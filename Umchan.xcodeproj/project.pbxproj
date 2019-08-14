@@ -7,14 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A70991F02303BD3600AE3ACA /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70991EF2303BD3600AE3ACA /* TabBarController.swift */; };
+		A70991F52303BF3A00AE3ACA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70991F42303BF3A00AE3ACA /* MainViewController.swift */; };
+		A70991FC2303C1DA00AE3ACA /* NanumSquareOTFBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A70991F82303C1D200AE3ACA /* NanumSquareOTFBold.otf */; };
+		A70991FD2303C1DA00AE3ACA /* NanumSquareOTFExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A70991F92303C1D200AE3ACA /* NanumSquareOTFExtraBold.otf */; };
+		A70991FE2303C1DA00AE3ACA /* NanumSquareOTFLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = A70991FB2303C1D200AE3ACA /* NanumSquareOTFLight.otf */; };
+		A70991FF2303C1DA00AE3ACA /* NanumSquareOTFRight.otf in Resources */ = {isa = PBXBuildFile; fileRef = A70991FA2303C1D200AE3ACA /* NanumSquareOTFRight.otf */; };
 		A742E39B22F88ADF002E333C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742E39A22F88ADF002E333C /* AppDelegate.swift */; };
 		A742E39D22F88ADF002E333C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742E39C22F88ADF002E333C /* ViewController.swift */; };
 		A742E3A022F88ADF002E333C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A742E39E22F88ADF002E333C /* Main.storyboard */; };
 		A742E3A222F88AE1002E333C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A742E3A122F88AE1002E333C /* Assets.xcassets */; };
 		A742E3A522F88AE1002E333C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A742E3A322F88AE1002E333C /* LaunchScreen.storyboard */; };
+		A7528B9E2302BBC000A6BEC0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7528B9D2302BBC000A6BEC0 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A70991EF2303BD3600AE3ACA /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		A70991F42303BF3A00AE3ACA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A70991F82303C1D200AE3ACA /* NanumSquareOTFBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTFBold.otf; sourceTree = "<group>"; };
+		A70991F92303C1D200AE3ACA /* NanumSquareOTFExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTFExtraBold.otf; sourceTree = "<group>"; };
+		A70991FA2303C1D200AE3ACA /* NanumSquareOTFRight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTFRight.otf; sourceTree = "<group>"; };
+		A70991FB2303C1D200AE3ACA /* NanumSquareOTFLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTFLight.otf; sourceTree = "<group>"; };
 		A742E39722F88ADF002E333C /* Umchan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Umchan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A742E39A22F88ADF002E333C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A742E39C22F88ADF002E333C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +35,7 @@
 		A742E3A122F88AE1002E333C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A742E3A422F88AE1002E333C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A742E3A622F88AE1002E333C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7528B9D2302BBC000A6BEC0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +49,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A70991ED2303BB4F00AE3ACA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A7528B9D2302BBC000A6BEC0 /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A70991EE2303BD1200AE3ACA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A70991EF2303BD3600AE3ACA /* TabBarController.swift */,
+				A70991F42303BF3A00AE3ACA /* MainViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A70991F12303BE9000AE3ACA /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A742E39E22F88ADF002E333C /* Main.storyboard */,
+				A742E3A322F88AE1002E333C /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		A70991F22303BEF000AE3ACA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A70991F32303BEF500AE3ACA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A70991F62303C1AD00AE3ACA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A70991F72303C1B500AE3ACA /* Font */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A70991F72303C1B500AE3ACA /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				A70991F82303C1D200AE3ACA /* NanumSquareOTFBold.otf */,
+				A70991F92303C1D200AE3ACA /* NanumSquareOTFExtraBold.otf */,
+				A70991FB2303C1D200AE3ACA /* NanumSquareOTFLight.otf */,
+				A70991FA2303C1D200AE3ACA /* NanumSquareOTFRight.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		A742E38E22F88ADF002E333C = {
 			isa = PBXGroup;
 			children = (
@@ -54,11 +127,15 @@
 		A742E39922F88ADF002E333C /* Umchan */ = {
 			isa = PBXGroup;
 			children = (
+				A70991F62303C1AD00AE3ACA /* Resources */,
+				A70991F32303BEF500AE3ACA /* Model */,
+				A70991F22303BEF000AE3ACA /* Views */,
+				A70991F12303BE9000AE3ACA /* Storyboards */,
+				A70991EE2303BD1200AE3ACA /* Controllers */,
+				A70991ED2303BB4F00AE3ACA /* Utils */,
 				A742E39A22F88ADF002E333C /* AppDelegate.swift */,
 				A742E39C22F88ADF002E333C /* ViewController.swift */,
-				A742E39E22F88ADF002E333C /* Main.storyboard */,
 				A742E3A122F88AE1002E333C /* Assets.xcassets */,
-				A742E3A322F88AE1002E333C /* LaunchScreen.storyboard */,
 				A742E3A622F88AE1002E333C /* Info.plist */,
 			);
 			path = Umchan;
@@ -123,8 +200,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A742E3A522F88AE1002E333C /* LaunchScreen.storyboard in Resources */,
+				A70991FF2303C1DA00AE3ACA /* NanumSquareOTFRight.otf in Resources */,
+				A70991FE2303C1DA00AE3ACA /* NanumSquareOTFLight.otf in Resources */,
 				A742E3A222F88AE1002E333C /* Assets.xcassets in Resources */,
 				A742E3A022F88ADF002E333C /* Main.storyboard in Resources */,
+				A70991FD2303C1DA00AE3ACA /* NanumSquareOTFExtraBold.otf in Resources */,
+				A70991FC2303C1DA00AE3ACA /* NanumSquareOTFBold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +217,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A742E39D22F88ADF002E333C /* ViewController.swift in Sources */,
+				A70991F02303BD3600AE3ACA /* TabBarController.swift in Sources */,
 				A742E39B22F88ADF002E333C /* AppDelegate.swift in Sources */,
+				A7528B9E2302BBC000A6BEC0 /* Constants.swift in Sources */,
+				A70991F52303BF3A00AE3ACA /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,13 +297,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -268,12 +353,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -285,6 +371,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5572FD66V9;
 				INFOPLIST_FILE = Umchan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,6 +390,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5572FD66V9;
 				INFOPLIST_FILE = Umchan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
