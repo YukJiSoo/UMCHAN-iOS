@@ -10,8 +10,19 @@ import UIKit
 
 @IBDesignable
 class SeoulMapView: UIView {
-    var image: UIImageView = UIImageView()
     
+    // MARK: - Properties
+    var distirctViews: [DistrictView] = []
+    
+    var widthRatio: CGFloat {
+        return self.frame.width / ORIGINAL_MAP_WIDTH
+    }
+    
+    var heightRatio: CGFloat {
+        return self.frame.height / ORIGINAL_MAP_HEIGHT
+    }
+    
+    // MARK: - Life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -23,11 +34,15 @@ class SeoulMapView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        image.image = UIImage(named: "한강")
-        image.contentMode = .scaleAspectFit
+        for _ in 0..<DistrictInfoService.shared.districtCoordinatesCount {
+            let districtView = DistrictView(frame: .zero)
+            self.distirctViews.append(districtView)
+            
+            self.addSubview(districtView)
+            
+        }
         
-        
-        self.addSubview(image)
+        self.setup()
     }
     
     override func prepareForInterfaceBuilder() {
@@ -37,12 +52,20 @@ class SeoulMapView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let widthRatio = self.frame.width / 335
-        let heightRatio = self.frame.height / 240
-        
-        image.frame = CGRect(x: 28 * widthRatio, y: 87 * heightRatio, width: (image.image?.size.width)! * widthRatio, height: (image.image?.size.height)! * heightRatio)
+        for i in 0..<DistrictInfoService.shared.districtCoordinatesCount {
+            self.distirctViews[i].setLayout(self.widthRatio, self.heightRatio)
+        }
     }
     
-    
+    // MARK: - Functions
+    func setup() {
+        
+        let districts = DistrictInfoService.shared.districtCoordinates
+        for i in 0..<DistrictInfoService.shared.districtCoordinatesCount {
+            
+            let district = districts[i]
+            self.distirctViews[i].configure(with: district, self.widthRatio, self.heightRatio)
+        }
+    }
     
 }

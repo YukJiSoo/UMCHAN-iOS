@@ -17,6 +17,7 @@
 		A70992032303E26500AE3ACA /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70992022303E26500AE3ACA /* CustomNavigationBar.swift */; };
 		A70992052303F85600AE3ACA /* DistrictCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70992042303F85600AE3ACA /* DistrictCoordinate.swift */; };
 		A70992072303FC5000AE3ACA /* DistrictView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70992062303FC5000AE3ACA /* DistrictView.swift */; };
+		A709920A2303FE2100AE3ACA /* DistrictInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70992092303FE2100AE3ACA /* DistrictInfoService.swift */; };
 		A742E39B22F88ADF002E333C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742E39A22F88ADF002E333C /* AppDelegate.swift */; };
 		A742E39D22F88ADF002E333C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742E39C22F88ADF002E333C /* ViewController.swift */; };
 		A742E3A022F88ADF002E333C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A742E39E22F88ADF002E333C /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		A70992022303E26500AE3ACA /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		A70992042303F85600AE3ACA /* DistrictCoordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistrictCoordinate.swift; sourceTree = "<group>"; };
 		A70992062303FC5000AE3ACA /* DistrictView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistrictView.swift; sourceTree = "<group>"; };
+		A70992092303FE2100AE3ACA /* DistrictInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistrictInfoService.swift; sourceTree = "<group>"; };
 		A742E39722F88ADF002E333C /* Umchan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Umchan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A742E39A22F88ADF002E333C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A742E39C22F88ADF002E333C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,14 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
+		A70992082303FE0000AE3ACA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A70992092303FE2100AE3ACA /* DistrictInfoService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		A742E38E22F88ADF002E333C = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +149,7 @@
 		A742E39922F88ADF002E333C /* Umchan */ = {
 			isa = PBXGroup;
 			children = (
+				A70992082303FE0000AE3ACA /* Services */,
 				A70991F62303C1AD00AE3ACA /* Resources */,
 				A70991F32303BEF500AE3ACA /* Model */,
 				A70991F22303BEF000AE3ACA /* Views */,
@@ -237,6 +248,7 @@
 				A70991F52303BF3A00AE3ACA /* MainViewController.swift in Sources */,
 				A70992032303E26500AE3ACA /* CustomNavigationBar.swift in Sources */,
 				A70992052303F85600AE3ACA /* DistrictCoordinate.swift in Sources */,
+				A709920A2303FE2100AE3ACA /* DistrictInfoService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
