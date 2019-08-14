@@ -13,6 +13,8 @@
 		A70991FD2303C1DA00AE3ACA /* NanumSquareOTFExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A70991F92303C1D200AE3ACA /* NanumSquareOTFExtraBold.otf */; };
 		A70991FE2303C1DA00AE3ACA /* NanumSquareOTFLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = A70991FB2303C1D200AE3ACA /* NanumSquareOTFLight.otf */; };
 		A70991FF2303C1DA00AE3ACA /* NanumSquareOTFRight.otf in Resources */ = {isa = PBXBuildFile; fileRef = A70991FA2303C1D200AE3ACA /* NanumSquareOTFRight.otf */; };
+		A70992012303DF0F00AE3ACA /* SeoulMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70992002303DF0F00AE3ACA /* SeoulMapView.swift */; };
+		A70992032303E26500AE3ACA /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70992022303E26500AE3ACA /* CustomNavigationBar.swift */; };
 		A742E39B22F88ADF002E333C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742E39A22F88ADF002E333C /* AppDelegate.swift */; };
 		A742E39D22F88ADF002E333C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742E39C22F88ADF002E333C /* ViewController.swift */; };
 		A742E3A022F88ADF002E333C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A742E39E22F88ADF002E333C /* Main.storyboard */; };
@@ -28,6 +30,8 @@
 		A70991F92303C1D200AE3ACA /* NanumSquareOTFExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTFExtraBold.otf; sourceTree = "<group>"; };
 		A70991FA2303C1D200AE3ACA /* NanumSquareOTFRight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTFRight.otf; sourceTree = "<group>"; };
 		A70991FB2303C1D200AE3ACA /* NanumSquareOTFLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTFLight.otf; sourceTree = "<group>"; };
+		A70992002303DF0F00AE3ACA /* SeoulMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeoulMapView.swift; sourceTree = "<group>"; };
+		A70992022303E26500AE3ACA /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		A742E39722F88ADF002E333C /* Umchan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Umchan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A742E39A22F88ADF002E333C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A742E39C22F88ADF002E333C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +82,8 @@
 		A70991F22303BEF000AE3ACA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A70992002303DF0F00AE3ACA /* SeoulMapView.swift */,
+				A70992022303E26500AE3ACA /* CustomNavigationBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -216,11 +222,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A70992012303DF0F00AE3ACA /* SeoulMapView.swift in Sources */,
 				A742E39D22F88ADF002E333C /* ViewController.swift in Sources */,
 				A70991F02303BD3600AE3ACA /* TabBarController.swift in Sources */,
 				A742E39B22F88ADF002E333C /* AppDelegate.swift in Sources */,
 				A7528B9E2302BBC000A6BEC0 /* Constants.swift in Sources */,
 				A70991F52303BF3A00AE3ACA /* MainViewController.swift in Sources */,
+				A70992032303E26500AE3ACA /* CustomNavigationBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumSquareOTFExtraBold.otf">
+            <string>NanumSquareOTF_acEB</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Item-->
         <scene sceneID="274-iJ-ubP">
@@ -33,15 +38,127 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BUo-at-fUX">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="725" translatesAutoresizingMaskIntoConstraints="NO" id="HpT-Hb-ZEg" userLabel="ContentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MkW-eW-2pY">
+                                                <rect key="frame" x="132" y="20" width="150" height="38"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="9uX-w4-1m9"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acEB" family="NanumSquareOTF_ac" pointSize="20"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="40" maxY="0.0"/>
+                                                <state key="normal" title="달리러가기" image="shoes">
+                                                    <color key="titleColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="goToRunButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ac7-My-bxU"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UVb-oP-OEg" userLabel="MapView" customClass="SeoulMapView" customModule="Umchan" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="78" width="374" height="268"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="UVb-oP-OEg" secondAttribute="height" multiplier="335:240" id="NyZ-1C-xbj"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원하시는 지역의 러닝을 확인하실 수 있습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVJ-jI-Ya0">
+                                                <rect key="frame" x="100" y="356" width="214.5" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hot Crews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qrw-hg-DaV">
+                                                <rect key="frame" x="20" y="390.5" width="84.5" height="19"/>
+                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acEB" family="NanumSquareOTF_ac" pointSize="17"/>
+                                                <color key="textColor" red="0.54836952689999996" green="0.16884723309999999" blue="0.18428939580000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZY-5Z-Yas">
+                                                <rect key="frame" x="0.0" y="419.5" width="414" height="179"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="170" translatesAutoresizingMaskIntoConstraints="NO" id="nbJ-Br-ZdY" userLabel="ContentView">
+                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="179"/>
+                                                        <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.33949509259999999" green="0.42738464469999998" blue="0.76082229609999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="nbJ-Br-ZdY" secondAttribute="trailing" id="9db-KB-PHQ"/>
+                                                    <constraint firstItem="nbJ-Br-ZdY" firstAttribute="height" secondItem="aZY-5Z-Yas" secondAttribute="height" id="AOz-lT-ys3"/>
+                                                    <constraint firstItem="nbJ-Br-ZdY" firstAttribute="leading" secondItem="aZY-5Z-Yas" secondAttribute="leading" id="WPN-JI-bGe"/>
+                                                    <constraint firstItem="nbJ-Br-ZdY" firstAttribute="top" secondItem="aZY-5Z-Yas" secondAttribute="top" id="eWX-GO-ocx"/>
+                                                    <constraint firstAttribute="bottom" secondItem="nbJ-Br-ZdY" secondAttribute="bottom" id="gXo-AH-2SO"/>
+                                                </constraints>
+                                            </scrollView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7kW-jH-DTq">
+                                                <rect key="frame" x="137.5" y="613.5" width="139" height="31"/>
+                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acEB" family="NanumSquareOTF_ac" pointSize="17"/>
+                                                <state key="normal" title="Crew 이름으로 검색"/>
+                                                <connections>
+                                                    <action selector="searchCrewByName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mH0-Oo-3dL"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="WVJ-jI-Ya0" firstAttribute="centerX" secondItem="HpT-Hb-ZEg" secondAttribute="centerX" id="5jI-j8-wbH"/>
+                                            <constraint firstItem="Qrw-hg-DaV" firstAttribute="top" secondItem="WVJ-jI-Ya0" secondAttribute="bottom" constant="20" id="Cpl-yx-59J"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="7kW-jH-DTq" secondAttribute="bottom" constant="50" id="IlJ-kb-KSF"/>
+                                            <constraint firstItem="Qrw-hg-DaV" firstAttribute="leading" secondItem="HpT-Hb-ZEg" secondAttribute="leading" constant="20" id="L2u-WI-W6R"/>
+                                            <constraint firstAttribute="trailing" secondItem="aZY-5Z-Yas" secondAttribute="trailing" id="NN2-ww-uei"/>
+                                            <constraint firstItem="WVJ-jI-Ya0" firstAttribute="top" secondItem="UVb-oP-OEg" secondAttribute="bottom" constant="10" id="NND-Wl-aCl"/>
+                                            <constraint firstItem="UVb-oP-OEg" firstAttribute="leading" secondItem="HpT-Hb-ZEg" secondAttribute="leading" constant="20" id="QPM-9Y-t0D"/>
+                                            <constraint firstItem="MkW-eW-2pY" firstAttribute="centerX" secondItem="HpT-Hb-ZEg" secondAttribute="centerX" id="ShA-hT-xQX"/>
+                                            <constraint firstItem="7kW-jH-DTq" firstAttribute="centerX" secondItem="HpT-Hb-ZEg" secondAttribute="centerX" id="YiO-6o-j8I"/>
+                                            <constraint firstItem="aZY-5Z-Yas" firstAttribute="top" secondItem="Qrw-hg-DaV" secondAttribute="bottom" constant="10" id="ab3-JC-x8Q"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Qrw-hg-DaV" secondAttribute="trailing" constant="20" symbolic="YES" id="fMn-dk-gvd"/>
+                                            <constraint firstAttribute="trailing" secondItem="UVb-oP-OEg" secondAttribute="trailing" constant="20" id="hUw-2V-ZJ7"/>
+                                            <constraint firstItem="UVb-oP-OEg" firstAttribute="top" secondItem="MkW-eW-2pY" secondAttribute="bottom" constant="20" id="obz-Bi-lIb"/>
+                                            <constraint firstItem="MkW-eW-2pY" firstAttribute="top" secondItem="HpT-Hb-ZEg" secondAttribute="top" constant="20" id="vID-wz-m1c"/>
+                                            <constraint firstItem="7kW-jH-DTq" firstAttribute="top" secondItem="aZY-5Z-Yas" secondAttribute="bottom" constant="15" id="y2F-gP-T2X"/>
+                                            <constraint firstItem="aZY-5Z-Yas" firstAttribute="leading" secondItem="HpT-Hb-ZEg" secondAttribute="leading" id="yMR-PI-KJp"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="HpT-Hb-ZEg" firstAttribute="top" secondItem="BUo-at-fUX" secondAttribute="top" id="6VO-l0-WHY"/>
+                                    <constraint firstItem="HpT-Hb-ZEg" firstAttribute="leading" secondItem="BUo-at-fUX" secondAttribute="leading" id="X1e-1E-zwB"/>
+                                    <constraint firstAttribute="trailing" secondItem="HpT-Hb-ZEg" secondAttribute="trailing" id="qtr-el-xRx"/>
+                                    <constraint firstAttribute="bottom" secondItem="HpT-Hb-ZEg" secondAttribute="bottom" id="u55-PN-iUT"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aZY-5Z-Yas" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="iIl-Xw-csO"/>
+                            <constraint firstItem="BUo-at-fUX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oQI-Eg-b8c"/>
+                            <constraint firstItem="HpT-Hb-ZEg" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="oi4-d0-gCD"/>
+                            <constraint firstItem="BUo-at-fUX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="qrb-rJ-9gH"/>
+                            <constraint firstItem="BUo-at-fUX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uvG-Xr-CKD"/>
+                            <constraint firstItem="BUo-at-fUX" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="yG3-mJ-gsS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="움찬 Runner" id="6Xj-hI-6gA"/>
+                    <navigationItem key="navigationItem" title="움찬 Runner" id="6Xj-hI-6gA">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="Pnh-qF-zat">
+                            <connections>
+                                <action selector="profileButtonPressed:" destination="BYZ-38-t0r" id="7k9-6T-Z9L"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <size key="freeformSize" width="414" height="896"/>
+                    <connections>
+                        <outlet property="seoulMapView" destination="UVb-oP-OEg" id="VF7-40-Lkn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2755.072463768116" y="292.63392857142856"/>
+            <point key="canvasLocation" x="2894.202898550725" y="292.63392857142856"/>
         </scene>
         <!--Item-->
         <scene sceneID="vfu-IN-Xcu">
@@ -99,5 +216,8 @@
             <point key="canvasLocation" x="1844.9275362318842" y="292.63392857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="shoes" width="40" height="38"/>
+    </resources>
     <color key="tintColor" red="0.62745098039215685" green="0.16078431372549018" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>

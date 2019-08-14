@@ -10,9 +10,24 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    @IBOutlet weak var seoulMapView: SeoulMapView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
-
+    
+    @IBAction func profileButtonPressed(_ sender: Any) {
+        
+    }
+    
+    @IBAction func goToRunButtonPressed(_ sender: Any) {
+        
+    }
+    
+    @IBAction func searchCrewByName(_ sender: Any) {
+        
+    }
+    
 }
