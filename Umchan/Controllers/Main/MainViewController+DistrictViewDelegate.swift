@@ -10,10 +10,13 @@ import Foundation
 import UIKit
 
 extension MainViewController: DistrictViewDelegate {
+    
     func districtView(selectedDistrict name: String) {
         
-        // TODO: - 새로운 뷰컨트롤러 modal 로 띄워주기
-        self.present(UIViewController(), animated: true, completion: nil)
+        let modalViewController = ModalViewController()
+        modalViewController.modalPresentationStyle = .custom
+        self.present(modalViewController, animated: true, completion: nil)
+        
     }
     
 }

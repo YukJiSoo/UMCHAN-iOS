@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class SeoulMapView: UIView {
+class SeoulMapView: UIView, NibLodable {
     
     // MARK: - Properties
     var distirctViews: [DistrictView] = []
