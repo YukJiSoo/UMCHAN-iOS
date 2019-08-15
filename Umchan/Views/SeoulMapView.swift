@@ -68,4 +68,10 @@ class SeoulMapView: UIView {
         }
     }
     
+    func setDistrictDelegate(_ target: DistrictViewDelegate) {
+        for districtView in self.distirctViews {
+            districtView.delegate = target
+        }
+    }
+    
 }

@@ -12,10 +12,10 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var seoulMapView: SeoulMapView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.seoulMapView.setDistrictDelegate(self)
     }
     
     @IBAction func profileButtonPressed(_ sender: Any) {
