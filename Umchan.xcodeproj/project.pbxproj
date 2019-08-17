@@ -23,11 +23,13 @@
 		A709921223056D6000AE3ACA /* NibLodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709921123056D6000AE3ACA /* NibLodable.swift */; };
 		A709921423056D9400AE3ACA /* UIStoryBoard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709921323056D9400AE3ACA /* UIStoryBoard+Extension.swift */; };
 		A7099217230570E600AE3ACA /* District.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7099216230570E600AE3ACA /* District.storyboard */; };
-		A709921C2305739100AE3ACA /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709921A2305739100AE3ACA /* ModalViewController.swift */; };
-		A709921D2305739100AE3ACA /* ModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A709921B2305739100AE3ACA /* ModalViewController.xib */; };
 		A70992212305743300AE3ACA /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70992202305743300AE3ACA /* CloseButton.swift */; };
+		A7099223230576C100AE3ACA /* RunningInDistrictViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7099222230576C100AE3ACA /* RunningInDistrictViewController.swift */; };
+		A70992272307105600AE3ACA /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70992262307105600AE3ACA /* ModalViewController.swift */; };
+		A70992292307114900AE3ACA /* ModalFirstViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70992282307114900AE3ACA /* ModalFirstViewable.swift */; };
+		A709922B2307122F00AE3ACA /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709922A2307122F00AE3ACA /* UIViewController+Extension.swift */; };
+		A709922D2307284400AE3ACA /* CustomNavigationBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709922C2307284400AE3ACA /* CustomNavigationBarDelegate.swift */; };
 		A742E39B22F88ADF002E333C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742E39A22F88ADF002E333C /* AppDelegate.swift */; };
-		A742E39D22F88ADF002E333C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742E39C22F88ADF002E333C /* ViewController.swift */; };
 		A742E3A022F88ADF002E333C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A742E39E22F88ADF002E333C /* Main.storyboard */; };
 		A742E3A222F88AE1002E333C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A742E3A122F88AE1002E333C /* Assets.xcassets */; };
 		A742E3A522F88AE1002E333C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A742E3A322F88AE1002E333C /* LaunchScreen.storyboard */; };
@@ -51,12 +53,14 @@
 		A709921123056D6000AE3ACA /* NibLodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLodable.swift; sourceTree = "<group>"; };
 		A709921323056D9400AE3ACA /* UIStoryBoard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryBoard+Extension.swift"; sourceTree = "<group>"; };
 		A7099216230570E600AE3ACA /* District.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = District.storyboard; sourceTree = "<group>"; };
-		A709921A2305739100AE3ACA /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
-		A709921B2305739100AE3ACA /* ModalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModalViewController.xib; sourceTree = "<group>"; };
 		A70992202305743300AE3ACA /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		A7099222230576C100AE3ACA /* RunningInDistrictViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningInDistrictViewController.swift; sourceTree = "<group>"; };
+		A70992262307105600AE3ACA /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		A70992282307114900AE3ACA /* ModalFirstViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalFirstViewable.swift; sourceTree = "<group>"; };
+		A709922A2307122F00AE3ACA /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		A709922C2307284400AE3ACA /* CustomNavigationBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarDelegate.swift; sourceTree = "<group>"; };
 		A742E39722F88ADF002E333C /* Umchan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Umchan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A742E39A22F88ADF002E333C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A742E39C22F88ADF002E333C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A742E39F22F88ADF002E333C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A742E3A122F88AE1002E333C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A742E3A422F88AE1002E333C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -88,9 +92,9 @@
 		A70991EE2303BD1200AE3ACA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A70992252306ECF500AE3ACA /* Commons */,
+				A70992242305770900AE3ACA /* RunningInDistrict */,
 				A709920F230558A400AE3ACA /* Main */,
-				A70991EF2303BD3600AE3ACA /* TabBarController.swift */,
-				A709921A2305739100AE3ACA /* ModalViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -112,6 +116,7 @@
 				A7099210230558B100AE3ACA /* DistrictView */,
 				A70992002303DF0F00AE3ACA /* SeoulMapView.swift */,
 				A70992022303E26500AE3ACA /* CustomNavigationBar.swift */,
+				A709922C2307284400AE3ACA /* CustomNavigationBarDelegate.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				A709921323056D9400AE3ACA /* UIStoryBoard+Extension.swift */,
+				A709922A2307122F00AE3ACA /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -180,7 +186,6 @@
 		A709921E2305739C00AE3ACA /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
-				A709921B2305739100AE3ACA /* ModalViewController.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -191,6 +196,24 @@
 				A70992202305743300AE3ACA /* CloseButton.swift */,
 			);
 			path = Button;
+			sourceTree = "<group>";
+		};
+		A70992242305770900AE3ACA /* RunningInDistrict */ = {
+			isa = PBXGroup;
+			children = (
+				A7099222230576C100AE3ACA /* RunningInDistrictViewController.swift */,
+			);
+			path = RunningInDistrict;
+			sourceTree = "<group>";
+		};
+		A70992252306ECF500AE3ACA /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				A70991EF2303BD3600AE3ACA /* TabBarController.swift */,
+				A70992262307105600AE3ACA /* ModalViewController.swift */,
+				A70992282307114900AE3ACA /* ModalFirstViewable.swift */,
+			);
+			path = Commons;
 			sourceTree = "<group>";
 		};
 		A742E38E22F88ADF002E333C = {
@@ -221,7 +244,6 @@
 				A70991EE2303BD1200AE3ACA /* Controllers */,
 				A70991ED2303BB4F00AE3ACA /* Utils */,
 				A742E39A22F88ADF002E333C /* AppDelegate.swift */,
-				A742E39C22F88ADF002E333C /* ViewController.swift */,
 				A742E3A122F88AE1002E333C /* Assets.xcassets */,
 				A742E3A622F88AE1002E333C /* Info.plist */,
 			);
@@ -294,7 +316,6 @@
 				A742E3A022F88ADF002E333C /* Main.storyboard in Resources */,
 				A70991FD2303C1DA00AE3ACA /* NanumSquareOTFExtraBold.otf in Resources */,
 				A70991FC2303C1DA00AE3ACA /* NanumSquareOTFBold.otf in Resources */,
-				A709921D2305739100AE3ACA /* ModalViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,10 +326,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A709922B2307122F00AE3ACA /* UIViewController+Extension.swift in Sources */,
+				A70992272307105600AE3ACA /* ModalViewController.swift in Sources */,
 				A70992012303DF0F00AE3ACA /* SeoulMapView.swift in Sources */,
-				A709921C2305739100AE3ACA /* ModalViewController.swift in Sources */,
-				A742E39D22F88ADF002E333C /* ViewController.swift in Sources */,
 				A70991F02303BD3600AE3ACA /* TabBarController.swift in Sources */,
+				A709922D2307284400AE3ACA /* CustomNavigationBarDelegate.swift in Sources */,
 				A742E39B22F88ADF002E333C /* AppDelegate.swift in Sources */,
 				A7528B9E2302BBC000A6BEC0 /* Constants.swift in Sources */,
 				A70992072303FC5000AE3ACA /* DistrictView.swift in Sources */,
@@ -316,9 +338,11 @@
 				A709921223056D6000AE3ACA /* NibLodable.swift in Sources */,
 				A709920C23053DAA00AE3ACA /* DistrictViewDelegate.swift in Sources */,
 				A709921423056D9400AE3ACA /* UIStoryBoard+Extension.swift in Sources */,
+				A70992292307114900AE3ACA /* ModalFirstViewable.swift in Sources */,
 				A70992032303E26500AE3ACA /* CustomNavigationBar.swift in Sources */,
 				A70992052303F85600AE3ACA /* DistrictCoordinate.swift in Sources */,
 				A709920A2303FE2100AE3ACA /* DistrictInfoService.swift in Sources */,
+				A7099223230576C100AE3ACA /* RunningInDistrictViewController.swift in Sources */,
 				A70992212305743300AE3ACA /* CloseButton.swift in Sources */,
 				A709920E2305514A00AE3ACA /* MainViewController+DistrictViewDelegate.swift in Sources */,
 			);

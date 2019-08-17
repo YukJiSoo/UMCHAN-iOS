@@ -11,68 +11,148 @@ import UIKit
 @IBDesignable
 class CustomNavigationBar: UIView {
     
-    // MARK: - Properties
-    var titleLabel: UILabel!
+    // MARK: - Constants
+    enum BarType {
+        case start, modalStart, navigationing
+    }
+    
+    enum BarButtonType {
+        case back, close, profile
+    }
+    
+    enum BarButtonLocation {
+        case left, right
+    }
+    
+    // MARK: - SubViews
+    var titleLabel = UILabel()
+    var bottomLineView = UIView()
     var rightButton: UIButton?
     var leftButton: UIButton?
     
+    // MARK: - Properties
     @IBInspectable var barItemSize: CGFloat = 30
     @IBInspectable var padding: CGFloat = 15
+    @IBInspectable var bottomLineHeight: CGFloat = 1
+    @IBInspectable var title: String = "Title" {
+        didSet {
+            self.titleLabel.text = self.title
+        }
+    }
+    // Todo: @IBInspectable 이용해서 enum Type 처리
+    var barType: BarType = .start
+    
+    var delegate: CustomNavigationBarDelegate?
     
     // MARK: - Life cycles
     override init(frame: CGRect) {
         super.init(frame: frame)
-        print("1")
+        
+        self.configureBottomLineView()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-//        self.setupViews()
-        print("2")
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        self.setupViews()
-        print("3")
+        
+        self.configureBottomLineView()
+        self.configureTitleLabel(with: self.title)
+        self.configureButton(location: .right, type: .profile)
     }
     
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
+        
+        self.configureBottomLineView()
+        self.configureTitleLabel(with: self.title)
+        self.configureButton(location: .right, type: .profile)
     }
     
     // MARK: - Functions
-    func setupViews() {
+    func configure(title: String, rightBarButtonType: BarButtonType?, leftBarButtonType: BarButtonType?) {
         
-        self.titleLabel = UILabel(frame: CGRect.zero)
-        self.titleLabel.text = "움찬러너"
+        self.configureTitleLabel(with: title)
+        
+        if let rightBarButtonType = rightBarButtonType {
+            self.configureButton(location: .right, type: rightBarButtonType)
+        }
+        
+        if let leftBarButtonType = leftBarButtonType {
+            self.configureButton(location: .left, type: leftBarButtonType)
+        }
+        
+    }
+    
+    func configureBottomLineView() {
+        
+        self.bottomLineView.backgroundColor = SYMBOL_COLOR
+        
+        self.addSubview(self.bottomLineView)
+        
+        self.bottomLineView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        self.bottomLineView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        self.bottomLineView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        self.bottomLineView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+        self.bottomLineView.heightAnchor.constraint(equalToConstant: self.bottomLineHeight).isActive = true
+    }
+    
+    func configureTitleLabel(with title: String?) {
+        
+        self.titleLabel.text = title ?? self.title
         self.titleLabel.font = UIFont(name: "NanumSquareOTF_ac", size: CGFloat(20))
         self.titleLabel.textColor = SYMBOL_COLOR
         self.titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        self.rightButton = UIButton(frame: CGRect.zero)
-        self.rightButton?.setImage(UIImage(named: "user"), for: .normal)
-        self.rightButton?.translatesAutoresizingMaskIntoConstraints = false
-        
         self.addSubview(self.titleLabel)
-        if let rightButton = self.rightButton {
-            self.addSubview(rightButton)
-        }
         
-        self.setupConstraints()
+        // set constraint
+        self.titleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        self.titleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
     }
     
-    func setupConstraints() {
+    func configureButton(location: BarButtonLocation, type: BarButtonType) {
         
-        self.titleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        self.titleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 20).isActive = true
-        
-        if let rightButtonTrailingAnchor = self.rightButton?.trailingAnchor {
-            self.trailingAnchor.constraint(equalTo: rightButtonTrailingAnchor, constant: self.padding).isActive = true
+        var button: UIButton
+        switch type {
+        case .back:
+            button = UIButton()
+        case .close:
+            button = CloseButton()
+        case .profile:
+            button = UIButton()
+            button.setImage(UIImage(named: "user"), for: .normal)
         }
-        self.rightButton?.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 20).isActive = true
-        self.rightButton?.widthAnchor.constraint(equalToConstant: barItemSize).isActive = true
-        self.rightButton?.heightAnchor.constraint(equalToConstant: barItemSize).isActive = true
         
+        self.addSubview(button)
+        
+        // set constraint
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        button.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        button.widthAnchor.constraint(equalToConstant: self.barItemSize).isActive = true
+        button.heightAnchor.constraint(equalToConstant: self.barItemSize).isActive = true
+        
+        switch location {
+        case .left:
+            button.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: self.padding).isActive = true
+            button.addTarget(self, action: #selector(self.leftBarButtonPressed(_:)), for: .touchUpInside)
+            
+            self.leftButton = button
+        case .right:
+            self.trailingAnchor.constraint(equalTo: button.trailingAnchor, constant: self.padding).isActive = true
+            button.addTarget(self, action: #selector(self.rightBarButtonPressed(_:)), for: .touchUpInside)
+            
+            self.rightButton = button
+        }
+        
+    }
+    
+    @objc func leftBarButtonPressed(_ sender: UIButton) {
+        print("1")
+        self.delegate?.leftBarButtonPressed?(sender)
+    }
+    
+    @objc func rightBarButtonPressed(_ sender: UIButton) {
+        
+        self.delegate?.rightBarButtonPressed?(sender)
     }
 }

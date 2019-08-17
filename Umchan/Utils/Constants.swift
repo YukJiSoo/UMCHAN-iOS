@@ -18,3 +18,7 @@ let ORIGINAL_MAP_HEIGHT: CGFloat = 240
 
 // MARK: - Assets
 let DISTRICTS = "districts"
+
+// MARK: - Constraints
+var navigationBarHeight: CGFloat = 64
+

@@ -33,6 +33,16 @@ class CloseButton: UIButton {
     }
     
     // MARK: - Life cycles
+    override init(frame: CGRect) {
+        
+        super.init(frame: frame)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        
+        super.init(coder: aDecoder)
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -43,7 +53,8 @@ class CloseButton: UIButton {
         self.setXLayer()
     }
     
-    // 버튼 내부의 X표시
+    
+    // MARK: - Functions
     func setXLayer() {
         self.layer.addSublayer(self.xLayer)
         

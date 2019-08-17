@@ -1,5 +1,5 @@
 //
-//  ModalViewController.swift
+//  RunningInDistrictViewController.swift
 //  Umchan
 //
 //  Created by 육지수 on 8/15/19.
@@ -8,18 +8,14 @@
 
 import UIKit
 
-class ModalViewController: UIViewController {
-
+class RunningInDistrictViewController: ModalViewController {
+    
     // MARK: - Life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
     }
-    
-    // MARK: - Actions
-    @IBAction func closeButtonPressed(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
-    }
+
+    // MARK: - Functions
     
 }

@@ -13,10 +13,12 @@ extension MainViewController: DistrictViewDelegate {
     
     func districtView(selectedDistrict name: String) {
         
-        let modalViewController = ModalViewController()
-        modalViewController.modalPresentationStyle = .custom
-        self.present(modalViewController, animated: true, completion: nil)
-        
+        let viewController = RunningInDistrictViewController()
+
+        viewController.modalPresentationStyle = .custom
+        viewController.setTitle(name)
+
+        self.present(viewController, animated: true, completion: nil)
     }
     
 }
