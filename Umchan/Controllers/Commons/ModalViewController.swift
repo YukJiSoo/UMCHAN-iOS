@@ -55,8 +55,7 @@ class ModalViewController: UIViewController, ModalFirstViewable {
 extension ModalViewController: CustomNavigationBarDelegate {
     
     func leftBarButtonPressed(_ sender: UIButton) {
-        print(UIViewController.statusBarHeight)
-        print(self.statusBarHeight)
+        
         self.closeButtonPressed(self.navigationBar)
     }
     

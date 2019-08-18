@@ -104,7 +104,7 @@
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZY-5Z-Yas">
                                                 <rect key="frame" x="0.0" y="459.5" width="414" height="180"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="170" translatesAutoresizingMaskIntoConstraints="NO" id="nbJ-Br-ZdY" userLabel="ContentView">
+                                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="180" translatesAutoresizingMaskIntoConstraints="NO" id="nbJ-Br-ZdY" userLabel="ContentView">
                                                         <rect key="frame" x="0.0" y="0.0" width="240" height="180"/>
                                                         <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </view>
@@ -179,6 +179,7 @@
                     </navigationItem>
                     <size key="freeformSize" width="414" height="896"/>
                     <connections>
+                        <outlet property="contentView" destination="nbJ-Br-ZdY" id="iE0-IQ-poP"/>
                         <outlet property="seoulMapView" destination="UVb-oP-OEg" id="VF7-40-Lkn"/>
                     </connections>
                 </viewController>
