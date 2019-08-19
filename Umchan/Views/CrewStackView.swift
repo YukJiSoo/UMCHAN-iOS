@@ -26,11 +26,20 @@ class CrewStackView: UIStackView {
     
     // MARK: - Functions
     func setupItems() {
-        print("스택")
+        self.axis = .horizontal
+        self.distribution = .fillEqually
         
-        let a = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        let a = UIView(frame: .zero)
         a.backgroundColor = .blue
         self.addArrangedSubview(a)
+        
+        let b = UIView(frame: .zero)
+        b.backgroundColor = .red
+        self.addArrangedSubview(b)
+        
+        let c = UIView(frame: .zero)
+        c.backgroundColor = .gray
+        self.addArrangedSubview(c)
         
     }
 }
