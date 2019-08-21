@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 protocol ModalFirstViewable {
+    
     var navigationBar: CustomNavigationBar { get set }
     
 }

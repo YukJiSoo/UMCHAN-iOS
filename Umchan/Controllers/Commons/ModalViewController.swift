@@ -60,3 +60,15 @@ extension ModalViewController: CustomNavigationBarDelegate {
     }
     
 }
+
+extension ModalViewController {
+    
+    class func viewController<T: ModalViewController>(_ type: T.Type, titleName: String) -> T {
+        let viewController = T.init()
+        
+        viewController.modalPresentationStyle = .custom
+        viewController.setTitle(titleName)
+        
+        return viewController
+    }
+}

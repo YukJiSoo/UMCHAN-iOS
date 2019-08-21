@@ -12,11 +12,7 @@ import UIKit
 extension MainViewController: DistrictViewDelegate {
     
     func districtView(selectedDistrict name: String) {
-        
-        let viewController = RunningInDistrictViewController()
-
-        viewController.modalPresentationStyle = .custom
-        viewController.setTitle(name)
+        let viewController = ModalViewController.viewController(RunningInDistrictViewController.self, titleName: name)
 
         self.present(viewController, animated: true, completion: nil)
     }
