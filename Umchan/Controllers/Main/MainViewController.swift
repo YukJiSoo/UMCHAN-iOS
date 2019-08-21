@@ -73,6 +73,12 @@ class MainViewController: UIViewController {
     
     @IBAction func goToRunButtonPressed(_ sender: Any) {
         
+        let viewController = RegisterRunningViewController()
+        
+        viewController.modalPresentationStyle = .custom
+        viewController.setTitle("달리러가기")
+        
+        self.present(viewController, animated: true, completion: nil)
     }
     
     @IBAction func searchCrewByName(_ sender: Any) {

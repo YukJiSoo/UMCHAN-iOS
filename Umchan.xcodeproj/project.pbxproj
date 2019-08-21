@@ -35,6 +35,7 @@
 		A742E3A522F88AE1002E333C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A742E3A322F88AE1002E333C /* LaunchScreen.storyboard */; };
 		A7528B9E2302BBC000A6BEC0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7528B9D2302BBC000A6BEC0 /* Constants.swift */; };
 		A76A70B82309978E00B5EA81 /* CrewStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76A70B72309978E00B5EA81 /* CrewStackView.swift */; };
+		A76A70F7230D8E9F00B5EA81 /* RegisterRunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76A70F6230D8E9F00B5EA81 /* RegisterRunningViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		A742E3A622F88AE1002E333C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7528B9D2302BBC000A6BEC0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A76A70B72309978E00B5EA81 /* CrewStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewStackView.swift; sourceTree = "<group>"; };
+		A76A70F6230D8E9F00B5EA81 /* RegisterRunningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRunningViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				A70992252306ECF500AE3ACA /* Commons */,
 				A70992242305770900AE3ACA /* RunningInDistrict */,
 				A709920F230558A400AE3ACA /* Main */,
+				A76A70F6230D8E9F00B5EA81 /* RegisterRunningViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A76A70F7230D8E9F00B5EA81 /* RegisterRunningViewController.swift in Sources */,
 				A709922B2307122F00AE3ACA /* UIViewController+Extension.swift in Sources */,
 				A70992272307105600AE3ACA /* ModalViewController.swift in Sources */,
 				A70992012303DF0F00AE3ACA /* SeoulMapView.swift in Sources */,

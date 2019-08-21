@@ -13,7 +13,7 @@ class RunningInDistrictViewController: ModalViewController {
     // MARK: - Life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("running")
     }
 
     // MARK: - Functions
