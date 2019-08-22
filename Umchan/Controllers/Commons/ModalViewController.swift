@@ -16,14 +16,15 @@ class ModalViewController: UIViewController, ModalFirstViewable {
     // MARK: - Life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupViews()
         
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        self.setupViews()
         self.setupConstraints()
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        self.setupConstraints()
+//    }
     
     // MARK: - Functions
     func setTitle(_ title: String) {
@@ -40,7 +41,7 @@ class ModalViewController: UIViewController, ModalFirstViewable {
     }
     
     func setupConstraints() {
-        
+        print("navi")
         self.navigationBar.translatesAutoresizingMaskIntoConstraints = false
         
         self.navigationBar.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true

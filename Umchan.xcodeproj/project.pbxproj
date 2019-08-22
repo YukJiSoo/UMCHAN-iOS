@@ -36,6 +36,8 @@
 		A7528B9E2302BBC000A6BEC0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7528B9D2302BBC000A6BEC0 /* Constants.swift */; };
 		A76A70B82309978E00B5EA81 /* CrewStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76A70B72309978E00B5EA81 /* CrewStackView.swift */; };
 		A76A70F7230D8E9F00B5EA81 /* RegisterRunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76A70F6230D8E9F00B5EA81 /* RegisterRunningViewController.swift */; };
+		A76A70FC230E923E00B5EA81 /* RunningTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76A70FA230E923E00B5EA81 /* RunningTableViewCell.swift */; };
+		A76A70FD230E923E00B5EA81 /* RunningTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A76A70FB230E923E00B5EA81 /* RunningTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		A7528B9D2302BBC000A6BEC0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A76A70B72309978E00B5EA81 /* CrewStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewStackView.swift; sourceTree = "<group>"; };
 		A76A70F6230D8E9F00B5EA81 /* RegisterRunningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRunningViewController.swift; sourceTree = "<group>"; };
+		A76A70FA230E923E00B5EA81 /* RunningTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningTableViewCell.swift; sourceTree = "<group>"; };
+		A76A70FB230E923E00B5EA81 /* RunningTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RunningTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,10 +100,10 @@
 		A70991EE2303BD1200AE3ACA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A76A70F8230E91EA00B5EA81 /* RegisterRunning */,
 				A70992252306ECF500AE3ACA /* Commons */,
 				A70992242305770900AE3ACA /* RunningInDistrict */,
 				A709920F230558A400AE3ACA /* Main */,
-				A76A70F6230D8E9F00B5EA81 /* RegisterRunningViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -117,6 +121,7 @@
 		A70991F22303BEF000AE3ACA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A76A70F9230E91FE00B5EA81 /* TableViewCell */,
 				A76A70B6230829E700B5EA81 /* NavigationBar */,
 				A709921F2305741F00AE3ACA /* Button */,
 				A7099210230558B100AE3ACA /* DistrictView */,
@@ -241,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				A709921E2305739C00AE3ACA /* Xibs */,
+				A76A70FB230E923E00B5EA81 /* RunningTableViewCell.xib */,
 				A70992082303FE0000AE3ACA /* Services */,
 				A70991F62303C1AD00AE3ACA /* Resources */,
 				A70991F32303BEF500AE3ACA /* Model */,
@@ -262,6 +268,22 @@
 				A709922C2307284400AE3ACA /* CustomNavigationBarDelegate.swift */,
 			);
 			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		A76A70F8230E91EA00B5EA81 /* RegisterRunning */ = {
+			isa = PBXGroup;
+			children = (
+				A76A70F6230D8E9F00B5EA81 /* RegisterRunningViewController.swift */,
+			);
+			path = RegisterRunning;
+			sourceTree = "<group>";
+		};
+		A76A70F9230E91FE00B5EA81 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A76A70FA230E923E00B5EA81 /* RunningTableViewCell.swift */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,6 +349,7 @@
 				A70991FF2303C1DA00AE3ACA /* NanumSquareOTFRight.otf in Resources */,
 				A70991FE2303C1DA00AE3ACA /* NanumSquareOTFLight.otf in Resources */,
 				A742E3A222F88AE1002E333C /* Assets.xcassets in Resources */,
+				A76A70FD230E923E00B5EA81 /* RunningTableViewCell.xib in Resources */,
 				A742E3A022F88ADF002E333C /* Main.storyboard in Resources */,
 				A70991FD2303C1DA00AE3ACA /* NanumSquareOTFExtraBold.otf in Resources */,
 				A70991FC2303C1DA00AE3ACA /* NanumSquareOTFBold.otf in Resources */,
@@ -345,6 +368,7 @@
 				A70992272307105600AE3ACA /* ModalViewController.swift in Sources */,
 				A70992012303DF0F00AE3ACA /* SeoulMapView.swift in Sources */,
 				A70991F02303BD3600AE3ACA /* TabBarController.swift in Sources */,
+				A76A70FC230E923E00B5EA81 /* RunningTableViewCell.swift in Sources */,
 				A709922D2307284400AE3ACA /* CustomNavigationBarDelegate.swift in Sources */,
 				A742E39B22F88ADF002E333C /* AppDelegate.swift in Sources */,
 				A7528B9E2302BBC000A6BEC0 /* Constants.swift in Sources */,
