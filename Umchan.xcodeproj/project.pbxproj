@@ -37,6 +37,10 @@
 		A7168B7C2310436500500621 /* MyCrewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B7B2310436500500621 /* MyCrewsViewController.swift */; };
 		A7168B7E2310458500500621 /* ElementNoExistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B7D2310458500500621 /* ElementNoExistable.swift */; };
 		A7168B8023104F8D00500621 /* ScrollableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B7F23104F8D00500621 /* ScrollableStackView.swift */; };
+		A7168B832310645500500621 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B822310645500500621 /* SearchViewController.swift */; };
+		A7168B862310648300500621 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B852310648300500621 /* CustomSearchBar.swift */; };
+		A7168B8A231069E200500621 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B89231069E200500621 /* CALayer+Extension.swift */; };
+		A7168B8C2310775400500621 /* CustomSearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B8B2310775400500621 /* CustomSearchBarDelegate.swift */; };
 		A71EC1DE230FB91F00275EA8 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC1DD230FB91F00275EA8 /* Date+Extension.swift */; };
 		A71EC1E0230FBD0A00275EA8 /* Crew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC1DF230FBD0A00275EA8 /* Crew.swift */; };
 		A71EC1E4230FC0D600275EA8 /* CrewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC1E3230FC0D600275EA8 /* CrewView.swift */; };
@@ -96,6 +100,10 @@
 		A7168B7B2310436500500621 /* MyCrewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCrewsViewController.swift; sourceTree = "<group>"; };
 		A7168B7D2310458500500621 /* ElementNoExistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementNoExistable.swift; sourceTree = "<group>"; };
 		A7168B7F23104F8D00500621 /* ScrollableStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableStackView.swift; sourceTree = "<group>"; };
+		A7168B822310645500500621 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		A7168B852310648300500621 /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
+		A7168B89231069E200500621 /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
+		A7168B8B2310775400500621 /* CustomSearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBarDelegate.swift; sourceTree = "<group>"; };
 		A71EC1DD230FB91F00275EA8 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		A71EC1DF230FBD0A00275EA8 /* Crew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crew.swift; sourceTree = "<group>"; };
 		A71EC1E3230FC0D600275EA8 /* CrewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewView.swift; sourceTree = "<group>"; };
@@ -174,6 +182,7 @@
 		A70991F22303BEF000AE3ACA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A7168B842310646900500621 /* SearchBar */,
 				A71EC1FD230FF85E00275EA8 /* DateView */,
 				A76A70F9230E91FE00B5EA81 /* TableViewCell */,
 				A76A70B6230829E700B5EA81 /* NavigationBar */,
@@ -252,6 +261,7 @@
 				A71EC1E9230FCAAC00275EA8 /* UIView+Extension.swift */,
 				A71EC1EB230FCBCA00275EA8 /* UIFont+Extension.swift */,
 				A7168B6B23100C8400500621 /* DateFormatter+Extension.swift */,
+				A7168B89231069E200500621 /* CALayer+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -287,6 +297,7 @@
 		A70992252306ECF500AE3ACA /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				A7168B812310644200500621 /* Search */,
 				A7168B6E2310109B00500621 /* DatePicker */,
 				A7168B6D2310108100500621 /* Modal */,
 				A70991EF2303BD3600AE3ACA /* TabBarController.swift */,
@@ -326,6 +337,23 @@
 				A7168B7B2310436500500621 /* MyCrewsViewController.swift */,
 			);
 			path = Crew;
+			sourceTree = "<group>";
+		};
+		A7168B812310644200500621 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				A7168B822310645500500621 /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		A7168B842310646900500621 /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				A7168B852310648300500621 /* CustomSearchBar.swift */,
+				A7168B8B2310775400500621 /* CustomSearchBarDelegate.swift */,
+			);
+			path = SearchBar;
 			sourceTree = "<group>";
 		};
 		A71EC1FD230FF85E00275EA8 /* DateView */ = {
@@ -483,6 +511,7 @@
 			files = (
 				A71EC1DE230FB91F00275EA8 /* Date+Extension.swift in Sources */,
 				A7168B7823103E4300500621 /* RunningHistoryTableViewCell.swift in Sources */,
+				A7168B862310648300500621 /* CustomSearchBar.swift in Sources */,
 				A76A70F7230D8E9F00B5EA81 /* RegisterRunningViewController.swift in Sources */,
 				A709922B2307122F00AE3ACA /* UIViewController+Extension.swift in Sources */,
 				A7168B712310111900500621 /* RunningHistoryViewController.swift in Sources */,
@@ -511,6 +540,7 @@
 				A709920C23053DAA00AE3ACA /* DistrictViewDelegate.swift in Sources */,
 				A709921423056D9400AE3ACA /* UIStoryBoard+Extension.swift in Sources */,
 				A70992292307114900AE3ACA /* ModalFirstViewable.swift in Sources */,
+				A7168B832310645500500621 /* SearchViewController.swift in Sources */,
 				A71EC1EC230FCBCA00275EA8 /* UIFont+Extension.swift in Sources */,
 				A71EC1F6230FF23400275EA8 /* RoundedButton.swift in Sources */,
 				A70992032303E26500AE3ACA /* CustomNavigationBar.swift in Sources */,
@@ -520,10 +550,12 @@
 				A70992052303F85600AE3ACA /* DistrictCoordinate.swift in Sources */,
 				A7168B7C2310436500500621 /* MyCrewsViewController.swift in Sources */,
 				A709920A2303FE2100AE3ACA /* DistrictInfoService.swift in Sources */,
+				A7168B8C2310775400500621 /* CustomSearchBarDelegate.swift in Sources */,
 				A7099223230576C100AE3ACA /* RunningInDistrictViewController.swift in Sources */,
 				A70992212305743300AE3ACA /* CloseButton.swift in Sources */,
 				A709920E2305514A00AE3ACA /* MainViewController+DistrictViewDelegate.swift in Sources */,
 				A71EC1FF230FF86C00275EA8 /* DateViewDelegate.swift in Sources */,
+				A7168B8A231069E200500621 /* CALayer+Extension.swift in Sources */,
 				A7168B6C23100C8400500621 /* DateFormatter+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -42,7 +42,7 @@
                                     <constraint firstItem="yFs-8P-sc6" firstAttribute="width" secondItem="wir-O9-Z76" secondAttribute="width" id="q3L-lF-Iix"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="움찬러너"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="내 크루"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
@@ -70,7 +70,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Umchan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="920"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oZ4-e6-frJ" customClass="CustomNavigationBar" customModule="Umchan" customModuleProvider="target">
@@ -97,10 +97,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BUo-at-fUX">
-                                <rect key="frame" x="0.0" y="108" width="414" height="705"/>
+                                <rect key="frame" x="0.0" y="108" width="414" height="729"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="725" translatesAutoresizingMaskIntoConstraints="NO" id="HpT-Hb-ZEg" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="735.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="778.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MkW-eW-2pY">
                                                 <rect key="frame" x="132" y="20" width="150" height="38"/>
@@ -130,13 +130,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hot Crews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qrw-hg-DaV">
-                                                <rect key="frame" x="20" y="430.5" width="84.5" height="19"/>
+                                                <rect key="frame" x="20" y="487.5" width="84.5" height="19"/>
                                                 <fontDescription key="fontDescription" name="NanumSquareOTF_acEB" family="NanumSquareOTF_ac" pointSize="17"/>
                                                 <color key="textColor" red="0.54836952689999996" green="0.16884723309999999" blue="0.18428939580000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZY-5Z-Yas">
-                                                <rect key="frame" x="0.0" y="459.5" width="414" height="180"/>
+                                                <rect key="frame" x="0.0" y="516.5" width="414" height="180"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="12G-4c-KFY">
                                                         <rect key="frame" x="0.0" y="0.0" width="200" height="180"/>
@@ -157,26 +157,33 @@
                                                 </constraints>
                                             </scrollView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7kW-jH-DTq">
-                                                <rect key="frame" x="137.5" y="654.5" width="139" height="31"/>
-                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acEB" family="NanumSquareOTF_ac" pointSize="17"/>
+                                                <rect key="frame" x="117.5" y="711.5" width="179" height="37"/>
+                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acEB" family="NanumSquareOTF_ac" pointSize="22"/>
                                                 <state key="normal" title="Crew 이름으로 검색"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YE5-4z-K8c">
+                                                <rect key="frame" x="100" y="420.5" width="214" height="37"/>
+                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acEB" family="NanumSquareOTF_ac" pointSize="22"/>
+                                                <state key="normal" title="Running 이름으로 검색"/>
                                                 <connections>
-                                                    <action selector="searchCrewByName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mH0-Oo-3dL"/>
+                                                    <action selector="searchCrewByName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="24b-7A-fz3"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="WVJ-jI-Ya0" firstAttribute="centerX" secondItem="HpT-Hb-ZEg" secondAttribute="centerX" id="5jI-j8-wbH"/>
-                                            <constraint firstItem="Qrw-hg-DaV" firstAttribute="top" secondItem="WVJ-jI-Ya0" secondAttribute="bottom" constant="40" id="Cpl-yx-59J"/>
-                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="7kW-jH-DTq" secondAttribute="bottom" constant="50" id="IlJ-kb-KSF"/>
+                                            <constraint firstItem="YE5-4z-K8c" firstAttribute="centerX" secondItem="HpT-Hb-ZEg" secondAttribute="centerX" id="AFN-W1-UIJ"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="7kW-jH-DTq" secondAttribute="bottom" constant="30" id="IlJ-kb-KSF"/>
                                             <constraint firstItem="Qrw-hg-DaV" firstAttribute="leading" secondItem="HpT-Hb-ZEg" secondAttribute="leading" constant="20" id="L2u-WI-W6R"/>
                                             <constraint firstAttribute="trailing" secondItem="aZY-5Z-Yas" secondAttribute="trailing" id="NN2-ww-uei"/>
                                             <constraint firstItem="WVJ-jI-Ya0" firstAttribute="top" secondItem="UVb-oP-OEg" secondAttribute="bottom" constant="20" id="NND-Wl-aCl"/>
                                             <constraint firstItem="UVb-oP-OEg" firstAttribute="leading" secondItem="HpT-Hb-ZEg" secondAttribute="leading" constant="20" id="QPM-9Y-t0D"/>
                                             <constraint firstItem="MkW-eW-2pY" firstAttribute="centerX" secondItem="HpT-Hb-ZEg" secondAttribute="centerX" id="ShA-hT-xQX"/>
+                                            <constraint firstItem="Qrw-hg-DaV" firstAttribute="top" secondItem="YE5-4z-K8c" secondAttribute="bottom" constant="30" id="YhJ-DQ-zv0"/>
                                             <constraint firstItem="7kW-jH-DTq" firstAttribute="centerX" secondItem="HpT-Hb-ZEg" secondAttribute="centerX" id="YiO-6o-j8I"/>
                                             <constraint firstItem="aZY-5Z-Yas" firstAttribute="top" secondItem="Qrw-hg-DaV" secondAttribute="bottom" constant="10" id="ab3-JC-x8Q"/>
+                                            <constraint firstItem="YE5-4z-K8c" firstAttribute="top" secondItem="WVJ-jI-Ya0" secondAttribute="bottom" constant="30" id="cWA-ih-3K6"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Qrw-hg-DaV" secondAttribute="trailing" constant="20" symbolic="YES" id="fMn-dk-gvd"/>
                                             <constraint firstAttribute="trailing" secondItem="UVb-oP-OEg" secondAttribute="trailing" constant="20" id="hUw-2V-ZJ7"/>
                                             <constraint firstItem="UVb-oP-OEg" firstAttribute="top" secondItem="MkW-eW-2pY" secondAttribute="bottom" constant="30" id="obz-Bi-lIb"/>
@@ -214,7 +221,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <size key="freeformSize" width="414" height="896"/>
+                    <size key="freeformSize" width="414" height="920"/>
                     <connections>
                         <outlet property="crewListView" destination="12G-4c-KFY" id="HSd-5k-lmO"/>
                         <outlet property="navigationBar" destination="oZ4-e6-frJ" id="Exj-C2-k7Y"/>
@@ -252,7 +259,7 @@
                                     <constraint firstAttribute="bottom" secondItem="ajT-1S-u8o" secondAttribute="bottom" id="otf-F5-Cj7"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="움찬러너"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="내 기록"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
