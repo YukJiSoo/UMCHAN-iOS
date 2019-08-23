@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        self.window?.tintColor = SYMBOL_COLOR
+        self.window?.tintColor = Color.symbol
         // Override point for customization after application launch.
         return true
     }

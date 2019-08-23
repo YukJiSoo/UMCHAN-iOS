@@ -83,7 +83,7 @@ class CustomNavigationBar: UIView {
     
     func configureBottomLineView() {
         
-        self.bottomLineView.backgroundColor = SYMBOL_COLOR
+        self.bottomLineView.backgroundColor = Color.symbol
         
         self.addSubview(self.bottomLineView)
         
@@ -98,7 +98,7 @@ class CustomNavigationBar: UIView {
         
         self.titleLabel.text = title ?? self.title
         self.titleLabel.font = UIFont.umchanFont(size: 20, boldState: .bold)
-        self.titleLabel.textColor = SYMBOL_COLOR
+        self.titleLabel.textColor = Color.symbol
         
         self.titleLabel.translatesAutoresizingMaskIntoConstraints = false
         

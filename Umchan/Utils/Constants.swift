@@ -10,7 +10,14 @@ import Foundation
 import UIKit
 
 // MARK: - Colors
-let SYMBOL_COLOR = #colorLiteral(red: 0.5968999267, green: 0.1244353876, blue: 0.1686562896, alpha: 1)
+class Color {
+    
+    private init() {
+    }
+    
+    static let symbol = #colorLiteral(red: 0.5968999267, green: 0.1244353876, blue: 0.1686562896, alpha: 1)
+    static let symbolTransparent = #colorLiteral(red: 0.5968999267, green: 0.1244353876, blue: 0.1686562896, alpha: 0.6979612586)
+}
 
 // MARK: - Seoul map info
 let ORIGINAL_MAP_WIDTH: CGFloat = 335
@@ -51,4 +58,13 @@ class DateFormat {
     static let time = "h시 m분"
     static let date = "yyyy년 M월 d일"
     static let dateAndTime = "\(date) \(time)"
+}
+
+// MARK: - image asset name
+class AssetName {
+    
+    private init() {
+    }
+    
+    static let empty = "empty"
 }

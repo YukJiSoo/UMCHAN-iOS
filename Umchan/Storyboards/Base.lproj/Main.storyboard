@@ -22,7 +22,36 @@
                     <view key="view" contentMode="scaleToFill" id="8Cy-7S-f33">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wir-O9-Z76" customClass="CustomNavigationBar" customModule="Umchan" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="64"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yFs-8P-sc6">
+                                        <rect key="frame" x="0.0" y="63" width="414" height="1"/>
+                                        <color key="backgroundColor" red="0.54836952689999996" green="0.16884723309999999" blue="0.18428939580000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="WZP-R2-QyX"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="1cd-HU-gbN"/>
+                                    <constraint firstItem="yFs-8P-sc6" firstAttribute="leading" secondItem="wir-O9-Z76" secondAttribute="leading" id="1l2-Rk-MXI"/>
+                                    <constraint firstAttribute="bottom" secondItem="yFs-8P-sc6" secondAttribute="bottom" id="nBf-Oh-hQN"/>
+                                    <constraint firstItem="yFs-8P-sc6" firstAttribute="width" secondItem="wir-O9-Z76" secondAttribute="width" id="q3L-lF-Iix"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="움찬러너"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wir-O9-Z76" firstAttribute="leading" secondItem="8Cy-7S-f33" secondAttribute="leading" id="25a-oj-cgw"/>
+                            <constraint firstItem="wir-O9-Z76" firstAttribute="top" secondItem="V8f-pC-2na" secondAttribute="top" id="OhA-kH-Ud2"/>
+                            <constraint firstItem="V8f-pC-2na" firstAttribute="trailing" secondItem="wir-O9-Z76" secondAttribute="trailing" id="tlB-lU-ab8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="V8f-pC-2na"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="crew" id="JXw-Mk-C4u">
@@ -193,19 +222,51 @@
             </objects>
             <point key="canvasLocation" x="2894.202898550725" y="292.63392857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Running History View Controller-->
         <scene sceneID="vfu-IN-Xcu">
             <objects>
-                <viewController id="CYI-j0-Uiy" sceneMemberID="viewController">
+                <viewController id="CYI-j0-Uiy" customClass="RunningHistoryViewController" customModule="Umchan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NK4-Be-Plj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hrp-k0-lDz" customClass="CustomNavigationBar" customModule="Umchan" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="64"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajT-1S-u8o">
+                                        <rect key="frame" x="0.0" y="63" width="414" height="1"/>
+                                        <color key="backgroundColor" red="0.54836952689999996" green="0.16884723309999999" blue="0.18428939580000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="3hf-gp-vkf"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ajT-1S-u8o" firstAttribute="leading" secondItem="hrp-k0-lDz" secondAttribute="leading" id="0GA-mf-SVU"/>
+                                    <constraint firstItem="ajT-1S-u8o" firstAttribute="width" secondItem="hrp-k0-lDz" secondAttribute="width" id="0Pq-L6-t4N"/>
+                                    <constraint firstAttribute="height" constant="64" id="iex-OE-7NA"/>
+                                    <constraint firstAttribute="bottom" secondItem="ajT-1S-u8o" secondAttribute="bottom" id="otf-F5-Cj7"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="움찬러너"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="hrp-k0-lDz" secondAttribute="trailing" id="5a8-El-erp"/>
+                            <constraint firstItem="hrp-k0-lDz" firstAttribute="leading" secondItem="K0A-h6-7uv" secondAttribute="leading" id="Xao-JG-feo"/>
+                            <constraint firstItem="hrp-k0-lDz" firstAttribute="top" secondItem="K0A-h6-7uv" secondAttribute="top" id="o1Y-Ed-r5I"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="K0A-h6-7uv"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="history" id="1Aw-ev-Jez">
                         <inset key="imageInsets" minX="0.0" minY="3" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="navigationBar" destination="hrp-k0-lDz" id="lcN-ch-3cl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WOj-x5-99S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

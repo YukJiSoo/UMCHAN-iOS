@@ -31,6 +31,7 @@
 		A709922D2307284400AE3ACA /* CustomNavigationBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709922C2307284400AE3ACA /* CustomNavigationBarDelegate.swift */; };
 		A7168B6A231006AA00500621 /* DateView+DatePickerPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B69231006AA00500621 /* DateView+DatePickerPresentable.swift */; };
 		A7168B6C23100C8400500621 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B6B23100C8400500621 /* DateFormatter+Extension.swift */; };
+		A7168B712310111900500621 /* RunningHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B702310111900500621 /* RunningHistoryViewController.swift */; };
 		A71EC1DE230FB91F00275EA8 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC1DD230FB91F00275EA8 /* Date+Extension.swift */; };
 		A71EC1E0230FBD0A00275EA8 /* Crew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC1DF230FBD0A00275EA8 /* Crew.swift */; };
 		A71EC1E4230FC0D600275EA8 /* CrewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC1E3230FC0D600275EA8 /* CrewView.swift */; };
@@ -84,6 +85,7 @@
 		A709922C2307284400AE3ACA /* CustomNavigationBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarDelegate.swift; sourceTree = "<group>"; };
 		A7168B69231006AA00500621 /* DateView+DatePickerPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateView+DatePickerPresentable.swift"; sourceTree = "<group>"; };
 		A7168B6B23100C8400500621 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
+		A7168B702310111900500621 /* RunningHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningHistoryViewController.swift; sourceTree = "<group>"; };
 		A71EC1DD230FB91F00275EA8 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		A71EC1DF230FBD0A00275EA8 /* Crew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crew.swift; sourceTree = "<group>"; };
 		A71EC1E3230FC0D600275EA8 /* CrewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewView.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		A70991EE2303BD1200AE3ACA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A7168B6F231010FF00500621 /* RunningHistory */,
 				A76A70F8230E91EA00B5EA81 /* RegisterRunning */,
 				A70992252306ECF500AE3ACA /* Commons */,
 				A70992242305770900AE3ACA /* RunningInDistrict */,
@@ -270,13 +273,37 @@
 		A70992252306ECF500AE3ACA /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				A7168B6E2310109B00500621 /* DatePicker */,
+				A7168B6D2310108100500621 /* Modal */,
 				A70991EF2303BD3600AE3ACA /* TabBarController.swift */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		A7168B6D2310108100500621 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
 				A70992262307105600AE3ACA /* ModalViewController.swift */,
 				A70992282307114900AE3ACA /* ModalFirstViewable.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		A7168B6E2310109B00500621 /* DatePicker */ = {
+			isa = PBXGroup;
+			children = (
 				A71EC1F7230FF45C00275EA8 /* DatePickerViewController.swift */,
 				A71EC202231003E100275EA8 /* DatePickerPresentable.swift */,
 			);
-			path = Commons;
+			path = DatePicker;
+			sourceTree = "<group>";
+		};
+		A7168B6F231010FF00500621 /* RunningHistory */ = {
+			isa = PBXGroup;
+			children = (
+				A7168B702310111900500621 /* RunningHistoryViewController.swift */,
+			);
+			path = RunningHistory;
 			sourceTree = "<group>";
 		};
 		A71EC1FD230FF85E00275EA8 /* DateView */ = {
@@ -433,6 +460,7 @@
 				A71EC1DE230FB91F00275EA8 /* Date+Extension.swift in Sources */,
 				A76A70F7230D8E9F00B5EA81 /* RegisterRunningViewController.swift in Sources */,
 				A709922B2307122F00AE3ACA /* UIViewController+Extension.swift in Sources */,
+				A7168B712310111900500621 /* RunningHistoryViewController.swift in Sources */,
 				A70992272307105600AE3ACA /* ModalViewController.swift in Sources */,
 				A71EC203231003E100275EA8 /* DatePickerPresentable.swift in Sources */,
 				A70992012303DF0F00AE3ACA /* SeoulMapView.swift in Sources */,

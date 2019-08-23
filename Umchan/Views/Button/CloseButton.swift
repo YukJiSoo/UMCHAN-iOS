@@ -14,7 +14,7 @@ class CloseButton: UIButton {
     // MARK: - Properties
     let xLayer = CAShapeLayer()
     
-    @IBInspectable var customBackgroundColor: UIColor = SYMBOL_COLOR {
+    @IBInspectable var customBackgroundColor: UIColor = Color.symbol {
         didSet {
             self.layer.backgroundColor = self.customBackgroundColor.cgColor
         }
