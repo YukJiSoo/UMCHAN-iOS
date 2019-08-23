@@ -34,6 +34,8 @@
 		A7168B712310111900500621 /* RunningHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B702310111900500621 /* RunningHistoryViewController.swift */; };
 		A7168B7823103E4300500621 /* RunningHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B7623103E4300500621 /* RunningHistoryTableViewCell.swift */; };
 		A7168B7923103E4300500621 /* RunningHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7168B7723103E4300500621 /* RunningHistoryTableViewCell.xib */; };
+		A7168B7C2310436500500621 /* MyCrewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B7B2310436500500621 /* MyCrewsViewController.swift */; };
+		A7168B7E2310458500500621 /* ElementNoExistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B7D2310458500500621 /* ElementNoExistable.swift */; };
 		A71EC1DE230FB91F00275EA8 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC1DD230FB91F00275EA8 /* Date+Extension.swift */; };
 		A71EC1E0230FBD0A00275EA8 /* Crew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC1DF230FBD0A00275EA8 /* Crew.swift */; };
 		A71EC1E4230FC0D600275EA8 /* CrewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC1E3230FC0D600275EA8 /* CrewView.swift */; };
@@ -90,6 +92,8 @@
 		A7168B702310111900500621 /* RunningHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningHistoryViewController.swift; sourceTree = "<group>"; };
 		A7168B7623103E4300500621 /* RunningHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		A7168B7723103E4300500621 /* RunningHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RunningHistoryTableViewCell.xib; sourceTree = "<group>"; };
+		A7168B7B2310436500500621 /* MyCrewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCrewsViewController.swift; sourceTree = "<group>"; };
+		A7168B7D2310458500500621 /* ElementNoExistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementNoExistable.swift; sourceTree = "<group>"; };
 		A71EC1DD230FB91F00275EA8 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		A71EC1DF230FBD0A00275EA8 /* Crew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crew.swift; sourceTree = "<group>"; };
 		A71EC1E3230FC0D600275EA8 /* CrewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewView.swift; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 				A709921523056DBE00AE3ACA /* Extensions */,
 				A7528B9D2302BBC000A6BEC0 /* Constants.swift */,
 				A709921123056D6000AE3ACA /* NibLodable.swift */,
+				A7168B7D2310458500500621 /* ElementNoExistable.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 		A70991EE2303BD1200AE3ACA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A7168B7A2310434800500621 /* Crew */,
 				A7168B6F231010FF00500621 /* RunningHistory */,
 				A76A70F8230E91EA00B5EA81 /* RegisterRunning */,
 				A70992252306ECF500AE3ACA /* Commons */,
@@ -309,6 +315,14 @@
 				A7168B702310111900500621 /* RunningHistoryViewController.swift */,
 			);
 			path = RunningHistory;
+			sourceTree = "<group>";
+		};
+		A7168B7A2310434800500621 /* Crew */ = {
+			isa = PBXGroup;
+			children = (
+				A7168B7B2310436500500621 /* MyCrewsViewController.swift */,
+			);
+			path = Crew;
 			sourceTree = "<group>";
 		};
 		A71EC1FD230FF85E00275EA8 /* DateView */ = {
@@ -488,6 +502,7 @@
 				A70991F52303BF3A00AE3ACA /* MainViewController.swift in Sources */,
 				A71EC1E0230FBD0A00275EA8 /* Crew.swift in Sources */,
 				A71EC1F1230FDAFF00275EA8 /* WriteTableViewCell.swift in Sources */,
+				A7168B7E2310458500500621 /* ElementNoExistable.swift in Sources */,
 				A709921223056D6000AE3ACA /* NibLodable.swift in Sources */,
 				A709920C23053DAA00AE3ACA /* DistrictViewDelegate.swift in Sources */,
 				A709921423056D9400AE3ACA /* UIStoryBoard+Extension.swift in Sources */,
@@ -499,6 +514,7 @@
 				A71EC1F9230FF45C00275EA8 /* DatePickerViewController.swift in Sources */,
 				A71EC1EA230FCAAC00275EA8 /* UIView+Extension.swift in Sources */,
 				A70992052303F85600AE3ACA /* DistrictCoordinate.swift in Sources */,
+				A7168B7C2310436500500621 /* MyCrewsViewController.swift in Sources */,
 				A709920A2303FE2100AE3ACA /* DistrictInfoService.swift in Sources */,
 				A7099223230576C100AE3ACA /* RunningInDistrictViewController.swift in Sources */,
 				A70992212305743300AE3ACA /* CloseButton.swift in Sources */,

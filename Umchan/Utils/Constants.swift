@@ -69,4 +69,5 @@ class AssetName {
     }
     
     static let empty = "empty"
+    static let shoes = "shoes"
 }

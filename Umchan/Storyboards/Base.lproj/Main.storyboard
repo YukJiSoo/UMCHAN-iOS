@@ -15,10 +15,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--My Crews View Controller-->
         <scene sceneID="274-iJ-ubP">
             <objects>
-                <viewController id="oSp-eQ-fc3" sceneMemberID="viewController">
+                <viewController id="oSp-eQ-fc3" customClass="MyCrewsViewController" customModule="Umchan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Cy-7S-f33">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,6 +57,9 @@
                     <tabBarItem key="tabBarItem" title="" image="crew" id="JXw-Mk-C4u">
                         <inset key="imageInsets" minX="0.0" minY="3" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="navigationBar" destination="wir-O9-Z76" id="eTa-eS-Rq0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CNJ-Nc-CYc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
