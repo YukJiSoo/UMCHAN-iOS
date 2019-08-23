@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumSquareOTFBold.otf">
+            <string>NanumSquareOTF_acB</string>
+        </array>
+        <array key="NanumSquareOTFRight.otf">
+            <string>NanumSquareOTF_acR</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RunningHistoryTableViewCell" rowHeight="100" id="KGk-i7-Jjw" customClass="RunningHistoryTableViewCell" customModule="Umchan" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2NE-fU-hsW">
+                        <rect key="frame" x="30" y="20" width="270" height="59.5"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shoes" translatesAutoresizingMaskIntoConstraints="NO" id="dPG-nW-TF6">
+                                <rect key="frame" x="0.0" y="10" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="RVK-M4-ORg"/>
+                                    <constraint firstAttribute="width" secondItem="dPG-nW-TF6" secondAttribute="height" multiplier="1:1" id="szw-OO-391"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="e5W-md-VHc">
+                                <rect key="frame" x="60" y="4.5" width="210" height="51"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19.08.21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WtU-1u-NSh">
+                                        <rect key="frame" x="0.0" y="0.0" width="210" height="18"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareOTF_acR" family="NanumSquareOTF_ac" pointSize="16"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="러닝이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Cd-nN-Drm">
+                                        <rect key="frame" x="0.0" y="23" width="210" height="28"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="2NE-fU-hsW" secondAttribute="trailing" constant="20" id="k3n-XI-BcR"/>
+                    <constraint firstItem="2NE-fU-hsW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="nC0-MU-fg7"/>
+                    <constraint firstAttribute="bottom" secondItem="2NE-fU-hsW" secondAttribute="bottom" constant="20" id="nL7-NU-fg3"/>
+                    <constraint firstItem="2NE-fU-hsW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="ppc-TE-smK"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="dateLabel" destination="WtU-1u-NSh" id="LfJ-j0-IWh"/>
+                <outlet property="nameLabel" destination="6Cd-nN-Drm" id="eyI-It-cIb"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="117.1875"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="shoes" width="40" height="38"/>
+    </resources>
+</document>

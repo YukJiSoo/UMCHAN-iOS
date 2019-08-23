@@ -55,8 +55,10 @@ class DateFormat {
     }
     
     static let locale = "ko_KR"
+    
     static let time = "h시 m분"
     static let date = "yyyy년 M월 d일"
+    static let dotDate = "yy.MM.dd"
     static let dateAndTime = "\(date) \(time)"
 }
 

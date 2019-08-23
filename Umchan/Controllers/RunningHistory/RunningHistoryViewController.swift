@@ -18,6 +18,11 @@ class RunningHistoryViewController: UIViewController {
     
     // MARK: - Properties
     var runningHistorys = [Running]()
+//    var runningHistorys = [
+//        Running(name: "test1", oneLine: "test1", runningDate: Date(), registerDate: Date()),
+//        Running(name: "test1", oneLine: "test1", runningDate: Date(), registerDate: Date()),
+//        Running(name: "test1", oneLine: "test1", runningDate: Date(), registerDate: Date()),
+//    ]
     
     // MARK: - Life cycles
     override func viewDidLoad() {
@@ -35,6 +40,7 @@ class RunningHistoryViewController: UIViewController {
             self.setupEmptyCase()
             return
         }
+        
         self.setupTableView()
     }
     
@@ -50,6 +56,7 @@ class RunningHistoryViewController: UIViewController {
         
         emptyImageView.image = UIImage(named: AssetName.empty)
         emptyImageView.contentMode = .scaleAspectFit
+        
         self.view.addSubview(emptyImageView)
         
         let emptyLabel = UILabel(frame: .zero)
@@ -57,6 +64,7 @@ class RunningHistoryViewController: UIViewController {
         emptyLabel.font = UIFont.umchanFont(size: CGFloat(20), boldState: .extrabold)
         emptyLabel.text = "러닝기록이 없습니다"
         emptyLabel.textColor = Color.symbolTransparent
+        
         self.view.addSubview(emptyLabel)
         
         // set Constraint
@@ -84,7 +92,49 @@ class RunningHistoryViewController: UIViewController {
     
     func setupTableView() {
         
+        let tableView = UITableView(frame: .zero)
+        tableView.separatorStyle = .none
+        
+        self.view.addSubview(tableView)
+        
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let topAnchor = tableView.topAnchor.constraint(equalTo: self.navigationBar.bottomAnchor)
+        let bottomAnchor = tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+        let leadingAnchor = tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)
+        let trailingAnchor = tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
+        
+        NSLayoutConstraint.activate([ topAnchor, bottomAnchor, leadingAnchor, trailingAnchor ])
+        
+        self.tableView = tableView
+        
+        let runningHistoryCellNib = UINib(nibName: RunningHistoryTableViewCell.nibId, bundle: nil)
+        self.tableView?.register(runningHistoryCellNib, forCellReuseIdentifier: RunningHistoryTableViewCell.nibId)
+        
+        self.tableView?.delegate = self
+        self.tableView?.dataSource = self
+    }
+
+}
+
+extension RunningHistoryViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return self.runningHistorys.count
     }
     
-
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: RunningHistoryTableViewCell.nibId, for: indexPath) as? RunningHistoryTableViewCell else {
+            debugPrint("err: fail to convert \(RunningHistoryTableViewCell.nibId)")
+            return UITableViewCell()
+        }
+        
+        cell.configure(running: runningHistorys[indexPath.row])
+        
+        return cell
+    }
+    
+    
 }
