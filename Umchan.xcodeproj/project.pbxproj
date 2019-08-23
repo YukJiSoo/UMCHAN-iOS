@@ -29,6 +29,7 @@
 		A70992292307114900AE3ACA /* ModalFirstViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70992282307114900AE3ACA /* ModalFirstViewable.swift */; };
 		A709922B2307122F00AE3ACA /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709922A2307122F00AE3ACA /* UIViewController+Extension.swift */; };
 		A709922D2307284400AE3ACA /* CustomNavigationBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709922C2307284400AE3ACA /* CustomNavigationBarDelegate.swift */; };
+		A71EC1DE230FB91F00275EA8 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC1DD230FB91F00275EA8 /* Date+Extension.swift */; };
 		A742E39B22F88ADF002E333C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742E39A22F88ADF002E333C /* AppDelegate.swift */; };
 		A742E3A022F88ADF002E333C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A742E39E22F88ADF002E333C /* Main.storyboard */; };
 		A742E3A222F88AE1002E333C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A742E3A122F88AE1002E333C /* Assets.xcassets */; };
@@ -38,6 +39,9 @@
 		A76A70F7230D8E9F00B5EA81 /* RegisterRunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76A70F6230D8E9F00B5EA81 /* RegisterRunningViewController.swift */; };
 		A76A70FC230E923E00B5EA81 /* RunningTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76A70FA230E923E00B5EA81 /* RunningTableViewCell.swift */; };
 		A76A70FD230E923E00B5EA81 /* RunningTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A76A70FB230E923E00B5EA81 /* RunningTableViewCell.xib */; };
+		A76A70FF230E9FB700B5EA81 /* Running.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76A70FE230E9FB700B5EA81 /* Running.swift */; };
+		A76A7102230EA13200B5EA81 /* EmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76A7100230EA13200B5EA81 /* EmptyTableViewCell.swift */; };
+		A76A7103230EA13200B5EA81 /* EmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A76A7101230EA13200B5EA81 /* EmptyTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +67,7 @@
 		A70992282307114900AE3ACA /* ModalFirstViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalFirstViewable.swift; sourceTree = "<group>"; };
 		A709922A2307122F00AE3ACA /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		A709922C2307284400AE3ACA /* CustomNavigationBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarDelegate.swift; sourceTree = "<group>"; };
+		A71EC1DD230FB91F00275EA8 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		A742E39722F88ADF002E333C /* Umchan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Umchan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A742E39A22F88ADF002E333C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A742E39F22F88ADF002E333C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,6 +79,9 @@
 		A76A70F6230D8E9F00B5EA81 /* RegisterRunningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRunningViewController.swift; sourceTree = "<group>"; };
 		A76A70FA230E923E00B5EA81 /* RunningTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningTableViewCell.swift; sourceTree = "<group>"; };
 		A76A70FB230E923E00B5EA81 /* RunningTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RunningTableViewCell.xib; sourceTree = "<group>"; };
+		A76A70FE230E9FB700B5EA81 /* Running.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Running.swift; sourceTree = "<group>"; };
+		A76A7100230EA13200B5EA81 /* EmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableViewCell.swift; sourceTree = "<group>"; };
+		A76A7101230EA13200B5EA81 /* EmptyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				A70992042303F85600AE3ACA /* DistrictCoordinate.swift */,
+				A76A70FE230E9FB700B5EA81 /* Running.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -189,6 +198,7 @@
 			children = (
 				A709921323056D9400AE3ACA /* UIStoryBoard+Extension.swift */,
 				A709922A2307122F00AE3ACA /* UIViewController+Extension.swift */,
+				A71EC1DD230FB91F00275EA8 /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -196,6 +206,8 @@
 		A709921E2305739C00AE3ACA /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
+				A76A7101230EA13200B5EA81 /* EmptyTableViewCell.xib */,
+				A76A70FB230E923E00B5EA81 /* RunningTableViewCell.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -246,7 +258,6 @@
 			isa = PBXGroup;
 			children = (
 				A709921E2305739C00AE3ACA /* Xibs */,
-				A76A70FB230E923E00B5EA81 /* RunningTableViewCell.xib */,
 				A70992082303FE0000AE3ACA /* Services */,
 				A70991F62303C1AD00AE3ACA /* Resources */,
 				A70991F32303BEF500AE3ACA /* Model */,
@@ -282,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				A76A70FA230E923E00B5EA81 /* RunningTableViewCell.swift */,
+				A76A7100230EA13200B5EA81 /* EmptyTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -345,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7099217230570E600AE3ACA /* District.storyboard in Resources */,
+				A76A7103230EA13200B5EA81 /* EmptyTableViewCell.xib in Resources */,
 				A742E3A522F88AE1002E333C /* LaunchScreen.storyboard in Resources */,
 				A70991FF2303C1DA00AE3ACA /* NanumSquareOTFRight.otf in Resources */,
 				A70991FE2303C1DA00AE3ACA /* NanumSquareOTFLight.otf in Resources */,
@@ -363,16 +376,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A71EC1DE230FB91F00275EA8 /* Date+Extension.swift in Sources */,
 				A76A70F7230D8E9F00B5EA81 /* RegisterRunningViewController.swift in Sources */,
 				A709922B2307122F00AE3ACA /* UIViewController+Extension.swift in Sources */,
 				A70992272307105600AE3ACA /* ModalViewController.swift in Sources */,
 				A70992012303DF0F00AE3ACA /* SeoulMapView.swift in Sources */,
 				A70991F02303BD3600AE3ACA /* TabBarController.swift in Sources */,
+				A76A7102230EA13200B5EA81 /* EmptyTableViewCell.swift in Sources */,
 				A76A70FC230E923E00B5EA81 /* RunningTableViewCell.swift in Sources */,
 				A709922D2307284400AE3ACA /* CustomNavigationBarDelegate.swift in Sources */,
 				A742E39B22F88ADF002E333C /* AppDelegate.swift in Sources */,
 				A7528B9E2302BBC000A6BEC0 /* Constants.swift in Sources */,
 				A70992072303FC5000AE3ACA /* DistrictView.swift in Sources */,
+				A76A70FF230E9FB700B5EA81 /* Running.swift in Sources */,
 				A70991F52303BF3A00AE3ACA /* MainViewController.swift in Sources */,
 				A709921223056D6000AE3ACA /* NibLodable.swift in Sources */,
 				A709920C23053DAA00AE3ACA /* DistrictViewDelegate.swift in Sources */,

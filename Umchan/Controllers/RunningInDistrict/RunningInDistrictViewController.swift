@@ -14,6 +14,13 @@ class RunningInDistrictViewController: ModalViewController {
     var tableView = UITableView()
     
     // MARK: - Properties
+//    var runnings = [Running]()
+    var runnings = [
+        Running(name: "test1", oneLine: "test1", runningDate: Date(), registerDate: Date()),
+        Running(name: "test2", oneLine: "test2", runningDate: Date(), registerDate: Date()),
+        Running(name: "test3", oneLine: "test3", runningDate: Date(), registerDate: Date()),
+        Running(name: "test4", oneLine: "test4", runningDate: Date(), registerDate: Date())
+    ]
     
     // MARK: - Life cycles
     override func viewDidLoad() {
@@ -47,8 +54,12 @@ class RunningInDistrictViewController: ModalViewController {
     
     func setupXib() {
         
-        let cellNib = UINib(nibName: RunningTableViewCell.nibId, bundle: nil)
-        self.tableView.register(cellNib, forCellReuseIdentifier: RunningTableViewCell.nibId)
+        let runningCellNib = UINib(nibName: RunningTableViewCell.nibId, bundle: nil)
+        let emptyNoticeCellNib = UINib(nibName: EmptyTableViewCell.nibId, bundle: nil)
+        
+        self.tableView.register(runningCellNib, forCellReuseIdentifier: RunningTableViewCell.nibId)
+        self.tableView.register(emptyNoticeCellNib, forCellReuseIdentifier: EmptyTableViewCell.nibId)
+        
     }
     
 }
@@ -56,19 +67,31 @@ class RunningInDistrictViewController: ModalViewController {
 extension RunningInDistrictViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        
+        return self.runnings.count == 0 ? 1 : self.runnings.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print(RunningTableViewCell.nibId)
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: RunningTableViewCell.nibId, for: indexPath) as? RunningTableViewCell else {
+        
+        if self.runnings.count == 0 {
+            guard let emptyNoticeCell = tableView.dequeueReusableCell(withIdentifier: EmptyTableViewCell.nibId, for: indexPath) as? EmptyTableViewCell else {
+                return UITableViewCell()
+            }
+            
+            emptyNoticeCell.configure(stateText: Statement.hsaNoRunning, state: .running)
+            return emptyNoticeCell
+        }
+        
+        guard let runningCell = tableView.dequeueReusableCell(withIdentifier: RunningTableViewCell.nibId, for: indexPath) as? RunningTableViewCell else {
             return UITableViewCell()
         }
         
-        return cell
+        runningCell.configure(running: self.runnings[indexPath.row])
+        return runningCell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
         return UITableView.automaticDimension
     }
 }

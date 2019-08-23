@@ -17,21 +17,35 @@ class RunningTableViewCell: UITableViewCell, NibLodable {
     @IBOutlet weak var runningOneLineLabel: UILabel!
     
     // MARK: - Properties
+    private var dateFormatter: DateFormatter {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy년 M월 d일 h시 m분"
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        
+        return dateFormatter
+    }
+    
     
     // MARK: - Life cycles
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
     }
     
     // MARK: - Properties
-    func configure() {
+    func configure(running: Running) {
+        
+        self.runningNameLabel.text = running.name
+        self.runningOneLineLabel.text = running.oneLine
+        
+        self.runningDateLabel.text = "\(dateFormatter.string(from: running.runningDate))에 달리기 시작"
+        self.registerDateLabel.text = "\(dateFormatter.string(from: running.registerDate))까지 등록"
         
     }
 }

@@ -22,3 +22,11 @@ let DISTRICTS = "districts"
 // MARK: - Constraints
 var navigationBarHeight: CGFloat = 64
 
+// MARK: - print Statement
+class Statement {
+    
+    private init() {
+    }
+    
+    static let hsaNoRunning = "참가 가능한 러닝이 없습니다"
+}
