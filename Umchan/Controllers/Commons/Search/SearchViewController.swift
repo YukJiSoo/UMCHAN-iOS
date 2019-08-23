@@ -14,12 +14,22 @@ class SearchViewController: UIViewController {
     var searchBar = CustomSearchBar(frame: .zero)
     
     // MARK: - Properties
-    var searchType: CustomSearchBar.SearchType?
+    var searchType: CustomSearchBar.SearchType {
+        return .none
+    }
     
+    // MARK: - Life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = .white
+        self.setupSearchBar()
+    }
+    
+    // MARK: - Functions
+    func setupSearchBar() {
+        
+        self.searchBar.delegate = self
         
         self.view.addSubview(self.searchBar)
         self.searchBar.translatesAutoresizingMaskIntoConstraints = false
@@ -28,9 +38,7 @@ class SearchViewController: UIViewController {
         self.searchBar.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         self.searchBar.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         
-        if let searchType = self.searchType {
-            self.searchBar.configure(searchType: searchType)
-        }
     }
+    
     
 }

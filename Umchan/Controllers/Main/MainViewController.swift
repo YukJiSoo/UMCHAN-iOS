@@ -77,9 +77,13 @@ class MainViewController: UIViewController {
     
     @IBAction func searchCrewByName(_ sender: Any) {
         
-        let viewController = SearchViewController()
-        viewController.searchType = .crew
+        let viewController = SearchCrewViewController()
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    @IBAction func searchRunningByName(_ sender: Any) {
         
+        let viewController = SearchRunningViewController()
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     

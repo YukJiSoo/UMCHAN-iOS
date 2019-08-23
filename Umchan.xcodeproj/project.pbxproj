@@ -41,6 +41,9 @@
 		A7168B862310648300500621 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B852310648300500621 /* CustomSearchBar.swift */; };
 		A7168B8A231069E200500621 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B89231069E200500621 /* CALayer+Extension.swift */; };
 		A7168B8C2310775400500621 /* CustomSearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B8B2310775400500621 /* CustomSearchBarDelegate.swift */; };
+		A7168B8E2310789A00500621 /* SearchViewController+CustomSearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B8D2310789A00500621 /* SearchViewController+CustomSearchBarDelegate.swift */; };
+		A7168B91231079FB00500621 /* SearchCrewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B90231079FB00500621 /* SearchCrewViewController.swift */; };
+		A7168B9323107A0C00500621 /* SearchRunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B9223107A0C00500621 /* SearchRunningViewController.swift */; };
 		A71EC1DE230FB91F00275EA8 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC1DD230FB91F00275EA8 /* Date+Extension.swift */; };
 		A71EC1E0230FBD0A00275EA8 /* Crew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC1DF230FBD0A00275EA8 /* Crew.swift */; };
 		A71EC1E4230FC0D600275EA8 /* CrewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC1E3230FC0D600275EA8 /* CrewView.swift */; };
@@ -104,6 +107,9 @@
 		A7168B852310648300500621 /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
 		A7168B89231069E200500621 /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
 		A7168B8B2310775400500621 /* CustomSearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBarDelegate.swift; sourceTree = "<group>"; };
+		A7168B8D2310789A00500621 /* SearchViewController+CustomSearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+CustomSearchBarDelegate.swift"; sourceTree = "<group>"; };
+		A7168B90231079FB00500621 /* SearchCrewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCrewViewController.swift; sourceTree = "<group>"; };
+		A7168B9223107A0C00500621 /* SearchRunningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRunningViewController.swift; sourceTree = "<group>"; };
 		A71EC1DD230FB91F00275EA8 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		A71EC1DF230FBD0A00275EA8 /* Crew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crew.swift; sourceTree = "<group>"; };
 		A71EC1E3230FC0D600275EA8 /* CrewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewView.swift; sourceTree = "<group>"; };
@@ -159,6 +165,7 @@
 		A70991EE2303BD1200AE3ACA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A7168B8F231079E000500621 /* Search */,
 				A7168B7A2310434800500621 /* Crew */,
 				A7168B6F231010FF00500621 /* RunningHistory */,
 				A76A70F8230E91EA00B5EA81 /* RegisterRunning */,
@@ -343,6 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				A7168B822310645500500621 /* SearchViewController.swift */,
+				A7168B8D2310789A00500621 /* SearchViewController+CustomSearchBarDelegate.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -354,6 +362,15 @@
 				A7168B8B2310775400500621 /* CustomSearchBarDelegate.swift */,
 			);
 			path = SearchBar;
+			sourceTree = "<group>";
+		};
+		A7168B8F231079E000500621 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				A7168B90231079FB00500621 /* SearchCrewViewController.swift */,
+				A7168B9223107A0C00500621 /* SearchRunningViewController.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		A71EC1FD230FF85E00275EA8 /* DateView */ = {
@@ -509,18 +526,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7168B8E2310789A00500621 /* SearchViewController+CustomSearchBarDelegate.swift in Sources */,
 				A71EC1DE230FB91F00275EA8 /* Date+Extension.swift in Sources */,
 				A7168B7823103E4300500621 /* RunningHistoryTableViewCell.swift in Sources */,
 				A7168B862310648300500621 /* CustomSearchBar.swift in Sources */,
 				A76A70F7230D8E9F00B5EA81 /* RegisterRunningViewController.swift in Sources */,
 				A709922B2307122F00AE3ACA /* UIViewController+Extension.swift in Sources */,
 				A7168B712310111900500621 /* RunningHistoryViewController.swift in Sources */,
+				A7168B9323107A0C00500621 /* SearchRunningViewController.swift in Sources */,
 				A70992272307105600AE3ACA /* ModalViewController.swift in Sources */,
 				A71EC203231003E100275EA8 /* DatePickerPresentable.swift in Sources */,
 				A70992012303DF0F00AE3ACA /* SeoulMapView.swift in Sources */,
 				A71EC1E8230FC6B000275EA8 /* UIStackView+Extension.swift in Sources */,
 				A71EC1EE230FD22C00275EA8 /* PaddingLabel.swift in Sources */,
 				A70991F02303BD3600AE3ACA /* TabBarController.swift in Sources */,
+				A7168B91231079FB00500621 /* SearchCrewViewController.swift in Sources */,
 				A76A7102230EA13200B5EA81 /* EmptyTableViewCell.swift in Sources */,
 				A76A70FC230E923E00B5EA81 /* RunningTableViewCell.swift in Sources */,
 				A709922D2307284400AE3ACA /* CustomNavigationBarDelegate.swift in Sources */,

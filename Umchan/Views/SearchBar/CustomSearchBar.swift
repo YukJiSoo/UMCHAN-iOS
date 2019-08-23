@@ -14,6 +14,7 @@ class CustomSearchBar: UIView {
     enum SearchType: String {
         case crew = "크루"
         case running = "러닝"
+        case none
     }
     
     // MARK: - SubViews
@@ -38,6 +39,7 @@ class CustomSearchBar: UIView {
             }
         }
     }
+    var delegate: CustomSearchBarDelegate?
     
     // MARK: - Life cycles
     override init(frame: CGRect) {
@@ -62,6 +64,7 @@ class CustomSearchBar: UIView {
         
         self.backButton = UIButton(frame: .zero)
         self.backButton.setImage(UIImage(named: AssetName.back), for: .normal)
+        self.backButton.addTarget(self, action: #selector(backButtonPressed(_:)), for: .touchUpInside)
         
         self.eraseButton = CloseButton(frame: .zero)
         self.eraseButton.isHidden = true
@@ -69,6 +72,7 @@ class CustomSearchBar: UIView {
         
         self.searchButton = UIButton(frame: .zero)
         self.searchButton.setImage(UIImage(named: AssetName.search), for: .normal)
+        self.searchButton.addTarget(self, action: #selector(searchButtonPressed(_:)), for: .touchUpInside)
         
         self.textField = UITextField(frame: .zero)
         self.textField.addTarget(self, action: #selector(checkTextField(_:)), for: .editingChanged)
@@ -133,4 +137,17 @@ class CustomSearchBar: UIView {
         self.isEmptyTextField = true
     }
     
+    @objc func backButtonPressed(_ sender: UIButton) {
+        self.delegate?.backButtonPressed()
+    }
+    
+    @objc func searchButtonPressed(_ sender: UIButton) {
+        
+        guard let text = self.textField.text, text != "" else {
+            debugPrint("입력 필요")
+            return
+        }
+        
+        self.delegate?.searchButtonPressed(wantToSearch: text)
+    }
 }

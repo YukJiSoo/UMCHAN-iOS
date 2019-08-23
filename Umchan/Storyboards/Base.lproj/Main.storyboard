@@ -160,13 +160,16 @@
                                                 <rect key="frame" x="117.5" y="711.5" width="179" height="37"/>
                                                 <fontDescription key="fontDescription" name="NanumSquareOTF_acEB" family="NanumSquareOTF_ac" pointSize="22"/>
                                                 <state key="normal" title="Crew 이름으로 검색"/>
+                                                <connections>
+                                                    <action selector="searchCrewByName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hse-90-3d3"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YE5-4z-K8c">
                                                 <rect key="frame" x="100" y="420.5" width="214" height="37"/>
                                                 <fontDescription key="fontDescription" name="NanumSquareOTF_acEB" family="NanumSquareOTF_ac" pointSize="22"/>
                                                 <state key="normal" title="Running 이름으로 검색"/>
                                                 <connections>
-                                                    <action selector="searchCrewByName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="24b-7A-fz3"/>
+                                                    <action selector="searchRunningByName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3nL-xD-4xM"/>
                                                 </connections>
                                             </button>
                                         </subviews>
