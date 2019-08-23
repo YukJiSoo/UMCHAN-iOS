@@ -11,10 +11,12 @@ import UIKit
 class MainViewController: UIViewController {
 
     // MARK: - Outlets
+    @IBOutlet weak var navigationBar: CustomNavigationBar!
     @IBOutlet weak var seoulMapView: SeoulMapView!
     @IBOutlet weak var crewListView: UIStackView!
     
     // MARK: - Properties
+    let storyBoardName = "Main"
 //    var crews = [Crew]()
     var crews = [
         Crew(name: "test1", numberOfPeople: 1, image: "test1"),
@@ -30,11 +32,17 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setupNavigationBar()
         self.setupSeoulMapView()
         self.setupCrewsView()
     }
     
     // MARK: - Functions
+    func setupNavigationBar() {
+        
+        self.navigationBar.configureButton(location: .right, type: .profile)
+    }
+    
     func setupSeoulMapView() {
         
         self.seoulMapView.setDistrictDelegate(self)
@@ -59,10 +67,12 @@ class MainViewController: UIViewController {
     
     @IBAction func goToRunButtonPressed(_ sender: Any) {
         
-        let viewController = ModalViewController.viewController(RegisterRunningViewController.self, titleName: "달리러가기")
+        
+        let storyBoard = UIStoryboard(name: StoryboardName.registerRunning, bundle: nil)
+        let viewController = storyBoard.viewController(RegisterRunningViewController.self)
+        viewController.modalPresentationStyle = .custom
         
         self.present(viewController, animated: true, completion: nil)
-        
     }
     
     @IBAction func searchCrewByName(_ sender: Any) {

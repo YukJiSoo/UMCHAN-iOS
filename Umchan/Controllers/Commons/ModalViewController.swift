@@ -21,10 +21,6 @@ class ModalViewController: UIViewController, ModalFirstViewable {
         self.setupConstraints()
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        self.setupConstraints()
-//    }
     
     // MARK: - Functions
     func setTitle(_ title: String) {

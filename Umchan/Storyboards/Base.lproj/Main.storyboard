@@ -185,6 +185,7 @@
                     <size key="freeformSize" width="414" height="896"/>
                     <connections>
                         <outlet property="crewListView" destination="12G-4c-KFY" id="HSd-5k-lmO"/>
+                        <outlet property="navigationBar" destination="oZ4-e6-frJ" id="Exj-C2-k7Y"/>
                         <outlet property="seoulMapView" destination="UVb-oP-OEg" id="VF7-40-Lkn"/>
                     </connections>
                 </viewController>

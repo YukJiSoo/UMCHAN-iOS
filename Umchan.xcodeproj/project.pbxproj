@@ -22,13 +22,15 @@
 		A709920E2305514A00AE3ACA /* MainViewController+DistrictViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709920D2305514A00AE3ACA /* MainViewController+DistrictViewDelegate.swift */; };
 		A709921223056D6000AE3ACA /* NibLodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709921123056D6000AE3ACA /* NibLodable.swift */; };
 		A709921423056D9400AE3ACA /* UIStoryBoard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709921323056D9400AE3ACA /* UIStoryBoard+Extension.swift */; };
-		A7099217230570E600AE3ACA /* District.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7099216230570E600AE3ACA /* District.storyboard */; };
+		A7099217230570E600AE3ACA /* RegisterRunning.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7099216230570E600AE3ACA /* RegisterRunning.storyboard */; };
 		A70992212305743300AE3ACA /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70992202305743300AE3ACA /* CloseButton.swift */; };
 		A7099223230576C100AE3ACA /* RunningInDistrictViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7099222230576C100AE3ACA /* RunningInDistrictViewController.swift */; };
 		A70992272307105600AE3ACA /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70992262307105600AE3ACA /* ModalViewController.swift */; };
 		A70992292307114900AE3ACA /* ModalFirstViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70992282307114900AE3ACA /* ModalFirstViewable.swift */; };
 		A709922B2307122F00AE3ACA /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709922A2307122F00AE3ACA /* UIViewController+Extension.swift */; };
 		A709922D2307284400AE3ACA /* CustomNavigationBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709922C2307284400AE3ACA /* CustomNavigationBarDelegate.swift */; };
+		A7168B6A231006AA00500621 /* DateView+DatePickerPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B69231006AA00500621 /* DateView+DatePickerPresentable.swift */; };
+		A7168B6C23100C8400500621 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B6B23100C8400500621 /* DateFormatter+Extension.swift */; };
 		A71EC1DE230FB91F00275EA8 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC1DD230FB91F00275EA8 /* Date+Extension.swift */; };
 		A71EC1E0230FBD0A00275EA8 /* Crew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC1DF230FBD0A00275EA8 /* Crew.swift */; };
 		A71EC1E4230FC0D600275EA8 /* CrewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC1E3230FC0D600275EA8 /* CrewView.swift */; };
@@ -36,6 +38,14 @@
 		A71EC1EA230FCAAC00275EA8 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC1E9230FCAAC00275EA8 /* UIView+Extension.swift */; };
 		A71EC1EC230FCBCA00275EA8 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC1EB230FCBCA00275EA8 /* UIFont+Extension.swift */; };
 		A71EC1EE230FD22C00275EA8 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC1ED230FD22C00275EA8 /* PaddingLabel.swift */; };
+		A71EC1F1230FDAFF00275EA8 /* WriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC1EF230FDAFF00275EA8 /* WriteTableViewCell.swift */; };
+		A71EC1F6230FF23400275EA8 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC1F5230FF23400275EA8 /* RoundedButton.swift */; };
+		A71EC1F9230FF45C00275EA8 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC1F7230FF45C00275EA8 /* DatePickerViewController.swift */; };
+		A71EC1FA230FF45C00275EA8 /* DatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A71EC1F8230FF45C00275EA8 /* DatePickerViewController.xib */; };
+		A71EC1FC230FF77100275EA8 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC1FB230FF77100275EA8 /* DateView.swift */; };
+		A71EC1FF230FF86C00275EA8 /* DateViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC1FE230FF86C00275EA8 /* DateViewDelegate.swift */; };
+		A71EC201230FF8CC00275EA8 /* RegisterRunningViewController+DateViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC200230FF8CC00275EA8 /* RegisterRunningViewController+DateViewDelegate.swift */; };
+		A71EC203231003E100275EA8 /* DatePickerPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC202231003E100275EA8 /* DatePickerPresentable.swift */; };
 		A742E39B22F88ADF002E333C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742E39A22F88ADF002E333C /* AppDelegate.swift */; };
 		A742E3A022F88ADF002E333C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A742E39E22F88ADF002E333C /* Main.storyboard */; };
 		A742E3A222F88AE1002E333C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A742E3A122F88AE1002E333C /* Assets.xcassets */; };
@@ -65,13 +75,15 @@
 		A709920D2305514A00AE3ACA /* MainViewController+DistrictViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+DistrictViewDelegate.swift"; sourceTree = "<group>"; };
 		A709921123056D6000AE3ACA /* NibLodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLodable.swift; sourceTree = "<group>"; };
 		A709921323056D9400AE3ACA /* UIStoryBoard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryBoard+Extension.swift"; sourceTree = "<group>"; };
-		A7099216230570E600AE3ACA /* District.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = District.storyboard; sourceTree = "<group>"; };
+		A7099216230570E600AE3ACA /* RegisterRunning.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterRunning.storyboard; sourceTree = "<group>"; };
 		A70992202305743300AE3ACA /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		A7099222230576C100AE3ACA /* RunningInDistrictViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningInDistrictViewController.swift; sourceTree = "<group>"; };
 		A70992262307105600AE3ACA /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		A70992282307114900AE3ACA /* ModalFirstViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalFirstViewable.swift; sourceTree = "<group>"; };
 		A709922A2307122F00AE3ACA /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		A709922C2307284400AE3ACA /* CustomNavigationBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarDelegate.swift; sourceTree = "<group>"; };
+		A7168B69231006AA00500621 /* DateView+DatePickerPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateView+DatePickerPresentable.swift"; sourceTree = "<group>"; };
+		A7168B6B23100C8400500621 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
 		A71EC1DD230FB91F00275EA8 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		A71EC1DF230FBD0A00275EA8 /* Crew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crew.swift; sourceTree = "<group>"; };
 		A71EC1E3230FC0D600275EA8 /* CrewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewView.swift; sourceTree = "<group>"; };
@@ -79,6 +91,14 @@
 		A71EC1E9230FCAAC00275EA8 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		A71EC1EB230FCBCA00275EA8 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		A71EC1ED230FD22C00275EA8 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		A71EC1EF230FDAFF00275EA8 /* WriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteTableViewCell.swift; sourceTree = "<group>"; };
+		A71EC1F5230FF23400275EA8 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		A71EC1F7230FF45C00275EA8 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		A71EC1F8230FF45C00275EA8 /* DatePickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerViewController.xib; sourceTree = "<group>"; };
+		A71EC1FB230FF77100275EA8 /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
+		A71EC1FE230FF86C00275EA8 /* DateViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewDelegate.swift; sourceTree = "<group>"; };
+		A71EC200230FF8CC00275EA8 /* RegisterRunningViewController+DateViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegisterRunningViewController+DateViewDelegate.swift"; sourceTree = "<group>"; };
+		A71EC202231003E100275EA8 /* DatePickerPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerPresentable.swift; sourceTree = "<group>"; };
 		A742E39722F88ADF002E333C /* Umchan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Umchan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A742E39A22F88ADF002E333C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A742E39F22F88ADF002E333C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -131,7 +151,7 @@
 			children = (
 				A742E39E22F88ADF002E333C /* Main.storyboard */,
 				A742E3A322F88AE1002E333C /* LaunchScreen.storyboard */,
-				A7099216230570E600AE3ACA /* District.storyboard */,
+				A7099216230570E600AE3ACA /* RegisterRunning.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -139,6 +159,7 @@
 		A70991F22303BEF000AE3ACA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A71EC1FD230FF85E00275EA8 /* DateView */,
 				A76A70F9230E91FE00B5EA81 /* TableViewCell */,
 				A76A70B6230829E700B5EA81 /* NavigationBar */,
 				A709921F2305741F00AE3ACA /* Button */,
@@ -214,6 +235,7 @@
 				A71EC1E7230FC6B000275EA8 /* UIStackView+Extension.swift */,
 				A71EC1E9230FCAAC00275EA8 /* UIView+Extension.swift */,
 				A71EC1EB230FCBCA00275EA8 /* UIFont+Extension.swift */,
+				A7168B6B23100C8400500621 /* DateFormatter+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -223,6 +245,7 @@
 			children = (
 				A76A7101230EA13200B5EA81 /* EmptyTableViewCell.xib */,
 				A76A70FB230E923E00B5EA81 /* RunningTableViewCell.xib */,
+				A71EC1F8230FF45C00275EA8 /* DatePickerViewController.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -231,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				A70992202305743300AE3ACA /* CloseButton.swift */,
+				A71EC1F5230FF23400275EA8 /* RoundedButton.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -249,8 +273,20 @@
 				A70991EF2303BD3600AE3ACA /* TabBarController.swift */,
 				A70992262307105600AE3ACA /* ModalViewController.swift */,
 				A70992282307114900AE3ACA /* ModalFirstViewable.swift */,
+				A71EC1F7230FF45C00275EA8 /* DatePickerViewController.swift */,
+				A71EC202231003E100275EA8 /* DatePickerPresentable.swift */,
 			);
 			path = Commons;
+			sourceTree = "<group>";
+		};
+		A71EC1FD230FF85E00275EA8 /* DateView */ = {
+			isa = PBXGroup;
+			children = (
+				A71EC1FB230FF77100275EA8 /* DateView.swift */,
+				A7168B69231006AA00500621 /* DateView+DatePickerPresentable.swift */,
+				A71EC1FE230FF86C00275EA8 /* DateViewDelegate.swift */,
+			);
+			path = DateView;
 			sourceTree = "<group>";
 		};
 		A742E38E22F88ADF002E333C = {
@@ -300,6 +336,7 @@
 			isa = PBXGroup;
 			children = (
 				A76A70F6230D8E9F00B5EA81 /* RegisterRunningViewController.swift */,
+				A71EC200230FF8CC00275EA8 /* RegisterRunningViewController+DateViewDelegate.swift */,
 			);
 			path = RegisterRunning;
 			sourceTree = "<group>";
@@ -309,6 +346,7 @@
 			children = (
 				A76A70FA230E923E00B5EA81 /* RunningTableViewCell.swift */,
 				A76A7100230EA13200B5EA81 /* EmptyTableViewCell.swift */,
+				A71EC1EF230FDAFF00275EA8 /* WriteTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -371,11 +409,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7099217230570E600AE3ACA /* District.storyboard in Resources */,
+				A7099217230570E600AE3ACA /* RegisterRunning.storyboard in Resources */,
 				A76A7103230EA13200B5EA81 /* EmptyTableViewCell.xib in Resources */,
 				A742E3A522F88AE1002E333C /* LaunchScreen.storyboard in Resources */,
 				A70991FF2303C1DA00AE3ACA /* NanumSquareOTFRight.otf in Resources */,
 				A70991FE2303C1DA00AE3ACA /* NanumSquareOTFLight.otf in Resources */,
+				A71EC1FA230FF45C00275EA8 /* DatePickerViewController.xib in Resources */,
 				A742E3A222F88AE1002E333C /* Assets.xcassets in Resources */,
 				A76A70FD230E923E00B5EA81 /* RunningTableViewCell.xib in Resources */,
 				A742E3A022F88ADF002E333C /* Main.storyboard in Resources */,
@@ -395,6 +434,7 @@
 				A76A70F7230D8E9F00B5EA81 /* RegisterRunningViewController.swift in Sources */,
 				A709922B2307122F00AE3ACA /* UIViewController+Extension.swift in Sources */,
 				A70992272307105600AE3ACA /* ModalViewController.swift in Sources */,
+				A71EC203231003E100275EA8 /* DatePickerPresentable.swift in Sources */,
 				A70992012303DF0F00AE3ACA /* SeoulMapView.swift in Sources */,
 				A71EC1E8230FC6B000275EA8 /* UIStackView+Extension.swift in Sources */,
 				A71EC1EE230FD22C00275EA8 /* PaddingLabel.swift in Sources */,
@@ -404,23 +444,31 @@
 				A709922D2307284400AE3ACA /* CustomNavigationBarDelegate.swift in Sources */,
 				A742E39B22F88ADF002E333C /* AppDelegate.swift in Sources */,
 				A7528B9E2302BBC000A6BEC0 /* Constants.swift in Sources */,
+				A7168B6A231006AA00500621 /* DateView+DatePickerPresentable.swift in Sources */,
 				A70992072303FC5000AE3ACA /* DistrictView.swift in Sources */,
 				A76A70FF230E9FB700B5EA81 /* Running.swift in Sources */,
 				A71EC1E4230FC0D600275EA8 /* CrewView.swift in Sources */,
+				A71EC1FC230FF77100275EA8 /* DateView.swift in Sources */,
 				A70991F52303BF3A00AE3ACA /* MainViewController.swift in Sources */,
 				A71EC1E0230FBD0A00275EA8 /* Crew.swift in Sources */,
+				A71EC1F1230FDAFF00275EA8 /* WriteTableViewCell.swift in Sources */,
 				A709921223056D6000AE3ACA /* NibLodable.swift in Sources */,
 				A709920C23053DAA00AE3ACA /* DistrictViewDelegate.swift in Sources */,
 				A709921423056D9400AE3ACA /* UIStoryBoard+Extension.swift in Sources */,
 				A70992292307114900AE3ACA /* ModalFirstViewable.swift in Sources */,
 				A71EC1EC230FCBCA00275EA8 /* UIFont+Extension.swift in Sources */,
+				A71EC1F6230FF23400275EA8 /* RoundedButton.swift in Sources */,
 				A70992032303E26500AE3ACA /* CustomNavigationBar.swift in Sources */,
+				A71EC201230FF8CC00275EA8 /* RegisterRunningViewController+DateViewDelegate.swift in Sources */,
+				A71EC1F9230FF45C00275EA8 /* DatePickerViewController.swift in Sources */,
 				A71EC1EA230FCAAC00275EA8 /* UIView+Extension.swift in Sources */,
 				A70992052303F85600AE3ACA /* DistrictCoordinate.swift in Sources */,
 				A709920A2303FE2100AE3ACA /* DistrictInfoService.swift in Sources */,
 				A7099223230576C100AE3ACA /* RunningInDistrictViewController.swift in Sources */,
 				A70992212305743300AE3ACA /* CloseButton.swift in Sources */,
 				A709920E2305514A00AE3ACA /* MainViewController+DistrictViewDelegate.swift in Sources */,
+				A71EC1FF230FF86C00275EA8 /* DateViewDelegate.swift in Sources */,
+				A7168B6C23100C8400500621 /* DateFormatter+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,11 +19,7 @@ class RunningTableViewCell: UITableViewCell, NibLodable {
     // MARK: - Properties
     private var dateFormatter: DateFormatter {
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy년 M월 d일 h시 m분"
-        dateFormatter.locale = Locale(identifier: "ko_KR")
-        
-        return dateFormatter
+        return DateFormatter.basicFormatter(format: DateFormat.dateAndTime, locale: DateFormat.locale)
     }
     
     

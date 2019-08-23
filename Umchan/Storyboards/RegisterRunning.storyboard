@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumSquareOTFBold.otf">
+            <string>NanumSquareOTF_acB</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Register Running View Controller-->
+        <scene sceneID="jIp-iG-Kri">
+            <objects>
+                <viewController storyboardIdentifier="RegisterRunningViewController" id="pRO-pa-NQ1" customClass="RegisterRunningViewController" customModule="Umchan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q0a-T5-Ua1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="awj-25-fdH" customClass="CustomNavigationBar" customModule="Umchan" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="64"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="9Dm-By-tfh"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="달리러가기"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dAt-FQ-MRA">
+                                <rect key="frame" x="0.0" y="108" width="414" height="754"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ckR-Va-PcA" userLabel="ContentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="676"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="TUP-3M-334">
+                                                <rect key="frame" x="45" y="40" width="339" height="336"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="xiL-pl-wfH">
+                                                        <rect key="frame" x="0.0" y="0.0" width="339" height="40"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shoes" translatesAutoresizingMaskIntoConstraints="NO" id="eag-ER-mfJ">
+                                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="eag-ER-mfJ" secondAttribute="height" multiplier="1:1" id="8Wh-1f-Nsg"/>
+                                                                    <constraint firstAttribute="width" constant="40" id="cxf-xo-jNN"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="러닝이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pTP-2r-CVh">
+                                                                <rect key="frame" x="65" y="10" width="274" height="20"/>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="18"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="eag-ER-mfJ" firstAttribute="width" secondItem="eag-ER-mfJ" secondAttribute="height" multiplier="1:1" id="JAX-6Z-CCm"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="4r2-EX-qZt">
+                                                        <rect key="frame" x="0.0" y="74" width="339" height="40"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shoes" translatesAutoresizingMaskIntoConstraints="NO" id="DSP-sB-fey">
+                                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="DSP-sB-fey" secondAttribute="height" multiplier="1:1" id="YgJ-tN-25f"/>
+                                                                    <constraint firstAttribute="width" constant="40" id="otv-tP-aGO"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="한줄소개" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KME-iV-FDJ">
+                                                                <rect key="frame" x="65" y="10" width="274" height="20"/>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="18"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="DSP-sB-fey" firstAttribute="width" secondItem="DSP-sB-fey" secondAttribute="height" multiplier="1:1" id="9bA-lA-JDf"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="xw0-aG-y0c" customClass="DateView" customModule="Umchan" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="148" width="339" height="40"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shoes" translatesAutoresizingMaskIntoConstraints="NO" id="gDu-8f-sT2">
+                                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="gDu-8f-sT2" secondAttribute="height" multiplier="1:1" id="85M-o0-tN4"/>
+                                                                    <constraint firstAttribute="width" constant="40" id="vmU-26-QCW"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신청기간 설정" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bj6-vR-65m">
+                                                                <rect key="frame" x="65" y="10" width="274" height="20"/>
+                                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="18"/>
+                                                                <color key="textColor" red="0.54836952689999996" green="0.16884723309999999" blue="0.18428939580000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="gDu-8f-sT2" firstAttribute="width" secondItem="gDu-8f-sT2" secondAttribute="height" multiplier="1:1" id="63A-5j-WEu"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <outlet property="dateLabel" destination="Bj6-vR-65m" id="73R-2K-Wvc"/>
+                                                        </connections>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="zBo-2t-PKa" customClass="DateView" customModule="Umchan" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="222" width="339" height="40"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shoes" translatesAutoresizingMaskIntoConstraints="NO" id="s1C-NZ-7IL">
+                                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="40" id="00S-Io-bFr"/>
+                                                                    <constraint firstAttribute="width" secondItem="s1C-NZ-7IL" secondAttribute="height" multiplier="1:1" id="onF-39-SyT"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="달리는 날 설정" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oz-jr-Pwy">
+                                                                <rect key="frame" x="65" y="10" width="274" height="20"/>
+                                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="18"/>
+                                                                <color key="textColor" red="0.54836952689999996" green="0.16884723309999999" blue="0.18428939580000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="s1C-NZ-7IL" firstAttribute="width" secondItem="s1C-NZ-7IL" secondAttribute="height" multiplier="1:1" id="vMk-F3-2MX"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <outlet property="dateLabel" destination="6oz-jr-Pwy" id="DPR-ZR-3u1"/>
+                                                        </connections>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="rHt-nd-XKN">
+                                                        <rect key="frame" x="0.0" y="296" width="339" height="40"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shoes" translatesAutoresizingMaskIntoConstraints="NO" id="hmG-Zx-zG7">
+                                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="40" id="vmB-vG-hc2"/>
+                                                                    <constraint firstAttribute="width" secondItem="hmG-Zx-zG7" secondAttribute="height" multiplier="1:1" id="yzw-gq-4CK"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="코스선택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHz-z2-wOG">
+                                                                <rect key="frame" x="65" y="10" width="274" height="20"/>
+                                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="18"/>
+                                                                <color key="textColor" red="0.54836952689999996" green="0.16884723309999999" blue="0.18428939580000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="hmG-Zx-zG7" firstAttribute="width" secondItem="hmG-Zx-zG7" secondAttribute="height" multiplier="1:1" id="eix-IH-x3W"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="TUP-3M-334" secondAttribute="bottom" constant="300" id="0Qx-wh-o70"/>
+                                            <constraint firstItem="TUP-3M-334" firstAttribute="top" secondItem="ckR-Va-PcA" secondAttribute="top" constant="40" id="CLN-WR-iK3"/>
+                                            <constraint firstItem="TUP-3M-334" firstAttribute="leading" secondItem="ckR-Va-PcA" secondAttribute="leading" constant="45" id="RJZ-Jf-p5J"/>
+                                            <constraint firstAttribute="trailing" secondItem="TUP-3M-334" secondAttribute="trailing" constant="30" id="dSN-lH-dYy"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ckR-Va-PcA" secondAttribute="trailing" id="X9m-2h-6pG"/>
+                                    <constraint firstItem="ckR-Va-PcA" firstAttribute="width" secondItem="dAt-FQ-MRA" secondAttribute="width" id="XBT-0I-3z2"/>
+                                    <constraint firstItem="ckR-Va-PcA" firstAttribute="top" secondItem="dAt-FQ-MRA" secondAttribute="top" id="gN4-4Y-kMr"/>
+                                    <constraint firstAttribute="bottom" secondItem="ckR-Va-PcA" secondAttribute="bottom" id="guL-hc-3b2"/>
+                                    <constraint firstItem="ckR-Va-PcA" firstAttribute="leading" secondItem="dAt-FQ-MRA" secondAttribute="leading" id="w8N-RG-wW6"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Kq-LR-Jty" customClass="RoundedButton" customModule="Umchan" customModuleProvider="target">
+                                <rect key="frame" x="30" y="772" width="354" height="60"/>
+                                <color key="backgroundColor" red="0.54836952689999996" green="0.16884723309999999" blue="0.18428939580000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="8Gy-Ox-3Rk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="25"/>
+                                <state key="normal" title="등록">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedDegree">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="awj-25-fdH" firstAttribute="leading" secondItem="HfF-hL-WJI" secondAttribute="leading" id="13Z-NL-j9S"/>
+                            <constraint firstItem="HfF-hL-WJI" firstAttribute="trailing" secondItem="dAt-FQ-MRA" secondAttribute="trailing" id="DsB-L1-3Ap"/>
+                            <constraint firstItem="HfF-hL-WJI" firstAttribute="trailing" secondItem="awj-25-fdH" secondAttribute="trailing" id="FPA-9m-52q"/>
+                            <constraint firstItem="8Kq-LR-Jty" firstAttribute="leading" secondItem="HfF-hL-WJI" secondAttribute="leading" constant="30" id="NRB-RK-Qns"/>
+                            <constraint firstItem="HfF-hL-WJI" firstAttribute="bottom" secondItem="dAt-FQ-MRA" secondAttribute="bottom" id="Zk4-qz-vKV"/>
+                            <constraint firstItem="dAt-FQ-MRA" firstAttribute="leading" secondItem="HfF-hL-WJI" secondAttribute="leading" id="dHb-QK-K42"/>
+                            <constraint firstItem="HfF-hL-WJI" firstAttribute="trailing" secondItem="8Kq-LR-Jty" secondAttribute="trailing" constant="30" id="dtd-3r-DOt"/>
+                            <constraint firstItem="HfF-hL-WJI" firstAttribute="bottom" secondItem="8Kq-LR-Jty" secondAttribute="bottom" constant="30" id="ewF-92-t2r"/>
+                            <constraint firstItem="awj-25-fdH" firstAttribute="top" secondItem="HfF-hL-WJI" secondAttribute="top" id="tOf-dC-LJM"/>
+                            <constraint firstItem="dAt-FQ-MRA" firstAttribute="top" secondItem="awj-25-fdH" secondAttribute="bottom" id="uem-Xy-GVU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HfF-hL-WJI"/>
+                    </view>
+                    <size key="freeformSize" width="414" height="896"/>
+                    <connections>
+                        <outlet property="navigationBar" destination="awj-25-fdH" id="7rw-V3-lcU"/>
+                        <outlet property="oneLineLabel" destination="KME-iV-FDJ" id="FB4-1X-Vx9"/>
+                        <outlet property="registerLimitDateView" destination="xw0-aG-y0c" id="LEW-QF-q4Z"/>
+                        <outlet property="runningDateView" destination="zBo-2t-PKa" id="XTi-hy-rmt"/>
+                        <outlet property="runningNameLabel" destination="pTP-2r-CVh" id="N9v-PN-FYp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DtD-Hs-7yq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="208.69565217391306" y="75.669642857142847"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="shoes" width="40" height="38"/>
+    </resources>
+</document>

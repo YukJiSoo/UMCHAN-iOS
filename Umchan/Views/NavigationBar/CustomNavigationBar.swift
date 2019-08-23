@@ -39,6 +39,7 @@ class CustomNavigationBar: UIView {
             self.titleLabel.text = self.title
         }
     }
+    
     // Todo: @IBInspectable 이용해서 enum Type 처리
     var barType: BarType = .start
     
@@ -56,7 +57,6 @@ class CustomNavigationBar: UIView {
         
         self.configureBottomLineView()
         self.configureTitleLabel(with: self.title)
-        self.configureButton(location: .right, type: .profile)
     }
     
     override func prepareForInterfaceBuilder() {
@@ -64,7 +64,6 @@ class CustomNavigationBar: UIView {
         
         self.configureBottomLineView()
         self.configureTitleLabel(with: self.title)
-        self.configureButton(location: .right, type: .profile)
     }
     
     // MARK: - Functions
