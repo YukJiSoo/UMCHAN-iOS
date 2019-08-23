@@ -98,8 +98,9 @@ class CustomNavigationBar: UIView {
     func configureTitleLabel(with title: String?) {
         
         self.titleLabel.text = title ?? self.title
-        self.titleLabel.font = UIFont(name: "NanumSquareOTF_ac", size: CGFloat(20))
+        self.titleLabel.font = UIFont.umchanFont(size: 20, boldState: .bold)
         self.titleLabel.textColor = SYMBOL_COLOR
+        
         self.titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
         self.addSubview(self.titleLabel)

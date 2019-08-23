@@ -12,58 +12,44 @@ class MainViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet weak var seoulMapView: SeoulMapView!
-    @IBOutlet weak var contentView: UIStackView!
+    @IBOutlet weak var crewListView: UIStackView!
+    
+    // MARK: - Properties
+//    var crews = [Crew]()
+    var crews = [
+        Crew(name: "test1", numberOfPeople: 1, image: "test1"),
+        Crew(name: "test2", numberOfPeople: 2, image: "test2"),
+        Crew(name: "test3", numberOfPeople: 3, image: "test3"),
+        Crew(name: "test4", numberOfPeople: 4, image: "test4"),
+        Crew(name: "test5", numberOfPeople: 5, image: "test5"),
+        Crew(name: "test6", numberOfPeople: 6, image: "test6"),
+        Crew(name: "test7", numberOfPeople: 7, image: "test7"),
+    ]
     
     // MARK: - Life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setup()
+        self.setupSeoulMapView()
+        self.setupCrewsView()
     }
     
     // MARK: - Functions
-    func setup() {
+    func setupSeoulMapView() {
         
         self.seoulMapView.setDistrictDelegate(self)
+    }
+    
+    func setupCrewsView() {
         
-//        let hotCrewsView = CrewStackView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.contentView.frame.height))
-//
-//        self.contentView.addSubview(hotCrewsView)
+        self.crewListView.configure(axis: .horizontal, distribution: .fillEqually, spacing: 10)
         
-        contentView.axis = .horizontal
-        contentView.distribution = .fillEqually
-        contentView.spacing = 1
-        contentView.widthAnchor.constraint(equalToConstant: 500).isActive = true
-        let a = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: self.contentView.frame.height))
-        a.backgroundColor = .blue
-        contentView.addArrangedSubview(a)
-        
-        let b = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: self.contentView.frame.height))
-        b.backgroundColor = .red
-        contentView.addArrangedSubview(b)
-        
-        let c = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: self.contentView.frame.height))
-        c.backgroundColor = .white
-        contentView.addArrangedSubview(c)
-        
-        let d = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: self.contentView.frame.height))
-        d.backgroundColor = .black
-        contentView.addArrangedSubview(d)
-        
-        let e = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: self.contentView.frame.height))
-        e.backgroundColor = .yellow
-        contentView.addArrangedSubview(e)
-        
-        let f = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: self.contentView.frame.height))
-        f.backgroundColor = .cyan
-        
-        let g = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: self.contentView.frame.height))
-        g.backgroundColor = .black
-        contentView.addArrangedSubview(g)
-        
-        let h = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: self.contentView.frame.height))
-        h.backgroundColor = .white
-        contentView.addArrangedSubview(h)
+        for crew in self.crews {
+            let crewView = CrewView(frame: CGRect(origin: .zero, size: CGSize(width: 0, height: self.crewListView.frame.height)))
+            crewView.configure(crew: Crew(name: crew.name, numberOfPeople: crew.numberOfPeople, image: crew.image))
+            
+            self.crewListView.addArrangedSubview(crewView)
+        }
     }
     
     // MARK: - Actions

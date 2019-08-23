@@ -103,7 +103,7 @@
                                                 <color key="textColor" red="0.54836952689999996" green="0.16884723309999999" blue="0.18428939580000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZY-5Z-Yas">
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZY-5Z-Yas">
                                                 <rect key="frame" x="0.0" y="459.5" width="414" height="180"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="12G-4c-KFY">
@@ -111,9 +111,10 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" priority="250" constant="200" id="hRn-GY-4PR"/>
                                                         </constraints>
+                                                        <directionalEdgeInsets key="directionalLayoutMargins" top="10" leading="10" bottom="10" trailing="10"/>
                                                     </stackView>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.33949509259999999" green="0.42738464469999998" blue="0.76082229609999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="12G-4c-KFY" secondAttribute="trailing" id="6YW-FO-Dcn"/>
                                                     <constraint firstAttribute="bottom" secondItem="12G-4c-KFY" secondAttribute="bottom" id="JaH-Jd-wwS"/>
@@ -183,7 +184,7 @@
                     </navigationItem>
                     <size key="freeformSize" width="414" height="896"/>
                     <connections>
-                        <outlet property="contentView" destination="12G-4c-KFY" id="HSd-5k-lmO"/>
+                        <outlet property="crewListView" destination="12G-4c-KFY" id="HSd-5k-lmO"/>
                         <outlet property="seoulMapView" destination="UVb-oP-OEg" id="VF7-40-Lkn"/>
                     </connections>
                 </viewController>

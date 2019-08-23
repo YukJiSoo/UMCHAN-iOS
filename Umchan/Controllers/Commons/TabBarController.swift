@@ -12,6 +12,7 @@ class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(UIFont.fontNames(forFamilyName: "NanumSquareOTF_ac"))
         self.selectedIndex = 1
     }
 
