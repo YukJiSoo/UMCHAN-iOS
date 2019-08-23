@@ -36,6 +36,7 @@
 		A7168B7923103E4300500621 /* RunningHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7168B7723103E4300500621 /* RunningHistoryTableViewCell.xib */; };
 		A7168B7C2310436500500621 /* MyCrewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B7B2310436500500621 /* MyCrewsViewController.swift */; };
 		A7168B7E2310458500500621 /* ElementNoExistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B7D2310458500500621 /* ElementNoExistable.swift */; };
+		A7168B8023104F8D00500621 /* ScrollableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B7F23104F8D00500621 /* ScrollableStackView.swift */; };
 		A71EC1DE230FB91F00275EA8 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC1DD230FB91F00275EA8 /* Date+Extension.swift */; };
 		A71EC1E0230FBD0A00275EA8 /* Crew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC1DF230FBD0A00275EA8 /* Crew.swift */; };
 		A71EC1E4230FC0D600275EA8 /* CrewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC1E3230FC0D600275EA8 /* CrewView.swift */; };
@@ -94,6 +95,7 @@
 		A7168B7723103E4300500621 /* RunningHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RunningHistoryTableViewCell.xib; sourceTree = "<group>"; };
 		A7168B7B2310436500500621 /* MyCrewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCrewsViewController.swift; sourceTree = "<group>"; };
 		A7168B7D2310458500500621 /* ElementNoExistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementNoExistable.swift; sourceTree = "<group>"; };
+		A7168B7F23104F8D00500621 /* ScrollableStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableStackView.swift; sourceTree = "<group>"; };
 		A71EC1DD230FB91F00275EA8 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		A71EC1DF230FBD0A00275EA8 /* Crew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crew.swift; sourceTree = "<group>"; };
 		A71EC1E3230FC0D600275EA8 /* CrewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewView.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				A70992002303DF0F00AE3ACA /* SeoulMapView.swift */,
 				A71EC1E3230FC0D600275EA8 /* CrewView.swift */,
 				A71EC1ED230FD22C00275EA8 /* PaddingLabel.swift */,
+				A7168B7F23104F8D00500621 /* ScrollableStackView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				A70992072303FC5000AE3ACA /* DistrictView.swift in Sources */,
 				A76A70FF230E9FB700B5EA81 /* Running.swift in Sources */,
 				A71EC1E4230FC0D600275EA8 /* CrewView.swift in Sources */,
+				A7168B8023104F8D00500621 /* ScrollableStackView.swift in Sources */,
 				A71EC1FC230FF77100275EA8 /* DateView.swift in Sources */,
 				A70991F52303BF3A00AE3ACA /* MainViewController.swift in Sources */,
 				A71EC1E0230FBD0A00275EA8 /* Crew.swift in Sources */,

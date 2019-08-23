@@ -17,12 +17,11 @@ class RunningHistoryViewController: UIViewController {
     var tableView: UITableView?
     
     // MARK: - Properties
-    var runningHistorys = [Running]()
-//    var runningHistorys = [
-//        Running(name: "test1", oneLine: "test1", runningDate: Date(), registerDate: Date()),
-//        Running(name: "test1", oneLine: "test1", runningDate: Date(), registerDate: Date()),
-//        Running(name: "test1", oneLine: "test1", runningDate: Date(), registerDate: Date()),
-//    ]
+    var runningHistorys = [
+        Running(name: "test1", oneLine: "test1", runningDate: Date(), registerDate: Date()),
+        Running(name: "test1", oneLine: "test1", runningDate: Date(), registerDate: Date()),
+        Running(name: "test1", oneLine: "test1", runningDate: Date(), registerDate: Date()),
+    ]
     
     // MARK: - Life cycles
     override func viewDidLoad() {

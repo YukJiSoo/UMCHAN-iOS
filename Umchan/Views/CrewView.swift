@@ -23,6 +23,12 @@ class CrewView: UIStackView {
         }
     }
     
+    var heightOfView: CGFloat = 180 {
+        didSet {
+            self.heightAnchor.constraint(equalToConstant: self.heightOfView)
+        }
+    }
+    
     // MARK: - Life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -50,6 +56,7 @@ class CrewView: UIStackView {
         
         self.configure(axis: .vertical, spacing: 10)
         self.widthAnchor.constraint(equalToConstant: self.widthOfView).isActive = true
+        self.heightAnchor.constraint(equalToConstant: self.heightOfView).isActive = true
     }
     
     func setupSubView() {
@@ -62,7 +69,7 @@ class CrewView: UIStackView {
         
         self.imageView = UIImageView(frame: .zero)
         self.imageView.configureViewEdgeRounded(by: 5)
-        
+        self.imageView.backgroundColor = .orange
         self.addArrangedSubview(self.imageView)
     }
     

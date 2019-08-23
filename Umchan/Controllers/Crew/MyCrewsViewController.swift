@@ -14,14 +14,14 @@ class MyCrewsViewController: UIViewController {
     @IBOutlet weak var navigationBar: CustomNavigationBar!
     
     // MARK: - SubViews
+    var crewListView: ScrollableStackView?
     
     // MARK: - Properties
-    var crews = [Crew]()
-//    var crews = [
-//        Crew(name: "test1", numberOfPeople: 1, image: "test1"),
-//        Crew(name: "test1", numberOfPeople: 1, image: "test1"),
-//        Crew(name: "test1", numberOfPeople: 1, image: "test1")
-//    ]
+    var crews = [
+        Crew(name: "test1", numberOfPeople: 1, image: "test1"),
+        Crew(name: "test1", numberOfPeople: 1, image: "test1"),
+        Crew(name: "test1", numberOfPeople: 1, image: "test1")
+    ]
     
     // MARK: - Life cycles
     override func viewDidLoad() {
@@ -40,7 +40,7 @@ class MyCrewsViewController: UIViewController {
             return
         }
         
-        self.setupTableView()
+        self.setupCrewListView()
     }
     
     func setupNavigationBar() {
@@ -91,9 +91,29 @@ class MyCrewsViewController: UIViewController {
         ])
     }
     
-    func setupTableView() {
+    func setupCrewListView() {
         
+        let crewListView = ScrollableStackView(frame: .zero)
         
+        var crewViews = [CrewView]()
+        for crew in crews {
+            let crewView = CrewView(frame: .zero)
+            crewView.configure(crew: crew)
+            
+            crewViews.append(crewView)
+        }
+        
+        crewListView.configureSubViews(subViews: crewViews)
+        self.view.addSubview(crewListView)
+        
+        crewListView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let topAnchor = crewListView.topAnchor.constraint(equalTo: self.navigationBar.bottomAnchor)
+        let bottomAnchor = crewListView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+        let leadingAnchor = crewListView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)
+        let trailingAnchor = crewListView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
+        
+        NSLayoutConstraint.activate([ topAnchor, bottomAnchor, leadingAnchor, trailingAnchor ])
     }
     
 }
