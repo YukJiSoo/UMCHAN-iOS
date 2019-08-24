@@ -111,11 +111,16 @@ extension MainViewController: CustomNavigationBarDelegate {
     
     func rightBarButtonPressed(_ sender: UIButton) {
         
-        let stroyboard = UIStoryboard(name: StoryboardName.profile, bundle: nil)
-        let viewController = stroyboard.viewController(ProfileViewController.self)
-        let navigationController = UINavigationController(rootViewController: viewController)
-        navigationController.isNavigationBarHidden = true
+//        let stroyboard = UIStoryboard(name: StoryboardName.profile, bundle: nil)
+//        let viewController = stroyboard.viewController(ProfileViewController.self)
+//        let navigationController = UINavigationController(rootViewController: viewController)
+//        navigationController.isNavigationBarHidden = true
+//        
+//        self.present(navigationController, animated: true, completion: nil)
         
-        self.present(navigationController, animated: true, completion: nil)
+        let stroyboard = UIStoryboard(name: StoryboardName.loginAndSignUp, bundle: nil)
+        let viewController = stroyboard.viewController(LoginViewController.self)
+        
+        self.present(viewController, animated: true, completion: nil)
     }
 }
