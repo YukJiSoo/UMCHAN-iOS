@@ -54,5 +54,12 @@ class ScrollableStackView: UIScrollView {
             self.contentView.addArrangedSubview(view)
         }
     }
+    
+    func initializeSubViews() {
+        
+        for subView in self.contentView.arrangedSubviews {
+            self.contentView.removeArrangedSubview(subView)
+        }
+    }
 
 }

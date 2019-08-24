@@ -43,6 +43,19 @@ class SearchRunningViewController: SearchViewController {
         self.searchBar.configure(searchType: self.searchType)
     }
     
+    override func loadData() {
+        
+        self.isLoading = true
+        
+        // get data from api server
+        // reload tableView
+        // set tableView visible
+        self.tableView.isHidden = false
+        self.tableView.reloadData()
+        
+        self.isLoading = false
+    }
+    
     func setupTableView() {
         
         self.tableView.delegate = self
@@ -74,18 +87,6 @@ class SearchRunningViewController: SearchViewController {
         self.tableView.register(runningCellNib, forCellReuseIdentifier: RunningTableViewCell.nibId)
         self.tableView.register(emptyNoticeCellNib, forCellReuseIdentifier: EmptyTableViewCell.nibId)
         
-    }
-    
-    override func loadData() {
-        
-        self.isLoading = true
-        
-        // get data from api server
-            // reload tableView
-            // set tableView visible
-        self.tableView.isHidden = false
-        
-        self.isLoading = false
     }
 
 }
