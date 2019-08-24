@@ -33,6 +33,10 @@ var navigationBarHeight: CGFloat = 64
 class Segue {
     
     static let segueToModifyProfile = "segueToModifyProfile"
+    
+    // unwind
+    static let unwindToLoginViewController = "unwindToLoginViewController"
+    
 }
 
 // MARK: - print Statement

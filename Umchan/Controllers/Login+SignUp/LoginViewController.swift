@@ -34,5 +34,11 @@ class LoginViewController: UIViewController, NibLodable {
         
         self.activityIndicator.stopAnimating()
     }
-
+    
+    @IBAction func unwindToLoginViewController(_ segue: UIStoryboardSegue) {
+        
+        if segue.identifier == Segue.unwindToLoginViewController {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
 }

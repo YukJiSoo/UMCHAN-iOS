@@ -15,6 +15,7 @@ class ModifyProfileViewController: UIViewController, NibLodable {
     @IBOutlet weak var nicknameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Life cycles
     override func viewDidLoad() {

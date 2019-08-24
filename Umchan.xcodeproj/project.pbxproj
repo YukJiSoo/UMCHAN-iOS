@@ -76,6 +76,7 @@
 		A71EC1FF230FF86C00275EA8 /* DateViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC1FE230FF86C00275EA8 /* DateViewDelegate.swift */; };
 		A71EC201230FF8CC00275EA8 /* RegisterRunningViewController+DateViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC200230FF8CC00275EA8 /* RegisterRunningViewController+DateViewDelegate.swift */; };
 		A71EC203231003E100275EA8 /* DatePickerPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC202231003E100275EA8 /* DatePickerPresentable.swift */; };
+		A72F015D2311CEAA0044A285 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72F015C2311CEAA0044A285 /* SignUpViewController.swift */; };
 		A742E39B22F88ADF002E333C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742E39A22F88ADF002E333C /* AppDelegate.swift */; };
 		A742E3A022F88ADF002E333C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A742E39E22F88ADF002E333C /* Main.storyboard */; };
 		A742E3A222F88AE1002E333C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A742E3A122F88AE1002E333C /* Assets.xcassets */; };
@@ -159,6 +160,7 @@
 		A71EC1FE230FF86C00275EA8 /* DateViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewDelegate.swift; sourceTree = "<group>"; };
 		A71EC200230FF8CC00275EA8 /* RegisterRunningViewController+DateViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegisterRunningViewController+DateViewDelegate.swift"; sourceTree = "<group>"; };
 		A71EC202231003E100275EA8 /* DatePickerPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerPresentable.swift; sourceTree = "<group>"; };
+		A72F015C2311CEAA0044A285 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A742E39722F88ADF002E333C /* Umchan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Umchan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A742E39A22F88ADF002E333C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A742E39F22F88ADF002E333C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -380,6 +382,7 @@
 			isa = PBXGroup;
 			children = (
 				A7071B882311C6D200982161 /* LoginViewController.swift */,
+				A72F015C2311CEAA0044A285 /* SignUpViewController.swift */,
 			);
 			path = "Login+SignUp";
 			sourceTree = "<group>";
@@ -624,6 +627,7 @@
 				A70992012303DF0F00AE3ACA /* SeoulMapView.swift in Sources */,
 				A70C2A3B2311B0F8002006A3 /* ProfileViewController.swift in Sources */,
 				A71EC1E8230FC6B000275EA8 /* UIStackView+Extension.swift in Sources */,
+				A72F015D2311CEAA0044A285 /* SignUpViewController.swift in Sources */,
 				A71EC1EE230FD22C00275EA8 /* PaddingLabel.swift in Sources */,
 				A70991F02303BD3600AE3ACA /* TabBarController.swift in Sources */,
 				A7168B91231079FB00500621 /* SearchCrewViewController.swift in Sources */,
