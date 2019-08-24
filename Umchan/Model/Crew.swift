@@ -11,6 +11,8 @@ import Foundation
 struct Crew: Codable {
     
     var name: String
+    var oneLine: String
+    var creationDate: String
     var numberOfPeople: Int
     var image: String
 }

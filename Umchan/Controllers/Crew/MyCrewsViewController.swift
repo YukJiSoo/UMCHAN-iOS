@@ -19,9 +19,12 @@ class MyCrewsViewController: UIViewController {
     
     // MARK: - Properties
     var crews = [
-        Crew(name: "test1", numberOfPeople: 1, image: "test1"),
-        Crew(name: "test1", numberOfPeople: 1, image: "test1"),
-        Crew(name: "test1", numberOfPeople: 1, image: "test1")
+        Crew(name: "test0", oneLine: "test0", creationDate: "test0", numberOfPeople: 9, image: "test0"),
+        Crew(name: "test1", oneLine: "test0", creationDate: "test0", numberOfPeople: 9, image: "test0"),
+        Crew(name: "test2", oneLine: "test0", creationDate: "test0", numberOfPeople: 9, image: "test0"),
+        Crew(name: "test3", oneLine: "test0", creationDate: "test0", numberOfPeople: 9, image: "test0"),
+        Crew(name: "test4", oneLine: "test0", creationDate: "test0", numberOfPeople: 9, image: "test0"),
+        Crew(name: "test5", oneLine: "test0", creationDate: "test0", numberOfPeople: 9, image: "test0")
     ]
 //    var crews = [Crew]()
     

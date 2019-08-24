@@ -19,13 +19,12 @@ class MainViewController: UIViewController {
     let storyBoardName = "Main"
 //    var crews = [Crew]()
     var crews = [
-        Crew(name: "test1", numberOfPeople: 1, image: "test1"),
-        Crew(name: "test2", numberOfPeople: 2, image: "test2"),
-        Crew(name: "test3", numberOfPeople: 3, image: "test3"),
-        Crew(name: "test4", numberOfPeople: 4, image: "test4"),
-        Crew(name: "test5", numberOfPeople: 5, image: "test5"),
-        Crew(name: "test6", numberOfPeople: 6, image: "test6"),
-        Crew(name: "test7", numberOfPeople: 7, image: "test7"),
+        Crew(name: "test0", oneLine: "test0", creationDate: "test0", numberOfPeople: 9, image: "test0"),
+        Crew(name: "test1", oneLine: "test0", creationDate: "test0", numberOfPeople: 9, image: "test0"),
+        Crew(name: "test2", oneLine: "test0", creationDate: "test0", numberOfPeople: 9, image: "test0"),
+        Crew(name: "test3", oneLine: "test0", creationDate: "test0", numberOfPeople: 9, image: "test0"),
+        Crew(name: "test4", oneLine: "test0", creationDate: "test0", numberOfPeople: 9, image: "test0"),
+        Crew(name: "test5", oneLine: "test0", creationDate: "test0", numberOfPeople: 9, image: "test0")
     ]
     
     // MARK: - Life cycles
@@ -52,12 +51,30 @@ class MainViewController: UIViewController {
         
         self.crewListView.configure(axis: .horizontal, distribution: .fillEqually, spacing: 10)
         
-        for crew in self.crews {
+        for (index, crew) in self.crews.enumerated() {
+            
             let crewView = CrewView(frame: CGRect(origin: .zero, size: CGSize(width: 0, height: self.crewListView.frame.height)))
-            crewView.configure(crew: Crew(name: crew.name, numberOfPeople: crew.numberOfPeople, image: crew.image))
+            crewView.configure(crew: Crew(name: crew.name, oneLine: crew.oneLine, creationDate: crew.creationDate, numberOfPeople: crew.numberOfPeople, image: crew.image))
+            
+            crewView.tag = index
+            crewView.isUserInteractionEnabled = true
+            let tapCrewViewGesture = UITapGestureRecognizer(target: self, action: #selector(self.crewViewTapped(_:)))
+            crewView.addGestureRecognizer(tapCrewViewGesture)
             
             self.crewListView.addArrangedSubview(crewView)
         }
+    }
+    
+    @objc func crewViewTapped(_ sender: UIGestureRecognizer) {
+        
+        let storyboard = UIStoryboard(name: StoryboardName.crewInfo, bundle: nil)
+        let viewController = storyboard.viewController(CrewInfoViewController.self)
+        viewController.modalPresentationStyle = .custom
+        
+        if let tag = sender.view?.tag {
+            viewController.crew = self.crews[tag]
+        }
+        self.present(viewController, animated: true, completion: nil)
     }
     
     // MARK: - Actions

@@ -33,6 +33,24 @@ extension UIViewController {
         return imagePickerController
     }
     
+    func addGestureForEndEditting() {
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapForEndEditting(_:)))
+        self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    func createCheckAlertViewController(title: String, message: String) -> UIAlertController {
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: .default) { (action) in
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        alertController.addAction(okAction)
+        
+        return alertController
+    }
+    
     @objc func closeButtonPressed(_ sender: Any) {
         print("close")
         self.dismiss(animated: true, completion: nil)

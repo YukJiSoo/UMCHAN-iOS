@@ -20,6 +20,7 @@ class CreateCrewViewController: UIViewController, NibLodable {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.addGestureForEndEditting()
         self.setupNavigationBar()
         self.setupImageView()
     }

@@ -17,12 +17,28 @@ class RoundedButton: UIButton {
             self.setNeedsLayout()
         }
     }
+    
+    @IBInspectable var borderColor: UIColor = .clear {
+        
+        didSet {
+            self.setNeedsLayout()
+        }
+    }
+    
+    @IBInspectable var borderWidth: CGFloat = 5 {
+        
+        didSet {
+            self.setNeedsLayout()
+        }
+    }
 
     override func layoutSubviews() {
         
         super.layoutSubviews()
         
         self.layer.cornerRadius = self.roundedDegree
+        self.layer.borderColor = self.borderColor.cgColor
+        self.layer.borderWidth = self.borderWidth
     }
 
 }
