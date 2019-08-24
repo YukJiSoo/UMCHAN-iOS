@@ -29,11 +29,14 @@ let DISTRICTS = "districts"
 // MARK: - Constraints
 var navigationBarHeight: CGFloat = 64
 
+// MARK: - segue
+class Segue {
+    
+    static let segueToModifyProfile = "segueToModifyProfile"
+}
+
 // MARK: - print Statement
 class Statement {
-    
-    private init() {
-    }
     
     static let hsaNoRunning = "참가 가능한 러닝이 없습니다"
 }
@@ -41,25 +44,19 @@ class Statement {
 // MARK: - story board name
 class StoryboardName {
     
-    private init() {
-    }
-    
     static let main = "Main"
     static let registerRunning = "RegisterRunning"
     static let createCrew = "CreateCrew"
     static let crewInfo = "CrewInfo"
     static let running = "Running"
     static let runningHistory = "RunningHistory"
+    static let profile = "Profile"
 }
 
 // MARK: - date format
 class DateFormat {
     
-    private init() {
-    }
-    
     static let locale = "ko_KR"
-    
     static let time = "h시 m분"
     static let date = "yyyy년 M월 d일"
     static let dotDate = "yy.MM.dd"
@@ -68,9 +65,6 @@ class DateFormat {
 
 // MARK: - image asset name
 class AssetName {
-    
-    private init() {
-    }
     
     static let user = "user"
     static let empty = "empty"

@@ -1,26 +1,25 @@
 //
-//  CreateCrewViewController.swift
+//  ModifyProfileViewController.swift
 //  Umchan
 //
-//  Created by 육지수 on 8/24/19.
+//  Created by 육지수 on 8/25/19.
 //  Copyright © 2019 JSYuk. All rights reserved.
 //
 
 import UIKit
 
-class CreateCrewViewController: UIViewController, NibLodable {
+class ModifyProfileViewController: UIViewController, NibLodable {
 
     // MARK: - Outlets
     @IBOutlet weak var navigationBar: CustomNavigationBar!
-    @IBOutlet weak var crewNameTextField: UITextField!
-    @IBOutlet weak var oneLineTextField: UITextField!
-    @IBOutlet weak var crewImageView: UIImageView!
+    @IBOutlet weak var nicknameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var userImageView: UIImageView!
     
     // MARK: - Life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.addGestureForEndEditting()
         self.setupNavigationBar()
         self.setupImageView()
     }
@@ -28,38 +27,37 @@ class CreateCrewViewController: UIViewController, NibLodable {
     func setupNavigationBar() {
         
         self.navigationBar.delegate = self
-        self.navigationBar.configureButton(location: .left, type: .close)
+        self.navigationBar.configureButton(location: .left, type: .back)
     }
     
     func setupImageView() {
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(selectImagePressed(_:)))
-        self.crewImageView.addGestureRecognizer(tapGesture)
-    }
-    
-    // MARK: - Actions
-    @IBAction func createButtonPressed(_ sender: UIButton) {
+        self.userImageView.isUserInteractionEnabled = true
         
-        let alertController = self.createCheckAlertViewController(title: "크루생성", message: "크루가 생성되었습니다.")
-        self.present(alertController, animated: true, completion: nil)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(selectImagePressed(_:)))
+        self.userImageView.addGestureRecognizer(tapGesture)
     }
     
-
+    @IBAction func saveButtonPressed(_ sender: UIButton) {
+        let alertController = self.createCheckAlertViewController(title: "프로필 수정", message: "프로필이 수정되었습니다.")
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
 }
 
-extension CreateCrewViewController: CustomNavigationBarDelegate {
+extension ModifyProfileViewController: CustomNavigationBarDelegate {
     
     func leftBarButtonPressed(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
 }
 
-extension CreateCrewViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension ModifyProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let image = info[.editedImage] as? UIImage {
-            self.crewImageView.image = image
+            self.userImageView.image = image
         }
         
         self.dismiss(animated: true, completion: nil)

@@ -59,4 +59,9 @@ extension UIViewController {
     @objc func tapForEndEditting(_ gesture: UIGestureRecognizer) {
         self.view.endEditing(true)
     }
+    
+    @objc func selectImagePressed(_ sender: Any) {
+        
+        self.present(self.imagePicker, animated: true, completion: nil)
+    }
 }

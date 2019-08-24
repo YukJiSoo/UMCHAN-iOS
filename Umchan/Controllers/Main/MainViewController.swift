@@ -39,6 +39,7 @@ class MainViewController: UIViewController {
     // MARK: - Functions
     func setupNavigationBar() {
         
+        self.navigationBar.delegate = self
         self.navigationBar.configureButton(location: .right, type: .profile)
     }
     
@@ -104,4 +105,17 @@ class MainViewController: UIViewController {
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
+}
+
+extension MainViewController: CustomNavigationBarDelegate {
+    
+    func rightBarButtonPressed(_ sender: UIButton) {
+        
+        let stroyboard = UIStoryboard(name: StoryboardName.profile, bundle: nil)
+        let viewController = stroyboard.viewController(ProfileViewController.self)
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.isNavigationBarHidden = true
+        
+        self.present(navigationController, animated: true, completion: nil)
+    }
 }

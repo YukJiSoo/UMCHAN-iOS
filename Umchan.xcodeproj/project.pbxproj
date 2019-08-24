@@ -43,6 +43,7 @@
 		A70C2A362311A824002006A3 /* RunningHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70C2A352311A824002006A3 /* RunningHistoryViewController.swift */; };
 		A70C2A392311ACDE002006A3 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A70C2A382311ACDE002006A3 /* Profile.storyboard */; };
 		A70C2A3B2311B0F8002006A3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70C2A3A2311B0F8002006A3 /* ProfileViewController.swift */; };
+		A70C2A3D2311B363002006A3 /* ModifyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70C2A3C2311B363002006A3 /* ModifyProfileViewController.swift */; };
 		A7168B6A231006AA00500621 /* DateView+DatePickerPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B69231006AA00500621 /* DateView+DatePickerPresentable.swift */; };
 		A7168B6C23100C8400500621 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B6B23100C8400500621 /* DateFormatter+Extension.swift */; };
 		A7168B712310111900500621 /* RunningHistoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B702310111900500621 /* RunningHistoryListViewController.swift */; };
@@ -123,6 +124,7 @@
 		A70C2A352311A824002006A3 /* RunningHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningHistoryViewController.swift; sourceTree = "<group>"; };
 		A70C2A382311ACDE002006A3 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		A70C2A3A2311B0F8002006A3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A70C2A3C2311B363002006A3 /* ModifyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyProfileViewController.swift; sourceTree = "<group>"; };
 		A7168B69231006AA00500621 /* DateView+DatePickerPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateView+DatePickerPresentable.swift"; sourceTree = "<group>"; };
 		A7168B6B23100C8400500621 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
 		A7168B702310111900500621 /* RunningHistoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningHistoryListViewController.swift; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 			isa = PBXGroup;
 			children = (
 				A70C2A3A2311B0F8002006A3 /* ProfileViewController.swift */,
+				A70C2A3C2311B363002006A3 /* ModifyProfileViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -602,6 +605,7 @@
 				A70992272307105600AE3ACA /* ModalViewController.swift in Sources */,
 				A71EC203231003E100275EA8 /* DatePickerPresentable.swift in Sources */,
 				A70C2A362311A824002006A3 /* RunningHistoryViewController.swift in Sources */,
+				A70C2A3D2311B363002006A3 /* ModifyProfileViewController.swift in Sources */,
 				A70992012303DF0F00AE3ACA /* SeoulMapView.swift in Sources */,
 				A70C2A3B2311B0F8002006A3 /* ProfileViewController.swift in Sources */,
 				A71EC1E8230FC6B000275EA8 /* UIStackView+Extension.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, NibLodable {
 
     // MARK: - Outlets
     @IBOutlet weak var navigationBar: CustomNavigationBar!
@@ -25,6 +25,11 @@ class ProfileViewController: UIViewController {
         self.setupNavigationBar()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
     func setupNavigationBar() {
         
         self.navigationBar.delegate = self
@@ -35,9 +40,6 @@ class ProfileViewController: UIViewController {
         
     }
     
-    @IBAction func modifyButtonPressed(_ sender: UIButton) {
-        
-    }
 }
 
 extension ProfileViewController: CustomNavigationBarDelegate {
