@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumSquareOTFBold.otf">
+            <string>NanumSquareOTF_acB</string>
+        </array>
+        <array key="NanumSquareOTFRight.otf">
+            <string>NanumSquareOTF_acR</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Running History View Controller-->
+        <scene sceneID="PD3-Xe-mad">
+            <objects>
+                <viewController storyboardIdentifier="RunningHistoryViewController" id="5P0-VA-FyA" customClass="RunningHistoryViewController" customModule="Umchan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rYL-FZ-k5K">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z2Q-dD-hLQ" customClass="CustomNavigationBar" customModule="Umchan" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="64"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="xe1-QX-rJy"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Pb-m0-k1s">
+                                <rect key="frame" x="0.0" y="108" width="414" height="754"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ygp-Il-hGL">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="380.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="emy-W3-3uU">
+                                                <rect key="frame" x="30" y="30" width="354" height="320.5"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xqN-aa-gfC">
+                                                        <rect key="frame" x="0.0" y="0.0" width="354" height="22.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="리더" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dP1-hA-ES6">
+                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="22.5"/>
+                                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="20"/>
+                                                                <color key="textColor" red="0.58039215690000001" green="0.066666666669999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="fsl-sK-uaO">
+                                                        <rect key="frame" x="0.0" y="57.5" width="354" height="56.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="소개말" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1z-Hc-YFz">
+                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="22.5"/>
+                                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="20"/>
+                                                                <color key="textColor" red="0.58039215690000001" green="0.066666666669999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcv-gk-1RT">
+                                                                <rect key="frame" x="0.0" y="37.5" width="354" height="19"/>
+                                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acR" family="NanumSquareOTF_ac" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="a9f-Tg-2oR">
+                                                        <rect key="frame" x="0.0" y="149" width="354" height="56.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="달린 날" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z5v-In-2yQ">
+                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="22.5"/>
+                                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="20"/>
+                                                                <color key="textColor" red="0.58039215690000001" green="0.066666666669999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n30-yN-b1a">
+                                                                <rect key="frame" x="0.0" y="37.5" width="354" height="19"/>
+                                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acR" family="NanumSquareOTF_ac" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Bpr-4i-jLB">
+                                                        <rect key="frame" x="0.0" y="240.5" width="354" height="22.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="참여자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVS-13-CUB">
+                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="22.5"/>
+                                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="20"/>
+                                                                <color key="textColor" red="0.58039215690000001" green="0.066666666669999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="MZ5-WP-KLa">
+                                                        <rect key="frame" x="0.0" y="298" width="354" height="22.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="코스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tZ-tP-218">
+                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="22.5"/>
+                                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="20"/>
+                                                                <color key="textColor" red="0.58039215690000001" green="0.066666666669999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="emy-W3-3uU" firstAttribute="top" secondItem="Ygp-Il-hGL" secondAttribute="top" constant="30" id="FBS-3T-WCB"/>
+                                            <constraint firstAttribute="trailing" secondItem="emy-W3-3uU" secondAttribute="trailing" constant="30" id="WCV-G0-76s"/>
+                                            <constraint firstAttribute="bottom" secondItem="emy-W3-3uU" secondAttribute="bottom" constant="30" id="YpK-hs-CWh"/>
+                                            <constraint firstItem="emy-W3-3uU" firstAttribute="leading" secondItem="Ygp-Il-hGL" secondAttribute="leading" constant="30" id="uKE-lD-mSq"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Ygp-Il-hGL" firstAttribute="leading" secondItem="2Pb-m0-k1s" secondAttribute="leading" id="09h-3R-IzP"/>
+                                    <constraint firstItem="Ygp-Il-hGL" firstAttribute="top" secondItem="2Pb-m0-k1s" secondAttribute="top" id="7fE-EX-77L"/>
+                                    <constraint firstItem="Ygp-Il-hGL" firstAttribute="width" secondItem="2Pb-m0-k1s" secondAttribute="width" id="H5J-EE-N5h"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ygp-Il-hGL" secondAttribute="trailing" id="hdt-rd-7iA"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ygp-Il-hGL" secondAttribute="bottom" id="vdv-n7-agF"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="z2Q-dD-hLQ" firstAttribute="top" secondItem="9RT-FP-qoi" secondAttribute="top" id="2qa-K6-ptq"/>
+                            <constraint firstItem="9RT-FP-qoi" firstAttribute="trailing" secondItem="2Pb-m0-k1s" secondAttribute="trailing" id="DUm-Kg-5uv"/>
+                            <constraint firstItem="9RT-FP-qoi" firstAttribute="trailing" secondItem="z2Q-dD-hLQ" secondAttribute="trailing" id="FyO-19-Bww"/>
+                            <constraint firstItem="2Pb-m0-k1s" firstAttribute="leading" secondItem="9RT-FP-qoi" secondAttribute="leading" id="M8l-pi-en8"/>
+                            <constraint firstItem="z2Q-dD-hLQ" firstAttribute="leading" secondItem="9RT-FP-qoi" secondAttribute="leading" id="V4J-fw-xFW"/>
+                            <constraint firstItem="2Pb-m0-k1s" firstAttribute="top" secondItem="z2Q-dD-hLQ" secondAttribute="bottom" id="Zt9-xH-Oda"/>
+                            <constraint firstItem="9RT-FP-qoi" firstAttribute="bottom" secondItem="2Pb-m0-k1s" secondAttribute="bottom" id="rR5-SN-K8t"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9RT-FP-qoi"/>
+                    </view>
+                    <connections>
+                        <outlet property="leaderView" destination="xqN-aa-gfC" id="Qjr-oP-Xyf"/>
+                        <outlet property="membersView" destination="Bpr-4i-jLB" id="ZMk-JK-we6"/>
+                        <outlet property="navigationBar" destination="z2Q-dD-hLQ" id="tUp-46-jRw"/>
+                        <outlet property="oneLineLabel" destination="fcv-gk-1RT" id="qHJ-wq-U5j"/>
+                        <outlet property="runningDateLabel" destination="n30-yN-b1a" id="fae-r8-Srw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v3H-ja-0qd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-126.08695652173914" y="68.973214285714278"/>
+        </scene>
+    </scenes>
+</document>

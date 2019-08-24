@@ -39,11 +39,15 @@
 		A70C2A2923119050002006A3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70C2A2823119050002006A3 /* User.swift */; };
 		A70C2A2F23119C7D002006A3 /* RunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70C2A2D23119C7D002006A3 /* RunningViewController.swift */; };
 		A70C2A3223119D8C002006A3 /* Running.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A70C2A3123119D8C002006A3 /* Running.storyboard */; };
+		A70C2A342311A7FF002006A3 /* RunningHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A70C2A332311A7FF002006A3 /* RunningHistory.storyboard */; };
+		A70C2A362311A824002006A3 /* RunningHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70C2A352311A824002006A3 /* RunningHistoryViewController.swift */; };
+		A70C2A392311ACDE002006A3 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A70C2A382311ACDE002006A3 /* Profile.storyboard */; };
+		A70C2A3B2311B0F8002006A3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70C2A3A2311B0F8002006A3 /* ProfileViewController.swift */; };
 		A7168B6A231006AA00500621 /* DateView+DatePickerPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B69231006AA00500621 /* DateView+DatePickerPresentable.swift */; };
 		A7168B6C23100C8400500621 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B6B23100C8400500621 /* DateFormatter+Extension.swift */; };
-		A7168B712310111900500621 /* RunningHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B702310111900500621 /* RunningHistoryViewController.swift */; };
-		A7168B7823103E4300500621 /* RunningHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B7623103E4300500621 /* RunningHistoryTableViewCell.swift */; };
-		A7168B7923103E4300500621 /* RunningHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7168B7723103E4300500621 /* RunningHistoryTableViewCell.xib */; };
+		A7168B712310111900500621 /* RunningHistoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B702310111900500621 /* RunningHistoryListViewController.swift */; };
+		A7168B7823103E4300500621 /* RunningHistoryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B7623103E4300500621 /* RunningHistoryListTableViewCell.swift */; };
+		A7168B7923103E4300500621 /* RunningHistoryListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7168B7723103E4300500621 /* RunningHistoryListTableViewCell.xib */; };
 		A7168B7C2310436500500621 /* MyCrewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B7B2310436500500621 /* MyCrewsViewController.swift */; };
 		A7168B7E2310458500500621 /* ElementNoExistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B7D2310458500500621 /* ElementNoExistable.swift */; };
 		A7168B8023104F8D00500621 /* ScrollableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B7F23104F8D00500621 /* ScrollableStackView.swift */; };
@@ -115,11 +119,15 @@
 		A70C2A2823119050002006A3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A70C2A2D23119C7D002006A3 /* RunningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningViewController.swift; sourceTree = "<group>"; };
 		A70C2A3123119D8C002006A3 /* Running.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Running.storyboard; sourceTree = "<group>"; };
+		A70C2A332311A7FF002006A3 /* RunningHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RunningHistory.storyboard; sourceTree = "<group>"; };
+		A70C2A352311A824002006A3 /* RunningHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningHistoryViewController.swift; sourceTree = "<group>"; };
+		A70C2A382311ACDE002006A3 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		A70C2A3A2311B0F8002006A3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A7168B69231006AA00500621 /* DateView+DatePickerPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateView+DatePickerPresentable.swift"; sourceTree = "<group>"; };
 		A7168B6B23100C8400500621 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
-		A7168B702310111900500621 /* RunningHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningHistoryViewController.swift; sourceTree = "<group>"; };
-		A7168B7623103E4300500621 /* RunningHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningHistoryTableViewCell.swift; sourceTree = "<group>"; };
-		A7168B7723103E4300500621 /* RunningHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RunningHistoryTableViewCell.xib; sourceTree = "<group>"; };
+		A7168B702310111900500621 /* RunningHistoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningHistoryListViewController.swift; sourceTree = "<group>"; };
+		A7168B7623103E4300500621 /* RunningHistoryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningHistoryListTableViewCell.swift; sourceTree = "<group>"; };
+		A7168B7723103E4300500621 /* RunningHistoryListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RunningHistoryListTableViewCell.xib; sourceTree = "<group>"; };
 		A7168B7B2310436500500621 /* MyCrewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCrewsViewController.swift; sourceTree = "<group>"; };
 		A7168B7D2310458500500621 /* ElementNoExistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementNoExistable.swift; sourceTree = "<group>"; };
 		A7168B7F23104F8D00500621 /* ScrollableStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableStackView.swift; sourceTree = "<group>"; };
@@ -185,6 +193,7 @@
 		A70991EE2303BD1200AE3ACA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A70C2A372311AB53002006A3 /* Profile */,
 				A7168B7A2310434800500621 /* Crew */,
 				A70C2A2A23119C49002006A3 /* Running */,
 				A7168B8F231079E000500621 /* Search */,
@@ -206,6 +215,8 @@
 				A7099216230570E600AE3ACA /* RegisterRunning.storyboard */,
 				A70C2A1C23116432002006A3 /* CreateCrew.storyboard */,
 				A70C2A3123119D8C002006A3 /* Running.storyboard */,
+				A70C2A332311A7FF002006A3 /* RunningHistory.storyboard */,
+				A70C2A382311ACDE002006A3 /* Profile.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -303,7 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				A76A7101230EA13200B5EA81 /* EmptyTableViewCell.xib */,
-				A7168B7723103E4300500621 /* RunningHistoryTableViewCell.xib */,
+				A7168B7723103E4300500621 /* RunningHistoryListTableViewCell.xib */,
 				A76A70FB230E923E00B5EA81 /* RunningTableViewCell.xib */,
 				A71EC1F8230FF45C00275EA8 /* DatePickerViewController.xib */,
 				A70C2A26231189EA002006A3 /* UserView.xib */,
@@ -348,6 +359,14 @@
 			path = Running;
 			sourceTree = "<group>";
 		};
+		A70C2A372311AB53002006A3 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				A70C2A3A2311B0F8002006A3 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		A7168B6D2310108100500621 /* Modal */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,7 +388,8 @@
 		A7168B6F231010FF00500621 /* RunningHistory */ = {
 			isa = PBXGroup;
 			children = (
-				A7168B702310111900500621 /* RunningHistoryViewController.swift */,
+				A7168B702310111900500621 /* RunningHistoryListViewController.swift */,
+				A70C2A352311A824002006A3 /* RunningHistoryViewController.swift */,
 			);
 			path = RunningHistory;
 			sourceTree = "<group>";
@@ -478,7 +498,7 @@
 			children = (
 				A76A70FA230E923E00B5EA81 /* RunningTableViewCell.swift */,
 				A76A7100230EA13200B5EA81 /* EmptyTableViewCell.swift */,
-				A7168B7623103E4300500621 /* RunningHistoryTableViewCell.swift */,
+				A7168B7623103E4300500621 /* RunningHistoryListTableViewCell.swift */,
 				A71EC1EF230FDAFF00275EA8 /* WriteTableViewCell.swift */,
 			);
 			path = TableViewCell;
@@ -548,9 +568,11 @@
 				A70C2A1D23116432002006A3 /* CreateCrew.storyboard in Resources */,
 				A70991FF2303C1DA00AE3ACA /* NanumSquareOTFRight.otf in Resources */,
 				A70991FE2303C1DA00AE3ACA /* NanumSquareOTFLight.otf in Resources */,
+				A70C2A392311ACDE002006A3 /* Profile.storyboard in Resources */,
 				A71EC1FA230FF45C00275EA8 /* DatePickerViewController.xib in Resources */,
 				A70C2A3223119D8C002006A3 /* Running.storyboard in Resources */,
-				A7168B7923103E4300500621 /* RunningHistoryTableViewCell.xib in Resources */,
+				A7168B7923103E4300500621 /* RunningHistoryListTableViewCell.xib in Resources */,
+				A70C2A342311A7FF002006A3 /* RunningHistory.storyboard in Resources */,
 				A742E3A222F88AE1002E333C /* Assets.xcassets in Resources */,
 				A70C2A27231189EA002006A3 /* UserView.xib in Resources */,
 				A76A70FD230E923E00B5EA81 /* RunningTableViewCell.xib in Resources */,
@@ -570,16 +592,18 @@
 			files = (
 				A7168B8E2310789A00500621 /* SearchViewController+CustomSearchBarDelegate.swift in Sources */,
 				A71EC1DE230FB91F00275EA8 /* Date+Extension.swift in Sources */,
-				A7168B7823103E4300500621 /* RunningHistoryTableViewCell.swift in Sources */,
+				A7168B7823103E4300500621 /* RunningHistoryListTableViewCell.swift in Sources */,
 				A7168B862310648300500621 /* CustomSearchBar.swift in Sources */,
 				A76A70F7230D8E9F00B5EA81 /* RegisterRunningViewController.swift in Sources */,
 				A709922B2307122F00AE3ACA /* UIViewController+Extension.swift in Sources */,
-				A7168B712310111900500621 /* RunningHistoryViewController.swift in Sources */,
+				A7168B712310111900500621 /* RunningHistoryListViewController.swift in Sources */,
 				A70C2A2F23119C7D002006A3 /* RunningViewController.swift in Sources */,
 				A7168B9323107A0C00500621 /* SearchRunningViewController.swift in Sources */,
 				A70992272307105600AE3ACA /* ModalViewController.swift in Sources */,
 				A71EC203231003E100275EA8 /* DatePickerPresentable.swift in Sources */,
+				A70C2A362311A824002006A3 /* RunningHistoryViewController.swift in Sources */,
 				A70992012303DF0F00AE3ACA /* SeoulMapView.swift in Sources */,
+				A70C2A3B2311B0F8002006A3 /* ProfileViewController.swift in Sources */,
 				A71EC1E8230FC6B000275EA8 /* UIStackView+Extension.swift in Sources */,
 				A71EC1EE230FD22C00275EA8 /* PaddingLabel.swift in Sources */,
 				A70991F02303BD3600AE3ACA /* TabBarController.swift in Sources */,

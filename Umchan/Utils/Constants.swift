@@ -49,6 +49,7 @@ class StoryboardName {
     static let createCrew = "CreateCrew"
     static let crewInfo = "CrewInfo"
     static let running = "Running"
+    static let runningHistory = "RunningHistory"
 }
 
 // MARK: - date format

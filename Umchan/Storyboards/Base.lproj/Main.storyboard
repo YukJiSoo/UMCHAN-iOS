@@ -235,10 +235,10 @@
             </objects>
             <point key="canvasLocation" x="2894.202898550725" y="292.63392857142856"/>
         </scene>
-        <!--Running History View Controller-->
+        <!--Running History List View Controller-->
         <scene sceneID="vfu-IN-Xcu">
             <objects>
-                <viewController id="CYI-j0-Uiy" customClass="RunningHistoryViewController" customModule="Umchan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="CYI-j0-Uiy" customClass="RunningHistoryListViewController" customModule="Umchan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NK4-Be-Plj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -274,16 +274,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="K0A-h6-7uv"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="history" id="1Aw-ev-Jez">
-                        <inset key="imageInsets" minX="0.0" minY="3" maxX="0.0" maxY="0.0"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="ouh-bA-2sd"/>
                     <connections>
                         <outlet property="navigationBar" destination="hrp-k0-lDz" id="lcN-ch-3cl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WOj-x5-99S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1845" y="1055"/>
+            <point key="canvasLocation" x="2893" y="1055"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="nTG-al-LVL">
@@ -298,7 +296,7 @@
                     <connections>
                         <segue destination="oSp-eQ-fc3" kind="relationship" relationship="viewControllers" id="2Aq-0B-gEn"/>
                         <segue destination="mNE-Jw-n5F" kind="relationship" relationship="viewControllers" id="09t-HD-5qg"/>
-                        <segue destination="CYI-j0-Uiy" kind="relationship" relationship="viewControllers" id="m1a-fh-Plz"/>
+                        <segue destination="EPs-qw-W7v" kind="relationship" relationship="viewControllers" id="m1a-fh-Plz"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yEv-zE-yfT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -324,6 +322,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RC8-Uj-Jes" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1844.9275362318842" y="292.63392857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dqV-z8-3l8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="EPs-qw-W7v" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="history" id="1Aw-ev-Jez">
+                        <inset key="imageInsets" minX="0.0" minY="3" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bd9-x1-Pvo">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CYI-j0-Uiy" kind="relationship" relationship="rootViewController" id="ODb-7t-rOg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zYI-11-7dc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1844.9275362318842" y="1054.6875"/>
         </scene>
     </scenes>
     <resources>

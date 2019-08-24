@@ -2,138 +2,74 @@
 //  RunningHistoryViewController.swift
 //  Umchan
 //
-//  Created by 육지수 on 8/23/19.
+//  Created by 육지수 on 8/25/19.
 //  Copyright © 2019 JSYuk. All rights reserved.
 //
 
 import UIKit
 
-class RunningHistoryViewController: UIViewController {
+class RunningHistoryViewController: UIViewController, NibLodable {
     
     // MARK: - Outlets
     @IBOutlet weak var navigationBar: CustomNavigationBar!
-    
-    // MARK: - SubViews
-    var tableView: UITableView?
+    @IBOutlet weak var leaderView: UIStackView!
+    @IBOutlet weak var oneLineLabel: UILabel!
+    @IBOutlet weak var runningDateLabel: UILabel!
+    @IBOutlet weak var membersView: UIStackView!
     
     // MARK: - Properties
-    var runningHistorys = [
-        Running(name: "test1", oneLine: "test1", runningDate: Date(), registerDate: Date()),
-        Running(name: "test1", oneLine: "test1", runningDate: Date(), registerDate: Date()),
-        Running(name: "test1", oneLine: "test1", runningDate: Date(), registerDate: Date()),
-    ]
+    var running: Running?
     
     // MARK: - Life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.setup()
+
+        self.setupSubViews()
+        self.setupNavigationBar()
+        self.setupParticipatingLeaderAndMembers()
     }
     
     // MARK: - Functions
-    func setup() {
+    func setupSubViews() {
         
-        self.setupNavigationBar()
+        self.oneLineLabel.text = self.running?.oneLine
         
-        guard !runningHistorys.isEmpty else {
-            self.setupEmptyCase()
-            return
+        if let running = running {
+            let dateFormatter = DateFormatter.basicFormatter(format: DateFormat.date, locale: DateFormat.locale)
+            self.runningDateLabel.text = dateFormatter.string(from: running.runningDate)
         }
-        
-        self.setupTableView()
     }
     
     func setupNavigationBar() {
         
-        self.navigationBar.configureButton(location: .right, type: .profile)
+        self.navigationBar.delegate = self
+        
+        if let title = self.running?.name {
+            self.navigationBar.title = title
+        }
+        self.navigationBar.configureButton(location: .left, type: .close)
     }
     
-    func setupEmptyCase() {
+    func setupParticipatingLeaderAndMembers() {
         
-        // add views
-        let emptyImageView = UIImageView(frame: .zero)
+        let captinViewNib = UserView.instanceFromNib()
+        captinViewNib.configure(user: User(name: "크루장"))
+        let firstMemberViewNib = UserView.instanceFromNib()
+        firstMemberViewNib.configure(user: User(name: "크루원1"))
+        let secondMemberViewNib = UserView.instanceFromNib()
+        secondMemberViewNib.configure(user: User(name: "크루원2"))
         
-        emptyImageView.image = UIImage(named: AssetName.empty)
-        emptyImageView.contentMode = .scaleAspectFit
-        
-        self.view.addSubview(emptyImageView)
-        
-        let emptyLabel = UILabel(frame: .zero)
-        
-        emptyLabel.font = UIFont.umchanFont(size: CGFloat(20), boldState: .extrabold)
-        emptyLabel.text = "러닝기록이 없습니다"
-        emptyLabel.textColor = Color.symbolTransparent
-        
-        self.view.addSubview(emptyLabel)
-        
-        // set Constraint
-        emptyImageView.translatesAutoresizingMaskIntoConstraints = false
-        
-        let emptyImageViewCenterXAnchor = emptyImageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
-        let emptyImageViewCenterYAnchor = emptyImageView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
-        let emptyImageViewWidthAnchor = emptyImageView.widthAnchor.constraint(equalToConstant: 200)
-        let emptyImageViewHeightAnchor = emptyImageView.heightAnchor.constraint(equalToConstant: 200)
-        
-        emptyLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        let emptyLabelTopAnchor = emptyLabel.topAnchor.constraint(equalTo: emptyImageView.bottomAnchor, constant: 30)
-        let emptyLabelCenterXAnchor = emptyLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
-        
-        NSLayoutConstraint.activate([
-            emptyImageViewCenterXAnchor,
-            emptyImageViewCenterYAnchor,
-            emptyImageViewWidthAnchor,
-            emptyImageViewHeightAnchor,
-            emptyLabelTopAnchor,
-            emptyLabelCenterXAnchor
-        ])
-    }
-    
-    func setupTableView() {
-        
-        let tableView = UITableView(frame: .zero)
-        tableView.separatorStyle = .none
-        
-        self.view.addSubview(tableView)
-        
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        
-        let topAnchor = tableView.topAnchor.constraint(equalTo: self.navigationBar.bottomAnchor)
-        let bottomAnchor = tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
-        let leadingAnchor = tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)
-        let trailingAnchor = tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
-        
-        NSLayoutConstraint.activate([ topAnchor, bottomAnchor, leadingAnchor, trailingAnchor ])
-        
-        self.tableView = tableView
-        
-        let runningHistoryCellNib = UINib(nibName: RunningHistoryTableViewCell.nibId, bundle: nil)
-        self.tableView?.register(runningHistoryCellNib, forCellReuseIdentifier: RunningHistoryTableViewCell.nibId)
-        
-        self.tableView?.delegate = self
-        self.tableView?.dataSource = self
+        self.leaderView.addArrangedSubview(captinViewNib)
+        self.membersView.addArrangedSubview(firstMemberViewNib)
+        self.membersView.addArrangedSubview(secondMemberViewNib)
     }
 
 }
 
-extension RunningHistoryViewController: UITableViewDelegate, UITableViewDataSource {
+extension RunningHistoryViewController: CustomNavigationBarDelegate {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func leftBarButtonPressed(_ sender: UIButton) {
         
-        return self.runningHistorys.count
+        self.dismiss(animated: true, completion: nil)
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: RunningHistoryTableViewCell.nibId, for: indexPath) as? RunningHistoryTableViewCell else {
-            debugPrint("err: fail to convert \(RunningHistoryTableViewCell.nibId)")
-            return UITableViewCell()
-        }
-        
-        cell.configure(running: runningHistorys[indexPath.row])
-        
-        return cell
-    }
-    
-    
 }

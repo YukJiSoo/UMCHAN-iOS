@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RunningHistoryTableViewCell: UITableViewCell, NibLodable {
+class RunningHistoryListTableViewCell: UITableViewCell, NibLodable {
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
@@ -29,6 +29,8 @@ class RunningHistoryTableViewCell: UITableViewCell, NibLodable {
     }
     
     func configure(running: Running) {
+        
+        self.selectionStyle = .none
         
         self.dateLabel.text = "\(dateFormatter.string(from: running.runningDate))"
         self.nameLabel.text = "\(running.name)"
