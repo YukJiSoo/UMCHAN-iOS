@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumSquareOTFBold.otf">
+            <string>NanumSquareOTF_acB</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Create Crew View Controller-->
+        <scene sceneID="MWB-qP-f9w">
+            <objects>
+                <viewController storyboardIdentifier="CreateCrewViewController" id="lSo-nD-3Ny" customClass="CreateCrewViewController" customModule="Umchan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4vt-7B-4eM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0CV-9s-PeR" customClass="CustomNavigationBar" customModule="Umchan" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="64"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Eoi-Vq-zN9"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="크루만들기"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="otR-vz-rlt">
+                                <rect key="frame" x="0.0" y="108" width="414" height="754"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AJQ-Vd-qJd">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="8oB-SW-hIO">
+                                                <rect key="frame" x="30" y="40" width="354" height="532"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="91J-kt-KdG">
+                                                        <rect key="frame" x="0.0" y="0.0" width="354" height="40"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shoes" translatesAutoresizingMaskIntoConstraints="NO" id="aV2-CD-fDp">
+                                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="aV2-CD-fDp" secondAttribute="height" multiplier="1:1" id="42r-Yz-uWX"/>
+                                                                    <constraint firstAttribute="width" constant="40" id="QnY-eb-kVr"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="크루이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eJX-VH-UMf">
+                                                                <rect key="frame" x="65" y="10" width="289" height="20"/>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="18"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="aV2-CD-fDp" firstAttribute="width" secondItem="aV2-CD-fDp" secondAttribute="height" multiplier="1:1" id="1gV-37-Sys"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="4In-RO-yam">
+                                                        <rect key="frame" x="0.0" y="74" width="354" height="40"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shoes" translatesAutoresizingMaskIntoConstraints="NO" id="4C9-I5-JkX">
+                                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="4C9-I5-JkX" secondAttribute="height" multiplier="1:1" id="DRL-G9-god"/>
+                                                                    <constraint firstAttribute="width" constant="40" id="sWZ-Ry-mQY"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="한줄소개" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eHo-BV-RHa">
+                                                                <rect key="frame" x="65" y="10" width="289" height="20"/>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="18"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="4C9-I5-JkX" firstAttribute="width" secondItem="4C9-I5-JkX" secondAttribute="height" multiplier="1:1" id="pcI-uF-8He"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="3hL-Lt-wox">
+                                                        <rect key="frame" x="0.0" y="148" width="354" height="40"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shoes" translatesAutoresizingMaskIntoConstraints="NO" id="gRZ-Rt-jDj">
+                                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="40" id="4xO-MG-K4c"/>
+                                                                    <constraint firstAttribute="width" secondItem="gRZ-Rt-jDj" secondAttribute="height" multiplier="1:1" id="ILP-RJ-vvk"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주 활동 장소" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yav-Nf-n3v">
+                                                                <rect key="frame" x="65" y="10" width="289" height="20"/>
+                                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="18"/>
+                                                                <color key="textColor" red="0.54836952689999996" green="0.16884723309999999" blue="0.18428939580000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="gRZ-Rt-jDj" firstAttribute="width" secondItem="gRZ-Rt-jDj" secondAttribute="height" multiplier="1:1" id="OKJ-4v-4mS"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="QKD-PX-6ty">
+                                                        <rect key="frame" x="0.0" y="222" width="354" height="40"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shoes" translatesAutoresizingMaskIntoConstraints="NO" id="Aye-d9-oBN">
+                                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="Aye-d9-oBN" secondAttribute="height" multiplier="1:1" id="6s0-uc-eyL"/>
+                                                                    <constraint firstAttribute="width" constant="40" id="IZd-x0-m5l"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="크루 사진" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hh6-0R-SfQ">
+                                                                <rect key="frame" x="65" y="10" width="289" height="20"/>
+                                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="18"/>
+                                                                <color key="textColor" red="0.54836952689999996" green="0.16884723309999999" blue="0.18428939580000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="Aye-d9-oBN" firstAttribute="width" secondItem="Aye-d9-oBN" secondAttribute="height" multiplier="1:1" id="BNC-dH-fts"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DQ7-qa-CYs">
+                                                        <rect key="frame" x="0.0" y="296" width="354" height="236"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="DQ7-qa-CYs" secondAttribute="height" multiplier="3:2" id="6dJ-Dd-6fJ"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="8oB-SW-hIO" firstAttribute="top" secondItem="AJQ-Vd-qJd" secondAttribute="top" constant="40" id="9u0-0L-926"/>
+                                            <constraint firstAttribute="trailing" secondItem="8oB-SW-hIO" secondAttribute="trailing" constant="30" id="KGm-dq-hrD"/>
+                                            <constraint firstAttribute="bottom" secondItem="8oB-SW-hIO" secondAttribute="bottom" constant="120" id="Nui-3F-HOB"/>
+                                            <constraint firstItem="8oB-SW-hIO" firstAttribute="leading" secondItem="AJQ-Vd-qJd" secondAttribute="leading" constant="30" id="maC-lX-1NO"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="AJQ-Vd-qJd" secondAttribute="bottom" id="0RK-Jq-vsU"/>
+                                    <constraint firstItem="AJQ-Vd-qJd" firstAttribute="top" secondItem="otR-vz-rlt" secondAttribute="top" id="4N2-Bd-x1S"/>
+                                    <constraint firstItem="AJQ-Vd-qJd" firstAttribute="leading" secondItem="otR-vz-rlt" secondAttribute="leading" id="EHH-gr-dQk"/>
+                                    <constraint firstAttribute="trailing" secondItem="AJQ-Vd-qJd" secondAttribute="trailing" id="IV8-Eo-YyY"/>
+                                    <constraint firstItem="AJQ-Vd-qJd" firstAttribute="width" secondItem="otR-vz-rlt" secondAttribute="width" id="maV-RY-av8"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2Q-1Z-QQD" customClass="RoundedButton" customModule="Umchan" customModuleProvider="target">
+                                <rect key="frame" x="30" y="806" width="354" height="60"/>
+                                <color key="backgroundColor" red="0.54836952689999996" green="0.16884723309999999" blue="0.18428939580000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="0N4-v5-oUH"/>
+                                    <constraint firstAttribute="height" constant="60" id="iyd-df-TZ4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="25"/>
+                                <state key="normal" title="등록">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedDegree">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="createButtonPressed:" destination="lSo-nD-3Ny" eventType="touchUpInside" id="ogF-zB-Vqe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VKA-Pd-M9N" firstAttribute="trailing" secondItem="otR-vz-rlt" secondAttribute="trailing" id="ESh-lt-2ml"/>
+                            <constraint firstItem="0CV-9s-PeR" firstAttribute="top" secondItem="VKA-Pd-M9N" secondAttribute="top" id="JiN-IW-pi7"/>
+                            <constraint firstAttribute="bottom" secondItem="K2Q-1Z-QQD" secondAttribute="bottom" constant="30" id="Mjh-mI-wVX"/>
+                            <constraint firstItem="0CV-9s-PeR" firstAttribute="leading" secondItem="VKA-Pd-M9N" secondAttribute="leading" id="ZKG-tj-QxD"/>
+                            <constraint firstItem="otR-vz-rlt" firstAttribute="leading" secondItem="VKA-Pd-M9N" secondAttribute="leading" id="dgy-Kz-0pW"/>
+                            <constraint firstItem="VKA-Pd-M9N" firstAttribute="trailing" secondItem="K2Q-1Z-QQD" secondAttribute="trailing" constant="30" id="eSe-3o-Ech"/>
+                            <constraint firstItem="VKA-Pd-M9N" firstAttribute="bottom" secondItem="otR-vz-rlt" secondAttribute="bottom" id="hf3-Vw-utY"/>
+                            <constraint firstItem="otR-vz-rlt" firstAttribute="top" secondItem="0CV-9s-PeR" secondAttribute="bottom" id="ltQ-5Z-dKt"/>
+                            <constraint firstItem="VKA-Pd-M9N" firstAttribute="trailing" secondItem="0CV-9s-PeR" secondAttribute="trailing" id="rns-pD-NJd"/>
+                            <constraint firstItem="K2Q-1Z-QQD" firstAttribute="leading" secondItem="VKA-Pd-M9N" secondAttribute="leading" constant="30" id="z8j-wU-74A"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VKA-Pd-M9N"/>
+                    </view>
+                    <size key="freeformSize" width="414" height="896"/>
+                    <connections>
+                        <outlet property="crewImageView" destination="DQ7-qa-CYs" id="i3d-m1-hcs"/>
+                        <outlet property="crewNameTextField" destination="eJX-VH-UMf" id="yHY-Bc-m1B"/>
+                        <outlet property="navigationBar" destination="0CV-9s-PeR" id="AQN-oE-3hu"/>
+                        <outlet property="oneLineTextField" destination="eHo-BV-RHa" id="rjU-Xe-k85"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mbg-wb-FvW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="32.8125"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="shoes" width="40" height="38"/>
+    </resources>
+</document>

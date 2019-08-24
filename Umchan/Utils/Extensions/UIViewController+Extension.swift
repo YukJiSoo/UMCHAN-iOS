@@ -19,6 +19,20 @@ extension UIViewController {
         return UIApplication.shared.statusBarFrame.height
     }
     
+    var imagePicker: UIImagePickerController {
+        
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .photoLibrary
+        imagePickerController.allowsEditing = true
+        
+        guard let delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate else {
+            fatalError("fail to load UIImagePickerController")
+        }
+        imagePickerController.delegate = delegate
+        
+        return imagePickerController
+    }
+    
     @objc func closeButtonPressed(_ sender: Any) {
         print("close")
         self.dismiss(animated: true, completion: nil)

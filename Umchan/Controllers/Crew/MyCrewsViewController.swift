@@ -117,5 +117,12 @@ class MyCrewsViewController: UIViewController {
     
     @objc func createButtonPressed(_ sender: UIButton) {
         
+        
+        let storyBoard = UIStoryboard(name: StoryboardName.createCrew, bundle: nil)
+        let viewController = storyBoard.viewController(CreateCrewViewController.self)
+        
+        viewController.modalPresentationStyle = .custom
+        
+        self.present(viewController, animated: true, completion: nil)
     }
 }

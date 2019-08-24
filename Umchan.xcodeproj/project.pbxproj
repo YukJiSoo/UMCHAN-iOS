@@ -30,6 +30,8 @@
 		A709922B2307122F00AE3ACA /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709922A2307122F00AE3ACA /* UIViewController+Extension.swift */; };
 		A709922D2307284400AE3ACA /* CustomNavigationBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709922C2307284400AE3ACA /* CustomNavigationBarDelegate.swift */; };
 		A70C2A192311611C002006A3 /* UmchanCreateButtom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70C2A182311611C002006A3 /* UmchanCreateButtom.swift */; };
+		A70C2A1B2311640A002006A3 /* CreateCrewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70C2A1A2311640A002006A3 /* CreateCrewViewController.swift */; };
+		A70C2A1D23116432002006A3 /* CreateCrew.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A70C2A1C23116432002006A3 /* CreateCrew.storyboard */; };
 		A7168B6A231006AA00500621 /* DateView+DatePickerPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B69231006AA00500621 /* DateView+DatePickerPresentable.swift */; };
 		A7168B6C23100C8400500621 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B6B23100C8400500621 /* DateFormatter+Extension.swift */; };
 		A7168B712310111900500621 /* RunningHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B702310111900500621 /* RunningHistoryViewController.swift */; };
@@ -97,6 +99,8 @@
 		A709922A2307122F00AE3ACA /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		A709922C2307284400AE3ACA /* CustomNavigationBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarDelegate.swift; sourceTree = "<group>"; };
 		A70C2A182311611C002006A3 /* UmchanCreateButtom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmchanCreateButtom.swift; sourceTree = "<group>"; };
+		A70C2A1A2311640A002006A3 /* CreateCrewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCrewViewController.swift; sourceTree = "<group>"; };
+		A70C2A1C23116432002006A3 /* CreateCrew.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateCrew.storyboard; sourceTree = "<group>"; };
 		A7168B69231006AA00500621 /* DateView+DatePickerPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateView+DatePickerPresentable.swift"; sourceTree = "<group>"; };
 		A7168B6B23100C8400500621 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
 		A7168B702310111900500621 /* RunningHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningHistoryViewController.swift; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 				A742E39E22F88ADF002E333C /* Main.storyboard */,
 				A742E3A322F88AE1002E333C /* LaunchScreen.storyboard */,
 				A7099216230570E600AE3ACA /* RegisterRunning.storyboard */,
+				A70C2A1C23116432002006A3 /* CreateCrew.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -345,6 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				A7168B7B2310436500500621 /* MyCrewsViewController.swift */,
+				A70C2A1A2311640A002006A3 /* CreateCrewViewController.swift */,
 			);
 			path = Crew;
 			sourceTree = "<group>";
@@ -510,6 +516,7 @@
 				A7099217230570E600AE3ACA /* RegisterRunning.storyboard in Resources */,
 				A76A7103230EA13200B5EA81 /* EmptyTableViewCell.xib in Resources */,
 				A742E3A522F88AE1002E333C /* LaunchScreen.storyboard in Resources */,
+				A70C2A1D23116432002006A3 /* CreateCrew.storyboard in Resources */,
 				A70991FF2303C1DA00AE3ACA /* NanumSquareOTFRight.otf in Resources */,
 				A70991FE2303C1DA00AE3ACA /* NanumSquareOTFLight.otf in Resources */,
 				A71EC1FA230FF45C00275EA8 /* DatePickerViewController.xib in Resources */,
@@ -573,6 +580,7 @@
 				A71EC1EA230FCAAC00275EA8 /* UIView+Extension.swift in Sources */,
 				A70992052303F85600AE3ACA /* DistrictCoordinate.swift in Sources */,
 				A7168B7C2310436500500621 /* MyCrewsViewController.swift in Sources */,
+				A70C2A1B2311640A002006A3 /* CreateCrewViewController.swift in Sources */,
 				A709920A2303FE2100AE3ACA /* DistrictInfoService.swift in Sources */,
 				A7168B8C2310775400500621 /* CustomSearchBarDelegate.swift in Sources */,
 				A7099223230576C100AE3ACA /* RunningInDistrictViewController.swift in Sources */,
