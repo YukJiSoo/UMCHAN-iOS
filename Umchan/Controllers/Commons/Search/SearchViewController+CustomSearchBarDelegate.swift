@@ -17,6 +17,7 @@ extension SearchViewController: CustomSearchBarDelegate {
     
     func searchButtonPressed(wantToSearch: String) {
         // todo
+        self.loadData()
     }
     
     

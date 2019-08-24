@@ -23,4 +23,8 @@ extension UIViewController {
         print("close")
         self.dismiss(animated: true, completion: nil)
     }
+    
+    @objc func tapForEndEditting(_ gesture: UIGestureRecognizer) {
+        self.view.endEditing(true)
+    }
 }

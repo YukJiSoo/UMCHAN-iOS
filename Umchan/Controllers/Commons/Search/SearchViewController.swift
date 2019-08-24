@@ -12,10 +12,22 @@ class SearchViewController: UIViewController {
 
     // MARK: - SubViews
     var searchBar = CustomSearchBar(frame: .zero)
+    var activityIndicator = UIActivityIndicatorView(frame: .zero)
     
     // MARK: - Properties
     var searchType: CustomSearchBar.SearchType {
         return .none
+    }
+    
+    var isLoading: Bool = false {
+        didSet {
+            if isLoading {
+                self.activityIndicator.startAnimating()
+            } else {
+                self.activityIndicator.stopAnimating()
+                self.view.endEditing(true)
+            }
+        }
     }
     
     // MARK: - Life cycles
@@ -23,7 +35,9 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = .white
+        
         self.setupSearchBar()
+        self.setGestureRecognoizer()
     }
     
     // MARK: - Functions
@@ -40,5 +54,29 @@ class SearchViewController: UIViewController {
         
     }
     
+    func setGestureRecognoizer() {
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapForEndEditting(_:)))
+        self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    func setupActivityIndicator() {
+        
+        self.activityIndicator.style = .whiteLarge
+        self.activityIndicator.color = Color.symbol
+        self.activityIndicator.hidesWhenStopped = true
+        
+        self.view.addSubview(self.activityIndicator)
+        
+        self.activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        
+        let centerXAnchor = self.activityIndicator.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+        let centerYAnchor = self.activityIndicator.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
+        
+        NSLayoutConstraint.activate([ centerXAnchor, centerYAnchor ])
+    }
+    
+    func loadData() {
+    }
     
 }

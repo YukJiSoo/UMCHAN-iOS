@@ -37,8 +37,8 @@ class RunningInDistrictViewController: ModalViewController {
         self.tableView.dataSource = self
         
         self.tableView.separatorStyle = .none
-        self.tableView.rowHeight = UITableView.automaticDimension;
-        self.tableView.estimatedRowHeight = 200;
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.estimatedRowHeight = 200
         
         self.tableView.translatesAutoresizingMaskIntoConstraints = false
         
