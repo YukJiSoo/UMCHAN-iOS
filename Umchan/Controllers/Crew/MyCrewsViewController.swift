@@ -15,6 +15,7 @@ class MyCrewsViewController: UIViewController {
     
     // MARK: - SubViews
     var crewListView: ScrollableStackView?
+    let createCrewButton = UmchanCreateButtom(frame: .zero)
     
     // MARK: - Properties
     var crews = [
@@ -22,6 +23,7 @@ class MyCrewsViewController: UIViewController {
         Crew(name: "test1", numberOfPeople: 1, image: "test1"),
         Crew(name: "test1", numberOfPeople: 1, image: "test1")
     ]
+//    var crews = [Crew]()
     
     // MARK: - Life cycles
     override func viewDidLoad() {
@@ -34,6 +36,9 @@ class MyCrewsViewController: UIViewController {
     func setup() {
         
         self.setupNavigationBar()
+        
+        createCrewButton.setup(title: "크루만들기")
+        createCrewButton.addTarget(self, action: #selector(createButtonPressed(_:)), for: .touchUpInside)
         
         guard !crews.isEmpty else {
             self.setupEmptyCase()
@@ -62,14 +67,6 @@ class MyCrewsViewController: UIViewController {
         emptyLabel.text = "참여중인 크루가 없습니다"
         emptyLabel.textColor = Color.symbolTransparent
         
-        let createCrewButton = UIButton(frame: .zero)
-        
-        createCrewButton.setImage(UIImage(named: AssetName.shoes), for: .normal)
-        createCrewButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 40)
-        createCrewButton.setTitle("크루만들기", for: .normal)
-        createCrewButton.titleLabel?.font = UIFont.umchanFont(size: CGFloat(20), boldState: .extrabold)
-        createCrewButton.setTitleColor(Color.symbol, for: .normal)
-        
         let stackView = UIStackView(arrangedSubviews: [ emptyImageView, emptyLabel, createCrewButton ])
         stackView.configure(axis: .vertical, distribution: .fill, alignment: .fill, spacing: 30)
         self.view.addSubview(stackView)
@@ -94,7 +91,7 @@ class MyCrewsViewController: UIViewController {
     func setupCrewListView() {
         
         let crewListView = ScrollableStackView(frame: .zero)
-        
+
         var crewViews = [CrewView]()
         for crew in crews {
             let crewView = CrewView(frame: .zero)
@@ -104,6 +101,8 @@ class MyCrewsViewController: UIViewController {
         }
         
         crewListView.configureSubViews(subViews: crewViews)
+        crewListView.configureSubViews(subViews: [createCrewButton])
+        
         self.view.addSubview(crewListView)
         
         crewListView.translatesAutoresizingMaskIntoConstraints = false
@@ -116,4 +115,7 @@ class MyCrewsViewController: UIViewController {
         NSLayoutConstraint.activate([ topAnchor, bottomAnchor, leadingAnchor, trailingAnchor ])
     }
     
+    @objc func createButtonPressed(_ sender: UIButton) {
+        
+    }
 }

@@ -32,7 +32,7 @@ class ScrollableStackView: UIScrollView {
         self.contentView.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         self.contentView.isLayoutMarginsRelativeArrangement = true
         
-        self.contentView.configure(axis: .vertical, distribution: .fillEqually, alignment: .fill, spacing: CGFloat(20))
+        self.contentView.configure(axis: .vertical, distribution: .fill, alignment: .fill, spacing: CGFloat(20))
         
         self.addSubview(self.contentView)
         
