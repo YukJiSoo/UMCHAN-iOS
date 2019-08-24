@@ -115,11 +115,12 @@ class CustomNavigationBar: UIView {
         switch type {
         case .back:
             button = UIButton()
+            button.setImage(UIImage(named: AssetName.back), for: .normal)
         case .close:
             button = CloseButton()
         case .profile:
             button = UIButton()
-            button.setImage(UIImage(named: "user"), for: .normal)
+            button.setImage(UIImage(named: AssetName.user), for: .normal)
         }
         
         self.addSubview(button)
@@ -147,7 +148,6 @@ class CustomNavigationBar: UIView {
     }
     
     @objc func leftBarButtonPressed(_ sender: UIButton) {
-        print("1")
         self.delegate?.leftBarButtonPressed?(sender)
     }
     

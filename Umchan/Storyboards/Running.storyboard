@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumSquareOTFBold.otf">
+            <string>NanumSquareOTF_acB</string>
+        </array>
+        <array key="NanumSquareOTFRight.otf">
+            <string>NanumSquareOTF_acR</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Running View Controller-->
+        <scene sceneID="RTe-OS-T04">
+            <objects>
+                <viewController storyboardIdentifier="RunningViewController" id="19l-bu-QEI" customClass="RunningViewController" customModule="Umchan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aSb-6o-6QF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yQr-DS-QEc" customClass="CustomNavigationBar" customModule="Umchan" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="64"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="CY4-Wv-Kog"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="러닝이름"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yPH-tj-8zX">
+                                <rect key="frame" x="0.0" y="108" width="414" height="754"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a6g-WK-ZrE" userLabel="ContentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="592"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="lYv-pP-tOq">
+                                                <rect key="frame" x="30" y="30" width="354" height="412"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="vkw-Pd-d1O">
+                                                        <rect key="frame" x="0.0" y="0.0" width="354" height="22.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="리더" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxH-AU-vBu">
+                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="22.5"/>
+                                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="20"/>
+                                                                <color key="textColor" red="0.58039215690000001" green="0.066666666669999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="2My-35-2ZD">
+                                                        <rect key="frame" x="0.0" y="57.5" width="354" height="56.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="소개말" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JnT-W2-PlP">
+                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="22.5"/>
+                                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="20"/>
+                                                                <color key="textColor" red="0.58039215690000001" green="0.066666666669999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MbS-lY-Sjv">
+                                                                <rect key="frame" x="0.0" y="37.5" width="354" height="19"/>
+                                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acR" family="NanumSquareOTF_ac" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="8b6-LJ-Oaq">
+                                                        <rect key="frame" x="0.0" y="149" width="354" height="56.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신청기간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apl-h4-3LS">
+                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="22.5"/>
+                                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="20"/>
+                                                                <color key="textColor" red="0.58039215690000001" green="0.066666666669999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H4P-ZZ-HsL">
+                                                                <rect key="frame" x="0.0" y="37.5" width="354" height="19"/>
+                                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acR" family="NanumSquareOTF_ac" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="oIS-po-1Pu">
+                                                        <rect key="frame" x="0.0" y="240.5" width="354" height="56.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="달리는 날" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYN-wM-8vo">
+                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="22.5"/>
+                                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="20"/>
+                                                                <color key="textColor" red="0.58039215690000001" green="0.066666666669999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHN-vh-ZAL">
+                                                                <rect key="frame" x="0.0" y="37.5" width="354" height="19"/>
+                                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acR" family="NanumSquareOTF_ac" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zVm-Nj-Mzj">
+                                                        <rect key="frame" x="0.0" y="332" width="354" height="22.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="참여자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odG-EW-Od0">
+                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="22.5"/>
+                                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="20"/>
+                                                                <color key="textColor" red="0.58039215690000001" green="0.066666666669999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rhH-es-fuM">
+                                                        <rect key="frame" x="0.0" y="389.5" width="354" height="22.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="코스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqp-dk-fy6">
+                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="22.5"/>
+                                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="20"/>
+                                                                <color key="textColor" red="0.58039215690000001" green="0.066666666669999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="lYv-pP-tOq" secondAttribute="trailing" constant="30" id="AoH-Eq-v5Q"/>
+                                            <constraint firstItem="lYv-pP-tOq" firstAttribute="leading" secondItem="a6g-WK-ZrE" secondAttribute="leading" constant="30" id="F6v-a3-9oE"/>
+                                            <constraint firstAttribute="bottom" secondItem="lYv-pP-tOq" secondAttribute="bottom" constant="150" id="rWu-46-xFP"/>
+                                            <constraint firstItem="lYv-pP-tOq" firstAttribute="top" secondItem="a6g-WK-ZrE" secondAttribute="top" constant="30" id="ybq-g7-7jQ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="a6g-WK-ZrE" firstAttribute="leading" secondItem="yPH-tj-8zX" secondAttribute="leading" id="0xu-bL-Pvo"/>
+                                    <constraint firstAttribute="bottom" secondItem="a6g-WK-ZrE" secondAttribute="bottom" id="EyP-gP-Lty"/>
+                                    <constraint firstItem="a6g-WK-ZrE" firstAttribute="width" secondItem="yPH-tj-8zX" secondAttribute="width" id="Fao-6H-SWS"/>
+                                    <constraint firstAttribute="trailing" secondItem="a6g-WK-ZrE" secondAttribute="trailing" id="nch-qQ-Pp0"/>
+                                    <constraint firstItem="a6g-WK-ZrE" firstAttribute="top" secondItem="yPH-tj-8zX" secondAttribute="top" id="wil-IT-7bI"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOI-tl-9Lh" customClass="RoundedButton" customModule="Umchan" customModuleProvider="target">
+                                <rect key="frame" x="30" y="772" width="354" height="60"/>
+                                <color key="backgroundColor" red="0.54836952689999996" green="0.16884723309999999" blue="0.18428939580000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="aIW-9p-hvf"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="zdG-Ak-mZO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="25"/>
+                                <state key="normal" title="참가신청">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedDegree">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="requestButtonPressed:" destination="19l-bu-QEI" eventType="touchUpInside" id="BoW-Q9-PxA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yQr-DS-QEc" firstAttribute="leading" secondItem="ecd-7d-aPm" secondAttribute="leading" id="25W-eo-kMl"/>
+                            <constraint firstItem="yQr-DS-QEc" firstAttribute="top" secondItem="ecd-7d-aPm" secondAttribute="top" id="5G0-vW-xiS"/>
+                            <constraint firstItem="ecd-7d-aPm" firstAttribute="trailing" secondItem="yPH-tj-8zX" secondAttribute="trailing" id="5a2-cR-T6h"/>
+                            <constraint firstItem="ecd-7d-aPm" firstAttribute="bottom" secondItem="yPH-tj-8zX" secondAttribute="bottom" id="8Bj-2V-nRo"/>
+                            <constraint firstItem="yPH-tj-8zX" firstAttribute="top" secondItem="yQr-DS-QEc" secondAttribute="bottom" id="Cgr-jF-EUg"/>
+                            <constraint firstItem="ecd-7d-aPm" firstAttribute="bottom" secondItem="aOI-tl-9Lh" secondAttribute="bottom" constant="30" id="QVx-xO-LNe"/>
+                            <constraint firstItem="ecd-7d-aPm" firstAttribute="trailing" secondItem="yQr-DS-QEc" secondAttribute="trailing" id="ZXY-qq-tIi"/>
+                            <constraint firstItem="yPH-tj-8zX" firstAttribute="leading" secondItem="ecd-7d-aPm" secondAttribute="leading" id="pfB-iG-pFE"/>
+                            <constraint firstItem="aOI-tl-9Lh" firstAttribute="leading" secondItem="ecd-7d-aPm" secondAttribute="leading" constant="30" id="sN5-KD-5XZ"/>
+                            <constraint firstItem="ecd-7d-aPm" firstAttribute="trailing" secondItem="aOI-tl-9Lh" secondAttribute="trailing" constant="30" id="zvW-yJ-GEB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ecd-7d-aPm"/>
+                    </view>
+                    <connections>
+                        <outlet property="leaderView" destination="vkw-Pd-d1O" id="Obh-9P-mAH"/>
+                        <outlet property="membersView" destination="zVm-Nj-Mzj" id="TDj-Dg-8Lj"/>
+                        <outlet property="navigationBar" destination="yQr-DS-QEc" id="5vp-Mx-D8o"/>
+                        <outlet property="oneLineLabel" destination="MbS-lY-Sjv" id="0oY-g8-hFs"/>
+                        <outlet property="registerDateLabel" destination="H4P-ZZ-HsL" id="9gc-YC-bmb"/>
+                        <outlet property="runningDateLabel" destination="aHN-vh-ZAL" id="iCV-td-HKe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ffQ-hS-WvA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="115.94202898550725" y="118.52678571428571"/>
+        </scene>
+    </scenes>
+</document>

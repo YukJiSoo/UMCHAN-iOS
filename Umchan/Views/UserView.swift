@@ -8,6 +8,7 @@
 
 import UIKit
 
+@IBDesignable
 class UserView: UIView, NibLodable {
     
     @IBOutlet weak var nameLabel: UILabel!

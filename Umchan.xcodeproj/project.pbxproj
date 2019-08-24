@@ -34,10 +34,11 @@
 		A70C2A1D23116432002006A3 /* CreateCrew.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A70C2A1C23116432002006A3 /* CreateCrew.storyboard */; };
 		A70C2A1F231171CE002006A3 /* CrewInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70C2A1E231171CE002006A3 /* CrewInfoViewController.swift */; };
 		A70C2A21231174A9002006A3 /* CrewInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A70C2A20231174A9002006A3 /* CrewInfo.storyboard */; };
-		A70C2A23231182BE002006A3 /* UIGestureRecognizer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70C2A22231182BE002006A3 /* UIGestureRecognizer+Extension.swift */; };
 		A70C2A25231189E0002006A3 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70C2A24231189E0002006A3 /* UserView.swift */; };
 		A70C2A27231189EA002006A3 /* UserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A70C2A26231189EA002006A3 /* UserView.xib */; };
 		A70C2A2923119050002006A3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70C2A2823119050002006A3 /* User.swift */; };
+		A70C2A2F23119C7D002006A3 /* RunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70C2A2D23119C7D002006A3 /* RunningViewController.swift */; };
+		A70C2A3223119D8C002006A3 /* Running.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A70C2A3123119D8C002006A3 /* Running.storyboard */; };
 		A7168B6A231006AA00500621 /* DateView+DatePickerPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B69231006AA00500621 /* DateView+DatePickerPresentable.swift */; };
 		A7168B6C23100C8400500621 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B6B23100C8400500621 /* DateFormatter+Extension.swift */; };
 		A7168B712310111900500621 /* RunningHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B702310111900500621 /* RunningHistoryViewController.swift */; };
@@ -109,10 +110,11 @@
 		A70C2A1C23116432002006A3 /* CreateCrew.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateCrew.storyboard; sourceTree = "<group>"; };
 		A70C2A1E231171CE002006A3 /* CrewInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewInfoViewController.swift; sourceTree = "<group>"; };
 		A70C2A20231174A9002006A3 /* CrewInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CrewInfo.storyboard; sourceTree = "<group>"; };
-		A70C2A22231182BE002006A3 /* UIGestureRecognizer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIGestureRecognizer+Extension.swift"; sourceTree = "<group>"; };
 		A70C2A24231189E0002006A3 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		A70C2A26231189EA002006A3 /* UserView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserView.xib; sourceTree = "<group>"; };
 		A70C2A2823119050002006A3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A70C2A2D23119C7D002006A3 /* RunningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningViewController.swift; sourceTree = "<group>"; };
+		A70C2A3123119D8C002006A3 /* Running.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Running.storyboard; sourceTree = "<group>"; };
 		A7168B69231006AA00500621 /* DateView+DatePickerPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateView+DatePickerPresentable.swift"; sourceTree = "<group>"; };
 		A7168B6B23100C8400500621 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
 		A7168B702310111900500621 /* RunningHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningHistoryViewController.swift; sourceTree = "<group>"; };
@@ -183,8 +185,9 @@
 		A70991EE2303BD1200AE3ACA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A7168B8F231079E000500621 /* Search */,
 				A7168B7A2310434800500621 /* Crew */,
+				A70C2A2A23119C49002006A3 /* Running */,
+				A7168B8F231079E000500621 /* Search */,
 				A7168B6F231010FF00500621 /* RunningHistory */,
 				A76A70F8230E91EA00B5EA81 /* RegisterRunning */,
 				A70992252306ECF500AE3ACA /* Commons */,
@@ -202,6 +205,7 @@
 				A742E3A322F88AE1002E333C /* LaunchScreen.storyboard */,
 				A7099216230570E600AE3ACA /* RegisterRunning.storyboard */,
 				A70C2A1C23116432002006A3 /* CreateCrew.storyboard */,
+				A70C2A3123119D8C002006A3 /* Running.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -291,7 +295,6 @@
 				A71EC1EB230FCBCA00275EA8 /* UIFont+Extension.swift */,
 				A7168B6B23100C8400500621 /* DateFormatter+Extension.swift */,
 				A7168B89231069E200500621 /* CALayer+Extension.swift */,
-				A70C2A22231182BE002006A3 /* UIGestureRecognizer+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -335,6 +338,14 @@
 				A70991EF2303BD3600AE3ACA /* TabBarController.swift */,
 			);
 			path = Commons;
+			sourceTree = "<group>";
+		};
+		A70C2A2A23119C49002006A3 /* Running */ = {
+			isa = PBXGroup;
+			children = (
+				A70C2A2D23119C7D002006A3 /* RunningViewController.swift */,
+			);
+			path = Running;
 			sourceTree = "<group>";
 		};
 		A7168B6D2310108100500621 /* Modal */ = {
@@ -538,6 +549,7 @@
 				A70991FF2303C1DA00AE3ACA /* NanumSquareOTFRight.otf in Resources */,
 				A70991FE2303C1DA00AE3ACA /* NanumSquareOTFLight.otf in Resources */,
 				A71EC1FA230FF45C00275EA8 /* DatePickerViewController.xib in Resources */,
+				A70C2A3223119D8C002006A3 /* Running.storyboard in Resources */,
 				A7168B7923103E4300500621 /* RunningHistoryTableViewCell.xib in Resources */,
 				A742E3A222F88AE1002E333C /* Assets.xcassets in Resources */,
 				A70C2A27231189EA002006A3 /* UserView.xib in Resources */,
@@ -557,13 +569,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7168B8E2310789A00500621 /* SearchViewController+CustomSearchBarDelegate.swift in Sources */,
-				A70C2A23231182BE002006A3 /* UIGestureRecognizer+Extension.swift in Sources */,
 				A71EC1DE230FB91F00275EA8 /* Date+Extension.swift in Sources */,
 				A7168B7823103E4300500621 /* RunningHistoryTableViewCell.swift in Sources */,
 				A7168B862310648300500621 /* CustomSearchBar.swift in Sources */,
 				A76A70F7230D8E9F00B5EA81 /* RegisterRunningViewController.swift in Sources */,
 				A709922B2307122F00AE3ACA /* UIViewController+Extension.swift in Sources */,
 				A7168B712310111900500621 /* RunningHistoryViewController.swift in Sources */,
+				A70C2A2F23119C7D002006A3 /* RunningViewController.swift in Sources */,
 				A7168B9323107A0C00500621 /* SearchRunningViewController.swift in Sources */,
 				A70992272307105600AE3ACA /* ModalViewController.swift in Sources */,
 				A71EC203231003E100275EA8 /* DatePickerPresentable.swift in Sources */,

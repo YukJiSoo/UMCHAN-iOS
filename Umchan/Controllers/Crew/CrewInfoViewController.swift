@@ -25,13 +25,13 @@ class CrewInfoViewController: UIViewController, NibLodable {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setupData()
+        self.setupSubViews()
         self.setupNavigationBar()
         self.setupCaptinAndMembers()
     }
     
     // MARK: - Functions
-    func setupData() {
+    func setupSubViews() {
         
         self.nameLabel.text = crew?.name
         self.oneLineLabel.text = crew?.oneLine

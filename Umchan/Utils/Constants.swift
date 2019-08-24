@@ -48,6 +48,7 @@ class StoryboardName {
     static let registerRunning = "RegisterRunning"
     static let createCrew = "CreateCrew"
     static let crewInfo = "CrewInfo"
+    static let running = "Running"
 }
 
 // MARK: - date format
@@ -70,6 +71,7 @@ class AssetName {
     private init() {
     }
     
+    static let user = "user"
     static let empty = "empty"
     static let shoes = "shoes"
     static let back = "back"

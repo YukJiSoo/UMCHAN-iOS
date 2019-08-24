@@ -64,34 +64,47 @@ class RunningInDistrictViewController: ModalViewController {
     
 }
 
-extension RunningInDistrictViewController: UITableViewDataSource, UITableViewDelegate {
-    
+extension RunningInDistrictViewController: UITableViewDataSource {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+
         return self.runnings.count == 0 ? 1 : self.runnings.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+
         if self.runnings.count == 0 {
             guard let emptyNoticeCell = tableView.dequeueReusableCell(withIdentifier: EmptyTableViewCell.nibId, for: indexPath) as? EmptyTableViewCell else {
                 return UITableViewCell()
             }
-            
+
             emptyNoticeCell.configure(stateText: Statement.hsaNoRunning, state: .running)
             return emptyNoticeCell
         }
-        
+
         guard let runningCell = tableView.dequeueReusableCell(withIdentifier: RunningTableViewCell.nibId, for: indexPath) as? RunningTableViewCell else {
             return UITableViewCell()
         }
-        
+
         runningCell.configure(running: self.runnings[indexPath.row])
         return runningCell
     }
+
+}
+
+extension RunningInDistrictViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("1")
+        let storyboard = UIStoryboard(name: StoryboardName.running, bundle: nil)
+        let viewController = storyboard.viewController(RunningViewController.self)
+        viewController.running = self.runnings[indexPath.row]
+        
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

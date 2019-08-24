@@ -12,9 +12,12 @@ import UIKit
 extension MainViewController: DistrictViewDelegate {
     
     func districtView(selectedDistrict name: String) {
+        
         let viewController = ModalViewController.viewController(RunningInDistrictViewController.self, titleName: name)
-
-        self.present(viewController, animated: true, completion: nil)
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.isNavigationBarHidden = true
+        
+        self.present(navigationController, animated: true, completion: nil)
     }
     
 }
