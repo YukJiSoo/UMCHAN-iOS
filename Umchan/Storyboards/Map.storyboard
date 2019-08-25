@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumSquareOTFBold.otf">
+            <string>NanumSquareOTF_acB</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="dx7-kI-eFp">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="g9w-X6-7Ho" customClass="MapViewController" customModule="Umchan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C9R-xD-Tle">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ncl-mI-gMp" customClass="CustomNavigationBar" customModule="Umchan" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="YmK-qe-6le"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxj-Ky-h5g">
+                                <rect key="frame" x="0.0" y="802" width="414" height="60"/>
+                                <color key="backgroundColor" red="0.54836952689999996" green="0.16884723309999999" blue="0.18428939580000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="uku-M8-G96"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="22"/>
+                                <state key="normal" title="코스 설정">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="setCourseButtonPressed:" destination="g9w-X6-7Ho" eventType="touchUpInside" id="olg-F2-AR6"/>
+                                </connections>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="F0x-2w-QqW">
+                                <rect key="frame" x="0.0" y="89" width="414" height="713"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ncl-mI-gMp" firstAttribute="top" secondItem="6GW-GP-Bzm" secondAttribute="top" id="5jt-Pb-u0x"/>
+                            <constraint firstItem="cxj-Ky-h5g" firstAttribute="top" secondItem="F0x-2w-QqW" secondAttribute="bottom" id="6MI-ho-4PJ"/>
+                            <constraint firstItem="6GW-GP-Bzm" firstAttribute="trailing" secondItem="cxj-Ky-h5g" secondAttribute="trailing" id="Gj9-97-W0l"/>
+                            <constraint firstItem="6GW-GP-Bzm" firstAttribute="trailing" secondItem="F0x-2w-QqW" secondAttribute="trailing" id="Lif-cy-1I5"/>
+                            <constraint firstItem="6GW-GP-Bzm" firstAttribute="bottom" secondItem="cxj-Ky-h5g" secondAttribute="bottom" id="bEM-8k-vL1"/>
+                            <constraint firstItem="Ncl-mI-gMp" firstAttribute="leading" secondItem="6GW-GP-Bzm" secondAttribute="leading" id="c4r-Oh-9ha"/>
+                            <constraint firstItem="F0x-2w-QqW" firstAttribute="leading" secondItem="6GW-GP-Bzm" secondAttribute="leading" id="qns-Zy-Che"/>
+                            <constraint firstItem="cxj-Ky-h5g" firstAttribute="leading" secondItem="6GW-GP-Bzm" secondAttribute="leading" id="sW1-fj-4gm"/>
+                            <constraint firstItem="6GW-GP-Bzm" firstAttribute="trailing" secondItem="Ncl-mI-gMp" secondAttribute="trailing" id="tJ8-gs-zix"/>
+                            <constraint firstItem="F0x-2w-QqW" firstAttribute="top" secondItem="Ncl-mI-gMp" secondAttribute="bottom" id="ue2-e4-lDa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6GW-GP-Bzm"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="F0x-2w-QqW" id="JJ2-Xs-GLj"/>
+                        <outlet property="navigationBar" destination="Ncl-mI-gMp" id="QWb-Sa-uaX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DXd-cZ-vu9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-143" y="-52"/>
+        </scene>
+    </scenes>
+</document>

@@ -34,7 +34,7 @@ class CustomNavigationBar: UIView {
     @IBInspectable var barItemSize: CGFloat = 30
     @IBInspectable var padding: CGFloat = 15
     @IBInspectable var bottomLineHeight: CGFloat = 1
-    @IBInspectable var title: String = "Title" {
+    @IBInspectable var title: String = "" {
         didSet {
             self.titleLabel.text = self.title
         }

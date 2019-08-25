@@ -77,6 +77,8 @@
 		A71EC201230FF8CC00275EA8 /* RegisterRunningViewController+DateViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC200230FF8CC00275EA8 /* RegisterRunningViewController+DateViewDelegate.swift */; };
 		A71EC203231003E100275EA8 /* DatePickerPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC202231003E100275EA8 /* DatePickerPresentable.swift */; };
 		A72F015D2311CEAA0044A285 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72F015C2311CEAA0044A285 /* SignUpViewController.swift */; };
+		A72F016023127C5A0044A285 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72F015F23127C5A0044A285 /* MapViewController.swift */; };
+		A72F016223127F3C0044A285 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A72F016123127F3C0044A285 /* Map.storyboard */; };
 		A742E39B22F88ADF002E333C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742E39A22F88ADF002E333C /* AppDelegate.swift */; };
 		A742E3A022F88ADF002E333C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A742E39E22F88ADF002E333C /* Main.storyboard */; };
 		A742E3A222F88AE1002E333C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A742E3A122F88AE1002E333C /* Assets.xcassets */; };
@@ -161,6 +163,8 @@
 		A71EC200230FF8CC00275EA8 /* RegisterRunningViewController+DateViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegisterRunningViewController+DateViewDelegate.swift"; sourceTree = "<group>"; };
 		A71EC202231003E100275EA8 /* DatePickerPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerPresentable.swift; sourceTree = "<group>"; };
 		A72F015C2311CEAA0044A285 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		A72F015F23127C5A0044A285 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A72F016123127F3C0044A285 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		A742E39722F88ADF002E333C /* Umchan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Umchan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A742E39A22F88ADF002E333C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A742E39F22F88ADF002E333C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -201,6 +205,7 @@
 		A70991EE2303BD1200AE3ACA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A72F015E23127C4D0044A285 /* Map */,
 				A70C2A3E2311BDBB002006A3 /* Login+SignUp */,
 				A70C2A372311AB53002006A3 /* Profile */,
 				A7168B7A2310434800500621 /* Crew */,
@@ -227,6 +232,7 @@
 				A70C2A332311A7FF002006A3 /* RunningHistory.storyboard */,
 				A70C2A382311ACDE002006A3 /* Profile.storyboard */,
 				A70C2A3F2311C036002006A3 /* LoginAndSignup.storyboard */,
+				A72F016123127F3C0044A285 /* Map.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -461,6 +467,14 @@
 			path = DateView;
 			sourceTree = "<group>";
 		};
+		A72F015E23127C4D0044A285 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				A72F015F23127C5A0044A285 /* MapViewController.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		A742E38E22F88ADF002E333C = {
 			isa = PBXGroup;
 			children = (
@@ -589,6 +603,7 @@
 				A70991FF2303C1DA00AE3ACA /* NanumSquareOTFRight.otf in Resources */,
 				A70C2A402311C036002006A3 /* LoginAndSignup.storyboard in Resources */,
 				A70991FE2303C1DA00AE3ACA /* NanumSquareOTFLight.otf in Resources */,
+				A72F016223127F3C0044A285 /* Map.storyboard in Resources */,
 				A70C2A392311ACDE002006A3 /* Profile.storyboard in Resources */,
 				A71EC1FA230FF45C00275EA8 /* DatePickerViewController.xib in Resources */,
 				A70C2A3223119D8C002006A3 /* Running.storyboard in Resources */,
@@ -624,6 +639,7 @@
 				A71EC203231003E100275EA8 /* DatePickerPresentable.swift in Sources */,
 				A70C2A362311A824002006A3 /* RunningHistoryViewController.swift in Sources */,
 				A70C2A3D2311B363002006A3 /* ModifyProfileViewController.swift in Sources */,
+				A72F016023127C5A0044A285 /* MapViewController.swift in Sources */,
 				A70992012303DF0F00AE3ACA /* SeoulMapView.swift in Sources */,
 				A70C2A3B2311B0F8002006A3 /* ProfileViewController.swift in Sources */,
 				A71EC1E8230FC6B000275EA8 /* UIStackView+Extension.swift in Sources */,

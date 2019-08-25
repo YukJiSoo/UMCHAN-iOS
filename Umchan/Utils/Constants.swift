@@ -57,6 +57,7 @@ class StoryboardName {
     static let runningHistory = "RunningHistory"
     static let profile = "Profile"
     static let loginAndSignUp = "LoginAndSignup"
+    static let map = "Map"
 }
 
 // MARK: - date format

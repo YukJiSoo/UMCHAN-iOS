@@ -16,6 +16,7 @@ class RegisterRunningViewController: UIViewController, NibLodable {
     @IBOutlet weak var oneLineLabel: UITextField!
     @IBOutlet weak var registerLimitDateView: DateView!
     @IBOutlet weak var runningDateView: DateView!
+    @IBOutlet weak var mapView: UIImageView!
     
     // MARK: - Properties
     
@@ -23,15 +24,25 @@ class RegisterRunningViewController: UIViewController, NibLodable {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.addGestureForEndEditting()
         self.setupNavigationBar()
+        self.setupGesture()
         self.setupDateView()
     }
     
+    // MARK: - Functions
     func setupNavigationBar() {
         
         self.navigationBar.delegate = self
         self.navigationBar.configureButton(location: .left, type: .close)
+    }
+    
+    func setupGesture() {
+        
+        self.addGestureForEndEditting()
+        
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapForSetRunningCourse(_:)))
+        self.mapView.addGestureRecognizer(tapGesture)
     }
     
     func setupDateView() {
@@ -43,6 +54,14 @@ class RegisterRunningViewController: UIViewController, NibLodable {
         self.runningDateView.dateLabelPlaceholder = "달리는 날 설정"
     }
     
+    @objc func tapForSetRunningCourse(_ gesture: UIGestureRecognizer) {
+        
+        let storyboard = UIStoryboard(name: StoryboardName.map, bundle: nil)
+        let viewController = storyboard.viewController(MapViewController.self)
+        viewController.modalPresentationStyle = .custom
+        
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
     
     @IBAction func unwindToRegisterRunningViewController(segue: UIStoryboardSegue) {
         

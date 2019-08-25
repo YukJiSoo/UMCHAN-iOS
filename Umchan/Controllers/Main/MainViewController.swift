@@ -27,7 +27,7 @@ class MainViewController: UIViewController {
         Crew(name: "test5", oneLine: "test0", creationDate: "test0", numberOfPeople: 9, image: "test0")
     ]
     
-    var isLoggedIn: Bool = false
+    var isLoggedIn: Bool = true
     
     // MARK: - Life cycles
     override func viewDidLoad() {
@@ -100,9 +100,10 @@ class MainViewController: UIViewController {
         
         let storyBoard = UIStoryboard(name: StoryboardName.registerRunning, bundle: nil)
         let viewController = storyBoard.viewController(RegisterRunningViewController.self)
-        viewController.modalPresentationStyle = .custom
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.isNavigationBarHidden = true
         
-        self.present(viewController, animated: true, completion: nil)
+        self.present(navigationController, animated: true, completion: nil)
     }
     
     @IBAction func searchCrewByName(_ sender: Any) {
