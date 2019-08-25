@@ -48,12 +48,12 @@ class SignUpViewController: UIViewController {
         self.activityIndicator.startAnimating()
         
         // todo: - refactoring createCheckAlertViewController(title:message:) add completionHandler
-//        let alertController = self.createCheckAlertViewController(title: "회원가입", message: "회원가입이 완료되었습니다")
+        let alertController = self.createBasicAlertViewController(title: "회원가입", message: "회원가입이 완료되었습니다")  {
+            self.performSegue(withIdentifier: Segue.unwindToLoginViewController, sender: nil)
+        }
         
         self.activityIndicator.stopAnimating()
-//        self.present(alertController, animated: true, completion: nil)
-        
-        self.performSegue(withIdentifier: Segue.unwindToLoginViewController, sender: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
     

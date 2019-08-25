@@ -40,7 +40,10 @@ class CreateCrewViewController: UIViewController, NibLodable {
     // MARK: - Actions
     @IBAction func createButtonPressed(_ sender: UIButton) {
         
-        let alertController = self.createCheckAlertViewController(title: "크루생성", message: "크루가 생성되었습니다.")
+        let alertController = self.createBasicAlertViewController(title: "크루생성", message: "크루가 생성되었습니다.")  {
+            self.dismiss(animated: true, completion: nil)
+        }
+        
         self.present(alertController, animated: true, completion: nil)
     }
     

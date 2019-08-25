@@ -40,7 +40,10 @@ class ModifyProfileViewController: UIViewController, NibLodable {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
-        let alertController = self.createCheckAlertViewController(title: "프로필 수정", message: "프로필이 수정되었습니다.")
+        let alertController = self.createBasicAlertViewController(title: "프로필 수정", message: "프로필이 수정되었습니다.")  {
+            self.dismiss(animated: true, completion: nil)
+        }
+        
         self.present(alertController, animated: true, completion: nil)
         
     }

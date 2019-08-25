@@ -39,11 +39,14 @@ extension UIViewController {
         self.view.addGestureRecognizer(tapGesture)
     }
     
-    func createCheckAlertViewController(title: String, message: String) -> UIAlertController {
+    func createBasicAlertViewController(title: String, message: String, completion: @escaping () -> ()) -> UIAlertController {
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+//        let okAction = UIAlertAction(title: "확인", style: .default) { (action) in
+//            self.dismiss(animated: true, completion: nil)
+//        }
         let okAction = UIAlertAction(title: "확인", style: .default) { (action) in
-            self.dismiss(animated: true, completion: nil)
+            completion()
         }
         
         alertController.addAction(okAction)

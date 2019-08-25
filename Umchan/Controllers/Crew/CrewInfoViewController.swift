@@ -64,7 +64,9 @@ class CrewInfoViewController: UIViewController, NibLodable {
     
     @IBAction func requestButtonPressed(_ sender: UIButton) {
         
-        let alertController = self.createCheckAlertViewController(title: "참가신청", message: "크루장에게 참가 신청을 보냈습니다")
+        let alertController = self.createBasicAlertViewController(title: "참가신청", message: "크루장에게 참가 신청을 보냈습니다") {
+            self.dismiss(animated: true, completion: nil)
+        }
         self.present(alertController, animated: true, completion: nil)
     }
     
