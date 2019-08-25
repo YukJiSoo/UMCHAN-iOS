@@ -25,12 +25,12 @@ class MapViewController: UIViewController, NibLodable {
         
         self.navigationBar.delegate = self
         self.navigationBar.configureButton(location: .left, type: .back)
+        self.navigationBar.configureBottomLineView(color: Color.symbol.cgColor, opacity: 0.3, radius: 0.1)
     }
     
     @IBAction func setCourseButtonPressed(_ sender: UIButton) {
         
         // todo: - MKMapSnapshotter으로 image캡쳐
-        
         self.navigationController?.popViewController(animated: true)
     }
 }

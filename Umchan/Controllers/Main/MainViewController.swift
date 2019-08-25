@@ -57,11 +57,13 @@ class MainViewController: UIViewController {
         
         self.navigationBar.delegate = self
         self.navigationBar.configureButton(location: .right, type: .profile)
+        self.navigationBar.configureBottomLineView(color: Color.symbol.cgColor, opacity: 0.5, radius: 0.1)
     }
     
     func setupSeoulMapView() {
         
         self.seoulMapView.setDistrictDelegate(self)
+        
     }
     
     func setupCrewsView() {

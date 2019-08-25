@@ -26,14 +26,12 @@ class CustomNavigationBar: UIView {
     
     // MARK: - SubViews
     var titleLabel = UILabel()
-    var bottomLineView = UIView()
     var rightButton: UIButton?
     var leftButton: UIButton?
     
     // MARK: - Properties
-    @IBInspectable var barItemSize: CGFloat = 30
+    @IBInspectable var barItemSize: CGFloat = 25
     @IBInspectable var padding: CGFloat = 15
-    @IBInspectable var bottomLineHeight: CGFloat = 1
     @IBInspectable var title: String = "" {
         didSet {
             self.titleLabel.text = self.title
@@ -49,20 +47,17 @@ class CustomNavigationBar: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.configureBottomLineView()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        self.configureBottomLineView()
         self.configureTitleLabel(with: self.title)
     }
     
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         
-        self.configureBottomLineView()
         self.configureTitleLabel(with: self.title)
     }
     
@@ -81,17 +76,9 @@ class CustomNavigationBar: UIView {
         
     }
     
-    func configureBottomLineView() {
+    func configureBottomLineView(color: CGColor, opacity: Float, radius: CGFloat) {
         
-        self.bottomLineView.backgroundColor = Color.symbol
-        
-        self.addSubview(self.bottomLineView)
-        
-        self.bottomLineView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        self.bottomLineView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        self.bottomLineView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        self.bottomLineView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
-        self.bottomLineView.heightAnchor.constraint(equalToConstant: self.bottomLineHeight).isActive = true
+        self.layer.setShadow(.bottom, color: color, opacity: opacity, radius: radius)
     }
     
     func configureTitleLabel(with title: String?) {

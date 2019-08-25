@@ -29,6 +29,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="YmK-qe-6le"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="코스선택"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxj-Ky-h5g">
                                 <rect key="frame" x="0.0" y="802" width="414" height="60"/>
@@ -37,7 +40,7 @@
                                     <constraint firstAttribute="height" constant="60" id="uku-M8-G96"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="22"/>
-                                <state key="normal" title="코스 설정">
+                                <state key="normal" title="설정">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -45,7 +48,7 @@
                                 </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="F0x-2w-QqW">
-                                <rect key="frame" x="0.0" y="89" width="414" height="713"/>
+                                <rect key="frame" x="0.0" y="90" width="414" height="712"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -59,7 +62,7 @@
                             <constraint firstItem="F0x-2w-QqW" firstAttribute="leading" secondItem="6GW-GP-Bzm" secondAttribute="leading" id="qns-Zy-Che"/>
                             <constraint firstItem="cxj-Ky-h5g" firstAttribute="leading" secondItem="6GW-GP-Bzm" secondAttribute="leading" id="sW1-fj-4gm"/>
                             <constraint firstItem="6GW-GP-Bzm" firstAttribute="trailing" secondItem="Ncl-mI-gMp" secondAttribute="trailing" id="tJ8-gs-zix"/>
-                            <constraint firstItem="F0x-2w-QqW" firstAttribute="top" secondItem="Ncl-mI-gMp" secondAttribute="bottom" id="ue2-e4-lDa"/>
+                            <constraint firstItem="F0x-2w-QqW" firstAttribute="top" secondItem="Ncl-mI-gMp" secondAttribute="bottom" constant="1" id="ue2-e4-lDa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6GW-GP-Bzm"/>
                     </view>

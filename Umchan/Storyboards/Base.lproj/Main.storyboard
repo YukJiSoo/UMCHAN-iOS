@@ -25,21 +25,9 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wir-O9-Z76" customClass="CustomNavigationBar" customModule="Umchan" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="414" height="64"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yFs-8P-sc6">
-                                        <rect key="frame" x="0.0" y="63" width="414" height="1"/>
-                                        <color key="backgroundColor" red="0.54836952689999996" green="0.16884723309999999" blue="0.18428939580000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="WZP-R2-QyX"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="1cd-HU-gbN"/>
-                                    <constraint firstItem="yFs-8P-sc6" firstAttribute="leading" secondItem="wir-O9-Z76" secondAttribute="leading" id="1l2-Rk-MXI"/>
-                                    <constraint firstAttribute="bottom" secondItem="yFs-8P-sc6" secondAttribute="bottom" id="nBf-Oh-hQN"/>
-                                    <constraint firstItem="yFs-8P-sc6" firstAttribute="width" secondItem="wir-O9-Z76" secondAttribute="width" id="q3L-lF-Iix"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="내 크루"/>
@@ -75,29 +63,16 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oZ4-e6-frJ" customClass="CustomNavigationBar" customModule="Umchan" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="414" height="64"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vw7-Ko-DCe">
-                                        <rect key="frame" x="0.0" y="63" width="414" height="1"/>
-                                        <color key="backgroundColor" red="0.54836952689999996" green="0.16884723309999999" blue="0.18428939580000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="zKL-Lt-1In"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="5Rq-S1-BDC"/>
-                                    <constraint firstItem="Vw7-Ko-DCe" firstAttribute="leading" secondItem="oZ4-e6-frJ" secondAttribute="leading" id="V95-5h-fZc"/>
-                                    <constraint firstAttribute="trailing" secondItem="Vw7-Ko-DCe" secondAttribute="trailing" id="Vmb-mH-hhX"/>
-                                    <constraint firstItem="Vw7-Ko-DCe" firstAttribute="width" secondItem="oZ4-e6-frJ" secondAttribute="width" id="Ww4-11-ziG"/>
-                                    <constraint firstAttribute="bottom" secondItem="Vw7-Ko-DCe" secondAttribute="bottom" id="uQ8-3c-WF3"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="움찬러너"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BUo-at-fUX">
-                                <rect key="frame" x="0.0" y="108" width="414" height="729"/>
+                                <rect key="frame" x="0.0" y="109" width="414" height="728"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="725" translatesAutoresizingMaskIntoConstraints="NO" id="HpT-Hb-ZEg" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="778.5"/>
@@ -209,7 +184,7 @@
                             <constraint firstItem="oZ4-e6-frJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8nS-tp-G8g"/>
                             <constraint firstItem="oZ4-e6-frJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VNi-u1-Vag"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="oZ4-e6-frJ" secondAttribute="top" id="ZeQ-OP-o3p"/>
-                            <constraint firstItem="BUo-at-fUX" firstAttribute="top" secondItem="oZ4-e6-frJ" secondAttribute="bottom" id="fNm-UE-xKp"/>
+                            <constraint firstItem="BUo-at-fUX" firstAttribute="top" secondItem="oZ4-e6-frJ" secondAttribute="bottom" constant="1" id="fNm-UE-xKp"/>
                             <constraint firstItem="BUo-at-fUX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oQI-Eg-b8c"/>
                             <constraint firstItem="HpT-Hb-ZEg" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="oi4-d0-gCD"/>
                             <constraint firstItem="BUo-at-fUX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uvG-Xr-CKD"/>
@@ -241,21 +216,9 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hrp-k0-lDz" customClass="CustomNavigationBar" customModule="Umchan" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="414" height="64"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajT-1S-u8o">
-                                        <rect key="frame" x="0.0" y="63" width="414" height="1"/>
-                                        <color key="backgroundColor" red="0.54836952689999996" green="0.16884723309999999" blue="0.18428939580000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="3hf-gp-vkf"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="ajT-1S-u8o" firstAttribute="leading" secondItem="hrp-k0-lDz" secondAttribute="leading" id="0GA-mf-SVU"/>
-                                    <constraint firstItem="ajT-1S-u8o" firstAttribute="width" secondItem="hrp-k0-lDz" secondAttribute="width" id="0Pq-L6-t4N"/>
                                     <constraint firstAttribute="height" constant="64" id="iex-OE-7NA"/>
-                                    <constraint firstAttribute="bottom" secondItem="ajT-1S-u8o" secondAttribute="bottom" id="otf-F5-Cj7"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="내 기록"/>
