@@ -38,7 +38,8 @@ class LoginViewController: UIViewController, NibLodable {
     @IBAction func unwindToLoginViewController(_ segue: UIStoryboardSegue) {
         
         if segue.identifier == Segue.unwindToLoginViewController {
-            self.dismiss(animated: true, completion: nil)
+            
+            self.performSegue(withIdentifier: Segue.unwindToMainViewController, sender: nil)
         }
     }
 }

@@ -27,16 +27,32 @@ class MainViewController: UIViewController {
         Crew(name: "test5", oneLine: "test0", creationDate: "test0", numberOfPeople: 9, image: "test0")
     ]
     
+    var isLoggedIn: Bool = false
+    
     // MARK: - Life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if !isLoggedIn {
+            
+            let stroyboard = UIStoryboard(name: StoryboardName.loginAndSignUp, bundle: nil)
+            let viewController = stroyboard.viewController(LoginViewController.self)
+            
+            self.present(viewController, animated: true, completion: nil)
+        } else {
+            
+            self.setup()
+        }
+    }
+    
+    // MARK: - Functions
+    func setup() {
         
         self.setupNavigationBar()
         self.setupSeoulMapView()
         self.setupCrewsView()
     }
     
-    // MARK: - Functions
     func setupNavigationBar() {
         
         self.navigationBar.delegate = self
@@ -79,10 +95,6 @@ class MainViewController: UIViewController {
     }
     
     // MARK: - Actions
-    @IBAction func profileButtonPressed(_ sender: Any) {
-        
-    }
-    
     @IBAction func goToRunButtonPressed(_ sender: Any) {
         
         
@@ -105,22 +117,25 @@ class MainViewController: UIViewController {
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
+    @IBAction func unwindToMainViewController(_ segue: UIStoryboardSegue) {
+        
+        if segue.identifier == Segue.unwindToMainViewController {
+            
+            self.isLoggedIn = true
+            self.setup()
+        }
+    }
 }
 
 extension MainViewController: CustomNavigationBarDelegate {
     
     func rightBarButtonPressed(_ sender: UIButton) {
         
-//        let stroyboard = UIStoryboard(name: StoryboardName.profile, bundle: nil)
-//        let viewController = stroyboard.viewController(ProfileViewController.self)
-//        let navigationController = UINavigationController(rootViewController: viewController)
-//        navigationController.isNavigationBarHidden = true
-//        
-//        self.present(navigationController, animated: true, completion: nil)
+        let stroyboard = UIStoryboard(name: StoryboardName.profile, bundle: nil)
+        let viewController = stroyboard.viewController(ProfileViewController.self)
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.isNavigationBarHidden = true
         
-        let stroyboard = UIStoryboard(name: StoryboardName.loginAndSignUp, bundle: nil)
-        let viewController = stroyboard.viewController(LoginViewController.self)
-        
-        self.present(viewController, animated: true, completion: nil)
+        self.present(navigationController, animated: true, completion: nil)
     }
 }

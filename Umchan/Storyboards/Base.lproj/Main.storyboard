@@ -218,11 +218,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="움찬 Runner" id="6Xj-hI-6gA">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="Pnh-qF-zat">
-                            <connections>
-                                <action selector="profileButtonPressed:" destination="BYZ-38-t0r" id="7k9-6T-Z9L"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="Pnh-qF-zat"/>
                     </navigationItem>
                     <size key="freeformSize" width="414" height="920"/>
                     <connections>

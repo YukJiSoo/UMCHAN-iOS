@@ -120,7 +120,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <segue destination="vSg-a9-9Y5" kind="show" id="Ar1-Vn-Hey"/>
+                                                            <segue destination="vSg-a9-9Y5" kind="show" identifier="" id="Ar1-Vn-Hey"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -170,9 +170,11 @@
                         <outlet property="activityIndicator" destination="uAQ-fI-ETl" id="sP9-qP-Lya"/>
                         <outlet property="emailLabel" destination="zG1-cN-lwE" id="wDE-0N-L6d"/>
                         <outlet property="passwordLabel" destination="gHN-bG-GqW" id="GJ1-E4-F02"/>
+                        <segue destination="fvw-3I-9mY" kind="unwind" identifier="unwindToMainViewController" unwindAction="unwindToMainViewController:" id="L19-Hv-PBt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uqm-9k-F9D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="fvw-3I-9mY" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="52.173913043478265" y="80.706521739130437"/>
         </scene>
