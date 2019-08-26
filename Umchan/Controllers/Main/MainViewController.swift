@@ -63,7 +63,6 @@ class MainViewController: UIViewController {
     func setupSeoulMapView() {
         
         self.seoulMapView.setDistrictDelegate(self)
-        
     }
     
     func setupCrewsView() {

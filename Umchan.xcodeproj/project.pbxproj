@@ -79,6 +79,7 @@
 		A72F015D2311CEAA0044A285 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72F015C2311CEAA0044A285 /* SignUpViewController.swift */; };
 		A72F016023127C5A0044A285 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72F015F23127C5A0044A285 /* MapViewController.swift */; };
 		A72F016223127F3C0044A285 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A72F016123127F3C0044A285 /* Map.storyboard */; };
+		A72F0166231439840044A285 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72F0165231439840044A285 /* MapView.swift */; };
 		A742E39B22F88ADF002E333C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742E39A22F88ADF002E333C /* AppDelegate.swift */; };
 		A742E3A022F88ADF002E333C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A742E39E22F88ADF002E333C /* Main.storyboard */; };
 		A742E3A222F88AE1002E333C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A742E3A122F88AE1002E333C /* Assets.xcassets */; };
@@ -165,6 +166,7 @@
 		A72F015C2311CEAA0044A285 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A72F015F23127C5A0044A285 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		A72F016123127F3C0044A285 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		A72F0165231439840044A285 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		A742E39722F88ADF002E333C /* Umchan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Umchan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A742E39A22F88ADF002E333C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A742E39F22F88ADF002E333C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -240,17 +242,14 @@
 		A70991F22303BEF000AE3ACA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A72F0164231439630044A285 /* Common */,
+				A72F0163231439540044A285 /* Map */,
 				A7168B842310646900500621 /* SearchBar */,
 				A71EC1FD230FF85E00275EA8 /* DateView */,
 				A76A70F9230E91FE00B5EA81 /* TableViewCell */,
 				A76A70B6230829E700B5EA81 /* NavigationBar */,
 				A709921F2305741F00AE3ACA /* Button */,
 				A7099210230558B100AE3ACA /* DistrictView */,
-				A70992002303DF0F00AE3ACA /* SeoulMapView.swift */,
-				A71EC1E3230FC0D600275EA8 /* CrewView.swift */,
-				A71EC1ED230FD22C00275EA8 /* PaddingLabel.swift */,
-				A7168B7F23104F8D00500621 /* ScrollableStackView.swift */,
-				A70C2A24231189E0002006A3 /* UserView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -475,6 +474,26 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
+		A72F0163231439540044A285 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				A70992002303DF0F00AE3ACA /* SeoulMapView.swift */,
+				A72F0165231439840044A285 /* MapView.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		A72F0164231439630044A285 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A71EC1E3230FC0D600275EA8 /* CrewView.swift */,
+				A71EC1ED230FD22C00275EA8 /* PaddingLabel.swift */,
+				A7168B7F23104F8D00500621 /* ScrollableStackView.swift */,
+				A70C2A24231189E0002006A3 /* UserView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		A742E38E22F88ADF002E333C = {
 			isa = PBXGroup;
 			children = (
@@ -659,6 +678,7 @@
 				A71EC1E4230FC0D600275EA8 /* CrewView.swift in Sources */,
 				A7168B8023104F8D00500621 /* ScrollableStackView.swift in Sources */,
 				A71EC1FC230FF77100275EA8 /* DateView.swift in Sources */,
+				A72F0166231439840044A285 /* MapView.swift in Sources */,
 				A70C2A25231189E0002006A3 /* UserView.swift in Sources */,
 				A70991F52303BF3A00AE3ACA /* MainViewController.swift in Sources */,
 				A71EC1E0230FBD0A00275EA8 /* Crew.swift in Sources */,

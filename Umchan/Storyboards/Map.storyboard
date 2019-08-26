@@ -47,27 +47,27 @@
                                     <action selector="setCourseButtonPressed:" destination="g9w-X6-7Ho" eventType="touchUpInside" id="olg-F2-AR6"/>
                                 </connections>
                             </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="F0x-2w-QqW">
-                                <rect key="frame" x="0.0" y="90" width="414" height="712"/>
-                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="axw-Al-qcX" customClass="MapView" customModule="Umchan" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="89" width="414" height="713"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Ncl-mI-gMp" firstAttribute="top" secondItem="6GW-GP-Bzm" secondAttribute="top" id="5jt-Pb-u0x"/>
-                            <constraint firstItem="cxj-Ky-h5g" firstAttribute="top" secondItem="F0x-2w-QqW" secondAttribute="bottom" id="6MI-ho-4PJ"/>
+                            <constraint firstItem="cxj-Ky-h5g" firstAttribute="top" secondItem="axw-Al-qcX" secondAttribute="bottom" id="66C-OL-BUA"/>
                             <constraint firstItem="6GW-GP-Bzm" firstAttribute="trailing" secondItem="cxj-Ky-h5g" secondAttribute="trailing" id="Gj9-97-W0l"/>
-                            <constraint firstItem="6GW-GP-Bzm" firstAttribute="trailing" secondItem="F0x-2w-QqW" secondAttribute="trailing" id="Lif-cy-1I5"/>
+                            <constraint firstItem="6GW-GP-Bzm" firstAttribute="trailing" secondItem="axw-Al-qcX" secondAttribute="trailing" id="LI9-hx-rI9"/>
                             <constraint firstItem="6GW-GP-Bzm" firstAttribute="bottom" secondItem="cxj-Ky-h5g" secondAttribute="bottom" id="bEM-8k-vL1"/>
                             <constraint firstItem="Ncl-mI-gMp" firstAttribute="leading" secondItem="6GW-GP-Bzm" secondAttribute="leading" id="c4r-Oh-9ha"/>
-                            <constraint firstItem="F0x-2w-QqW" firstAttribute="leading" secondItem="6GW-GP-Bzm" secondAttribute="leading" id="qns-Zy-Che"/>
+                            <constraint firstItem="axw-Al-qcX" firstAttribute="top" secondItem="Ncl-mI-gMp" secondAttribute="bottom" id="f6a-Yp-7bd"/>
+                            <constraint firstItem="axw-Al-qcX" firstAttribute="leading" secondItem="6GW-GP-Bzm" secondAttribute="leading" id="kW7-cC-Pxl"/>
                             <constraint firstItem="cxj-Ky-h5g" firstAttribute="leading" secondItem="6GW-GP-Bzm" secondAttribute="leading" id="sW1-fj-4gm"/>
                             <constraint firstItem="6GW-GP-Bzm" firstAttribute="trailing" secondItem="Ncl-mI-gMp" secondAttribute="trailing" id="tJ8-gs-zix"/>
-                            <constraint firstItem="F0x-2w-QqW" firstAttribute="top" secondItem="Ncl-mI-gMp" secondAttribute="bottom" constant="1" id="ue2-e4-lDa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6GW-GP-Bzm"/>
                     </view>
                     <connections>
-                        <outlet property="mapView" destination="F0x-2w-QqW" id="JJ2-Xs-GLj"/>
                         <outlet property="navigationBar" destination="Ncl-mI-gMp" id="QWb-Sa-uaX"/>
                     </connections>
                 </viewController>
