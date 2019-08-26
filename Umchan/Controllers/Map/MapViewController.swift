@@ -16,6 +16,7 @@ class MapViewController: UIViewController, NibLodable {
     @IBOutlet weak var mapView: MapView!
     
     // MARK: - Properties
+    // TODO: - 지정된 위치가 없는 경우 현재 위치를 default로 받아오는 기능 구현
     let initialLocation = CLLocation(latitude: 37.562310, longitude: 126.999827)
     
     // MARK: - Life cycles
@@ -40,7 +41,7 @@ class MapViewController: UIViewController, NibLodable {
     
     @IBAction func setCourseButtonPressed(_ sender: UIButton) {
         
-        // todo: - MKMapSnapshotter으로 image캡쳐
+        // TODO: - MKMapSnapshotter으로 image캡쳐
         self.navigationController?.popViewController(animated: true)
     }
 }

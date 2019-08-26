@@ -79,4 +79,5 @@ class AssetName {
     static let back = "back"
     static let search = "search"
     static let mainLogo = "mainLogo"
+    static let annotation = "annotation"
 }

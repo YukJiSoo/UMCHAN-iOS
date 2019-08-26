@@ -80,6 +80,8 @@
 		A72F016023127C5A0044A285 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72F015F23127C5A0044A285 /* MapViewController.swift */; };
 		A72F016223127F3C0044A285 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A72F016123127F3C0044A285 /* Map.storyboard */; };
 		A72F0166231439840044A285 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72F0165231439840044A285 /* MapView.swift */; };
+		A72F0168231448E90044A285 /* AnnotationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72F0167231448E90044A285 /* AnnotationButton.swift */; };
+		A72F016A231449CC0044A285 /* AnnotationButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72F0169231449CC0044A285 /* AnnotationButtonDelegate.swift */; };
 		A742E39B22F88ADF002E333C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742E39A22F88ADF002E333C /* AppDelegate.swift */; };
 		A742E3A022F88ADF002E333C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A742E39E22F88ADF002E333C /* Main.storyboard */; };
 		A742E3A222F88AE1002E333C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A742E3A122F88AE1002E333C /* Assets.xcassets */; };
@@ -167,6 +169,8 @@
 		A72F015F23127C5A0044A285 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		A72F016123127F3C0044A285 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		A72F0165231439840044A285 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		A72F0167231448E90044A285 /* AnnotationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationButton.swift; sourceTree = "<group>"; };
+		A72F0169231449CC0044A285 /* AnnotationButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationButtonDelegate.swift; sourceTree = "<group>"; };
 		A742E39722F88ADF002E333C /* Umchan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Umchan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A742E39A22F88ADF002E333C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A742E39F22F88ADF002E333C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -479,6 +483,8 @@
 			children = (
 				A70992002303DF0F00AE3ACA /* SeoulMapView.swift */,
 				A72F0165231439840044A285 /* MapView.swift */,
+				A72F0167231448E90044A285 /* AnnotationButton.swift */,
+				A72F0169231449CC0044A285 /* AnnotationButtonDelegate.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -648,6 +654,7 @@
 				A7168B8E2310789A00500621 /* SearchViewController+CustomSearchBarDelegate.swift in Sources */,
 				A71EC1DE230FB91F00275EA8 /* Date+Extension.swift in Sources */,
 				A7168B7823103E4300500621 /* RunningHistoryListTableViewCell.swift in Sources */,
+				A72F016A231449CC0044A285 /* AnnotationButtonDelegate.swift in Sources */,
 				A7168B862310648300500621 /* CustomSearchBar.swift in Sources */,
 				A76A70F7230D8E9F00B5EA81 /* RegisterRunningViewController.swift in Sources */,
 				A709922B2307122F00AE3ACA /* UIViewController+Extension.swift in Sources */,
@@ -703,6 +710,7 @@
 				A709920A2303FE2100AE3ACA /* DistrictInfoService.swift in Sources */,
 				A7168B8C2310775400500621 /* CustomSearchBarDelegate.swift in Sources */,
 				A7099223230576C100AE3ACA /* RunningInDistrictViewController.swift in Sources */,
+				A72F0168231448E90044A285 /* AnnotationButton.swift in Sources */,
 				A70992212305743300AE3ACA /* CloseButton.swift in Sources */,
 				A709920E2305514A00AE3ACA /* MainViewController+DistrictViewDelegate.swift in Sources */,
 				A71EC1FF230FF86C00275EA8 /* DateViewDelegate.swift in Sources */,
