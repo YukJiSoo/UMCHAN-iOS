@@ -14,6 +14,15 @@ class MapView: UIView {
     // MARK: - SubViews
     weak var mapView: MKMapView?
     
+    // MARK: - Properties
+    @IBInspectable var regionRadius: CLLocationDistance = 1000 {
+        didSet {
+            if let nowLocation = self.mapView?.userLocation.location {
+                self.centerMapOnLocation(location: nowLocation)
+            }
+        }
+    }
+
     // MARK: - Life cycles
     override init(frame: CGRect) {
         
@@ -46,6 +55,12 @@ class MapView: UIView {
         NSLayoutConstraint.activate([ topAnchor, bottomAnchor, leadingAnchor, trailingAnchor ])
         
         self.mapView = mapView
+    }
+    
+    func centerMapOnLocation(location: CLLocation) {
+        let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
+                                                  latitudinalMeters: regionRadius, longitudinalMeters: self.regionRadius)
+        self.mapView?.setRegion(coordinateRegion, animated: true)
     }
     
 }
