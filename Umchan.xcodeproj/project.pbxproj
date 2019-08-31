@@ -52,7 +52,6 @@
 		A7168B7823103E4300500621 /* RunningHistoryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B7623103E4300500621 /* RunningHistoryListTableViewCell.swift */; };
 		A7168B7923103E4300500621 /* RunningHistoryListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7168B7723103E4300500621 /* RunningHistoryListTableViewCell.xib */; };
 		A7168B7C2310436500500621 /* MyCrewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B7B2310436500500621 /* MyCrewsViewController.swift */; };
-		A7168B7E2310458500500621 /* ElementNoExistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B7D2310458500500621 /* ElementNoExistable.swift */; };
 		A7168B8023104F8D00500621 /* ScrollableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B7F23104F8D00500621 /* ScrollableStackView.swift */; };
 		A7168B832310645500500621 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B822310645500500621 /* SearchViewController.swift */; };
 		A7168B862310648300500621 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B852310648300500621 /* CustomSearchBar.swift */; };
@@ -61,6 +60,8 @@
 		A7168B8E2310789A00500621 /* SearchViewController+CustomSearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B8D2310789A00500621 /* SearchViewController+CustomSearchBarDelegate.swift */; };
 		A7168B91231079FB00500621 /* SearchCrewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B90231079FB00500621 /* SearchCrewViewController.swift */; };
 		A7168B9323107A0C00500621 /* SearchRunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B9223107A0C00500621 /* SearchRunningViewController.swift */; };
+		A71B94B4231AA19F00BCD3E7 /* MapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71B94B3231AA19F00BCD3E7 /* MapViewDelegate.swift */; };
+		A71B94B6231AA25300BCD3E7 /* MapViewController+MapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71B94B5231AA25300BCD3E7 /* MapViewController+MapViewDelegate.swift */; };
 		A71EC1DE230FB91F00275EA8 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC1DD230FB91F00275EA8 /* Date+Extension.swift */; };
 		A71EC1E0230FBD0A00275EA8 /* Crew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC1DF230FBD0A00275EA8 /* Crew.swift */; };
 		A71EC1E4230FC0D600275EA8 /* CrewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC1E3230FC0D600275EA8 /* CrewView.swift */; };
@@ -141,7 +142,6 @@
 		A7168B7623103E4300500621 /* RunningHistoryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningHistoryListTableViewCell.swift; sourceTree = "<group>"; };
 		A7168B7723103E4300500621 /* RunningHistoryListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RunningHistoryListTableViewCell.xib; sourceTree = "<group>"; };
 		A7168B7B2310436500500621 /* MyCrewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCrewsViewController.swift; sourceTree = "<group>"; };
-		A7168B7D2310458500500621 /* ElementNoExistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementNoExistable.swift; sourceTree = "<group>"; };
 		A7168B7F23104F8D00500621 /* ScrollableStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableStackView.swift; sourceTree = "<group>"; };
 		A7168B822310645500500621 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		A7168B852310648300500621 /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
@@ -150,6 +150,8 @@
 		A7168B8D2310789A00500621 /* SearchViewController+CustomSearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+CustomSearchBarDelegate.swift"; sourceTree = "<group>"; };
 		A7168B90231079FB00500621 /* SearchCrewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCrewViewController.swift; sourceTree = "<group>"; };
 		A7168B9223107A0C00500621 /* SearchRunningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRunningViewController.swift; sourceTree = "<group>"; };
+		A71B94B3231AA19F00BCD3E7 /* MapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewDelegate.swift; sourceTree = "<group>"; };
+		A71B94B5231AA25300BCD3E7 /* MapViewController+MapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+MapViewDelegate.swift"; sourceTree = "<group>"; };
 		A71EC1DD230FB91F00275EA8 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		A71EC1DF230FBD0A00275EA8 /* Crew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crew.swift; sourceTree = "<group>"; };
 		A71EC1E3230FC0D600275EA8 /* CrewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewView.swift; sourceTree = "<group>"; };
@@ -203,7 +205,6 @@
 				A709921523056DBE00AE3ACA /* Extensions */,
 				A7528B9D2302BBC000A6BEC0 /* Constants.swift */,
 				A709921123056D6000AE3ACA /* NibLodable.swift */,
-				A7168B7D2310458500500621 /* ElementNoExistable.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -474,6 +475,7 @@
 			isa = PBXGroup;
 			children = (
 				A72F015F23127C5A0044A285 /* MapViewController.swift */,
+				A71B94B5231AA25300BCD3E7 /* MapViewController+MapViewDelegate.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -485,6 +487,7 @@
 				A72F0165231439840044A285 /* MapView.swift */,
 				A72F0167231448E90044A285 /* AnnotationButton.swift */,
 				A72F0169231449CC0044A285 /* AnnotationButtonDelegate.swift */,
+				A71B94B3231AA19F00BCD3E7 /* MapViewDelegate.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -673,6 +676,7 @@
 				A71EC1EE230FD22C00275EA8 /* PaddingLabel.swift in Sources */,
 				A70991F02303BD3600AE3ACA /* TabBarController.swift in Sources */,
 				A7168B91231079FB00500621 /* SearchCrewViewController.swift in Sources */,
+				A71B94B6231AA25300BCD3E7 /* MapViewController+MapViewDelegate.swift in Sources */,
 				A76A7102230EA13200B5EA81 /* EmptyTableViewCell.swift in Sources */,
 				A76A70FC230E923E00B5EA81 /* RunningTableViewCell.swift in Sources */,
 				A709922D2307284400AE3ACA /* CustomNavigationBarDelegate.swift in Sources */,
@@ -687,10 +691,10 @@
 				A71EC1FC230FF77100275EA8 /* DateView.swift in Sources */,
 				A72F0166231439840044A285 /* MapView.swift in Sources */,
 				A70C2A25231189E0002006A3 /* UserView.swift in Sources */,
+				A71B94B4231AA19F00BCD3E7 /* MapViewDelegate.swift in Sources */,
 				A70991F52303BF3A00AE3ACA /* MainViewController.swift in Sources */,
 				A71EC1E0230FBD0A00275EA8 /* Crew.swift in Sources */,
 				A71EC1F1230FDAFF00275EA8 /* WriteTableViewCell.swift in Sources */,
-				A7168B7E2310458500500621 /* ElementNoExistable.swift in Sources */,
 				A70C2A192311611C002006A3 /* UmchanCreateButtom.swift in Sources */,
 				A709921223056D6000AE3ACA /* NibLodable.swift in Sources */,
 				A709920C23053DAA00AE3ACA /* DistrictViewDelegate.swift in Sources */,

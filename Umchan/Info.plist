@@ -48,5 +48,11 @@
 		<string>NanumSquareOTFLight</string>
 		<string>NanumSquareOTFRight</string>
 	</array>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>위치 정보 공유 필요.</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>위치 정보 공유 필요.</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>위치 정보 공유 필요.</string>
 </dict>
 </plist>

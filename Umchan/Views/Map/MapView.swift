@@ -27,6 +27,8 @@ class MapView: UIView {
     }
     @IBInspectable var annotationSize: CGFloat = 50
     
+    weak var delegate: MapViewDelegate?
+    
     // MARK: - Life cycles
     override init(frame: CGRect) {
         
@@ -122,9 +124,10 @@ class MapView: UIView {
 }
 
 extension MapView: AnnotationButtonDelegate {
+    
     func pressed(isCheckMode: Bool) {
         
         self.annotationView?.isHidden = !isCheckMode
-        
+        self.delegate?.annotationButtonDelegate(isCheckMode: isCheckMode)
     }
 }

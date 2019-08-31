@@ -70,6 +70,7 @@
                     <connections>
                         <outlet property="mapView" destination="axw-Al-qcX" id="P3q-lx-7Ke"/>
                         <outlet property="navigationBar" destination="Ncl-mI-gMp" id="QWb-Sa-uaX"/>
+                        <outlet property="selectButton" destination="cxj-Ky-h5g" id="Euo-wX-eiP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DXd-cZ-vu9" userLabel="First Responder" sceneMemberID="firstResponder"/>

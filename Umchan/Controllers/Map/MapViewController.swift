@@ -14,6 +14,7 @@ class MapViewController: UIViewController, NibLodable {
     // MARK: - Outlets
     @IBOutlet weak var navigationBar: CustomNavigationBar!
     @IBOutlet weak var mapView: MapView!
+    @IBOutlet weak var selectButton: UIButton!
     
     // MARK: - Properties
     // TODO: - 지정된 위치가 없는 경우 현재 위치를 default로 받아오는 기능 구현
@@ -36,6 +37,7 @@ class MapViewController: UIViewController, NibLodable {
     
     func setupMapView() {
         
+        self.mapView.delegate = self
         self.mapView.centerMapOnLocation(location: self.initialLocation)
     }
     
