@@ -12,6 +12,8 @@ extension MapViewController: MapViewDelegate {
     
     func annotationButtonDelegate(isCheckMode: Bool) {
         
+        self.isCheckMode = isCheckMode
+        
         if isCheckMode {
             
             self.navigationBar.leftButton?.isHidden = true

@@ -62,6 +62,9 @@
 		A7168B9323107A0C00500621 /* SearchRunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B9223107A0C00500621 /* SearchRunningViewController.swift */; };
 		A71B94B4231AA19F00BCD3E7 /* MapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71B94B3231AA19F00BCD3E7 /* MapViewDelegate.swift */; };
 		A71B94B6231AA25300BCD3E7 /* MapViewController+MapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71B94B5231AA25300BCD3E7 /* MapViewController+MapViewDelegate.swift */; };
+		A71B94B8231AAA5700BCD3E7 /* RunningPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71B94B7231AAA5700BCD3E7 /* RunningPoint.swift */; };
+		A71B94BA231B8E4800BCD3E7 /* MapView+MKMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71B94B9231B8E4800BCD3E7 /* MapView+MKMapViewDelegate.swift */; };
+		A71B94BC231B8FD800BCD3E7 /* RunningPointAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71B94BB231B8FD800BCD3E7 /* RunningPointAnnotationView.swift */; };
 		A71EC1DE230FB91F00275EA8 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC1DD230FB91F00275EA8 /* Date+Extension.swift */; };
 		A71EC1E0230FBD0A00275EA8 /* Crew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC1DF230FBD0A00275EA8 /* Crew.swift */; };
 		A71EC1E4230FC0D600275EA8 /* CrewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71EC1E3230FC0D600275EA8 /* CrewView.swift */; };
@@ -152,6 +155,9 @@
 		A7168B9223107A0C00500621 /* SearchRunningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRunningViewController.swift; sourceTree = "<group>"; };
 		A71B94B3231AA19F00BCD3E7 /* MapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewDelegate.swift; sourceTree = "<group>"; };
 		A71B94B5231AA25300BCD3E7 /* MapViewController+MapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+MapViewDelegate.swift"; sourceTree = "<group>"; };
+		A71B94B7231AAA5700BCD3E7 /* RunningPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningPoint.swift; sourceTree = "<group>"; };
+		A71B94B9231B8E4800BCD3E7 /* MapView+MKMapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapView+MKMapViewDelegate.swift"; sourceTree = "<group>"; };
+		A71B94BB231B8FD800BCD3E7 /* RunningPointAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningPointAnnotationView.swift; sourceTree = "<group>"; };
 		A71EC1DD230FB91F00275EA8 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		A71EC1DF230FBD0A00275EA8 /* Crew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crew.swift; sourceTree = "<group>"; };
 		A71EC1E3230FC0D600275EA8 /* CrewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewView.swift; sourceTree = "<group>"; };
@@ -262,6 +268,7 @@
 		A70991F32303BEF500AE3ACA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A71B94B7231AAA5700BCD3E7 /* RunningPoint.swift */,
 				A70992042303F85600AE3ACA /* DistrictCoordinate.swift */,
 				A76A70FE230E9FB700B5EA81 /* Running.swift */,
 				A71EC1DF230FBD0A00275EA8 /* Crew.swift */,
@@ -461,6 +468,19 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		A71B94BD231B99E500BCD3E7 /* PathSettingMapLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				A72F0167231448E90044A285 /* AnnotationButton.swift */,
+				A72F0169231449CC0044A285 /* AnnotationButtonDelegate.swift */,
+				A71B94B3231AA19F00BCD3E7 /* MapViewDelegate.swift */,
+				A71B94BB231B8FD800BCD3E7 /* RunningPointAnnotationView.swift */,
+				A72F0165231439840044A285 /* MapView.swift */,
+				A71B94B9231B8E4800BCD3E7 /* MapView+MKMapViewDelegate.swift */,
+			);
+			path = PathSettingMapLibrary;
+			sourceTree = "<group>";
+		};
 		A71EC1FD230FF85E00275EA8 /* DateView */ = {
 			isa = PBXGroup;
 			children = (
@@ -483,11 +503,8 @@
 		A72F0163231439540044A285 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				A71B94BD231B99E500BCD3E7 /* PathSettingMapLibrary */,
 				A70992002303DF0F00AE3ACA /* SeoulMapView.swift */,
-				A72F0165231439840044A285 /* MapView.swift */,
-				A72F0167231448E90044A285 /* AnnotationButton.swift */,
-				A72F0169231449CC0044A285 /* AnnotationButtonDelegate.swift */,
-				A71B94B3231AA19F00BCD3E7 /* MapViewDelegate.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -658,9 +675,11 @@
 				A71EC1DE230FB91F00275EA8 /* Date+Extension.swift in Sources */,
 				A7168B7823103E4300500621 /* RunningHistoryListTableViewCell.swift in Sources */,
 				A72F016A231449CC0044A285 /* AnnotationButtonDelegate.swift in Sources */,
+				A71B94B8231AAA5700BCD3E7 /* RunningPoint.swift in Sources */,
 				A7168B862310648300500621 /* CustomSearchBar.swift in Sources */,
 				A76A70F7230D8E9F00B5EA81 /* RegisterRunningViewController.swift in Sources */,
 				A709922B2307122F00AE3ACA /* UIViewController+Extension.swift in Sources */,
+				A71B94BA231B8E4800BCD3E7 /* MapView+MKMapViewDelegate.swift in Sources */,
 				A7168B712310111900500621 /* RunningHistoryListViewController.swift in Sources */,
 				A70C2A2F23119C7D002006A3 /* RunningViewController.swift in Sources */,
 				A7168B9323107A0C00500621 /* SearchRunningViewController.swift in Sources */,
@@ -714,6 +733,7 @@
 				A709920A2303FE2100AE3ACA /* DistrictInfoService.swift in Sources */,
 				A7168B8C2310775400500621 /* CustomSearchBarDelegate.swift in Sources */,
 				A7099223230576C100AE3ACA /* RunningInDistrictViewController.swift in Sources */,
+				A71B94BC231B8FD800BCD3E7 /* RunningPointAnnotationView.swift in Sources */,
 				A72F0168231448E90044A285 /* AnnotationButton.swift in Sources */,
 				A70992212305743300AE3ACA /* CloseButton.swift in Sources */,
 				A709920E2305514A00AE3ACA /* MainViewController+DistrictViewDelegate.swift in Sources */,

@@ -27,6 +27,7 @@ class MapView: UIView {
     }
     @IBInspectable var annotationSize: CGFloat = 50
     
+    var annotationList = [RunningPoint]()
     weak var delegate: MapViewDelegate?
     
     // MARK: - Life cycles
@@ -53,6 +54,7 @@ class MapView: UIView {
     
     // MARK: - Functions
     func setupSubViews() {
+        
         self.setupMapView()
         self.setupAnnotationButton()
         self.setupAnnotationView()
@@ -74,6 +76,8 @@ class MapView: UIView {
         NSLayoutConstraint.activate([ topAnchor, bottomAnchor, leadingAnchor, trailingAnchor ])
         
         self.mapView = mapView
+        self.mapView?.delegate = self
+        self.mapView?.register(RunningPointAnnotationView.self, forAnnotationViewWithReuseIdentifier: RunningPointAnnotationView.nibId)
     }
     
     func setupAnnotationButton() {
@@ -87,9 +91,9 @@ class MapView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         
         let topAnchor = button.topAnchor.constraint(equalTo: self.topAnchor, constant: 10)
-        let trailingAnchor = self.trailingAnchor.constraint(equalTo: button.trailingAnchor, constant: 10)
+        let leadingAnchor = button.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10)
         
-        NSLayoutConstraint.activate([ topAnchor, trailingAnchor ])
+        NSLayoutConstraint.activate([ topAnchor, leadingAnchor ])
         
         self.annotationButton = button
     }
@@ -107,8 +111,8 @@ class MapView: UIView {
         
         let heightAnchor = annotationView.heightAnchor.constraint(equalToConstant: self.annotationSize)
         let widthAnchor = annotationView.widthAnchor.constraint(equalToConstant: self.annotationSize)
-        let centerXAnchor = annotationView.centerXAnchor.constraint(equalTo: self.centerXAnchor)
-        let centerYAnchor = annotationView.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -self.annotationSize)
+        let centerXAnchor = annotationView.centerXAnchor.constraint(equalTo: self.mapView!.centerXAnchor)
+        let centerYAnchor = annotationView.centerYAnchor.constraint(equalTo: self.mapView!.centerYAnchor, constant: -(self.annotationSize / 2))
         
         NSLayoutConstraint.activate([ heightAnchor, widthAnchor, centerXAnchor, centerYAnchor ])
         
@@ -116,11 +120,26 @@ class MapView: UIView {
     }
     
     func centerMapOnLocation(location: CLLocation) {
+        
         let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
                                                   latitudinalMeters: regionRadius, longitudinalMeters: self.regionRadius)
         self.mapView?.setRegion(coordinateRegion, animated: true)
     }
     
+    func addAnnotation() {
+        
+        guard let centerCoordinate = self.mapView?.centerCoordinate else {
+            
+            debugPrint("err: fail to load center coordinate")
+            return
+        }
+        
+        let nowOrderOfPoint = self.annotationList.count + 1
+        let runningPoint = RunningPoint(coordinate: centerCoordinate, order: nowOrderOfPoint)
+        self.annotationList.append(runningPoint)
+        
+        self.mapView?.addAnnotations([runningPoint])
+    }
 }
 
 extension MapView: AnnotationButtonDelegate {
