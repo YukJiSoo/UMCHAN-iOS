@@ -98,6 +98,7 @@
 		A76A7102230EA13200B5EA81 /* EmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76A7100230EA13200B5EA81 /* EmptyTableViewCell.swift */; };
 		A76A7103230EA13200B5EA81 /* EmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A76A7101230EA13200B5EA81 /* EmptyTableViewCell.xib */; };
 		A797A4572323E88500FD2CD5 /* MapView+CalculateRunningCourseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A797A4562323E88500FD2CD5 /* MapView+CalculateRunningCourseDelegate.swift */; };
+		A797A4592323FD5100FD2CD5 /* RegisterRunningViewController+MKMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A797A4582323FD5100FD2CD5 /* RegisterRunningViewController+MKMapViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -194,6 +195,7 @@
 		A76A7100230EA13200B5EA81 /* EmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableViewCell.swift; sourceTree = "<group>"; };
 		A76A7101230EA13200B5EA81 /* EmptyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyTableViewCell.xib; sourceTree = "<group>"; };
 		A797A4562323E88500FD2CD5 /* MapView+CalculateRunningCourseDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapView+CalculateRunningCourseDelegate.swift"; sourceTree = "<group>"; };
+		A797A4582323FD5100FD2CD5 /* RegisterRunningViewController+MKMapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegisterRunningViewController+MKMapViewDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -571,6 +573,7 @@
 			children = (
 				A76A70F6230D8E9F00B5EA81 /* RegisterRunningViewController.swift */,
 				A71EC200230FF8CC00275EA8 /* RegisterRunningViewController+DateViewDelegate.swift */,
+				A797A4582323FD5100FD2CD5 /* RegisterRunningViewController+MKMapViewDelegate.swift */,
 			);
 			path = RegisterRunning;
 			sourceTree = "<group>";
@@ -742,6 +745,7 @@
 				A70992212305743300AE3ACA /* CloseButton.swift in Sources */,
 				A709920E2305514A00AE3ACA /* MainViewController+DistrictViewDelegate.swift in Sources */,
 				A71EC1FF230FF86C00275EA8 /* DateViewDelegate.swift in Sources */,
+				A797A4592323FD5100FD2CD5 /* RegisterRunningViewController+MKMapViewDelegate.swift in Sources */,
 				A7168B8A231069E200500621 /* CALayer+Extension.swift in Sources */,
 				A7168B6C23100C8400500621 /* DateFormatter+Extension.swift in Sources */,
 				A70C2A2923119050002006A3 /* User.swift in Sources */,

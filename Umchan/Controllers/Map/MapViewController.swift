@@ -21,6 +21,7 @@ class MapViewController: UIViewController, NibLodable {
     var isCheckMode: Bool = false
     
     let initialLocation = CLLocation(latitude: 37.562310, longitude: 126.999827)
+    var runningCourseData: [RunningPoint]?
     
     // MARK: - Life cycles
     override func viewDidLoad() {
@@ -41,17 +42,23 @@ class MapViewController: UIViewController, NibLodable {
         
         self.mapView.delegate = self
         self.mapView.centerMapOnLocation(location: self.initialLocation)
+        
+        if let runningCourseData = self.runningCourseData {
+            
+            self.mapView.annotationList = runningCourseData
+            self.mapView.drawRunningCourse()
+        }
     }
     
     @IBAction func setCourseButtonPressed(_ sender: UIButton) {
         
-        // TODO: - MKMapSnapshotter으로 image캡쳐
         if self.isCheckMode {
             
             self.mapView.addAnnotation()
         } else {
             
-            self.navigationController?.popViewController(animated: true)
+            self.runningCourseData = self.mapView.annotationList
+            self.performSegue(withIdentifier: Segue.unwindToRegisterRunningViewController, sender: self)
         }
     }
 }

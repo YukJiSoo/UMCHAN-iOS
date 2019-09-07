@@ -155,23 +155,22 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JOe-Mt-1Q8">
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTw-rd-pse" customClass="Map">
                                                 <rect key="frame" x="15" y="396" width="384" height="288"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="JOe-Mt-1Q8" secondAttribute="height" multiplier="4:3" id="nzS-Wh-4SU"/>
+                                                    <constraint firstAttribute="width" secondItem="KTw-rd-pse" secondAttribute="height" multiplier="4:3" id="4fE-ox-Upu"/>
                                                 </constraints>
-                                            </imageView>
+                                            </mapView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="TUP-3M-334" firstAttribute="top" secondItem="ckR-Va-PcA" secondAttribute="top" constant="40" id="CLN-WR-iK3"/>
-                                            <constraint firstAttribute="bottom" secondItem="JOe-Mt-1Q8" secondAttribute="bottom" constant="120" id="Ccx-iV-e8r"/>
-                                            <constraint firstAttribute="trailing" secondItem="JOe-Mt-1Q8" secondAttribute="trailing" constant="15" id="NvA-US-oUK"/>
-                                            <constraint firstItem="JOe-Mt-1Q8" firstAttribute="top" secondItem="TUP-3M-334" secondAttribute="bottom" constant="20" id="OGA-jb-pdg"/>
                                             <constraint firstItem="TUP-3M-334" firstAttribute="leading" secondItem="ckR-Va-PcA" secondAttribute="leading" constant="45" id="RJZ-Jf-p5J"/>
+                                            <constraint firstItem="KTw-rd-pse" firstAttribute="leading" secondItem="ckR-Va-PcA" secondAttribute="leading" constant="15" id="ZTr-GB-HrI"/>
                                             <constraint firstAttribute="trailing" secondItem="TUP-3M-334" secondAttribute="trailing" constant="30" id="dSN-lH-dYy"/>
-                                            <constraint firstItem="JOe-Mt-1Q8" firstAttribute="leading" secondItem="ckR-Va-PcA" secondAttribute="leading" constant="15" id="uG4-dQ-fur"/>
+                                            <constraint firstItem="KTw-rd-pse" firstAttribute="top" secondItem="TUP-3M-334" secondAttribute="bottom" constant="20" id="s3R-dV-T1I"/>
+                                            <constraint firstAttribute="trailing" secondItem="KTw-rd-pse" secondAttribute="trailing" constant="15" id="vBV-f9-WDu"/>
+                                            <constraint firstAttribute="bottom" secondItem="KTw-rd-pse" secondAttribute="bottom" constant="120" id="wP7-8B-gqh"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -217,7 +216,7 @@
                     </view>
                     <size key="freeformSize" width="414" height="896"/>
                     <connections>
-                        <outlet property="mapView" destination="JOe-Mt-1Q8" id="LnC-oV-ryx"/>
+                        <outlet property="mapView" destination="KTw-rd-pse" id="cCe-r4-DE8"/>
                         <outlet property="navigationBar" destination="awj-25-fdH" id="7rw-V3-lcU"/>
                         <outlet property="oneLineLabel" destination="KME-iV-FDJ" id="FB4-1X-Vx9"/>
                         <outlet property="registerLimitDateView" destination="xw0-aG-y0c" id="LEW-QF-q4Z"/>
@@ -227,7 +226,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DtD-Hs-7yq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="301" y="18"/>
+            <point key="canvasLocation" x="481" y="27"/>
         </scene>
     </scenes>
     <resources>

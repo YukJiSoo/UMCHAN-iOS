@@ -71,9 +71,11 @@
                         <outlet property="mapView" destination="axw-Al-qcX" id="P3q-lx-7Ke"/>
                         <outlet property="navigationBar" destination="Ncl-mI-gMp" id="QWb-Sa-uaX"/>
                         <outlet property="selectButton" destination="cxj-Ky-h5g" id="Euo-wX-eiP"/>
+                        <segue destination="KNn-OL-ObD" kind="unwind" identifier="unwindToRegisterRunningViewController" unwindAction="unwindToRegisterRunningViewControllerWithSegue:" id="OXS-cX-v3j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DXd-cZ-vu9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="KNn-OL-ObD" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-143" y="-52"/>
         </scene>

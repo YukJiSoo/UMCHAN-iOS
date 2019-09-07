@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class RegisterRunningViewController: UIViewController, NibLodable {
 
@@ -16,9 +17,13 @@ class RegisterRunningViewController: UIViewController, NibLodable {
     @IBOutlet weak var oneLineLabel: UITextField!
     @IBOutlet weak var registerLimitDateView: DateView!
     @IBOutlet weak var runningDateView: DateView!
-    @IBOutlet weak var mapView: UIImageView!
+    @IBOutlet weak var mapView: MKMapView!
     
     // MARK: - Properties
+    var runningCourseData: [RunningPoint]?
+    var runningCourseOverlays = [MKOverlay]()
+    
+    let initialLocation = CLLocation(latitude: 37.562310, longitude: 126.999827)
     
     // MARK: - Life cycles
     override func viewDidLoad() {
@@ -27,6 +32,7 @@ class RegisterRunningViewController: UIViewController, NibLodable {
         self.setupNavigationBar()
         self.setupGesture()
         self.setupDateView()
+        self.setupMapView()
     }
     
     // MARK: - Functions
@@ -39,7 +45,6 @@ class RegisterRunningViewController: UIViewController, NibLodable {
     func setupGesture() {
         
         self.addGestureForEndEditting()
-        
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapForSetRunningCourse(_:)))
         self.mapView.addGestureRecognizer(tapGesture)
@@ -54,17 +59,45 @@ class RegisterRunningViewController: UIViewController, NibLodable {
         self.runningDateView.dateLabelPlaceholder = "달리는 날 설정"
     }
     
+    func setupMapView() {
+        
+        self.mapView.delegate = self
+        let coordinateRegion = MKCoordinateRegion(center: initialLocation.coordinate,
+                                                  latitudinalMeters: 1000, longitudinalMeters: 1000)
+        self.mapView?.setRegion(coordinateRegion, animated: true)
+    }
+    
+    func updateMapView() {
+        
+        self.clearRunningCourse()
+        self.drawRunningCourse()
+    }
+    
     @objc func tapForSetRunningCourse(_ gesture: UIGestureRecognizer) {
         
         let storyboard = UIStoryboard(name: StoryboardName.map, bundle: nil)
         let viewController = storyboard.viewController(MapViewController.self)
         viewController.modalPresentationStyle = .custom
         
+        if let runningCourseData = self.runningCourseData {
+            viewController.runningCourseData = runningCourseData
+        }
+        
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     @IBAction func unwindToRegisterRunningViewController(segue: UIStoryboardSegue) {
         
+        if segue.identifier == Segue.unwindToRegisterRunningViewController {
+            
+            guard let mapViewController = segue.source as? MapViewController else {
+                debugPrint("fail to convert \(MapViewController.nibId)")
+                return
+            }
+            
+            self.runningCourseData = mapViewController.runningCourseData
+            self.updateMapView()
+        }
     }
     
 }

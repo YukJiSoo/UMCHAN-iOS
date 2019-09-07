@@ -28,6 +28,8 @@ class MapView: UIView {
     @IBInspectable var annotationSize: CGFloat = 50
     
     var annotationList = [RunningPoint]()
+    var runningCourses = [MKOverlay]()
+    
     weak var delegate: MapViewDelegate?
     
     // MARK: - Life cycles
@@ -141,6 +143,7 @@ class MapView: UIView {
         
         self.mapView?.addAnnotations([runningPoint])
     }
+
 }
 
 extension MapView: AnnotationButtonDelegate {
@@ -148,7 +151,7 @@ extension MapView: AnnotationButtonDelegate {
     func pressed(isCheckMode: Bool) {
         
         if isCheckMode {
-//            self.removeRunningCourse()
+            self.clearRunningCourse()
         } else {
             self.drawRunningCourse()
             

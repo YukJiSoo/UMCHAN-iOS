@@ -1,5 +1,5 @@
 //
-//  MapView+CalculateRunningCourseDelegate.swift
+//  RegisterRunningViewController+MKMapViewDelegate.swift
 //  Umchan
 //
 //  Created by 육지수 on 9/7/19.
@@ -9,13 +9,7 @@
 import UIKit
 import MapKit
 
-protocol OverlayRunningCourseDelegate {
-    
-    func drawRunningCourse()
-    func clearRunningCourse()
-}
-
-extension MapView: OverlayRunningCourseDelegate {
+extension RegisterRunningViewController: MKMapViewDelegate, OverlayRunningCourseDelegate {
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         
@@ -26,10 +20,13 @@ extension MapView: OverlayRunningCourseDelegate {
         return renderer
     }
     
-    
     func drawRunningCourse() {
         
-        _ = self.annotationList
+        guard let runningPoints = self.runningCourseData else {
+            return
+        }
+        
+        _ = runningPoints
             .map{ $0.coordinate }
             .reduce(nil) { (startCoordinate, endCoordinate) -> CLLocationCoordinate2D in
                 
@@ -57,7 +54,7 @@ extension MapView: OverlayRunningCourseDelegate {
                     
                     let overlay = directionResponse.routes[0].polyline
                     
-                    self.runningCourses.append(overlay)
+                    self.runningCourseOverlays.append(overlay)
                     self.mapView?.addOverlay(overlay, level: .aboveRoads)
                 }
                 
@@ -67,6 +64,6 @@ extension MapView: OverlayRunningCourseDelegate {
     
     func clearRunningCourse() {
         
-        self.mapView?.removeOverlays(self.runningCourses)
+        self.mapView.removeOverlays(self.runningCourseOverlays)
     }
 }
