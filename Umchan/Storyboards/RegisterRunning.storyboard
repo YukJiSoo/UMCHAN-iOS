@@ -155,22 +155,23 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTw-rd-pse" customClass="Map">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a3Y-89-rxF" customClass="MapView" customModule="Umchan" customModuleProvider="target">
                                                 <rect key="frame" x="15" y="396" width="384" height="288"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="KTw-rd-pse" secondAttribute="height" multiplier="4:3" id="4fE-ox-Upu"/>
+                                                    <constraint firstAttribute="width" secondItem="a3Y-89-rxF" secondAttribute="height" multiplier="4:3" id="vm3-Yw-cJm"/>
                                                 </constraints>
-                                            </mapView>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="a3Y-89-rxF" firstAttribute="leading" secondItem="ckR-Va-PcA" secondAttribute="leading" constant="15" id="AUK-nv-zIm"/>
                                             <constraint firstItem="TUP-3M-334" firstAttribute="top" secondItem="ckR-Va-PcA" secondAttribute="top" constant="40" id="CLN-WR-iK3"/>
                                             <constraint firstItem="TUP-3M-334" firstAttribute="leading" secondItem="ckR-Va-PcA" secondAttribute="leading" constant="45" id="RJZ-Jf-p5J"/>
-                                            <constraint firstItem="KTw-rd-pse" firstAttribute="leading" secondItem="ckR-Va-PcA" secondAttribute="leading" constant="15" id="ZTr-GB-HrI"/>
+                                            <constraint firstAttribute="trailing" secondItem="a3Y-89-rxF" secondAttribute="trailing" constant="15" id="U9b-fT-2wc"/>
                                             <constraint firstAttribute="trailing" secondItem="TUP-3M-334" secondAttribute="trailing" constant="30" id="dSN-lH-dYy"/>
-                                            <constraint firstItem="KTw-rd-pse" firstAttribute="top" secondItem="TUP-3M-334" secondAttribute="bottom" constant="20" id="s3R-dV-T1I"/>
-                                            <constraint firstAttribute="trailing" secondItem="KTw-rd-pse" secondAttribute="trailing" constant="15" id="vBV-f9-WDu"/>
-                                            <constraint firstAttribute="bottom" secondItem="KTw-rd-pse" secondAttribute="bottom" constant="120" id="wP7-8B-gqh"/>
+                                            <constraint firstItem="a3Y-89-rxF" firstAttribute="top" secondItem="TUP-3M-334" secondAttribute="bottom" constant="20" id="eag-mh-nqE"/>
+                                            <constraint firstAttribute="bottom" secondItem="a3Y-89-rxF" secondAttribute="bottom" constant="120" id="oj6-U5-8pQ"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -216,7 +217,7 @@
                     </view>
                     <size key="freeformSize" width="414" height="896"/>
                     <connections>
-                        <outlet property="mapView" destination="KTw-rd-pse" id="cCe-r4-DE8"/>
+                        <outlet property="mapView" destination="a3Y-89-rxF" id="2ph-9u-vJy"/>
                         <outlet property="navigationBar" destination="awj-25-fdH" id="7rw-V3-lcU"/>
                         <outlet property="oneLineLabel" destination="KME-iV-FDJ" id="FB4-1X-Vx9"/>
                         <outlet property="registerLimitDateView" destination="xw0-aG-y0c" id="LEW-QF-q4Z"/>

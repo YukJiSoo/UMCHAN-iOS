@@ -17,7 +17,7 @@ class RegisterRunningViewController: UIViewController, NibLodable {
     @IBOutlet weak var oneLineLabel: UITextField!
     @IBOutlet weak var registerLimitDateView: DateView!
     @IBOutlet weak var runningDateView: DateView!
-    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var mapView: MapView!
     
     // MARK: - Properties
     var runningCourseData: [RunningPoint]?
@@ -61,16 +61,26 @@ class RegisterRunningViewController: UIViewController, NibLodable {
     
     func setupMapView() {
         
-        self.mapView.delegate = self
-        let coordinateRegion = MKCoordinateRegion(center: initialLocation.coordinate,
-                                                  latitudinalMeters: 1000, longitudinalMeters: 1000)
-        self.mapView?.setRegion(coordinateRegion, animated: true)
+        self.mapView.setupFix()
+        self.mapView.centerMapOnLocation(location: self.initialLocation)
+        
+        if let runningCourseData = self.runningCourseData {
+            
+            self.mapView.annotationList = runningCourseData
+            self.mapView.reloadAnnotation()
+        }
     }
     
     func updateMapView() {
         
-        self.clearRunningCourse()
-        self.drawRunningCourse()
+        self.mapView.clearRunningCourse()
+        if let runningCourseData = self.runningCourseData {
+            
+            self.mapView.annotationList = runningCourseData
+            self.mapView.reloadAnnotation()
+            
+            self.mapView.drawRunningCourse()
+        }
     }
     
     @objc func tapForSetRunningCourse(_ gesture: UIGestureRecognizer) {

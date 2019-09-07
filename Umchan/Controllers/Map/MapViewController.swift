@@ -40,12 +40,14 @@ class MapViewController: UIViewController, NibLodable {
     
     func setupMapView() {
         
+        self.mapView.setupAnnotationButton()
         self.mapView.delegate = self
         self.mapView.centerMapOnLocation(location: self.initialLocation)
         
         if let runningCourseData = self.runningCourseData {
             
             self.mapView.annotationList = runningCourseData
+            self.mapView.reloadAnnotation()
             self.mapView.drawRunningCourse()
         }
     }

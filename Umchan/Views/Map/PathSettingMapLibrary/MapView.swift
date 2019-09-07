@@ -58,7 +58,6 @@ class MapView: UIView {
     func setupSubViews() {
         
         self.setupMapView()
-        self.setupAnnotationButton()
         self.setupAnnotationView()
     }
     
@@ -122,6 +121,15 @@ class MapView: UIView {
         self.annotationView = annotationView
     }
     
+    func setupFix() {
+        
+        self.mapView?.isZoomEnabled = false
+        self.mapView?.isPitchEnabled = false
+        self.mapView?.isRotateEnabled = false
+        self.mapView?.isScrollEnabled = false
+        self.mapView?.isMultipleTouchEnabled = false
+    }
+    
     func centerMapOnLocation(location: CLLocation) {
         
         let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
@@ -142,6 +150,11 @@ class MapView: UIView {
         self.annotationList.append(runningPoint)
         
         self.mapView?.addAnnotations([runningPoint])
+    }
+    
+    func reloadAnnotation() {
+        
+        self.mapView?.addAnnotations(self.annotationList)
     }
 
 }
