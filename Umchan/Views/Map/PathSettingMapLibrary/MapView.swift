@@ -77,6 +77,7 @@ class MapView: UIView {
         
         self.mapView = mapView
         self.mapView?.delegate = self
+        
         self.mapView?.register(RunningPointAnnotationView.self, forAnnotationViewWithReuseIdentifier: RunningPointAnnotationView.nibId)
     }
     
@@ -145,6 +146,13 @@ class MapView: UIView {
 extension MapView: AnnotationButtonDelegate {
     
     func pressed(isCheckMode: Bool) {
+        
+        if isCheckMode {
+//            self.removeRunningCourse()
+        } else {
+            self.drawRunningCourse()
+            
+        }
         
         self.annotationView?.isHidden = !isCheckMode
         self.delegate?.annotationButtonDelegate(isCheckMode: isCheckMode)

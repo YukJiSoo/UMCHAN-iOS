@@ -97,6 +97,7 @@
 		A76A70FF230E9FB700B5EA81 /* Running.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76A70FE230E9FB700B5EA81 /* Running.swift */; };
 		A76A7102230EA13200B5EA81 /* EmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76A7100230EA13200B5EA81 /* EmptyTableViewCell.swift */; };
 		A76A7103230EA13200B5EA81 /* EmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A76A7101230EA13200B5EA81 /* EmptyTableViewCell.xib */; };
+		A797A4572323E88500FD2CD5 /* MapView+CalculateRunningCourseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A797A4562323E88500FD2CD5 /* MapView+CalculateRunningCourseDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -192,6 +193,7 @@
 		A76A70FE230E9FB700B5EA81 /* Running.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Running.swift; sourceTree = "<group>"; };
 		A76A7100230EA13200B5EA81 /* EmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableViewCell.swift; sourceTree = "<group>"; };
 		A76A7101230EA13200B5EA81 /* EmptyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyTableViewCell.xib; sourceTree = "<group>"; };
+		A797A4562323E88500FD2CD5 /* MapView+CalculateRunningCourseDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapView+CalculateRunningCourseDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -476,6 +478,7 @@
 				A71B94B3231AA19F00BCD3E7 /* MapViewDelegate.swift */,
 				A71B94BB231B8FD800BCD3E7 /* RunningPointAnnotationView.swift */,
 				A72F0165231439840044A285 /* MapView.swift */,
+				A797A4562323E88500FD2CD5 /* MapView+CalculateRunningCourseDelegate.swift */,
 				A71B94B9231B8E4800BCD3E7 /* MapView+MKMapViewDelegate.swift */,
 			);
 			path = PathSettingMapLibrary;
@@ -683,6 +686,7 @@
 				A7168B712310111900500621 /* RunningHistoryListViewController.swift in Sources */,
 				A70C2A2F23119C7D002006A3 /* RunningViewController.swift in Sources */,
 				A7168B9323107A0C00500621 /* SearchRunningViewController.swift in Sources */,
+				A797A4572323E88500FD2CD5 /* MapView+CalculateRunningCourseDelegate.swift in Sources */,
 				A70992272307105600AE3ACA /* ModalViewController.swift in Sources */,
 				A71EC203231003E100275EA8 /* DatePickerPresentable.swift in Sources */,
 				A70C2A362311A824002006A3 /* RunningHistoryViewController.swift in Sources */,
