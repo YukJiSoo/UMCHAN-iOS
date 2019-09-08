@@ -74,6 +74,7 @@ class RegisterRunningViewController: UIViewController, NibLodable {
     func updateMapView() {
         
         self.mapView.clearRunningCourse()
+        
         if let runningCourseData = self.runningCourseData {
             
             self.mapView.annotationList = runningCourseData

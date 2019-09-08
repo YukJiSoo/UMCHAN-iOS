@@ -154,6 +154,10 @@ class MapView: UIView {
     
     func reloadAnnotation() {
         
+        if let annotations = self.mapView?.annotations {
+            
+            self.mapView?.removeAnnotations(annotations)
+        }
         self.mapView?.addAnnotations(self.annotationList)
     }
 
@@ -164,10 +168,11 @@ extension MapView: AnnotationButtonDelegate {
     func pressed(isCheckMode: Bool) {
         
         if isCheckMode {
+            
             self.clearRunningCourse()
         } else {
-            self.drawRunningCourse()
             
+            self.drawRunningCourse()
         }
         
         self.annotationView?.isHidden = !isCheckMode

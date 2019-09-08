@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import MapKit
 
 protocol MapViewDelegate: class {
     
     func annotationButtonDelegate(isCheckMode: Bool)
+    func answerAnnotationRemoveDelegate(didSelect view: MKAnnotationView)
 }

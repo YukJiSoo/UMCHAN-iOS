@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 extension MapViewController: MapViewDelegate {
     
@@ -50,4 +51,39 @@ extension MapViewController: MapViewDelegate {
         }
     }
     
+    func answerAnnotationRemoveDelegate(didSelect view: MKAnnotationView) {
+        
+        let alertController = UIAlertController(title: "러닝포인트 삭제", message: "해당 러닝포인트를 코스에서 제외시키겠습니까?", preferredStyle: .alert)
+        
+        let removeActionHandler: (UIAlertAction) -> Void = { (action) in
+            
+            guard let runningPointView = view as? RunningPointAnnotationView else {
+                debugPrint("err: fail to convert \(RunningPointAnnotationView.nibId)")
+                return
+            }
+            
+            guard let runningPoint = runningPointView.annotation as? RunningPoint else {
+                debugPrint("err: fail to convert RunningPoint")
+                return
+            }
+            
+            let order = runningPoint.order - 1
+            self.mapView.annotationList.remove(at: order)
+            runningPointView.removeFromSuperview()
+            
+            self.mapView.reloadAnnotaionViews()
+            
+            self.mapView.clearRunningCourse()
+            self.mapView.drawRunningCourse()
+        }
+        
+        let removeAction = UIAlertAction(title: "예", style: .destructive, handler: removeActionHandler)
+        let preserveAction = UIAlertAction(title: "아니오", style: .default, handler: nil)
+        preserveAction.setValue(UIColor.blue, forKey: "titleTextColor")
+        
+        alertController.addAction(removeAction)
+        alertController.addAction(preserveAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
 }

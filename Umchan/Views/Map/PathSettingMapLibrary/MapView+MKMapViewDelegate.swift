@@ -6,7 +6,7 @@
 //  Copyright © 2019 JSYuk. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import MapKit
 
 extension MapView: MKMapViewDelegate {
@@ -30,5 +30,31 @@ extension MapView: MKMapViewDelegate {
         runningPointView.configure(markerColor: Color.symbol, text: String(runningPointAnnotation.order))
 
         return runningPointView
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        
+        view.setSelected(false, animated: false)
+        self.delegate?.answerAnnotationRemoveDelegate(didSelect: view)
+    }
+    
+    func resortRunningPointArrayOrder() {
+        
+        for (order, runningPoint) in self.annotationList.enumerated() {
+            runningPoint.order = order
+        }
+    }
+    
+    func reloadAnnotaionViews() {
+        
+        for (order, runningPoint) in self.annotationList.enumerated() {
+            runningPoint.order = order + 1
+        }
+        
+        if let annotations = self.mapView?.annotations {
+            
+            self.mapView?.removeAnnotations(annotations)
+            self.mapView?.addAnnotations(self.annotationList)
+        }
     }
 }
