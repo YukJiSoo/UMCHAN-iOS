@@ -41,16 +41,11 @@ class LoginViewController: UIViewController, NibLodable {
             
             switch response {
             case .success(_):
-                do {
-                    print(try Keychain.loadValue(for: "user_name"))
-                } catch (let error) {
-                    print(error)
-                }
                 
-//                let mainTabbarViewController = MainTabBarController()
-//
-//                self.dismiss(animated: true, completion: nil)
-//                self.present(mainTabbarViewController, animated: true)
+                let mainTabbarViewController = MainTabBarController()
+
+                self.dismiss(animated: true, completion: nil)
+                self.present(mainTabbarViewController, animated: true)
                 
             case .failure(APIError.login):
                 

@@ -104,6 +104,7 @@
 		A76A7103230EA13200B5EA81 /* EmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A76A7101230EA13200B5EA81 /* EmptyTableViewCell.xib */; };
 		A787546D232B89F1004EA9E4 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787546C232B89F1004EA9E4 /* Keychain.swift */; };
 		A792F20A232C07E900CE1742 /* AuthService.graphql in Resources */ = {isa = PBXBuildFile; fileRef = A792F209232C07E900CE1742 /* AuthService.graphql */; };
+		A792F20F232C22D300CE1742 /* ApolloNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792F20E232C22D300CE1742 /* ApolloNetworking.swift */; };
 		A797A4572323E88500FD2CD5 /* MapView+CalculateRunningCourseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A797A4562323E88500FD2CD5 /* MapView+CalculateRunningCourseDelegate.swift */; };
 		A797A4592323FD5100FD2CD5 /* RegisterRunningViewController+MKMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A797A4582323FD5100FD2CD5 /* RegisterRunningViewController+MKMapViewDelegate.swift */; };
 		A7FC54F8232C01D20036177A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FC54F7232C01D20036177A /* API.swift */; };
@@ -211,6 +212,7 @@
 		A787546C232B89F1004EA9E4 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		A792F209232C07E900CE1742 /* AuthService.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = AuthService.graphql; sourceTree = "<group>"; };
 		A792F20B232C143400CE1742 /* Apollo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Apollo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A792F20E232C22D300CE1742 /* ApolloNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloNetworking.swift; sourceTree = "<group>"; };
 		A797A4562323E88500FD2CD5 /* MapView+CalculateRunningCourseDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapView+CalculateRunningCourseDelegate.swift"; sourceTree = "<group>"; };
 		A797A4582323FD5100FD2CD5 /* RegisterRunningViewController+MKMapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegisterRunningViewController+MKMapViewDelegate.swift"; sourceTree = "<group>"; };
 		A7FC54F7232C01D20036177A /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -587,6 +589,7 @@
 		A742E39922F88ADF002E333C /* Umchan */ = {
 			isa = PBXGroup;
 			children = (
+				A792F20D232C22AB00CE1742 /* Networking */,
 				A752FF49232BF84A0012D31D /* schema.json */,
 				A752FF44232BB29A0012D31D /* Error */,
 				A709921E2305739C00AE3ACA /* Xibs */,
@@ -642,6 +645,14 @@
 				A71EC1EF230FDAFF00275EA8 /* WriteTableViewCell.swift */,
 			);
 			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		A792F20D232C22AB00CE1742 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				A792F20E232C22D300CE1742 /* ApolloNetworking.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -792,6 +803,7 @@
 				A7168B8E2310789A00500621 /* SearchViewController+CustomSearchBarDelegate.swift in Sources */,
 				A71EC1DE230FB91F00275EA8 /* Date+Extension.swift in Sources */,
 				A7168B7823103E4300500621 /* RunningHistoryListTableViewCell.swift in Sources */,
+				A792F20F232C22D300CE1742 /* ApolloNetworking.swift in Sources */,
 				A72F016A231449CC0044A285 /* AnnotationButtonDelegate.swift in Sources */,
 				A71B94B8231AAA5700BCD3E7 /* RunningPoint.swift in Sources */,
 				A7168B862310648300500621 /* CustomSearchBar.swift in Sources */,
