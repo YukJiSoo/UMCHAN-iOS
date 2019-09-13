@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyCrewsViewController: UIViewController {
+class MyCrewsViewController: UIViewController, NibLodable {
 
     // MARK: - Outlets
     @IBOutlet weak var navigationBar: CustomNavigationBar!

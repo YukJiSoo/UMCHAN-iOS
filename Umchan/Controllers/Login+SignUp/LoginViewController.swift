@@ -30,16 +30,11 @@ class LoginViewController: UIViewController, NibLodable {
         
         self.activityIndicator.startAnimating()
         
+        let mainTabbarViewController = MainTabBarController()
+        
         self.dismiss(animated: true, completion: nil)
+        self.present(mainTabbarViewController, animated: true)
         
         self.activityIndicator.stopAnimating()
-    }
-    
-    @IBAction func unwindToLoginViewController(_ segue: UIStoryboardSegue) {
-        
-        if segue.identifier == Segue.unwindToLoginViewController {
-            
-            self.performSegue(withIdentifier: Segue.unwindToMainViewController, sender: nil)
-        }
     }
 }

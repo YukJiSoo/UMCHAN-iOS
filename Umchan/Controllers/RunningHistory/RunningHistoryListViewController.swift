@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RunningHistoryListViewController: UIViewController {
+class RunningHistoryListViewController: UIViewController, NibLodable {
     
     // MARK: - Outlets
     @IBOutlet weak var navigationBar: CustomNavigationBar!

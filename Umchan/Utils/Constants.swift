@@ -74,6 +74,11 @@ class DateFormat {
 // MARK: - image asset name
 class AssetName {
     
+    // tabBarItem image
+    static let main = "main"
+    static let crew = "crew"
+    static let history = "history"
+    
     static let user = "user"
     static let empty = "empty"
     static let shoes = "shoes"

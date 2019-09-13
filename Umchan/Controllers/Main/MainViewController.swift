@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, NibLodable {
 
     // MARK: - Outlets
     @IBOutlet weak var navigationBar: CustomNavigationBar!
