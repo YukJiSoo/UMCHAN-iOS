@@ -1,0 +1,27 @@
+mutation RegisterUser($user: RegisterUserInput) {
+    register(user: $user) {
+        code,
+        success,
+        message,
+        token
+    }
+}
+
+mutation Login($account: LoginInput!) {
+    login(account: $account) {
+        code,
+        success,
+        message,
+        token,
+        user {
+            id,
+            name,
+            nickname,
+            imagePath,
+            location {
+                latitude,
+                longitude
+            }
+        }
+    }
+}

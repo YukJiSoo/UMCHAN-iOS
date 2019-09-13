@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -103,8 +103,10 @@
 		A76A7102230EA13200B5EA81 /* EmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76A7100230EA13200B5EA81 /* EmptyTableViewCell.swift */; };
 		A76A7103230EA13200B5EA81 /* EmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A76A7101230EA13200B5EA81 /* EmptyTableViewCell.xib */; };
 		A787546D232B89F1004EA9E4 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787546C232B89F1004EA9E4 /* Keychain.swift */; };
+		A792F20A232C07E900CE1742 /* AuthService.graphql in Resources */ = {isa = PBXBuildFile; fileRef = A792F209232C07E900CE1742 /* AuthService.graphql */; };
 		A797A4572323E88500FD2CD5 /* MapView+CalculateRunningCourseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A797A4562323E88500FD2CD5 /* MapView+CalculateRunningCourseDelegate.swift */; };
 		A797A4592323FD5100FD2CD5 /* RegisterRunningViewController+MKMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A797A4582323FD5100FD2CD5 /* RegisterRunningViewController+MKMapViewDelegate.swift */; };
+		A7FC54F8232C01D20036177A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FC54F7232C01D20036177A /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -207,8 +209,11 @@
 		A76A7100230EA13200B5EA81 /* EmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableViewCell.swift; sourceTree = "<group>"; };
 		A76A7101230EA13200B5EA81 /* EmptyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyTableViewCell.xib; sourceTree = "<group>"; };
 		A787546C232B89F1004EA9E4 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		A792F209232C07E900CE1742 /* AuthService.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = AuthService.graphql; sourceTree = "<group>"; };
+		A792F20B232C143400CE1742 /* Apollo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Apollo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A797A4562323E88500FD2CD5 /* MapView+CalculateRunningCourseDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapView+CalculateRunningCourseDelegate.swift"; sourceTree = "<group>"; };
 		A797A4582323FD5100FD2CD5 /* RegisterRunningViewController+MKMapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegisterRunningViewController+MKMapViewDelegate.swift"; sourceTree = "<group>"; };
+		A7FC54F7232C01D20036177A /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		C321F398A866D850759BD543 /* Pods_Umchan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Umchan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -236,6 +241,7 @@
 		838B0E6814C4A49380336550 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A792F20B232C143400CE1742 /* Apollo.framework */,
 				C321F398A866D850759BD543 /* Pods_Umchan.framework */,
 			);
 			name = Frameworks;
@@ -316,7 +322,6 @@
 		A70991F62303C1AD00AE3ACA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A752FF49232BF84A0012D31D /* schema.json */,
 				A70991F72303C1B500AE3ACA /* Font */,
 			);
 			path = Resources;
@@ -337,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				A70992092303FE2100AE3ACA /* DistrictInfoService.swift */,
+				A792F209232C07E900CE1742 /* AuthService.graphql */,
 				A752FF42232BAB610012D31D /* AuthService.swift */,
 				A752FF47232BB7DC0012D31D /* UserDataService.swift */,
 			);
@@ -581,6 +587,7 @@
 		A742E39922F88ADF002E333C /* Umchan */ = {
 			isa = PBXGroup;
 			children = (
+				A752FF49232BF84A0012D31D /* schema.json */,
 				A752FF44232BB29A0012D31D /* Error */,
 				A709921E2305739C00AE3ACA /* Xibs */,
 				A70992082303FE0000AE3ACA /* Services */,
@@ -594,6 +601,7 @@
 				A7528B9D2302BBC000A6BEC0 /* Constants.swift */,
 				A742E3A122F88AE1002E333C /* Assets.xcassets */,
 				A742E3A622F88AE1002E333C /* Info.plist */,
+				A7FC54F7232C01D20036177A /* API.swift */,
 			);
 			path = Umchan;
 			sourceTree = "<group>";
@@ -644,10 +652,11 @@
 			buildConfigurationList = A742E3A922F88AE1002E333C /* Build configuration list for PBXNativeTarget "Umchan" */;
 			buildPhases = (
 				E397A05A53D134CA6FA4C165 /* [CP] Check Pods Manifest.lock */,
+				A7A8EF30232BFD2900C2F01D /* Generate Apollo GraphQL API */,
 				A742E39322F88ADF002E333C /* Sources */,
 				A742E39422F88ADF002E333C /* Frameworks */,
 				A742E39522F88ADF002E333C /* Resources */,
-				72189BD32363DAC9031C560E /* [CP] Embed Pods Frameworks */,
+				5E95083E2568F5A54426D47B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -702,6 +711,7 @@
 				A70C2A1D23116432002006A3 /* CreateCrew.storyboard in Resources */,
 				A70991FF2303C1DA00AE3ACA /* NanumSquareOTFRight.otf in Resources */,
 				A70C2A402311C036002006A3 /* LoginAndSignup.storyboard in Resources */,
+				A792F20A232C07E900CE1742 /* AuthService.graphql in Resources */,
 				A70991FE2303C1DA00AE3ACA /* NanumSquareOTFLight.otf in Resources */,
 				A752FF4A232BF84A0012D31D /* schema.json in Resources */,
 				A72F016223127F3C0044A285 /* Map.storyboard in Resources */,
@@ -723,23 +733,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		72189BD32363DAC9031C560E /* [CP] Embed Pods Frameworks */ = {
+		5E95083E2568F5A54426D47B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Umchan/Pods-Umchan-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Umchan/Pods-Umchan-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Umchan/Pods-Umchan-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7A8EF30232BFD2900C2F01D /* Generate Apollo GraphQL API */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Umchan/Pods-Umchan-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Apollo/Apollo.framework",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "Generate Apollo GraphQL API";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Apollo.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Umchan/Pods-Umchan-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "SCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/check-and-run-apollo-cli.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n";
 		};
 		E397A05A53D134CA6FA4C165 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -821,6 +844,7 @@
 				A71EC1F6230FF23400275EA8 /* RoundedButton.swift in Sources */,
 				A787546D232B89F1004EA9E4 /* Keychain.swift in Sources */,
 				A70992032303E26500AE3ACA /* CustomNavigationBar.swift in Sources */,
+				A7FC54F8232C01D20036177A /* API.swift in Sources */,
 				A70C2A1F231171CE002006A3 /* CrewInfoViewController.swift in Sources */,
 				A71EC201230FF8CC00275EA8 /* RegisterRunningViewController+DateViewDelegate.swift in Sources */,
 				A71EC1F9230FF45C00275EA8 /* DatePickerViewController.swift in Sources */,
