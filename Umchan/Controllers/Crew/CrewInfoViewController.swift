@@ -51,11 +51,11 @@ class CrewInfoViewController: UIViewController, NibLodable {
     func setupCaptinAndMembers() {
         
         let captinViewNib = UserView.instanceFromNib()
-        captinViewNib.configure(user: User(name: "크루장"))
+        captinViewNib.configure(user: User(email: "이메일", name: "크루장", nickname: "별명", imagePath: "이미지", location: Location(latitude: 20.0, longitude: 10.2)))
         let firstMemberViewNib = UserView.instanceFromNib()
-        firstMemberViewNib.configure(user: User(name: "크루원1"))
+        firstMemberViewNib.configure(user: User(email: "이메일", name: "크루월1", nickname: "별명", imagePath: "이미지", location: Location(latitude: 20.0, longitude: 10.2)))
         let secondMemberViewNib = UserView.instanceFromNib()
-        secondMemberViewNib.configure(user: User(name: "크루원2"))
+        secondMemberViewNib.configure(user: User(email: "이메일", name: "크루월2", nickname: "별명", imagePath: "이미지", location: Location(latitude: 20.0, longitude: 10.2)))
         
         self.CrewCaptinView.addArrangedSubview(captinViewNib)
         self.CrewMembersView.addArrangedSubview(firstMemberViewNib)

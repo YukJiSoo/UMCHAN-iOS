@@ -11,3 +11,7 @@ import Foundation
 enum APIError: Error {
     case login
 }
+
+enum KeychainError: Error {
+    case failToSave
+}

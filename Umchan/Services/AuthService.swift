@@ -17,12 +17,19 @@ class AuthService {
         // TODO: API Networking(GraphQL)
         let resultStub = true
         
-        if resultStub {
-            
-            completion(.success(true))
-        } else {
-            
+        if !resultStub {
             completion(.failure(.login))
+            return
+        }
+        
+        UserDataService.shared.saveUserData(user: User(email: "이메일", name: "크루장", nickname: "별명", imagePath: "이미지", location: Location(latitude: 20.0, longitude: 10.2))) { (result) in
+            switch result {
+            case .success(_):
+                completion(.success(true))
+                
+            case .failure(KeychainError.failToSave):
+                completion(.failure(.login))
+            }
         }
     }
 }
