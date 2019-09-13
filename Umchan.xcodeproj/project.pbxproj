@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		832E8D2F07E1069DEF1C4995 /* Pods_Umchan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C321F398A866D850759BD543 /* Pods_Umchan.framework */; };
 		A7071B892311C6D200982161 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7071B882311C6D200982161 /* LoginViewController.swift */; };
 		A70991F02303BD3600AE3ACA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70991EF2303BD3600AE3ACA /* MainTabBarController.swift */; };
 		A70991F52303BF3A00AE3ACA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70991F42303BF3A00AE3ACA /* MainViewController.swift */; };
@@ -94,6 +95,7 @@
 		A752FF43232BAB610012D31D /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A752FF42232BAB610012D31D /* AuthService.swift */; };
 		A752FF46232BB2A50012D31D /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = A752FF45232BB2A50012D31D /* Error.swift */; };
 		A752FF48232BB7DC0012D31D /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A752FF47232BB7DC0012D31D /* UserDataService.swift */; };
+		A752FF4A232BF84A0012D31D /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = A752FF49232BF84A0012D31D /* schema.json */; };
 		A76A70F7230D8E9F00B5EA81 /* RegisterRunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76A70F6230D8E9F00B5EA81 /* RegisterRunningViewController.swift */; };
 		A76A70FC230E923E00B5EA81 /* RunningTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76A70FA230E923E00B5EA81 /* RunningTableViewCell.swift */; };
 		A76A70FD230E923E00B5EA81 /* RunningTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A76A70FB230E923E00B5EA81 /* RunningTableViewCell.xib */; };
@@ -106,6 +108,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		92D1184A8472392B33710137 /* Pods-Umchan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Umchan.release.xcconfig"; path = "Pods/Target Support Files/Pods-Umchan/Pods-Umchan.release.xcconfig"; sourceTree = "<group>"; };
+		A3C8C7E90AB0BE113C23634C /* Pods-Umchan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Umchan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Umchan/Pods-Umchan.debug.xcconfig"; sourceTree = "<group>"; };
 		A7071B882311C6D200982161 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A70991EF2303BD3600AE3ACA /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		A70991F42303BF3A00AE3ACA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +199,7 @@
 		A752FF42232BAB610012D31D /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		A752FF45232BB2A50012D31D /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		A752FF47232BB7DC0012D31D /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
+		A752FF49232BF84A0012D31D /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		A76A70F6230D8E9F00B5EA81 /* RegisterRunningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRunningViewController.swift; sourceTree = "<group>"; };
 		A76A70FA230E923E00B5EA81 /* RunningTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningTableViewCell.swift; sourceTree = "<group>"; };
 		A76A70FB230E923E00B5EA81 /* RunningTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RunningTableViewCell.xib; sourceTree = "<group>"; };
@@ -204,6 +209,7 @@
 		A787546C232B89F1004EA9E4 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		A797A4562323E88500FD2CD5 /* MapView+CalculateRunningCourseDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapView+CalculateRunningCourseDelegate.swift"; sourceTree = "<group>"; };
 		A797A4582323FD5100FD2CD5 /* RegisterRunningViewController+MKMapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegisterRunningViewController+MKMapViewDelegate.swift"; sourceTree = "<group>"; };
+		C321F398A866D850759BD543 /* Pods_Umchan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Umchan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,12 +217,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				832E8D2F07E1069DEF1C4995 /* Pods_Umchan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7911BAB6B95AD9C7C871AB9B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A3C8C7E90AB0BE113C23634C /* Pods-Umchan.debug.xcconfig */,
+				92D1184A8472392B33710137 /* Pods-Umchan.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		838B0E6814C4A49380336550 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C321F398A866D850759BD543 /* Pods_Umchan.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A70991ED2303BB4F00AE3ACA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +316,7 @@
 		A70991F62303C1AD00AE3ACA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A752FF49232BF84A0012D31D /* schema.json */,
 				A70991F72303C1B500AE3ACA /* Font */,
 			);
 			path = Resources;
@@ -540,6 +565,8 @@
 			children = (
 				A742E39922F88ADF002E333C /* Umchan */,
 				A742E39822F88ADF002E333C /* Products */,
+				7911BAB6B95AD9C7C871AB9B /* Pods */,
+				838B0E6814C4A49380336550 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -616,9 +643,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A742E3A922F88AE1002E333C /* Build configuration list for PBXNativeTarget "Umchan" */;
 			buildPhases = (
+				E397A05A53D134CA6FA4C165 /* [CP] Check Pods Manifest.lock */,
 				A742E39322F88ADF002E333C /* Sources */,
 				A742E39422F88ADF002E333C /* Frameworks */,
 				A742E39522F88ADF002E333C /* Resources */,
+				72189BD32363DAC9031C560E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -674,6 +703,7 @@
 				A70991FF2303C1DA00AE3ACA /* NanumSquareOTFRight.otf in Resources */,
 				A70C2A402311C036002006A3 /* LoginAndSignup.storyboard in Resources */,
 				A70991FE2303C1DA00AE3ACA /* NanumSquareOTFLight.otf in Resources */,
+				A752FF4A232BF84A0012D31D /* schema.json in Resources */,
 				A72F016223127F3C0044A285 /* Map.storyboard in Resources */,
 				A70C2A392311ACDE002006A3 /* Profile.storyboard in Resources */,
 				A71EC1FA230FF45C00275EA8 /* DatePickerViewController.xib in Resources */,
@@ -691,6 +721,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		72189BD32363DAC9031C560E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Umchan/Pods-Umchan-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Apollo/Apollo.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Apollo.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Umchan/Pods-Umchan-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E397A05A53D134CA6FA4C165 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Umchan-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A742E39322F88ADF002E333C /* Sources */ = {
@@ -918,6 +987,7 @@
 		};
 		A742E3AA22F88AE1002E333C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3C8C7E90AB0BE113C23634C /* Pods-Umchan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -937,6 +1007,7 @@
 		};
 		A742E3AB22F88AE1002E333C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92D1184A8472392B33710137 /* Pods-Umchan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
