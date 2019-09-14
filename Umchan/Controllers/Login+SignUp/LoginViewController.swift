@@ -10,16 +10,19 @@ import UIKit
 
 class LoginViewController: UIViewController, NibLodable {
 
+    // MARK: Outlets
     @IBOutlet weak var emailLabel: UITextField!
     @IBOutlet weak var passwordLabel: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    // MARK: Life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.setup()
     }
     
+    // MARK: Functions
     func setup() {
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapForEndEditting(_:)))
@@ -62,6 +65,7 @@ class LoginViewController: UIViewController, NibLodable {
         }
     }
     
+    // MARK: Actions
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         
         self.activityIndicator.startAnimating()
@@ -72,5 +76,10 @@ class LoginViewController: UIViewController, NibLodable {
         }
         
         AuthService.shared.authorize(email: email, password: password, completion: authorizeCompletion(_:))
+    }
+    
+    @IBAction func unwindToLoginViewController(_ segue: UIStoryboardSegue) {
+        
+        self.dismissSelfAndPresenetMain()
     }
 }

@@ -228,7 +228,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="354" height="28"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" name="NanumSquareOTF_acR" family="NanumSquareOTF_ac" pointSize="25"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                             </textField>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6vs-hl-Oxn" userLabel="BarView">
                                                                 <rect key="frame" x="0.0" y="38" width="354" height="2"/>
@@ -358,7 +358,7 @@
                         <outlet property="nicknameLabel" destination="32D-Cb-dT2" id="ES9-EL-ct0"/>
                         <outlet property="passwordLabel" destination="X72-Rh-r1S" id="8Dg-x9-fwb"/>
                         <outlet property="userImageView" destination="wJz-0C-VJs" id="7qw-DP-Azz"/>
-                        <segue destination="58T-66-PZv" kind="unwind" identifier="unwindToLoginViewController" unwindAction="unwindToLoginViewController:" id="tOH-nc-onC"/>
+                        <segue destination="58T-66-PZv" kind="unwind" identifier="unwindToLoginViewController" unwindAction="unwindToLoginViewController:" id="ZIg-qU-huP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dWj-N4-BBl" userLabel="First Responder" sceneMemberID="firstResponder"/>

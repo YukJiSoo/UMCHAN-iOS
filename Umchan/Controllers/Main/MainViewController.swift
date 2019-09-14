@@ -118,15 +118,6 @@ class MainViewController: UIViewController, NibLodable {
         let viewController = SearchRunningViewController()
         self.navigationController?.pushViewController(viewController, animated: true)
     }
-    
-    @IBAction func unwindToMainViewController(_ segue: UIStoryboardSegue) {
-        
-        if segue.identifier == Segue.unwindToMainViewController {
-            
-            self.isLoggedIn = true
-            self.setup()
-        }
-    }
 }
 
 extension MainViewController: CustomNavigationBarDelegate {
