@@ -8,13 +8,19 @@
 
 import Foundation
 
-struct User: Codable {
+struct User {
     
-    var email: String
     var name: String
     var nickname: String
     var imagePath: String
     var location: Location
+}
+
+extension User: Codable {
+    
+    init(_ dictionary: [String: Any]) throws {
+        self = try JSONDecoder().decode(User.self, from: JSONSerialization.data(withJSONObject: dictionary))
+    }
 }
 
 struct Location: Codable {

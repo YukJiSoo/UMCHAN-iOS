@@ -12,13 +12,18 @@ class UserDataService {
     
     static let shared = UserDataService()
     
-    // MARK: 
-    func saveUserData(user: User, completion: @escaping (_ Response: Result<Bool, KeychainError>) -> Void) {
+    // MARK: Properties
+    private(set) var user: User?
+    
+    // MARK: Func
+    func saveUserData(_ dictionary: [String: Any], completion: @escaping (_ Response: Result<Bool, KeychainError>) -> Void) {
         
-        if Keychain.saveValue(user.name, for: "user_name") {
-            completion(.success(true))
-        } else {
-            completion(.failure(.failToSave))
+        guard let user = try? User(dictionary) else {
+            completion(.failure(.failToSave("Fail initialize User struct")))
+            return
         }
+        
+        self.user = user
+        completion(.success(true))
     }
 }

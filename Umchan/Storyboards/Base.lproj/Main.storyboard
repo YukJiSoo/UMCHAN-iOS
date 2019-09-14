@@ -72,7 +72,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BUo-at-fUX">
-                                <rect key="frame" x="0.0" y="109" width="414" height="728"/>
+                                <rect key="frame" x="0.0" y="109" width="414" height="777"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="725" translatesAutoresizingMaskIntoConstraints="NO" id="HpT-Hb-ZEg" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="778.5"/>
@@ -242,71 +242,9 @@
             </objects>
             <point key="canvasLocation" x="2893" y="1055"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="nTG-al-LVL">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="T6H-tw-VKL" customClass="TabBarController" customModule="Umchan" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DyQ-1L-YCW">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="oSp-eQ-fc3" kind="relationship" relationship="viewControllers" id="2Aq-0B-gEn"/>
-                        <segue destination="mNE-Jw-n5F" kind="relationship" relationship="viewControllers" id="09t-HD-5qg"/>
-                        <segue destination="EPs-qw-W7v" kind="relationship" relationship="viewControllers" id="m1a-fh-Plz"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yEv-zE-yfT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="934.78260869565224" y="292.63392857142856"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ck9-nD-TgD">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="mNE-Jw-n5F" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="main" id="47Q-lN-0Yc">
-                        <inset key="imageInsets" minX="0.0" minY="3" maxX="0.0" maxY="0.0"/>
-                    </tabBarItem>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xeh-6H-fLH">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="MSY-so-wUb"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RC8-Uj-Jes" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1844.9275362318842" y="292.63392857142856"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="dqV-z8-3l8">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="EPs-qw-W7v" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="history" id="1Aw-ev-Jez">
-                        <inset key="imageInsets" minX="0.0" minY="3" maxX="0.0" maxY="0.0"/>
-                    </tabBarItem>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bd9-x1-Pvo">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="CYI-j0-Uiy" kind="relationship" relationship="rootViewController" id="ODb-7t-rOg"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zYI-11-7dc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1844.9275362318842" y="1054.6875"/>
-        </scene>
     </scenes>
     <resources>
         <image name="crew" width="36" height="30"/>
-        <image name="history" width="38" height="34"/>
-        <image name="main" width="28" height="32"/>
         <image name="shoes" width="40" height="38"/>
     </resources>
     <color key="tintColor" red="0.62745098039215685" green="0.16078431372549018" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

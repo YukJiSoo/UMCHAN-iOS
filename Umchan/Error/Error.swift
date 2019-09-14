@@ -9,9 +9,9 @@
 import Foundation
 
 enum APIError: Error {
-    case login
+    case login(String)
 }
 
 enum KeychainError: Error {
-    case failToSave
+    case failToSave(String)
 }
