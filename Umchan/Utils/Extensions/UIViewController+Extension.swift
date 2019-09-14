@@ -67,4 +67,16 @@ extension UIViewController {
         
         self.present(self.imagePicker, animated: true, completion: nil)
     }
+
+    func presentFailAlertController(_ title: String, with message: String) {
+
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+
+        let okAction = UIAlertAction(title: "예", style: .destructive) { (action) in
+            self.dismiss(animated: true, completion: nil)
+        }
+        alertController.addAction(okAction)
+
+        self.present(alertController, animated: true, completion: nil)
+    }
 }

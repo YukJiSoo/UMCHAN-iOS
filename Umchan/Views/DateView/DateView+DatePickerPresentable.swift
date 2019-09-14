@@ -19,6 +19,9 @@ extension DateView: DatePickerPresentable {
     }
     
     func datePicked(date: Date, time: Date) {
+
+        self.date = date
+        self.time = time
         
         let dateString = self.dateFormatter.string(from: date)
         let timeString = self.timeFormatter.string(from: time)

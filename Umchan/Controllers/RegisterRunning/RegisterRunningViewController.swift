@@ -111,6 +111,20 @@ class RegisterRunningViewController: UIViewController, NibLodable {
         }
     }
 
+    func registerRunningCompletion(_ response: Result<Bool, RunningAPIError>){
+
+        switch response {
+        case .success(_):
+
+            self.dismiss(animated: true, completion: nil)
+        case .failure(RunningAPIError.createRunning(let message)):
+
+            self.presentFailAlertController("러닝 등록 실패", with: message)
+        default:
+            debugPrint("Uncorrect access")
+        }
+    }
+
     @IBAction func registerButtonPressed(_ sender: UIButton) {
 
         guard
@@ -120,13 +134,20 @@ class RegisterRunningViewController: UIViewController, NibLodable {
             let registerLimitDate = self.registerLimitDateView.getDateAndTimeComponents(),
             let runningCourseData = self.runningCourseData, runningCourseData.count != 0
             else {
-
                 debugPrint("All field is not filled")
                 return
         }
 
         let runningPoint = runningCourseData.map { (Double($0.coordinate.latitude), Double($0.coordinate.longitude)) }
-        RunningService.shared.registerRunning(name: name, oneLine: oneLine, runningDate: runningDate, registerLimitDate: registerLimitDate, runningPoint: runningPoint)
+
+        RunningService.shared.registerRunning(
+            name: name,
+            oneLine: oneLine,
+            runningDate: runningDate,
+            registerLimitDate: registerLimitDate,
+            runningPoint: runningPoint,
+            completion: registerRunningCompletion(_:)
+        )
     }
     
 }
