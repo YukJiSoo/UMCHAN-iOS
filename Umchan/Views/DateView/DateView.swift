@@ -7,6 +7,14 @@
 //
 
 import UIKit
+import Foundation
+
+typealias Year = Int
+typealias Month = Int
+typealias Day = Int
+typealias Hour = Int
+typealias Minute = Int
+typealias RunningDateType = (Year, Month, Day, Hour, Minute)
 
 class DateView: UIStackView {
     
@@ -21,6 +29,9 @@ class DateView: UIStackView {
             self.dateLabel.text = self.pickedDate
         }
     }
+
+    var date: Date?
+    var time: Date?
     
     var delegate: DateViewDelegate?
     
@@ -45,8 +56,25 @@ class DateView: UIStackView {
     }
     
     @objc func dateViewPressed(_ gesture: UIGestureRecognizer) {
-        
+
         self.delegate?.presentDatePickerViewController(self)
     }
 
+    func getDateAndTimeComponents() -> (Year, Month, Day, Hour, Minute)? {
+
+        let calendar = Calendar.current
+
+        guard let date = self.date, let time = self.time else {
+            debugPrint("date and time is nil")
+            return nil
+        }
+
+        return (
+            calendar.component(.year, from: date),
+            calendar.component(.month, from: date),
+            calendar.component(.day, from: date),
+            calendar.component(.hour, from: time),
+            calendar.component(.minute, from: time)
+        )
+    }
 }

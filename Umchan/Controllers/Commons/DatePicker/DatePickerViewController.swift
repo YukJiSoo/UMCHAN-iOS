@@ -19,16 +19,6 @@ class DatePickerViewController: UIViewController {
     // MARK: - Properties
     var delegate: DatePickerPresentable?
     
-    var dateFormatter: DateFormatter {
-        
-        return DateFormatter.basicFormatter(format: DateFormat.date, locale: DateFormat.locale)
-    }
-    
-    var timeFormatter: DateFormatter {
-        
-        return DateFormatter.basicFormatter(format: DateFormat.time, locale: DateFormat.locale)
-    }
-    
     // MARK: - Life cycles
     override func viewDidLoad() {
         
@@ -48,11 +38,8 @@ class DatePickerViewController: UIViewController {
         
         let date = self.dateDatePicker.date
         let time = self.timeDatePicker.date
-        
-        let dateString = self.dateFormatter.string(from: date)
-        let timeString = self.timeFormatter.string(from: time)
-        
-        self.delegate?.datePicked(date: dateString, time: timeString)
+
+        self.delegate?.datePicked(date: date, time: time)
         
         self.dismiss(animated: true, completion: nil)
     }

@@ -9,10 +9,21 @@
 import Foundation
 
 extension DateView: DatePickerPresentable {
+
+    var dateFormatter: DateFormatter {
+        return DateFormatter.basicFormatter(format: DateFormat.date, locale: DateFormat.locale)
+    }
+
+    var timeFormatter: DateFormatter {
+        return DateFormatter.basicFormatter(format: DateFormat.time, locale: DateFormat.locale)
+    }
     
-    func datePicked(date: String, time: String) {
+    func datePicked(date: Date, time: Date) {
         
-        self.dateLabel.text = "\(date) \(time)"
+        let dateString = self.dateFormatter.string(from: date)
+        let timeString = self.timeFormatter.string(from: time)
+
+        self.dateLabel.text = "\(dateString) \(timeString)"
     }
     
 }

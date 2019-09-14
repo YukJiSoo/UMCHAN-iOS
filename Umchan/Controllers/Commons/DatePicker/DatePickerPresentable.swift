@@ -10,5 +10,5 @@ import Foundation
 
 protocol DatePickerPresentable {
     
-    func datePicked(date: String, time: String)
+    func datePicked(date: Date, time: Date)
 }
