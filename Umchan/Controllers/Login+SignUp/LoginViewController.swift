@@ -71,6 +71,6 @@ class LoginViewController: UIViewController, NibLodable {
             return
         }
         
-        AuthService.shared.authorize(email: email, password: password, completion: authorizeCompletion)
+        AuthService.shared.authorize(email: email, password: password, completion: authorizeCompletion(_:))
     }
 }

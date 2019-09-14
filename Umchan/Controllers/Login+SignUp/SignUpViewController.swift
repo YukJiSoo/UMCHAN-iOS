@@ -43,17 +43,59 @@ class SignUpViewController: UIViewController {
         self.navigationBar.configureButton(location: .right, type: .close)
     }
     
-    @IBAction func signUpButtonPressed(_ sender: UIButton) {
+    func presenetSuccessAlertAndUnwind() {
         
-        self.activityIndicator.startAnimating()
-        
-        // todo: - refactoring createCheckAlertViewController(title:message:) add completionHandler
         let alertController = self.createBasicAlertViewController(title: "회원가입", message: "회원가입이 완료되었습니다")  {
             self.performSegue(withIdentifier: Segue.unwindToLoginViewController, sender: nil)
         }
         
-        self.activityIndicator.stopAnimating()
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func presenetFailAlertController(with message: String) {
+        
+        let alertController = UIAlertController(title: "회원가입 실패", message: message, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "예", style: .destructive) { (action) in
+            self.dismiss(animated: true, completion: nil)
+        }
+        alertController.addAction(okAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func registerCompletion(_ response: Result<Bool, AuthAPIError>) -> Void {
+        
+        self.activityIndicator.stopAnimating()
+        
+        switch response {
+        case .success(_):
+            
+            self.presenetSuccessAlertAndUnwind()
+        case .failure(AuthAPIError.login(let message)):
+            
+            self.presenetFailAlertController(with: message)
+        default:
+            debugPrint("Uncorrect access")
+        }
+    }
+    
+    @IBAction func signUpButtonPressed(_ sender: UIButton) {
+        
+        self.activityIndicator.startAnimating()
+        
+        guard
+            let email = self.emailLabel.text, !email.isEmpty,
+            let password = self.passwordLabel.text, !password.isEmpty,
+            let name = self.nameLabel.text, !name.isEmpty,
+            let nickname = self.nicknameLabel.text, !nickname.isEmpty
+            else {
+                
+                debugPrint("All field is not filled")
+                return
+        }
+        
+        AuthService.shared.register(email: email, password: password, name: name, nickname: nickname, completion: registerCompletion(_:))
     }
 }
     
@@ -61,7 +103,6 @@ extension SignUpViewController: CustomNavigationBarDelegate {
         
     func rightBarButtonPressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
-        
     }
 }
 
