@@ -13,6 +13,10 @@ enum AuthAPIError: Error {
     case register(String)
 }
 
+enum RunningAPIError: Error {
+    case createRunning(String)
+}
+
 enum KeychainError: Error {
     case failToSave(String)
 }

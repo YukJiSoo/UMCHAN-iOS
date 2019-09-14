@@ -1,0 +1,9 @@
+
+mutation CreateRunning($running: CreateRunningInput) {
+    createRunning(running: $running) {
+        code,
+        success,
+        message,
+        id
+    }
+}
