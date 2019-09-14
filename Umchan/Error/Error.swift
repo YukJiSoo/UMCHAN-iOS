@@ -8,8 +8,9 @@
 
 import Foundation
 
-enum APIError: Error {
+enum AuthAPIError: Error {
     case login(String)
+    case register(String)
 }
 
 enum KeychainError: Error {

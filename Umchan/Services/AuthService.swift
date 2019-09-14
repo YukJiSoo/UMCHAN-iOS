@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias AuthCompletion = (_ Response: Result<Bool, APIError>) -> Void
+typealias AuthCompletion = (_ Response: Result<Bool, AuthAPIError>) -> Void
 
 protocol AuthServiceType {
     
@@ -28,8 +28,7 @@ final class AuthService: AuthServiceType {
     // MARK: Func
     func authorize(email: String, password: String, completion: @escaping AuthCompletion) {
         
-//        let loginInput = LoginInput(email: email, password: password)
-        let loginInput = LoginInput(email: "2t1@test.com", password: "test123@#$")
+        let loginInput = LoginInput(email: email, password: password)
         Apollo.shared.client.perform(mutation: LoginMutation(account: loginInput)) { result in
             
             guard
@@ -72,4 +71,6 @@ final class AuthService: AuthServiceType {
             }
         }
     }
+    
+    
 }

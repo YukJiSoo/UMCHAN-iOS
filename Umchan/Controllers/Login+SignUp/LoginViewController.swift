@@ -46,7 +46,7 @@ class LoginViewController: UIViewController, NibLodable {
         self.present(alertController, animated: true, completion: nil)
     }
     
-    func authorizeCompletion(_ response: Result<Bool, APIError>){
+    func authorizeCompletion(_ response: Result<Bool, AuthAPIError>){
         
         self.activityIndicator.stopAnimating()
         
@@ -54,10 +54,11 @@ class LoginViewController: UIViewController, NibLodable {
         case .success(_):
             
             self.dismissSelfAndPresenetMain()
-            
-        case .failure(APIError.login(let message)):
+        case .failure(AuthAPIError.login(let message)):
             
             self.presenetFailAlertController(with: message)
+        default:
+            debugPrint("Uncorrect access")
         }
     }
     
