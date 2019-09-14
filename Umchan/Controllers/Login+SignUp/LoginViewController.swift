@@ -35,7 +35,7 @@ class LoginViewController: UIViewController, NibLodable {
             return
         }
         
-        AuthService.shared.loginUser(email: email, password: password) { (response) in
+        AuthService.shared.authorize(email: email, password: password) { (response) in
             
             self.activityIndicator.stopAnimating()
             

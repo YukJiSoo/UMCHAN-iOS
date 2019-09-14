@@ -13,7 +13,7 @@ class AuthService {
     
     static let shared = AuthService()
     
-    func loginUser(email: String, password: String, completion: @escaping (_ Response: Result<Bool, APIError>) -> Void) {
+    func authorize(email: String, password: String, completion: @escaping (_ Response: Result<Bool, APIError>) -> Void) {
         
         let loginInput = LoginInput(email: email, password: password)
         Apollo.shared.client.perform(mutation: LoginMutation(account: loginInput)) { result in
