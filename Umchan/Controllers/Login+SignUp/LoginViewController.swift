@@ -26,6 +26,26 @@ class LoginViewController: UIViewController, NibLodable {
         self.view.addGestureRecognizer(tapGesture)
     }
     
+    func dismissSelfAndPresenetMain() {
+        
+        let mainTabbarViewController = MainTabBarController()
+        
+        self.dismiss(animated: true, completion: nil)
+        self.present(mainTabbarViewController, animated: true)
+    }
+    
+    func presenetFailAlertController(with message: String) {
+        
+        let alertController = UIAlertController(title: "로그인 실패", message: message, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "예", style: .destructive) { (action) in
+            self.dismiss(animated: true, completion: nil)
+        }
+        alertController.addAction(okAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     func authorizeCompletion(_ response: Result<Bool, APIError>){
         
         self.activityIndicator.stopAnimating()
@@ -33,21 +53,11 @@ class LoginViewController: UIViewController, NibLodable {
         switch response {
         case .success(_):
             
-            let mainTabbarViewController = MainTabBarController()
+            self.dismissSelfAndPresenetMain()
             
-            self.dismiss(animated: true, completion: nil)
-            self.present(mainTabbarViewController, animated: true)
+        case .failure(APIError.login(let message)):
             
-        case .failure(APIError.login):
-            
-            let alertController = UIAlertController(title: "로그인 실패", message: "로그인실패", preferredStyle: .alert)
-            
-            let okAction = UIAlertAction(title: "예", style: .destructive) { (action) in
-                self.dismiss(animated: true, completion: nil)
-            }
-            alertController.addAction(okAction)
-            
-            self.present(alertController, animated: true, completion: nil)
+            self.presenetFailAlertController(with: message)
         }
     }
     
