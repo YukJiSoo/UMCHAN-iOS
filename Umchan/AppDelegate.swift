@@ -19,10 +19,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.tintColor = Color.symbol
 
-        let storyBoard = UIStoryboard(name: StoryboardName.loginAndSignUp, bundle: nil)
-        let initialViewController = storyBoard.viewController(LoginViewController.self)
-        
-        self.window?.rootViewController = initialViewController
+        if Keychain.loadValue(for: "access_token") != nil {
+
+            let mainTabbarViewController = MainTabBarController()
+
+            self.window?.rootViewController = mainTabbarViewController
+        } else {
+
+            let storyBoard = UIStoryboard(name: StoryboardName.loginAndSignUp, bundle: nil)
+            let initialViewController = storyBoard.viewController(LoginViewController.self)
+
+            self.window?.rootViewController = initialViewController
+        }
+
         self.window?.makeKeyAndVisible()
         
         return true
