@@ -14,4 +14,5 @@ struct Running: Codable {
     var oneLine: String
     var runningDate: Date
     var registerDate: Date
+    var runningPoints: [Location]
 }

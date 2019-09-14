@@ -15,12 +15,7 @@ class RunningInDistrictViewController: ModalViewController {
     
     // MARK: - Properties
 //    var runnings = [Running]()
-    var runnings = [
-        Running(name: "test1", oneLine: "test1", runningDate: Date(), registerDate: Date()),
-        Running(name: "test2", oneLine: "test2", runningDate: Date(), registerDate: Date()),
-        Running(name: "test3", oneLine: "test3", runningDate: Date(), registerDate: Date()),
-        Running(name: "test4", oneLine: "test4", runningDate: Date(), registerDate: Date())
-    ]
+    var runnings = [Running]()
     
     // MARK: - Life cycles
     override func viewDidLoad() {

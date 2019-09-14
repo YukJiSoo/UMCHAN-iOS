@@ -110,6 +110,24 @@ class RegisterRunningViewController: UIViewController, NibLodable {
             self.updateMapView()
         }
     }
+
+    @IBAction func registerButtonPressed(_ sender: UIButton) {
+
+        guard
+            let name = self.runningNameLabel.text, !name.isEmpty,
+            let oneLine = self.oneLineLabel.text, !oneLine.isEmpty,
+            let runningDate = self.runningDateView.getDateAndTimeComponents(),
+            let registerLimitDate = self.registerLimitDateView.getDateAndTimeComponents(),
+            let runningCourseData = self.runningCourseData, runningCourseData.count != 0
+            else {
+
+                debugPrint("All field is not filled")
+                return
+        }
+
+        let runningPoint = runningCourseData.map { (Double($0.coordinate.latitude), Double($0.coordinate.longitude)) }
+        RunningService.shared.registerRunning(name: name, oneLine: oneLine, runningDate: runningDate, registerLimitDate: registerLimitDate, runningPoint: runningPoint)
+    }
     
 }
 
