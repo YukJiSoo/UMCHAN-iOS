@@ -22,9 +22,3 @@ extension User: Codable {
         self = try JSONDecoder().decode(User.self, from: JSONSerialization.data(withJSONObject: dictionary))
     }
 }
-
-struct Location: Codable {
-    
-    var latitude: Double
-    var longitude: Double
-}
