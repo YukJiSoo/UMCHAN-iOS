@@ -72,5 +72,42 @@ final class AuthService: AuthServiceType {
         }
     }
     
-    
+    func register(email: String, password: String, name: String, nickname: String, completion: @escaping AuthCompletion) {
+        
+        let registerInput = RegisterUserInput(email: email, password: password, name: name, nickname: nickname, location: LocationInput(latitude: 10.0, longitude: 20.2))
+        
+        Apollo.shared.client.perform(mutation: RegisterUserMutation(user: registerInput)) { result in
+            
+            guard
+                let data = try? result.get().data,
+                let code = data.register?.code,
+                let message = data.register?.message
+                else {
+                    completion(.failure(.register("Internal server error")))
+                    return
+            }
+            
+            // check reseponse HTTP code
+            guard code.isSuccessfulResponse else {
+                completion(.failure(.register(message)))
+                return
+            }
+            
+            // response from server
+            guard let token = data.register?.token else {
+                completion(.failure(.login("Fail Convert json data")))
+                return
+            }
+            
+            // save token in Keychain
+            guard Keychain.saveValue(token, for: "access_token") else {
+                completion(.failure(.login("KeychainError.failToSave")))
+                return
+            }
+            self.accessToken = token
+            
+            // response from server
+            completion(.success(true))
+        }
+    }
 }
