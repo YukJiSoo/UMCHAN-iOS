@@ -776,7 +776,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "SCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/check-and-run-apollo-cli.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"Resources/schema.json\" Networking/API.swift\n";
+			shellScript = "SCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\ncd \"${SRCROOT}/${TARGET_NAME}\"\napollo schema:download --endpoint=http://localhost:3030/graphql Resources/schema.json\n\"${SCRIPT_PATH}\"/check-and-run-apollo-cli.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"Resources/schema.json\" Networking/API.swift\n";
 		};
 		E397A05A53D134CA6FA4C165 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
