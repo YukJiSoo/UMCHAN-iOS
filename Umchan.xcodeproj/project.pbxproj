@@ -326,6 +326,7 @@
 		A70991F62303C1AD00AE3ACA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A752FF49232BF84A0012D31D /* schema.json */,
 				A70991F72303C1B500AE3ACA /* Font */,
 			);
 			path = Resources;
@@ -593,7 +594,6 @@
 			isa = PBXGroup;
 			children = (
 				A792F20D232C22AB00CE1742 /* Networking */,
-				A752FF49232BF84A0012D31D /* schema.json */,
 				A752FF44232BB29A0012D31D /* Error */,
 				A709921E2305739C00AE3ACA /* Xibs */,
 				A70992082303FE0000AE3ACA /* Services */,
@@ -607,7 +607,6 @@
 				A7528B9D2302BBC000A6BEC0 /* Constants.swift */,
 				A742E3A122F88AE1002E333C /* Assets.xcassets */,
 				A742E3A622F88AE1002E333C /* Info.plist */,
-				A7FC54F7232C01D20036177A /* API.swift */,
 			);
 			path = Umchan;
 			sourceTree = "<group>";
@@ -653,6 +652,7 @@
 		A792F20D232C22AB00CE1742 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				A7FC54F7232C01D20036177A /* API.swift */,
 				A792F20E232C22D300CE1742 /* ApolloNetworking.swift */,
 			);
 			path = Networking;
@@ -776,7 +776,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "SCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/check-and-run-apollo-cli.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n";
+			shellScript = "SCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/check-and-run-apollo-cli.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"Resources/schema.json\" Networking/API.swift\n";
 		};
 		E397A05A53D134CA6FA4C165 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
