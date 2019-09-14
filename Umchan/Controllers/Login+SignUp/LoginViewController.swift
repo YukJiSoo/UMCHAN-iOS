@@ -26,6 +26,31 @@ class LoginViewController: UIViewController, NibLodable {
         self.view.addGestureRecognizer(tapGesture)
     }
     
+    func authorizeCompletion(_ response: Result<Bool, APIError>){
+        
+        self.activityIndicator.stopAnimating()
+        
+        switch response {
+        case .success(_):
+            
+            let mainTabbarViewController = MainTabBarController()
+            
+            self.dismiss(animated: true, completion: nil)
+            self.present(mainTabbarViewController, animated: true)
+            
+        case .failure(APIError.login):
+            
+            let alertController = UIAlertController(title: "로그인 실패", message: "로그인실패", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "예", style: .destructive) { (action) in
+                self.dismiss(animated: true, completion: nil)
+            }
+            alertController.addAction(okAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         
         self.activityIndicator.startAnimating()
@@ -35,29 +60,6 @@ class LoginViewController: UIViewController, NibLodable {
             return
         }
         
-        AuthService.shared.authorize(email: email, password: password) { (response) in
-            
-            self.activityIndicator.stopAnimating()
-            
-            switch response {
-            case .success(_):
-                
-                let mainTabbarViewController = MainTabBarController()
-
-                self.dismiss(animated: true, completion: nil)
-                self.present(mainTabbarViewController, animated: true)
-                
-            case .failure(APIError.login):
-                
-                let alertController = UIAlertController(title: "로그인 실패", message: "로그인실패", preferredStyle: .alert)
-                
-                let okAction = UIAlertAction(title: "예", style: .destructive) { (action) in
-                    self.dismiss(animated: true, completion: nil)
-                }
-                alertController.addAction(okAction)
-                
-                self.present(alertController, animated: true, completion: nil)
-            }
-        }
+        AuthService.shared.authorize(email: email, password: password, completion: authorizeCompletion)
     }
 }
