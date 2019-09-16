@@ -82,6 +82,16 @@ class MainViewController: UIViewController, NibLodable {
             self.crewListView.addArrangedSubview(crewView)
         }
     }
+
+    func dismissSelfAndPresenetLogin() {
+
+        let storyBoard = UIStoryboard(name: StoryboardName.loginAndSignUp, bundle: nil)
+        let viewController = storyBoard.viewController(LoginViewController.self)
+
+        self.tabBarController?.dismiss(animated: true, completion: nil)
+
+        self.present(viewController, animated: true, completion: nil)
+    }
     
     @objc func crewViewTapped(_ sender: UIGestureRecognizer) {
         
@@ -97,13 +107,22 @@ class MainViewController: UIViewController, NibLodable {
     
     // MARK: - Actions
     @IBAction func goToRunButtonPressed(_ sender: Any) {
-        
-        
+
         let storyBoard = UIStoryboard(name: StoryboardName.registerRunning, bundle: nil)
         let viewController = storyBoard.viewController(RegisterRunningViewController.self)
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.isNavigationBarHidden = true
         
+        self.present(navigationController, animated: true, completion: nil)
+    }
+
+    @IBAction func myRunningButtonPressed(_ sender: Any) {
+
+        let storyBoard = UIStoryboard(name: StoryboardName.main, bundle: nil)
+        let viewController = storyBoard.viewController(MyRunningsViewController.self)
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.isNavigationBarHidden = true
+
         self.present(navigationController, animated: true, completion: nil)
     }
     
@@ -117,6 +136,11 @@ class MainViewController: UIViewController, NibLodable {
         
         let viewController = SearchRunningViewController()
         self.navigationController?.pushViewController(viewController, animated: true)
+    }
+
+    @IBAction func unwindToMainViewController(_ segue: UIStoryboardSegue) {
+
+        self.dismissSelfAndPresenetLogin()
     }
 }
 

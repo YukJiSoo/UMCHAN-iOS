@@ -40,10 +40,10 @@
                                 <rect key="frame" x="0.0" y="108" width="414" height="754"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kHB-UZ-1Es" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="814.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="894.66666666666663"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="LBX-Jy-ZhV">
-                                                <rect key="frame" x="10" y="30" width="394" height="754.66666666666663"/>
+                                                <rect key="frame" x="10" y="30" width="394" height="834.66666666666663"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XR1-AP-Cin">
                                                         <rect key="frame" x="0.0" y="0.0" width="394" height="185.66666666666666"/>
@@ -157,25 +157,49 @@
                                                             <constraint firstAttribute="height" constant="2" id="GHf-7b-PvS"/>
                                                         </constraints>
                                                     </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZk-dW-Ze0" customClass="RoundedButton" customModule="Umchan" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="694.66666666666663" width="394" height="60"/>
-                                                        <color key="backgroundColor" red="0.54836952689999996" green="0.16884723309999999" blue="0.18428939580000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="60" id="Vde-Vi-Mhi"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="25"/>
-                                                        <state key="normal" title="프로필 수정">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="roundedDegree">
-                                                                <real key="value" value="10"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <segue destination="kd3-4q-fRa" kind="show" id="KxC-Gb-QNB"/>
-                                                        </connections>
-                                                    </button>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Fg2-J4-WJl">
+                                                        <rect key="frame" x="0.0" y="694.66666666666663" width="394" height="140"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZk-dW-Ze0" customClass="RoundedButton" customModule="Umchan" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="394" height="60"/>
+                                                                <color key="backgroundColor" red="0.54836952689999996" green="0.16884723309999999" blue="0.18428939580000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="60" id="Vde-Vi-Mhi"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="25"/>
+                                                                <state key="normal" title="프로필 수정">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedDegree">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <segue destination="kd3-4q-fRa" kind="show" id="KxC-Gb-QNB"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drM-MT-jxD" customClass="RoundedButton" customModule="Umchan" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="80" width="394" height="60"/>
+                                                                <color key="backgroundColor" red="0.54836952689999996" green="0.16884723309999999" blue="0.18428939580000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="60" id="9p3-qZ-5sg"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="25"/>
+                                                                <state key="normal" title="로그아웃">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedDegree">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="logoutButtonPressed:" destination="xsk-lq-Z9s" eventType="touchUpInside" id="a0S-bH-SuJ"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -218,9 +242,11 @@
                         <outlet property="navigationBar" destination="aTy-IM-Pzm" id="pco-Zh-i1z"/>
                         <outlet property="nicknameLabel" destination="7pO-0e-r90" id="FbW-ju-1Bo"/>
                         <outlet property="userImageView" destination="YDG-T4-LLO" id="p2E-J5-kVp"/>
+                        <segue destination="AWK-9j-keS" kind="unwind" identifier="unwindToMainViewController" unwindAction="unwindToMainViewController:" id="SqI-mK-qTl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="olT-mk-KQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="AWK-9j-keS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="113.04347826086958" y="79.6875"/>
         </scene>

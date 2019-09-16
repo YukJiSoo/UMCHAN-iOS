@@ -39,6 +39,15 @@ class ProfileViewController: UIViewController, NibLodable {
     @IBAction func switchValueChanged(_ sender: UISwitch) {
         
     }
+
+    @IBAction func logoutButtonPressed(_ sender: UIButton) {
+        
+        if Keychain.deleteValue(for: "access_token") {
+            self.performSegue(withIdentifier: Segue.unwindToMainViewController, sender: nil)
+        } else {
+            print("fail to logout")
+        }
+    }
     
 }
 
