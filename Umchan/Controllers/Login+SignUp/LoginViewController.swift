@@ -32,7 +32,7 @@ class LoginViewController: UIViewController, NibLodable {
     }
     
     func dismissSelfAndPresenetMain() {
-        
+
         let mainTabbarViewController = MainTabBarController()
         
         self.dismiss(animated: true, completion: nil)

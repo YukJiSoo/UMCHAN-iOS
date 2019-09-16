@@ -88,7 +88,7 @@
                                                     <color key="titleColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="goToRunButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tcf-NA-jn8"/>
+                                                    <action selector="searchRunningByName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cyz-Ia-qga"/>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UVb-oP-OEg" userLabel="MapView" customClass="SeoulMapView" customModule="Umchan" customModuleProvider="target">
@@ -144,6 +144,9 @@
                                                                 <real key="value" value="5"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="myRunningButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YUe-AD-Bda"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -260,6 +263,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2916" y="64"/>
+        </scene>
+        <!--My Runnings View Controller-->
+        <scene sceneID="qdp-DO-J6c">
+            <objects>
+                <viewController storyboardIdentifier="MyRunningsViewController" id="uvl-Tb-5fN" customClass="MyRunningsViewController" customModule="Umchan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="78I-F6-e8D">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b3K-dd-DH4" customClass="CustomNavigationBar" customModule="Umchan" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="320" height="64"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="yFJ-Mn-gas"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="My Running"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="b3K-dd-DH4" firstAttribute="top" secondItem="uxG-u6-P06" secondAttribute="top" id="45d-mk-EGC"/>
+                            <constraint firstAttribute="trailing" secondItem="b3K-dd-DH4" secondAttribute="trailing" id="kib-bs-TBH"/>
+                            <constraint firstItem="b3K-dd-DH4" firstAttribute="leading" secondItem="uxG-u6-P06" secondAttribute="leading" id="lkQ-Dx-GVv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uxG-u6-P06"/>
+                    </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="b3K-dd-DH4" id="YPk-Bk-EBS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y7U-zt-j3u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4043" y="64"/>
         </scene>
         <!--Running History List View Controller-->
         <scene sceneID="vfu-IN-Xcu">

@@ -91,6 +91,7 @@
 		A742E3A022F88ADF002E333C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A742E39E22F88ADF002E333C /* Main.storyboard */; };
 		A742E3A222F88AE1002E333C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A742E3A122F88AE1002E333C /* Assets.xcassets */; };
 		A742E3A522F88AE1002E333C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A742E3A322F88AE1002E333C /* LaunchScreen.storyboard */; };
+		A74A0EE1232D568E00420DF6 /* MyRunningsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74A0EE0232D568E00420DF6 /* MyRunningsViewController.swift */; };
 		A7528B9E2302BBC000A6BEC0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7528B9D2302BBC000A6BEC0 /* Constants.swift */; };
 		A752FF43232BAB610012D31D /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A752FF42232BAB610012D31D /* AuthService.swift */; };
 		A752FF46232BB2A50012D31D /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = A752FF45232BB2A50012D31D /* Error.swift */; };
@@ -202,6 +203,7 @@
 		A742E3A122F88AE1002E333C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A742E3A422F88AE1002E333C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A742E3A622F88AE1002E333C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A74A0EE0232D568E00420DF6 /* MyRunningsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRunningsViewController.swift; sourceTree = "<group>"; };
 		A7528B9D2302BBC000A6BEC0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utils/Constants.swift; sourceTree = "<group>"; };
 		A752FF42232BAB610012D31D /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		A752FF45232BB2A50012D31D /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
@@ -442,6 +444,7 @@
 			isa = PBXGroup;
 			children = (
 				A70C2A2D23119C7D002006A3 /* RunningViewController.swift */,
+				A74A0EE0232D568E00420DF6 /* MyRunningsViewController.swift */,
 			);
 			path = Running;
 			sourceTree = "<group>";
@@ -845,6 +848,7 @@
 				A709922D2307284400AE3ACA /* CustomNavigationBarDelegate.swift in Sources */,
 				A742E39B22F88ADF002E333C /* AppDelegate.swift in Sources */,
 				A7528B9E2302BBC000A6BEC0 /* Constants.swift in Sources */,
+				A74A0EE1232D568E00420DF6 /* MyRunningsViewController.swift in Sources */,
 				A7071B892311C6D200982161 /* LoginViewController.swift in Sources */,
 				A7168B6A231006AA00500621 /* DateView+DatePickerPresentable.swift in Sources */,
 				A70992072303FC5000AE3ACA /* DistrictView.swift in Sources */,
