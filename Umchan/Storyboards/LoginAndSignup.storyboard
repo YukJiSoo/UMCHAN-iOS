@@ -169,7 +169,9 @@
                     <connections>
                         <outlet property="activityIndicator" destination="uAQ-fI-ETl" id="sP9-qP-Lya"/>
                         <outlet property="emailLabel" destination="zG1-cN-lwE" id="wDE-0N-L6d"/>
+                        <outlet property="loginButton" destination="rru-Nf-Y2H" id="ktz-aS-yZp"/>
                         <outlet property="passwordLabel" destination="gHN-bG-GqW" id="GJ1-E4-F02"/>
+                        <outlet property="signUpButton" destination="k8k-Uy-Cx7" id="mYL-qh-56u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uqm-9k-F9D" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -357,6 +359,7 @@
                         <outlet property="navigationBar" destination="iKL-X3-dqu" id="vaj-rm-3ru"/>
                         <outlet property="nicknameLabel" destination="32D-Cb-dT2" id="ES9-EL-ct0"/>
                         <outlet property="passwordLabel" destination="X72-Rh-r1S" id="8Dg-x9-fwb"/>
+                        <outlet property="signUpButton" destination="33M-UG-qi7" id="N21-YO-8GV"/>
                         <outlet property="userImageView" destination="wJz-0C-VJs" id="7qw-DP-Azz"/>
                         <segue destination="58T-66-PZv" kind="unwind" identifier="unwindToLoginViewController" unwindAction="unwindToLoginViewController:" id="ZIg-qU-huP"/>
                     </connections>

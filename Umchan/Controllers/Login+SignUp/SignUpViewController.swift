@@ -18,6 +18,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var nicknameLabel: UITextField!
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var signUpButton: UIButton!
     
     // MARK: - Life cycles
     override func viewDidLoad() {
@@ -67,6 +68,7 @@ class SignUpViewController: UIViewController {
     func registerCompletion(_ response: Result<Bool, AuthAPIError>) -> Void {
         
         self.activityIndicator.stopAnimating()
+        self.signUpButton.isEnabled = true
         
         switch response {
         case .success(_):
@@ -83,7 +85,7 @@ class SignUpViewController: UIViewController {
     @IBAction func signUpButtonPressed(_ sender: UIButton) {
         
         self.activityIndicator.startAnimating()
-        
+
         guard
             let email = self.emailLabel.text, !email.isEmpty,
             let password = self.passwordLabel.text, !password.isEmpty,
@@ -94,7 +96,9 @@ class SignUpViewController: UIViewController {
                 debugPrint("All field is not filled")
                 return
         }
-        
+
+        self.signUpButton.isEnabled = false
+
         AuthService.shared.register(email: email, password: password, name: name, nickname: nickname, completion: registerCompletion(_:))
     }
 }

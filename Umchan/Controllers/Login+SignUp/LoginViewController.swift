@@ -14,6 +14,8 @@ class LoginViewController: UIViewController, NibLodable {
     @IBOutlet weak var emailLabel: UITextField!
     @IBOutlet weak var passwordLabel: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
     
     // MARK: Life cycles
     override func viewDidLoad() {
@@ -52,7 +54,9 @@ class LoginViewController: UIViewController, NibLodable {
     func authorizeCompletion(_ response: Result<Bool, AuthAPIError>){
         
         self.activityIndicator.stopAnimating()
-        
+        self.loginButton.isEnabled = true
+        self.signUpButton.isEnabled = true
+
         switch response {
         case .success(_):
             
@@ -74,6 +78,9 @@ class LoginViewController: UIViewController, NibLodable {
             debugPrint("email or password is nil")
             return
         }
+
+        self.loginButton.isEnabled = false
+        self.signUpButton.isEnabled = false
         
         AuthService.shared.authorize(email: email, password: password, completion: authorizeCompletion(_:))
     }
