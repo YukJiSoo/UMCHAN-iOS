@@ -47,7 +47,7 @@ extension Apollo: HTTPNetworkTransportPreflightDelegate {
         if let accessToken = AuthService.shared.accessToken {
             headers["Authorization"] = "Bearer \(accessToken)"
         }
-
+        
         request.allHTTPHeaderFields = headers
 
         print("Outgoing request: \(request)")

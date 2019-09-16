@@ -8,16 +8,56 @@
 
 import Foundation
 
+typealias GetRunningCompletion = (_ Response: Result<[Running], RunningAPIError>) -> Void
 typealias RunningCompletion = (_ Response: Result<Bool, RunningAPIError>) -> Void
 
 protocol RunningServiceType {
 
+    func runningList(completion: @escaping GetRunningCompletion)
     func registerRunning(name: String, oneLine: String, runningDate: RunningDateType, registerLimitDate: RunningDateType, runningPoint: [LocationType], completion: @escaping RunningCompletion)
 }
 
 final class RunningService: RunningServiceType {
 
     static let shared = RunningService()
+
+    func runningList(completion: @escaping GetRunningCompletion) {
+
+        Apollo.shared.client.fetch(query: RunningListQuery()) { result in
+
+            guard
+                let data = try? result.get().data,
+                let code = data.runnings?.code,
+                let message = data.runnings?.message
+                else {
+                    completion(.failure(.runningList(("Internal server error"))))
+                    return
+            }
+
+            // check reseponse HTTP code
+            guard code.isSuccessfulResponse else {
+                completion(.failure(.runningList(message)))
+                return
+            }
+
+            // response from server
+            guard let runnings = data.runnings?.runnings else {
+                completion(.failure(.runningList("Fail Convert json data")))
+                return
+            }
+
+            var result = [Running]()
+            for item in runnings {
+                guard let object = try? Running(item.jsonObject) else {
+                    completion(.failure(.runningList("Fail Convert swift object data")))
+                    return
+                }
+                result.append(object)
+            }
+
+            completion(.success(result))
+        }
+    }
 
     func registerRunning(name: String, oneLine: String, runningDate: RunningDateType, registerLimitDate: RunningDateType, runningPoint: [LocationType], completion: @escaping RunningCompletion) {
 

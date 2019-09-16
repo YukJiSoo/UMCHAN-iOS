@@ -115,7 +115,7 @@ class RegisterRunningViewController: UIViewController, NibLodable {
 
         switch response {
         case .success(_):
-                
+
             self.dismiss(animated: true, completion: nil)
         case .failure(RunningAPIError.createRunning(let message)):
 

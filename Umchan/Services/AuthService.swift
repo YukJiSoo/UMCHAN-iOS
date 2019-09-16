@@ -23,7 +23,7 @@ final class AuthService: AuthServiceType {
     static let shared = AuthService()
     
     // MARK: Properties
-    private(set) var accessToken: String?
+    var accessToken: String?
     
     // MARK: Func
     func authorize(email: String, password: String, completion: @escaping AuthCompletion) {
@@ -51,7 +51,7 @@ final class AuthService: AuthServiceType {
                 completion(.failure(.login("Fail Convert json data")))
                 return
             }
-            
+
             // save token in Keychain
             guard Keychain.saveValue(token, for: "access_token") else {
                 completion(.failure(.login("KeychainError.failToSave")))
@@ -98,7 +98,7 @@ final class AuthService: AuthServiceType {
                 completion(.failure(.login("Fail Convert json data")))
                 return
             }
-            
+
             // save token in Keychain
             guard Keychain.saveValue(token, for: "access_token") else {
                 completion(.failure(.login("KeychainError.failToSave")))

@@ -19,8 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.tintColor = Color.symbol
 
-        if Keychain.loadValue(for: "access_token") != nil {
+        if let accessToken = Keychain.loadValue(for: "access_token") {
 
+            AuthService.shared.accessToken = accessToken
             let mainTabbarViewController = MainTabBarController()
 
             self.window?.rootViewController = mainTabbarViewController

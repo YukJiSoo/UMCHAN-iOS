@@ -15,6 +15,7 @@ enum AuthAPIError: Error {
 
 enum RunningAPIError: Error {
     case createRunning(String)
+    case runningList(String)
 }
 
 enum KeychainError: Error {

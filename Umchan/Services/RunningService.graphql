@@ -1,4 +1,29 @@
 
+query RunningList {
+    runnings {
+        code,
+        success,
+        message,
+        runnings {
+            name,
+            oneLine,
+            runningDate {
+                year,
+                month,
+                date,
+                hour,
+                minute
+            },
+            registerLimitDate {
+                year,
+                month,
+                date,
+                hour,
+                minute
+            }
+        }
+    }
+}
 mutation CreateRunning($running: CreateRunningInput) {
     createRunning(running: $running) {
         code,

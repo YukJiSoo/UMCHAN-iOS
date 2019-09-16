@@ -29,19 +29,38 @@ class MyRunningsViewController: UIViewController, NibLodable {
     // MARK: - Functions
     func setup() {
 
-        self.setupData()
-
-        guard !runnings.isEmpty else {
-            self.setupEmptyCase()
-            return
-        }
-
         self.setupNavigationBar()
-        self.setupTableView()
+        self.setupData()
     }
 
     func setupData() {
-        
+
+        RunningService.shared.runningList { (response) in
+
+            switch response {
+            case .success(_):
+
+                guard let data = try? response.get() else {
+                    debugPrint("cannot get data")
+                    return
+                }
+
+                self.runnings = data
+                DispatchQueue.main.async {
+
+                    if self.runnings.isEmpty {
+                        self.setupEmptyCase()
+                    } else {
+                        self.setupTableView()
+                    }
+                }
+            case .failure(RunningAPIError.runningList(let message)):
+
+                print(message)
+            default:
+                debugPrint("Uncorrect access")
+            }
+        }
     }
     
     func setupNavigationBar() {
@@ -109,8 +128,8 @@ class MyRunningsViewController: UIViewController, NibLodable {
 
         self.tableView = tableView
 
-        let runningHistoryCellNib = UINib(nibName: RunningHistoryListTableViewCell.nibId, bundle: nil)
-        self.tableView?.register(runningHistoryCellNib, forCellReuseIdentifier: RunningHistoryListTableViewCell.nibId)
+        let runningCellNib = UINib(nibName: RunningTableViewCell.nibId, bundle: nil)
+        self.tableView?.register(runningCellNib, forCellReuseIdentifier: RunningTableViewCell.nibId)
 
         self.tableView?.delegate = self
         self.tableView?.dataSource = self
@@ -127,8 +146,8 @@ extension MyRunningsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: RunningHistoryListTableViewCell.nibId, for: indexPath) as? RunningHistoryListTableViewCell else {
-            debugPrint("err: fail to convert \(RunningHistoryListTableViewCell.nibId)")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: RunningTableViewCell.nibId, for: indexPath) as? RunningTableViewCell else {
+            debugPrint("err: fail to convert \(RunningTableViewCell.nibId)")
             return UITableViewCell()
         }
 
