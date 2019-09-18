@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias GetRunningCompletion = (_ Response: Result<[Running], RunningAPIError>) -> Void
+typealias GetRunningCompletion = (_ Response: Result<[RunningListQuery.Data.Running.Running], RunningAPIError>) -> Void
 typealias RunningCompletion = (_ Response: Result<Bool, RunningAPIError>) -> Void
 
 protocol RunningServiceType {
@@ -46,16 +46,18 @@ final class RunningService: RunningServiceType {
                 return
             }
 
-            var result = [Running]()
-            for item in runnings {
-                guard let object = try? Running(item.jsonObject) else {
-                    completion(.failure(.runningList("Fail Convert swift object data")))
-                    return
-                }
-                result.append(object)
-            }
+//            var result = [Running]()
+//            for item in runnings {
+//                guard let object = try? Running(item.jsonObject) else {
+//                    completion(.failure(.runningList("Fail Convert swift object data")))
+//                    return
+//                }
+//                result.append(object)
+//            }
+//
+//            completion(.success(result))
 
-            completion(.success(result))
+            completion(.success(runnings))
         }
     }
 

@@ -35,13 +35,35 @@ class RunningTableViewCell: UITableViewCell, NibLodable {
     }
     
     // MARK: - Properties
-    func configure(running: Running) {
+    func configure(running: RunningType) {
         
         self.runningNameLabel.text = running.name
         self.runningOneLineLabel.text = running.oneLine
+
+        let runningDate = running.runningDate
+        if
+            let year = runningDate?.year,
+            let month = runningDate?.month,
+            let date = runningDate?.date,
+            let hour = runningDate?.hour,
+            let minute = runningDate?.minute {
+
+            self.runningDateLabel.text = "\(year)년 \(month)월 \(date)일 \(hour)시 \(minute)분에 달리기 시작"
+        }
+
+        if
+            let year = runningDate?.year,
+            let month = runningDate?.month,
+            let date = runningDate?.date,
+            let hour = runningDate?.hour,
+            let minute = runningDate?.minute {
+
+            self.registerDateLabel.text = "\(year)년 \(month)월 \(date)일 \(hour)시 \(minute)분까지 등록"
+        }
         
-        self.runningDateLabel.text = "\(dateFormatter.string(from: running.runningDate))에 달리기 시작"
-        self.registerDateLabel.text = "\(dateFormatter.string(from: running.registerDate))까지 등록"
-        
+    }
+
+    func convertDataString() {
+
     }
 }

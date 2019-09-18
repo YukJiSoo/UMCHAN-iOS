@@ -81,7 +81,7 @@ extension RunningInDistrictViewController: UITableViewDataSource {
             return UITableViewCell()
         }
 
-        runningCell.configure(running: self.runnings[indexPath.row])
+//        runningCell.configure(running: self.runnings[indexPath.row])
         return runningCell
     }
 

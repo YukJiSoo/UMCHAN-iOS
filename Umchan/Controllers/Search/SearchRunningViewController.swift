@@ -108,7 +108,7 @@ extension SearchRunningViewController: UITableViewDelegate, UITableViewDataSourc
             return UITableViewCell()
         }
         
-        runningCell.configure(running: self.runnings[indexPath.row])
+//        runningCell.configure(running: self.runnings[indexPath.row])
         return runningCell
     }
     

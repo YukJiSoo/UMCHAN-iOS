@@ -8,6 +8,8 @@
 
 import UIKit
 
+typealias RunningType = RunningListQuery.Data.Running.Running
+
 class MyRunningsViewController: UIViewController, NibLodable {
 
     // MARK: - Outlets
@@ -17,7 +19,22 @@ class MyRunningsViewController: UIViewController, NibLodable {
     var tableView: UITableView?
 
     // MARK: - Properties
-    var runnings = [Running]()
+//    var runnings = [Running]()
+    var runnings: [RunningType]? {
+        didSet {
+            DispatchQueue.main.async {
+                guard let runnings = self.runnings else {
+                    return
+                }
+
+                if runnings.isEmpty {
+                    self.setupEmptyCase()
+                } else {
+                    self.setupTableView()
+                }
+            }
+        }
+    }
 
     // MARK: - Life cycles
     override func viewDidLoad() {
@@ -46,14 +63,6 @@ class MyRunningsViewController: UIViewController, NibLodable {
                 }
 
                 self.runnings = data
-                DispatchQueue.main.async {
-
-                    if self.runnings.isEmpty {
-                        self.setupEmptyCase()
-                    } else {
-                        self.setupTableView()
-                    }
-                }
             case .failure(RunningAPIError.runningList(let message)):
 
                 print(message)
@@ -133,6 +142,8 @@ class MyRunningsViewController: UIViewController, NibLodable {
 
         self.tableView?.delegate = self
         self.tableView?.dataSource = self
+
+        self.tableView?.reloadData()
     }
 
 }
@@ -141,7 +152,7 @@ extension MyRunningsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return self.runnings.count
+        return self.runnings?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -151,7 +162,11 @@ extension MyRunningsViewController: UITableViewDataSource {
             return UITableViewCell()
         }
 
-        cell.configure(running: runnings[indexPath.row])
+        guard let running = self.runnings?[indexPath.row] else {
+            fatalError("Could not find post at row \(indexPath.row)")
+        }
+
+        cell.configure(running: running)
 
         return cell
     }
@@ -165,7 +180,7 @@ extension MyRunningsViewController: UITableViewDelegate {
 
         let storyboard = UIStoryboard(name: StoryboardName.runningHistory, bundle: nil)
         let viewController = storyboard.viewController(RunningHistoryViewController.self)
-        viewController.running = self.runnings[indexPath.row]
+//        viewController.running = self.runnings[indexPath.row]
 
         self.present(viewController, animated: true, completion: nil)
     }
