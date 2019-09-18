@@ -1403,8 +1403,8 @@ public final class RunningQuery: GraphQLQuery {
 }
 
 public final class CreateRunningMutation: GraphQLMutation {
-  /// mutation CreateRunning($running: CreateRunningInput) {
-  ///   createRunning(running: $running) {
+  /// mutation CreateRunning($nickname: String, $running: CreateRunningInput) {
+  ///   createRunning(nickname: $nickname, running: $running) {
   ///     __typename
   ///     code
   ///     success
@@ -1412,25 +1412,27 @@ public final class CreateRunningMutation: GraphQLMutation {
   ///   }
   /// }
   public let operationDefinition =
-    "mutation CreateRunning($running: CreateRunningInput) { createRunning(running: $running) { __typename code success message } }"
+    "mutation CreateRunning($nickname: String, $running: CreateRunningInput) { createRunning(nickname: $nickname, running: $running) { __typename code success message } }"
 
   public let operationName = "CreateRunning"
 
+  public var nickname: String?
   public var running: CreateRunningInput?
 
-  public init(running: CreateRunningInput? = nil) {
+  public init(nickname: String? = nil, running: CreateRunningInput? = nil) {
+    self.nickname = nickname
     self.running = running
   }
 
   public var variables: GraphQLMap? {
-    return ["running": running]
+    return ["nickname": nickname, "running": running]
   }
 
   public struct Data: GraphQLSelectionSet {
     public static let possibleTypes = ["Mutation"]
 
     public static let selections: [GraphQLSelection] = [
-      GraphQLField("createRunning", arguments: ["running": GraphQLVariable("running")], type: .object(CreateRunning.selections)),
+      GraphQLField("createRunning", arguments: ["nickname": GraphQLVariable("nickname"), "running": GraphQLVariable("running")], type: .object(CreateRunning.selections)),
     ]
 
     public private(set) var resultMap: ResultMap

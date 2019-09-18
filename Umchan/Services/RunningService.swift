@@ -103,8 +103,14 @@ final class RunningService: RunningServiceType {
         )
         let locationInput = runningPoint.map { LocationInput(latitude: $0.0, longitude: $0.1) }
 
+        guard let nickname = UserDataService.shared.user?.nickname else {
+            completion(.failure(.createRunning(("Nickname is nil"))))
+            return
+        }
+
         let createRunningInput = CreateRunningInput(name: name, oneLine: oneLine, runningDate: runningDateInput, registerLimitDate: registerLimitDateInput, runningPoints: locationInput)
-        Apollo.shared.client.perform(mutation: CreateRunningMutation(running: createRunningInput)) { result in
+        let createRunningMutation = CreateRunningMutation(nickname: nickname, running: createRunningInput)
+        Apollo.shared.client.perform(mutation: createRunningMutation) { result in
 
             guard
                 let data = try? result.get().data,
