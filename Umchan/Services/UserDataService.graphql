@@ -1,0 +1,18 @@
+
+query User {
+    user {
+        code,
+        success,
+        message,
+        user {
+            id,
+            name,
+            nickname,
+            imagePath,
+            location {
+                latitude,
+                longitude
+            }
+        },
+    }
+}
