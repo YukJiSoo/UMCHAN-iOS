@@ -8,6 +8,10 @@
 
 import Foundation
 
+enum UserAPIError: Error {
+    case user(String)
+}
+
 enum AuthAPIError: Error {
     case login(String)
     case register(String)

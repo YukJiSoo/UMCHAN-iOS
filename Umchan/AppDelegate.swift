@@ -24,6 +24,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             AuthService.shared.accessToken = accessToken
             let mainTabbarViewController = MainTabBarController()
 
+            UserDataService.shared.loadUserData { (response) in
+
+                switch response {
+                case .success(_):
+                    print("success")
+                case .failure(.user(let message)):
+                    print(message)
+                default:
+                    debugPrint("Uncorrect access")
+                }
+            }
+
             self.window?.rootViewController = mainTabbarViewController
         } else {
 
