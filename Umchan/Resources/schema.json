@@ -36,6 +36,29 @@
             },
             "isDeprecated": false,
             "deprecationReason": null
+          },
+          {
+            "name": "running",
+            "description": "",
+            "args": [
+              {
+                "name": "id",
+                "description": "",
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "ID",
+                  "ofType": null
+                },
+                "defaultValue": null
+              }
+            ],
+            "type": {
+              "kind": "OBJECT",
+              "name": "RunningQueryResponse",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
           }
         ],
         "inputFields": null,
@@ -56,7 +79,7 @@
       {
         "kind": "OBJECT",
         "name": "RunningsQueryResponse",
-        "description": "Response",
+        "description": "",
         "fields": [
           {
             "name": "code",
@@ -131,7 +154,7 @@
         "interfaces": [
           {
             "kind": "INTERFACE",
-            "name": "MutationResponse",
+            "name": "Response",
             "ofType": null
           }
         ],
@@ -140,7 +163,7 @@
       },
       {
         "kind": "INTERFACE",
-        "name": "MutationResponse",
+        "name": "Response",
         "description": "Response",
         "fields": [
           {
@@ -199,6 +222,11 @@
           {
             "kind": "OBJECT",
             "name": "RunningsQueryResponse",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "RunningQueryResponse",
             "ofType": null
           },
           {
@@ -456,6 +484,87 @@
         "fields": null,
         "inputFields": null,
         "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "RunningQueryResponse",
+        "description": "Response",
+        "fields": [
+          {
+            "name": "code",
+            "description": "",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "success",
+            "description": "",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "message",
+            "description": "",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "running",
+            "description": "",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "Running",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [
+          {
+            "kind": "INTERFACE",
+            "name": "Response",
+            "ofType": null
+          }
+        ],
         "enumValues": null,
         "possibleTypes": null
       },
@@ -733,7 +842,7 @@
         "interfaces": [
           {
             "kind": "INTERFACE",
-            "name": "MutationResponse",
+            "name": "Response",
             "ofType": null
           }
         ],
@@ -861,7 +970,7 @@
         "interfaces": [
           {
             "kind": "INTERFACE",
-            "name": "MutationResponse",
+            "name": "Response",
             "ofType": null
           }
         ],
@@ -1199,7 +1308,7 @@
         "interfaces": [
           {
             "kind": "INTERFACE",
-            "name": "MutationResponse",
+            "name": "Response",
             "ofType": null
           }
         ],

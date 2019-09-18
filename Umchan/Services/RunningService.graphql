@@ -5,6 +5,7 @@ query RunningList {
         success,
         message,
         runnings {
+            id,
             name,
             oneLine,
             runningDate {
@@ -24,6 +25,38 @@ query RunningList {
         }
     }
 }
+
+query Running($id: ID) {
+    running(id: $id) {
+        code,
+        success,
+        message,
+        running {
+            id,
+            name,
+            oneLine,
+            runningDate {
+                year,
+                month,
+                date,
+                hour,
+                minute
+            },
+            registerLimitDate {
+                year,
+                month,
+                date,
+                hour,
+                minute
+            },
+            runningPoints {
+                latitude,
+                longitude
+            }
+        }
+    }
+}
+
 mutation CreateRunning($running: CreateRunningInput) {
     createRunning(running: $running) {
         code,

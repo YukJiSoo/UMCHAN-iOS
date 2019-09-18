@@ -612,6 +612,7 @@ public final class RunningListQuery: GraphQLQuery {
   ///     message
   ///     runnings {
   ///       __typename
+  ///       id
   ///       name
   ///       oneLine
   ///       runningDate {
@@ -634,7 +635,7 @@ public final class RunningListQuery: GraphQLQuery {
   ///   }
   /// }
   public let operationDefinition =
-    "query RunningList { runnings { __typename code success message runnings { __typename name oneLine runningDate { __typename year month date hour minute } registerLimitDate { __typename year month date hour minute } } } }"
+    "query RunningList { runnings { __typename code success message runnings { __typename id name oneLine runningDate { __typename year month date hour minute } registerLimitDate { __typename year month date hour minute } } } }"
 
   public let operationName = "RunningList"
 
@@ -738,6 +739,7 @@ public final class RunningListQuery: GraphQLQuery {
 
         public static let selections: [GraphQLSelection] = [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .scalar(GraphQLID.self)),
           GraphQLField("name", type: .scalar(String.self)),
           GraphQLField("oneLine", type: .scalar(String.self)),
           GraphQLField("runningDate", type: .object(RunningDate.selections)),
@@ -750,8 +752,8 @@ public final class RunningListQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(name: String? = nil, oneLine: String? = nil, runningDate: RunningDate? = nil, registerLimitDate: RegisterLimitDate? = nil) {
-          self.init(unsafeResultMap: ["__typename": "Running", "name": name, "oneLine": oneLine, "runningDate": runningDate.flatMap { (value: RunningDate) -> ResultMap in value.resultMap }, "registerLimitDate": registerLimitDate.flatMap { (value: RegisterLimitDate) -> ResultMap in value.resultMap }])
+        public init(id: GraphQLID? = nil, name: String? = nil, oneLine: String? = nil, runningDate: RunningDate? = nil, registerLimitDate: RegisterLimitDate? = nil) {
+          self.init(unsafeResultMap: ["__typename": "Running", "id": id, "name": name, "oneLine": oneLine, "runningDate": runningDate.flatMap { (value: RunningDate) -> ResultMap in value.resultMap }, "registerLimitDate": registerLimitDate.flatMap { (value: RegisterLimitDate) -> ResultMap in value.resultMap }])
         }
 
         public var __typename: String {
@@ -760,6 +762,15 @@ public final class RunningListQuery: GraphQLQuery {
           }
           set {
             resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID? {
+          get {
+            return resultMap["id"] as? GraphQLID
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "id")
           }
         }
 
@@ -949,6 +960,440 @@ public final class RunningListQuery: GraphQLQuery {
             }
             set {
               resultMap.updateValue(newValue, forKey: "minute")
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+public final class RunningQuery: GraphQLQuery {
+  /// query Running($id: ID) {
+  ///   running(id: $id) {
+  ///     __typename
+  ///     code
+  ///     success
+  ///     message
+  ///     running {
+  ///       __typename
+  ///       id
+  ///       name
+  ///       oneLine
+  ///       runningDate {
+  ///         __typename
+  ///         year
+  ///         month
+  ///         date
+  ///         hour
+  ///         minute
+  ///       }
+  ///       registerLimitDate {
+  ///         __typename
+  ///         year
+  ///         month
+  ///         date
+  ///         hour
+  ///         minute
+  ///       }
+  ///       runningPoints {
+  ///         __typename
+  ///         latitude
+  ///         longitude
+  ///       }
+  ///     }
+  ///   }
+  /// }
+  public let operationDefinition =
+    "query Running($id: ID) { running(id: $id) { __typename code success message running { __typename id name oneLine runningDate { __typename year month date hour minute } registerLimitDate { __typename year month date hour minute } runningPoints { __typename latitude longitude } } } }"
+
+  public let operationName = "Running"
+
+  public var id: GraphQLID?
+
+  public init(id: GraphQLID? = nil) {
+    self.id = id
+  }
+
+  public var variables: GraphQLMap? {
+    return ["id": id]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes = ["Query"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("running", arguments: ["id": GraphQLVariable("id")], type: .object(Running.selections)),
+    ]
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(running: Running? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Query", "running": running.flatMap { (value: Running) -> ResultMap in value.resultMap }])
+    }
+
+    public var running: Running? {
+      get {
+        return (resultMap["running"] as? ResultMap).flatMap { Running(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "running")
+      }
+    }
+
+    public struct Running: GraphQLSelectionSet {
+      public static let possibleTypes = ["RunningQueryResponse"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("code", type: .nonNull(.scalar(String.self))),
+        GraphQLField("success", type: .nonNull(.scalar(Bool.self))),
+        GraphQLField("message", type: .nonNull(.scalar(String.self))),
+        GraphQLField("running", type: .nonNull(.object(Running.selections))),
+      ]
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(code: String, success: Bool, message: String, running: Running) {
+        self.init(unsafeResultMap: ["__typename": "RunningQueryResponse", "code": code, "success": success, "message": message, "running": running.resultMap])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var code: String {
+        get {
+          return resultMap["code"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "code")
+        }
+      }
+
+      public var success: Bool {
+        get {
+          return resultMap["success"]! as! Bool
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "success")
+        }
+      }
+
+      public var message: String {
+        get {
+          return resultMap["message"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "message")
+        }
+      }
+
+      public var running: Running {
+        get {
+          return Running(unsafeResultMap: resultMap["running"]! as! ResultMap)
+        }
+        set {
+          resultMap.updateValue(newValue.resultMap, forKey: "running")
+        }
+      }
+
+      public struct Running: GraphQLSelectionSet {
+        public static let possibleTypes = ["Running"]
+
+        public static let selections: [GraphQLSelection] = [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .scalar(GraphQLID.self)),
+          GraphQLField("name", type: .scalar(String.self)),
+          GraphQLField("oneLine", type: .scalar(String.self)),
+          GraphQLField("runningDate", type: .object(RunningDate.selections)),
+          GraphQLField("registerLimitDate", type: .object(RegisterLimitDate.selections)),
+          GraphQLField("runningPoints", type: .list(.object(RunningPoint.selections))),
+        ]
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(id: GraphQLID? = nil, name: String? = nil, oneLine: String? = nil, runningDate: RunningDate? = nil, registerLimitDate: RegisterLimitDate? = nil, runningPoints: [RunningPoint?]? = nil) {
+          self.init(unsafeResultMap: ["__typename": "Running", "id": id, "name": name, "oneLine": oneLine, "runningDate": runningDate.flatMap { (value: RunningDate) -> ResultMap in value.resultMap }, "registerLimitDate": registerLimitDate.flatMap { (value: RegisterLimitDate) -> ResultMap in value.resultMap }, "runningPoints": runningPoints.flatMap { (value: [RunningPoint?]) -> [ResultMap?] in value.map { (value: RunningPoint?) -> ResultMap? in value.flatMap { (value: RunningPoint) -> ResultMap in value.resultMap } } }])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID? {
+          get {
+            return resultMap["id"] as? GraphQLID
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var name: String? {
+          get {
+            return resultMap["name"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "name")
+          }
+        }
+
+        public var oneLine: String? {
+          get {
+            return resultMap["oneLine"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "oneLine")
+          }
+        }
+
+        public var runningDate: RunningDate? {
+          get {
+            return (resultMap["runningDate"] as? ResultMap).flatMap { RunningDate(unsafeResultMap: $0) }
+          }
+          set {
+            resultMap.updateValue(newValue?.resultMap, forKey: "runningDate")
+          }
+        }
+
+        public var registerLimitDate: RegisterLimitDate? {
+          get {
+            return (resultMap["registerLimitDate"] as? ResultMap).flatMap { RegisterLimitDate(unsafeResultMap: $0) }
+          }
+          set {
+            resultMap.updateValue(newValue?.resultMap, forKey: "registerLimitDate")
+          }
+        }
+
+        public var runningPoints: [RunningPoint?]? {
+          get {
+            return (resultMap["runningPoints"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [RunningPoint?] in value.map { (value: ResultMap?) -> RunningPoint? in value.flatMap { (value: ResultMap) -> RunningPoint in RunningPoint(unsafeResultMap: value) } } }
+          }
+          set {
+            resultMap.updateValue(newValue.flatMap { (value: [RunningPoint?]) -> [ResultMap?] in value.map { (value: RunningPoint?) -> ResultMap? in value.flatMap { (value: RunningPoint) -> ResultMap in value.resultMap } } }, forKey: "runningPoints")
+          }
+        }
+
+        public struct RunningDate: GraphQLSelectionSet {
+          public static let possibleTypes = ["Date"]
+
+          public static let selections: [GraphQLSelection] = [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("year", type: .scalar(Int.self)),
+            GraphQLField("month", type: .scalar(Int.self)),
+            GraphQLField("date", type: .scalar(Int.self)),
+            GraphQLField("hour", type: .scalar(Int.self)),
+            GraphQLField("minute", type: .scalar(Int.self)),
+          ]
+
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public init(year: Int? = nil, month: Int? = nil, date: Int? = nil, hour: Int? = nil, minute: Int? = nil) {
+            self.init(unsafeResultMap: ["__typename": "Date", "year": year, "month": month, "date": date, "hour": hour, "minute": minute])
+          }
+
+          public var __typename: String {
+            get {
+              return resultMap["__typename"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "__typename")
+            }
+          }
+
+          public var year: Int? {
+            get {
+              return resultMap["year"] as? Int
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "year")
+            }
+          }
+
+          public var month: Int? {
+            get {
+              return resultMap["month"] as? Int
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "month")
+            }
+          }
+
+          public var date: Int? {
+            get {
+              return resultMap["date"] as? Int
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "date")
+            }
+          }
+
+          public var hour: Int? {
+            get {
+              return resultMap["hour"] as? Int
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "hour")
+            }
+          }
+
+          public var minute: Int? {
+            get {
+              return resultMap["minute"] as? Int
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "minute")
+            }
+          }
+        }
+
+        public struct RegisterLimitDate: GraphQLSelectionSet {
+          public static let possibleTypes = ["Date"]
+
+          public static let selections: [GraphQLSelection] = [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("year", type: .scalar(Int.self)),
+            GraphQLField("month", type: .scalar(Int.self)),
+            GraphQLField("date", type: .scalar(Int.self)),
+            GraphQLField("hour", type: .scalar(Int.self)),
+            GraphQLField("minute", type: .scalar(Int.self)),
+          ]
+
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public init(year: Int? = nil, month: Int? = nil, date: Int? = nil, hour: Int? = nil, minute: Int? = nil) {
+            self.init(unsafeResultMap: ["__typename": "Date", "year": year, "month": month, "date": date, "hour": hour, "minute": minute])
+          }
+
+          public var __typename: String {
+            get {
+              return resultMap["__typename"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "__typename")
+            }
+          }
+
+          public var year: Int? {
+            get {
+              return resultMap["year"] as? Int
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "year")
+            }
+          }
+
+          public var month: Int? {
+            get {
+              return resultMap["month"] as? Int
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "month")
+            }
+          }
+
+          public var date: Int? {
+            get {
+              return resultMap["date"] as? Int
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "date")
+            }
+          }
+
+          public var hour: Int? {
+            get {
+              return resultMap["hour"] as? Int
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "hour")
+            }
+          }
+
+          public var minute: Int? {
+            get {
+              return resultMap["minute"] as? Int
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "minute")
+            }
+          }
+        }
+
+        public struct RunningPoint: GraphQLSelectionSet {
+          public static let possibleTypes = ["Location"]
+
+          public static let selections: [GraphQLSelection] = [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("latitude", type: .nonNull(.scalar(Double.self))),
+            GraphQLField("longitude", type: .nonNull(.scalar(Double.self))),
+          ]
+
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public init(latitude: Double, longitude: Double) {
+            self.init(unsafeResultMap: ["__typename": "Location", "latitude": latitude, "longitude": longitude])
+          }
+
+          public var __typename: String {
+            get {
+              return resultMap["__typename"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "__typename")
+            }
+          }
+
+          public var latitude: Double {
+            get {
+              return resultMap["latitude"]! as! Double
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "latitude")
+            }
+          }
+
+          public var longitude: Double {
+            get {
+              return resultMap["longitude"]! as! Double
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "longitude")
             }
           }
         }

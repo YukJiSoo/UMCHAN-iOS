@@ -35,7 +35,7 @@ class RunningTableViewCell: UITableViewCell, NibLodable {
     }
     
     // MARK: - Properties
-    func configure(running: RunningType) {
+    func configure(running: RunningListQueryType) {
         
         self.runningNameLabel.text = running.name
         self.runningOneLineLabel.text = running.oneLine

@@ -8,8 +8,6 @@
 
 import UIKit
 
-typealias RunningType = RunningListQuery.Data.Running.Running
-
 class MyRunningsViewController: UIViewController, NibLodable {
 
     // MARK: - Outlets
@@ -20,7 +18,7 @@ class MyRunningsViewController: UIViewController, NibLodable {
 
     // MARK: - Properties
 //    var runnings = [Running]()
-    var runnings: [RunningType]? {
+    var runnings: [RunningListQueryType]? {
         didSet {
             DispatchQueue.main.async {
                 guard let runnings = self.runnings else {
@@ -182,7 +180,7 @@ extension MyRunningsViewController: UITableViewDelegate {
         let viewController = storyboard.viewController(RunningViewController.self)
 
         if let runnings = self.runnings {
-            viewController.running = runnings[indexPath.row]
+            viewController.id = runnings[indexPath.row].id
         }
 
         self.navigationController?.pushViewController(viewController, animated: true)

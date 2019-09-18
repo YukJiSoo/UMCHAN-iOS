@@ -19,36 +19,64 @@ class RunningViewController: UIViewController, NibLodable {
     @IBOutlet weak var membersView: UIStackView!
     
     // MARK: - Properties
-    var running: RunningType?
+    var id: String?
+    var running: RunningQueryType?
     
     // MARK: - Life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.setupSubViews()
+        self.setupData()
         self.setupNavigationBar()
         self.setupParticipatingLeaderAndMembers()
     }
     
     // MARK: - Functions
+    func setupData() {
+
+        guard let id = self.id else {
+            return
+        }
+        RunningService.shared.running(id: id) { (response) in
+
+            switch response {
+            case .success(_):
+
+                guard let data = try? response.get() else {
+                    debugPrint("cannot get data")
+                    return
+                }
+
+                self.running = data
+                DispatchQueue.main.async {
+                    self.setupSubViews()
+                }
+            case .failure(RunningAPIError.runningList(let message)):
+
+                print(message)
+            default:
+                debugPrint("Uncorrect access")
+            }
+        }
+    }
+
     func setupSubViews() {
         
         self.oneLineLabel.text = self.running?.oneLine
-        
-        if let running = running {
+
+        if let running = self.running {
+            self.navigationBar.title = running.name ?? "러닝"
+
             let (runningDate, registerDate) = convertRunningDateString(running: running)
             self.registerDateLabel.text = registerDate
             self.runningDateLabel.text = runningDate
         }
+
     }
     
     func setupNavigationBar() {
         
         self.navigationBar.delegate = self
-        
-        if let title = self.running?.name {
-            self.navigationBar.title = title
-        }
         self.navigationBar.configureButton(location: .left, type: .back)
     }
     
