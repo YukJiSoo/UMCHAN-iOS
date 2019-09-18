@@ -178,11 +178,14 @@ extension MyRunningsViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        let storyboard = UIStoryboard(name: StoryboardName.runningHistory, bundle: nil)
-        let viewController = storyboard.viewController(RunningHistoryViewController.self)
-//        viewController.running = self.runnings[indexPath.row]
+        let storyboard = UIStoryboard(name: StoryboardName.running, bundle: nil)
+        let viewController = storyboard.viewController(RunningViewController.self)
 
-        self.present(viewController, animated: true, completion: nil)
+        if let runnings = self.runnings {
+            viewController.running = runnings[indexPath.row]
+        }
+
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
 

@@ -35,7 +35,7 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="러닝이름"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="barItemSize">
-                                        <real key="value" value="0.0"/>
+                                        <real key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>

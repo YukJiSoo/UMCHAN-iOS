@@ -98,8 +98,8 @@ extension RunningInDistrictViewController: UITableViewDelegate {
         print("1")
         let storyboard = UIStoryboard(name: StoryboardName.running, bundle: nil)
         let viewController = storyboard.viewController(RunningViewController.self)
-        viewController.running = self.runnings[indexPath.row]
-        
+//        viewController.running = self.runnings[indexPath.row]
+
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

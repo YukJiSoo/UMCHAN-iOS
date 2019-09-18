@@ -19,7 +19,7 @@ class RunningViewController: UIViewController, NibLodable {
     @IBOutlet weak var membersView: UIStackView!
     
     // MARK: - Properties
-    var running: Running?
+    var running: RunningType?
     
     // MARK: - Life cycles
     override func viewDidLoad() {
@@ -36,9 +36,9 @@ class RunningViewController: UIViewController, NibLodable {
         self.oneLineLabel.text = self.running?.oneLine
         
         if let running = running {
-            let dateFormatter = DateFormatter.basicFormatter(format: DateFormat.date, locale: DateFormat.locale)
-            self.registerDateLabel.text = dateFormatter.string(from: running.registerDate)
-            self.runningDateLabel.text = dateFormatter.string(from: running.runningDate)
+            let (runningDate, registerDate) = convertRunningDateString(running: running)
+            self.registerDateLabel.text = registerDate
+            self.runningDateLabel.text = runningDate
         }
     }
     

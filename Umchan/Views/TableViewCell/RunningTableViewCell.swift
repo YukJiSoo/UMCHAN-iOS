@@ -40,30 +40,8 @@ class RunningTableViewCell: UITableViewCell, NibLodable {
         self.runningNameLabel.text = running.name
         self.runningOneLineLabel.text = running.oneLine
 
-        let runningDate = running.runningDate
-        if
-            let year = runningDate?.year,
-            let month = runningDate?.month,
-            let date = runningDate?.date,
-            let hour = runningDate?.hour,
-            let minute = runningDate?.minute {
-
-            self.runningDateLabel.text = "\(year)년 \(month)월 \(date)일 \(hour)시 \(minute)분에 달리기 시작"
-        }
-
-        if
-            let year = runningDate?.year,
-            let month = runningDate?.month,
-            let date = runningDate?.date,
-            let hour = runningDate?.hour,
-            let minute = runningDate?.minute {
-
-            self.registerDateLabel.text = "\(year)년 \(month)월 \(date)일 \(hour)시 \(minute)분까지 등록"
-        }
-        
-    }
-
-    func convertDataString() {
-
+        let (runningDate, registerDate) = convertRunningDateString(running: running)
+        self.runningDateLabel.text = "\(runningDate)에 달리기 시작"
+        self.registerDateLabel.text = "\(registerDate)까지 등록"
     }
 }
