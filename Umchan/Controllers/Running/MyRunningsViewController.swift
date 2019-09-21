@@ -17,7 +17,6 @@ class MyRunningsViewController: UIViewController, NibLodable {
     var tableView: UITableView?
 
     // MARK: - Properties
-//    var runnings = [Running]()
     var runnings: [RunningListQueryType]? {
         didSet {
             DispatchQueue.main.async {

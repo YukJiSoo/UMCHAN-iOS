@@ -28,15 +28,10 @@ class RunningTableViewCell: UITableViewCell, NibLodable {
         super.awakeFromNib()
         
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-    }
     
     // MARK: - Properties
     func configure(running: RunningListQueryType) {
-        
+
         self.runningNameLabel.text = running.name
         self.runningOneLineLabel.text = running.oneLine
 

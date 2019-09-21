@@ -28,7 +28,18 @@
           {
             "name": "runnings",
             "description": "",
-            "args": [],
+            "args": [
+              {
+                "name": "name",
+                "description": "",
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null
+              }
+            ],
             "type": {
               "kind": "OBJECT",
               "name": "RunningsQueryResponse",

@@ -12,13 +12,13 @@ typealias RunningQueryType = RunningQuery.Data.Running.Running
 typealias RunningListQueryType = RunningListQuery.Data.Running.Running
 
 typealias GetRunningCompletion = (_ Response: Result<RunningQuery.Data.Running.Running, RunningAPIError>) -> Void
-typealias GetRunningListCompletion = (_ Response: Result<[RunningListQuery.Data.Running.Running], RunningAPIError>) -> Void
+typealias GetRunningListCompletion = (_ Response: Result<[RunningListQueryType], RunningAPIError>) -> Void
 typealias RunningCompletion = (_ Response: Result<Bool, RunningAPIError>) -> Void
 
 protocol RunningServiceType {
 
     func running(id: String, completion: @escaping GetRunningCompletion)
-    func runningList(completion: @escaping GetRunningListCompletion)
+    func runningList(name: String?, completion: @escaping GetRunningListCompletion)
     func registerRunning(name: String, oneLine: String, runningDate: UCDateType, registerLimitDate: UCDateType, runningPoint: [LocationType], completion: @escaping RunningCompletion)
 }
 
@@ -56,9 +56,9 @@ final class RunningService: RunningServiceType {
 
     }
 
-    func runningList(completion: @escaping GetRunningListCompletion) {
+    func runningList(name: String? = nil, completion: @escaping GetRunningListCompletion) {
 
-        Apollo.shared.client.fetch(query: RunningListQuery()) { result in
+        Apollo.shared.client.fetch(query: RunningListQuery(name: name)) { result in
 
             guard
                 let data = try? result.get().data,

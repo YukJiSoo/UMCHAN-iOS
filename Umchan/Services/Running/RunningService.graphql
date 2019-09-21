@@ -1,6 +1,6 @@
 
-query RunningList {
-    runnings {
+query RunningList($name: String) {
+    runnings(name: $name) {
         code,
         success,
         message,

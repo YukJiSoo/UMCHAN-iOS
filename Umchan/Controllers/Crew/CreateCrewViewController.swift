@@ -49,7 +49,7 @@ class CreateCrewViewController: UIViewController, NibLodable {
             self.present(alertController, animated: true, completion: nil)
         case .failure(CrewAPIError.createCrew(let message)):
 
-            self.presentFailAlertController("러닝 등록 실패", with: message)
+            self.presentFailAlertController("크루 생성 실패", with: message)
         default:
             debugPrint("Uncorrect access")
         }

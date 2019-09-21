@@ -39,6 +39,11 @@ class CustomSearchBar: UIView {
             }
         }
     }
+
+    var writedText: String? {
+        return self.textField.text
+    }
+
     var delegate: CustomSearchBarDelegate?
     
     // MARK: - Life cycles
@@ -75,6 +80,7 @@ class CustomSearchBar: UIView {
         self.searchButton.addTarget(self, action: #selector(searchButtonPressed(_:)), for: .touchUpInside)
         
         self.textField = UITextField(frame: .zero)
+        self.textField.autocapitalizationType = UITextAutocapitalizationType.none
         self.textField.addTarget(self, action: #selector(checkTextField(_:)), for: .editingChanged)
     }
     
