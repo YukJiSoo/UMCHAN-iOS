@@ -128,8 +128,8 @@ class SearchCrewViewController: SearchViewController {
         var crewViews = [CrewView]()
         for crew in crews {
             let crewView = CrewView(frame: .zero)
-            crewView.configure(crew: crew)
-            
+//            crewView.configure(crew: crew)
+
             crewViews.append(crewView)
         }
         

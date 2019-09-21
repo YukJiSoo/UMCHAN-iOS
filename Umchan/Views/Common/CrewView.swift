@@ -14,7 +14,6 @@ class CrewView: UIStackView {
     // MARK: - SubViews
     var imageView: UIImageView!
     var nameLabel: PaddingLabel!
-    var numberOfPeopleLabel: PaddingLabel!
     
     // MARK: - Properties
     var widthOfView: CGFloat = 150 {
@@ -79,22 +78,14 @@ class CrewView: UIStackView {
         self.nameLabel.text = "Initialize"
         self.nameLabel.font = UIFont.umchanFont(size: CGFloat(13), boldState: .light)
         self.nameLabel.padding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
-        
-        self.numberOfPeopleLabel = PaddingLabel(frame: .zero)
-        self.numberOfPeopleLabel.text = "Initialize"
-        self.numberOfPeopleLabel.font = UIFont.umchanFont(size: CGFloat(13), boldState: .light)
-        self.numberOfPeopleLabel.padding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
-        
+
         self.addArrangedSubview(self.nameLabel)
-        self.addArrangedSubview(self.numberOfPeopleLabel)
-        
     }
     
-    func configure(crew: Crew) {
-        
-        self.imageView.image = UIImage(named: crew.image)
+    func configure(crew: CrewListQueryResult) {
+
+//        self.imageView.image = UIImage(named: crew.image)
         self.nameLabel.text = crew.name
-        self.numberOfPeopleLabel.text = "\(crew.numberOfPeople)"
     }
     
 }

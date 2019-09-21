@@ -18,15 +18,21 @@ class MyCrewsViewController: UIViewController, NibLodable {
     let createCrewButton = UmchanCreateButtom(frame: .zero)
     
     // MARK: - Properties
-    var crews = [
-        Crew(name: "test0", oneLine: "test0", creationDate: "test0", numberOfPeople: 9, image: "test0"),
-        Crew(name: "test1", oneLine: "test0", creationDate: "test0", numberOfPeople: 9, image: "test0"),
-        Crew(name: "test2", oneLine: "test0", creationDate: "test0", numberOfPeople: 9, image: "test0"),
-        Crew(name: "test3", oneLine: "test0", creationDate: "test0", numberOfPeople: 9, image: "test0"),
-        Crew(name: "test4", oneLine: "test0", creationDate: "test0", numberOfPeople: 9, image: "test0"),
-        Crew(name: "test5", oneLine: "test0", creationDate: "test0", numberOfPeople: 9, image: "test0")
-    ]
-//    var crews = [Crew]()
+    var crews: [CrewListQueryResult]? {
+        didSet {
+            DispatchQueue.main.async {
+                guard let crews = self.crews else {
+                    return
+                }
+
+                if crews.isEmpty {
+                    self.setupEmptyCase()
+                } else {
+                    self.setupCrewListView()
+                }
+            }
+        }
+    }
     
     // MARK: - Life cycles
     override func viewDidLoad() {
@@ -39,18 +45,34 @@ class MyCrewsViewController: UIViewController, NibLodable {
     func setup() {
         
         self.setupNavigationBar()
-        
+
         createCrewButton.setup(title: "크루만들기")
         createCrewButton.addTarget(self, action: #selector(createButtonPressed(_:)), for: .touchUpInside)
-        
-        guard !crews.isEmpty else {
-            self.setupEmptyCase()
-            return
-        }
-        
-        self.setupCrewListView()
+
+        self.setupData()
     }
-    
+
+    func setupData() {
+
+        CrewService.shared.crewList { (response) in
+            switch response {
+            case .success(_):
+
+                guard let data = try? response.get() else {
+                    debugPrint("cannot get data")
+                    return
+                }
+
+                self.crews = data
+            case .failure(CrewAPIError.crewList(let message)):
+
+                print(message)
+            default:
+                debugPrint("Uncorrect access")
+            }
+        }
+    }
+
     func setupNavigationBar() {
         
         self.navigationBar.configureButton(location: .right, type: .profile)
@@ -97,6 +119,12 @@ class MyCrewsViewController: UIViewController, NibLodable {
         let crewListView = ScrollableStackView(frame: .zero)
 
         var crewViews = [CrewView]()
+
+        guard let crews = self.crews else {
+            debugPrint("Fail: binding crew array")
+            return
+        }
+
         for crew in crews {
             let crewView = CrewView(frame: .zero)
             crewView.configure(crew: crew)

@@ -9,7 +9,9 @@
 
 import Foundation
 
-typealias GetCrewListCompletion = (_ Response: Result<[CrewListQuery.Data.Crew.Crew], CrewAPIError>) -> Void
+typealias CrewListQueryResult = CrewListQuery.Data.Crew.Crew
+
+typealias GetCrewListCompletion = (_ Response: Result<[CrewListQueryResult], CrewAPIError>) -> Void
 typealias CrewCompletion = (_ Response: Result<Bool, CrewAPIError>) -> Void
 
 protocol CrewServiceType {

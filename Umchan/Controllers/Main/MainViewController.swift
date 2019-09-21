@@ -72,8 +72,8 @@ class MainViewController: UIViewController, NibLodable {
         for (index, crew) in self.crews.enumerated() {
             
             let crewView = CrewView(frame: CGRect(origin: .zero, size: CGSize(width: 0, height: self.crewListView.frame.height)))
-            crewView.configure(crew: Crew(name: crew.name, oneLine: crew.oneLine, creationDate: crew.creationDate, numberOfPeople: crew.numberOfPeople, image: crew.image))
-            
+//            crewView.configure(crew: Crew(name: crew.name, oneLine: crew.oneLine, creationDate: crew.creationDate, numberOfPeople: crew.numberOfPeople, image: crew.image))
+
             crewView.tag = index
             crewView.isUserInteractionEnabled = true
             let tapCrewViewGesture = UITapGestureRecognizer(target: self, action: #selector(self.crewViewTapped(_:)))
