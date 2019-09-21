@@ -19,7 +19,7 @@ protocol RunningServiceType {
 
     func running(id: String, completion: @escaping GetRunningCompletion)
     func runningList(completion: @escaping GetRunningListCompletion)
-    func registerRunning(name: String, oneLine: String, runningDate: RunningDateType, registerLimitDate: RunningDateType, runningPoint: [LocationType], completion: @escaping RunningCompletion)
+    func registerRunning(name: String, oneLine: String, runningDate: UCDateType, registerLimitDate: UCDateType, runningPoint: [LocationType], completion: @escaping RunningCompletion)
 }
 
 final class RunningService: RunningServiceType {
@@ -85,7 +85,7 @@ final class RunningService: RunningServiceType {
         }
     }
 
-    func registerRunning(name: String, oneLine: String, runningDate: RunningDateType, registerLimitDate: RunningDateType, runningPoint: [LocationType], completion: @escaping RunningCompletion) {
+    func registerRunning(name: String, oneLine: String, runningDate: UCDateType, registerLimitDate: UCDateType, runningPoint: [LocationType], completion: @escaping RunningCompletion) {
 
         let runningDateInput = DateInput(
             year: runningDate.0,

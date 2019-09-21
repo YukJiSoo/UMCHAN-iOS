@@ -14,7 +14,7 @@ typealias Month = Int
 typealias Day = Int
 typealias Hour = Int
 typealias Minute = Int
-typealias RunningDateType = (Year, Month, Day, Hour, Minute)
+typealias UCDateType = (Year, Month, Day, Hour, Minute)
 
 class DateView: UIStackView {
     

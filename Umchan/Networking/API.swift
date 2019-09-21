@@ -111,11 +111,11 @@ public struct LoginInput: GraphQLMapConvertible {
 }
 
 /// Input
-public struct CreateRunningInput: GraphQLMapConvertible {
+public struct CreateCrewInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(name: String, oneLine: String, runningDate: DateInput, registerLimitDate: DateInput, runningPoints: [LocationInput?]) {
-    graphQLMap = ["name": name, "oneLine": oneLine, "runningDate": runningDate, "registerLimitDate": registerLimitDate, "runningPoints": runningPoints]
+  public init(name: String, oneLine: String, creationDate: DateInput) {
+    graphQLMap = ["name": name, "oneLine": oneLine, "creationDate": creationDate]
   }
 
   public var name: String {
@@ -136,30 +136,12 @@ public struct CreateRunningInput: GraphQLMapConvertible {
     }
   }
 
-  public var runningDate: DateInput {
+  public var creationDate: DateInput {
     get {
-      return graphQLMap["runningDate"] as! DateInput
+      return graphQLMap["creationDate"] as! DateInput
     }
     set {
-      graphQLMap.updateValue(newValue, forKey: "runningDate")
-    }
-  }
-
-  public var registerLimitDate: DateInput {
-    get {
-      return graphQLMap["registerLimitDate"] as! DateInput
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "registerLimitDate")
-    }
-  }
-
-  public var runningPoints: [LocationInput?] {
-    get {
-      return graphQLMap["runningPoints"] as! [LocationInput?]
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "runningPoints")
+      graphQLMap.updateValue(newValue, forKey: "creationDate")
     }
   }
 }
@@ -213,6 +195,60 @@ public struct DateInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "minute")
+    }
+  }
+}
+
+/// Input
+public struct CreateRunningInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  public init(name: String, oneLine: String, runningDate: DateInput, registerLimitDate: DateInput, runningPoints: [LocationInput?]) {
+    graphQLMap = ["name": name, "oneLine": oneLine, "runningDate": runningDate, "registerLimitDate": registerLimitDate, "runningPoints": runningPoints]
+  }
+
+  public var name: String {
+    get {
+      return graphQLMap["name"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "name")
+    }
+  }
+
+  public var oneLine: String {
+    get {
+      return graphQLMap["oneLine"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "oneLine")
+    }
+  }
+
+  public var runningDate: DateInput {
+    get {
+      return graphQLMap["runningDate"] as! DateInput
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "runningDate")
+    }
+  }
+
+  public var registerLimitDate: DateInput {
+    get {
+      return graphQLMap["registerLimitDate"] as! DateInput
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "registerLimitDate")
+    }
+  }
+
+  public var runningPoints: [LocationInput?] {
+    get {
+      return graphQLMap["runningPoints"] as! [LocationInput?]
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "runningPoints")
     }
   }
 }
@@ -597,6 +633,117 @@ public final class LoginMutation: GraphQLMutation {
               resultMap.updateValue(newValue, forKey: "longitude")
             }
           }
+        }
+      }
+    }
+  }
+}
+
+public final class CreateCrewMutation: GraphQLMutation {
+  /// mutation CreateCrew($nickname: String, $crew: CreateCrewInput) {
+  ///   createCrew(nickname: $nickname, crew: $crew) {
+  ///     __typename
+  ///     code
+  ///     success
+  ///     message
+  ///   }
+  /// }
+  public let operationDefinition =
+    "mutation CreateCrew($nickname: String, $crew: CreateCrewInput) { createCrew(nickname: $nickname, crew: $crew) { __typename code success message } }"
+
+  public let operationName = "CreateCrew"
+
+  public var nickname: String?
+  public var crew: CreateCrewInput?
+
+  public init(nickname: String? = nil, crew: CreateCrewInput? = nil) {
+    self.nickname = nickname
+    self.crew = crew
+  }
+
+  public var variables: GraphQLMap? {
+    return ["nickname": nickname, "crew": crew]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes = ["Mutation"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("createCrew", arguments: ["nickname": GraphQLVariable("nickname"), "crew": GraphQLVariable("crew")], type: .object(CreateCrew.selections)),
+    ]
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(createCrew: CreateCrew? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "createCrew": createCrew.flatMap { (value: CreateCrew) -> ResultMap in value.resultMap }])
+    }
+
+    public var createCrew: CreateCrew? {
+      get {
+        return (resultMap["createCrew"] as? ResultMap).flatMap { CreateCrew(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "createCrew")
+      }
+    }
+
+    public struct CreateCrew: GraphQLSelectionSet {
+      public static let possibleTypes = ["CreateCrewMutationResponse"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("code", type: .nonNull(.scalar(String.self))),
+        GraphQLField("success", type: .nonNull(.scalar(Bool.self))),
+        GraphQLField("message", type: .nonNull(.scalar(String.self))),
+      ]
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(code: String, success: Bool, message: String) {
+        self.init(unsafeResultMap: ["__typename": "CreateCrewMutationResponse", "code": code, "success": success, "message": message])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var code: String {
+        get {
+          return resultMap["code"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "code")
+        }
+      }
+
+      public var success: Bool {
+        get {
+          return resultMap["success"]! as! Bool
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "success")
+        }
+      }
+
+      public var message: String {
+        get {
+          return resultMap["message"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "message")
         }
       }
     }

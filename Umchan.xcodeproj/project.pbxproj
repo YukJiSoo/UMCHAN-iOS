@@ -114,6 +114,8 @@
 		A792F219232D1ED600CE1742 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792F218232D1ED600CE1742 /* Common.swift */; };
 		A797A4572323E88500FD2CD5 /* MapView+CalculateRunningCourseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A797A4562323E88500FD2CD5 /* MapView+CalculateRunningCourseDelegate.swift */; };
 		A797A4592323FD5100FD2CD5 /* RegisterRunningViewController+MKMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A797A4582323FD5100FD2CD5 /* RegisterRunningViewController+MKMapViewDelegate.swift */; };
+		A7AE6C5F233659F60043B9FE /* CrewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AE6C5E233659F60043B9FE /* CrewService.swift */; };
+		A7AE6C6123365A580043B9FE /* CrewService.graphql in Resources */ = {isa = PBXBuildFile; fileRef = A7AE6C6023365A580043B9FE /* CrewService.graphql */; };
 		A7FC54F8232C01D20036177A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FC54F7232C01D20036177A /* API.swift */; };
 /* End PBXBuildFile section */
 
@@ -229,6 +231,8 @@
 		A792F218232D1ED600CE1742 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		A797A4562323E88500FD2CD5 /* MapView+CalculateRunningCourseDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapView+CalculateRunningCourseDelegate.swift"; sourceTree = "<group>"; };
 		A797A4582323FD5100FD2CD5 /* RegisterRunningViewController+MKMapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegisterRunningViewController+MKMapViewDelegate.swift"; sourceTree = "<group>"; };
+		A7AE6C5E233659F60043B9FE /* CrewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewService.swift; sourceTree = "<group>"; };
+		A7AE6C6023365A580043B9FE /* CrewService.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CrewService.graphql; sourceTree = "<group>"; };
 		A7FC54F7232C01D20036177A /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		C321F398A866D850759BD543 /* Pods_Umchan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Umchan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -360,13 +364,11 @@
 		A70992082303FE0000AE3ACA /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				A792F212232D1B8000CE1742 /* RunningService.swift */,
+				A7AE6C5D233659E40043B9FE /* Crew */,
+				A7AE6C5B233659CC0043B9FE /* Auth */,
+				A7AE6C5A233659C30043B9FE /* UserData */,
+				A7AE6C59233659AE0043B9FE /* Running */,
 				A70992092303FE2100AE3ACA /* DistrictInfoService.swift */,
-				A792F216232D1DDB00CE1742 /* RunningService.graphql */,
-				A792F209232C07E900CE1742 /* AuthService.graphql */,
-				A752FF42232BAB610012D31D /* AuthService.swift */,
-				A752FF47232BB7DC0012D31D /* UserDataService.swift */,
-				A7317E102332AC65001BE9F9 /* UserDataService.graphql */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -676,6 +678,42 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		A7AE6C59233659AE0043B9FE /* Running */ = {
+			isa = PBXGroup;
+			children = (
+				A792F216232D1DDB00CE1742 /* RunningService.graphql */,
+				A792F212232D1B8000CE1742 /* RunningService.swift */,
+			);
+			path = Running;
+			sourceTree = "<group>";
+		};
+		A7AE6C5A233659C30043B9FE /* UserData */ = {
+			isa = PBXGroup;
+			children = (
+				A752FF47232BB7DC0012D31D /* UserDataService.swift */,
+				A7317E102332AC65001BE9F9 /* UserDataService.graphql */,
+			);
+			path = UserData;
+			sourceTree = "<group>";
+		};
+		A7AE6C5B233659CC0043B9FE /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				A792F209232C07E900CE1742 /* AuthService.graphql */,
+				A752FF42232BAB610012D31D /* AuthService.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		A7AE6C5D233659E40043B9FE /* Crew */ = {
+			isa = PBXGroup;
+			children = (
+				A7AE6C5E233659F60043B9FE /* CrewService.swift */,
+				A7AE6C6023365A580043B9FE /* CrewService.graphql */,
+			);
+			path = Crew;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -751,6 +789,7 @@
 				A71EC1FA230FF45C00275EA8 /* DatePickerViewController.xib in Resources */,
 				A70C2A3223119D8C002006A3 /* Running.storyboard in Resources */,
 				A7168B7923103E4300500621 /* RunningHistoryListTableViewCell.xib in Resources */,
+				A7AE6C6123365A580043B9FE /* CrewService.graphql in Resources */,
 				A7317E112332AC65001BE9F9 /* UserDataService.graphql in Resources */,
 				A792F217232D1DDB00CE1742 /* RunningService.graphql in Resources */,
 				A70C2A342311A7FF002006A3 /* RunningHistory.storyboard in Resources */,
@@ -861,6 +900,7 @@
 				A70992072303FC5000AE3ACA /* DistrictView.swift in Sources */,
 				A76A70FF230E9FB700B5EA81 /* Running.swift in Sources */,
 				A71EC1E4230FC0D600275EA8 /* CrewView.swift in Sources */,
+				A7AE6C5F233659F60043B9FE /* CrewService.swift in Sources */,
 				A7168B8023104F8D00500621 /* ScrollableStackView.swift in Sources */,
 				A792F213232D1B8000CE1742 /* RunningService.swift in Sources */,
 				A71EC1FC230FF77100275EA8 /* DateView.swift in Sources */,

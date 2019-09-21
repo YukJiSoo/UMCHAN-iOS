@@ -1,0 +1,8 @@
+
+mutation CreateCrew($nickname: String, $crew: CreateCrewInput) {
+    createCrew(nickname: $nickname, crew: $crew) {
+        code,
+        success,
+        message
+    }
+}

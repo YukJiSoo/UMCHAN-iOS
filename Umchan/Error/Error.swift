@@ -23,6 +23,10 @@ enum RunningAPIError: Error {
     case running(String)
 }
 
+enum CrewAPIError: Error {
+    case createCrew(String)
+}
+
 enum KeychainError: Error {
     case failToSave(String)
 }
