@@ -25,6 +25,7 @@ enum RunningAPIError: Error {
 
 enum CrewAPIError: Error {
     case createCrew(String)
+    case crewList(String)
 }
 
 enum KeychainError: Error {

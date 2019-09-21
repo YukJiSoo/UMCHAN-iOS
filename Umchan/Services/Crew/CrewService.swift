@@ -9,16 +9,47 @@
 
 import Foundation
 
+typealias GetCrewListCompletion = (_ Response: Result<[CrewListQuery.Data.Crew.Crew], CrewAPIError>) -> Void
 typealias CrewCompletion = (_ Response: Result<Bool, CrewAPIError>) -> Void
 
 protocol CrewServiceType {
 
+    func crewList(completion: @escaping GetCrewListCompletion)
     func createCrew(name: String, oneLine: String, completion: @escaping CrewCompletion)
 }
 
 final class CrewService: CrewServiceType {
 
     static let shared = CrewService()
+
+    func crewList(completion: @escaping GetCrewListCompletion) {
+
+        Apollo.shared.client.fetch(query: CrewListQuery()) { result in
+
+            guard
+                let data = try? result.get().data,
+                let code = data.crews?.code,
+                let message = data.crews?.message
+                else {
+                    completion(.failure(.crewList(("Internal server error"))))
+                    return
+            }
+
+            // check reseponse HTTP code
+            guard code.isSuccessfulResponse else {
+                completion(.failure(.crewList(message)))
+                return
+            }
+
+            // response from server
+            guard let crews = data.crews?.crews else {
+                completion(.failure(.crewList("Fail Convert json data")))
+                return
+            }
+
+            completion(.success(crews))
+        }
+    }
 
     func createCrew(name: String, oneLine: String, completion: @escaping CrewCompletion) {
 
