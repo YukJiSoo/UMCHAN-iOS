@@ -1,3 +1,30 @@
+query CrewList {
+    crews {
+        code,
+        success,
+        message,
+        crews {
+            name,
+            oneLine,
+            imagePath,
+            creationDate {
+                year,
+                month,
+                date,
+                hour,
+                minute
+            },
+            leader {
+                name,
+                userID
+            },
+            members {
+                name,
+                userID
+            }
+        }
+    }
+}
 
 mutation CreateCrew($nickname: String, $crew: CreateCrewInput) {
     createCrew(nickname: $nickname, crew: $crew) {
