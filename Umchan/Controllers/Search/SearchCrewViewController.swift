@@ -15,16 +15,7 @@ class SearchCrewViewController: SearchViewController {
     var stackView: UIStackView?
     
     // MARK: - Properties
-    var crews = [Crew]()
-//    var crews = [
-//        Crew(name: "test1", numberOfPeople: 1, image: "test1"),
-//        Crew(name: "test1", numberOfPeople: 1, image: "test1"),
-//        Crew(name: "test1", numberOfPeople: 1, image: "test1"),
-//        Crew(name: "test1", numberOfPeople: 1, image: "test1"),
-//        Crew(name: "test1", numberOfPeople: 1, image: "test1"),
-//        Crew(name: "test1", numberOfPeople: 1, image: "test1"),
-//        Crew(name: "test1", numberOfPeople: 1, image: "test1")
-//    ]
+    var crews = [CrewListQueryResult]()
     
     override var searchType: CustomSearchBar.SearchType {
         return .crew
@@ -51,16 +42,41 @@ class SearchCrewViewController: SearchViewController {
         self.crewListView.initializeSubViews()
         
         self.isLoading = true
-        // get data from api server
-        // update view
-        
-        if !crews.isEmpty {
-            self.updateCrewListView()
-        } else {
-            self.stackView?.isHidden = false
+
+        guard let writedText = self.searchBar.writedText else {
+            debugPrint("Text is nil")
+            return
         }
-        
+
+        CrewService.shared.crewList(name: writedText, completion: self.loadCrewListCompletion(_:))
+    }
+
+    func loadCrewListCompletion(_ response: Result<[CrewListQueryResult], CrewAPIError>) {
         self.isLoading = false
+
+        switch response {
+        case .success(_):
+
+            guard let data = try? response.get() else {
+                debugPrint("cannot get data")
+                return
+            }
+
+            self.crews = data
+
+            DispatchQueue.main.async {
+                if !self.crews.isEmpty {
+                    self.updateCrewListView()
+                } else {
+                    self.stackView?.isHidden = false
+                }
+            }
+        case .failure(CrewAPIError.crewList(let message)):
+
+            self.presentFailAlertController("크루 검색 실패", with: message)
+        default:
+            debugPrint("Uncorrect access")
+        }
     }
     
     func setupEmptyCase() {
@@ -126,15 +142,33 @@ class SearchCrewViewController: SearchViewController {
     func updateCrewListView() {
         
         var crewViews = [CrewView]()
-        for crew in crews {
+        for (index, crew) in self.crews.enumerated() {
             let crewView = CrewView(frame: .zero)
-//            crewView.configure(crew: crew)
+            crewView.configure(crew: crew)
+
+            crewView.tag = index
+            crewView.isUserInteractionEnabled = true
+            let tapCrewViewGesture = UITapGestureRecognizer(target: self, action: #selector(self.crewViewTapped(_:)))
+            crewView.addGestureRecognizer(tapCrewViewGesture)
 
             crewViews.append(crewView)
         }
-        
+
         self.crewListView.configureSubViews(subViews: crewViews)
         self.crewListView.reloadInputViews()
     }
+
+    @objc func crewViewTapped(_ sender: UIGestureRecognizer) {
+
+        let storyboard = UIStoryboard(name: StoryboardName.crewInfo, bundle: nil)
+        let viewController = storyboard.viewController(CrewInfoViewController.self)
+        viewController.modalPresentationStyle = .custom
+
+        if let tag = sender.view?.tag {
+            viewController.crew = self.crews[tag]
+        }
+        self.present(viewController, animated: true, completion: nil)
+    }
+
     
 }

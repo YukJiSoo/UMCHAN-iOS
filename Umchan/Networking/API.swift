@@ -640,8 +640,8 @@ public final class LoginMutation: GraphQLMutation {
 }
 
 public final class CrewListQuery: GraphQLQuery {
-  /// query CrewList {
-  ///   crews {
+  /// query CrewList($name: String) {
+  ///   crews(name: $name) {
   ///     __typename
   ///     code
   ///     success
@@ -673,18 +673,25 @@ public final class CrewListQuery: GraphQLQuery {
   ///   }
   /// }
   public let operationDefinition =
-    "query CrewList { crews { __typename code success message crews { __typename name oneLine imagePath creationDate { __typename year month date hour minute } leader { __typename name userID } members { __typename name userID } } } }"
+    "query CrewList($name: String) { crews(name: $name) { __typename code success message crews { __typename name oneLine imagePath creationDate { __typename year month date hour minute } leader { __typename name userID } members { __typename name userID } } } }"
 
   public let operationName = "CrewList"
 
-  public init() {
+  public var name: String?
+
+  public init(name: String? = nil) {
+    self.name = name
+  }
+
+  public var variables: GraphQLMap? {
+    return ["name": name]
   }
 
   public struct Data: GraphQLSelectionSet {
     public static let possibleTypes = ["Query"]
 
     public static let selections: [GraphQLSelection] = [
-      GraphQLField("crews", type: .object(Crew.selections)),
+      GraphQLField("crews", arguments: ["name": GraphQLVariable("name")], type: .object(Crew.selections)),
     ]
 
     public private(set) var resultMap: ResultMap

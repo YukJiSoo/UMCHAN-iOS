@@ -16,7 +16,7 @@ typealias CrewCompletion = (_ Response: Result<Bool, CrewAPIError>) -> Void
 
 protocol CrewServiceType {
 
-    func crewList(completion: @escaping GetCrewListCompletion)
+    func crewList(name: String?, completion: @escaping GetCrewListCompletion)
     func createCrew(name: String, oneLine: String, completion: @escaping CrewCompletion)
 }
 
@@ -24,9 +24,9 @@ final class CrewService: CrewServiceType {
 
     static let shared = CrewService()
 
-    func crewList(completion: @escaping GetCrewListCompletion) {
+    func crewList(name: String? = nil, completion: @escaping GetCrewListCompletion) {
 
-        Apollo.shared.client.fetch(query: CrewListQuery()) { result in
+        Apollo.shared.client.fetch(query: CrewListQuery(name: name)) { result in
 
             guard
                 let data = try? result.get().data,

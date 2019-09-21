@@ -1,5 +1,5 @@
-query CrewList {
-    crews {
+query CrewList($name: String) {
+    crews(name: $name) {
         code,
         success,
         message,
