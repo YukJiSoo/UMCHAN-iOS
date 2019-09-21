@@ -74,6 +74,8 @@ class MyCrewsViewController: UIViewController, NibLodable {
     }
 
     func setupNavigationBar() {
+
+        self.navigationBar.delegate = self
         
         self.navigationBar.configureButton(location: .right, type: .profile)
         self.navigationBar.configureBottomLineView(color: Color.symbol.cgColor, opacity: 0.5, radius: 0.1)
@@ -173,5 +175,18 @@ class MyCrewsViewController: UIViewController, NibLodable {
         viewController.modalPresentationStyle = .custom
         
         self.present(viewController, animated: true, completion: nil)
+    }
+}
+
+extension MyCrewsViewController: CustomNavigationBarDelegate {
+
+    func rightBarButtonPressed(_ sender: UIButton) {
+
+        let stroyboard = UIStoryboard(name: StoryboardName.profile, bundle: nil)
+        let viewController = stroyboard.viewController(ProfileViewController.self)
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.isNavigationBarHidden = true
+
+        self.present(navigationController, animated: true, completion: nil)
     }
 }

@@ -17,15 +17,6 @@ class MainViewController: UIViewController, NibLodable {
     
     // MARK: - Properties
     let storyBoardName = "Main"
-//    var crews = [Crew]()
-    var crews = [
-        Crew(name: "test0", oneLine: "test0", creationDate: "test0", numberOfPeople: 9, image: "test0"),
-        Crew(name: "test1", oneLine: "test0", creationDate: "test0", numberOfPeople: 9, image: "test0"),
-        Crew(name: "test2", oneLine: "test0", creationDate: "test0", numberOfPeople: 9, image: "test0"),
-        Crew(name: "test3", oneLine: "test0", creationDate: "test0", numberOfPeople: 9, image: "test0"),
-        Crew(name: "test4", oneLine: "test0", creationDate: "test0", numberOfPeople: 9, image: "test0"),
-        Crew(name: "test5", oneLine: "test0", creationDate: "test0", numberOfPeople: 9, image: "test0")
-    ]
     
     var isLoggedIn: Bool = true
     
@@ -65,23 +56,23 @@ class MainViewController: UIViewController, NibLodable {
         self.seoulMapView.setDistrictDelegate(self)
     }
     
-    func setupCrewsView() {
-        
-        self.crewListView.configure(axis: .horizontal, distribution: .fillEqually, spacing: 10)
-        
-        for (index, crew) in self.crews.enumerated() {
-            
-            let crewView = CrewView(frame: CGRect(origin: .zero, size: CGSize(width: 0, height: self.crewListView.frame.height)))
+//    func setupCrewsView() {
+//
+//        self.crewListView.configure(axis: .horizontal, distribution: .fillEqually, spacing: 10)
+//
+//        for (index, crew) in self.crews.enumerated() {
+//
+//            let crewView = CrewView(frame: CGRect(origin: .zero, size: CGSize(width: 0, height: self.crewListView.frame.height)))
 //            crewView.configure(crew: Crew(name: crew.name, oneLine: crew.oneLine, creationDate: crew.creationDate, numberOfPeople: crew.numberOfPeople, image: crew.image))
-
-            crewView.tag = index
-            crewView.isUserInteractionEnabled = true
-            let tapCrewViewGesture = UITapGestureRecognizer(target: self, action: #selector(self.crewViewTapped(_:)))
-            crewView.addGestureRecognizer(tapCrewViewGesture)
-            
-            self.crewListView.addArrangedSubview(crewView)
-        }
-    }
+//
+//            crewView.tag = index
+//            crewView.isUserInteractionEnabled = true
+//            let tapCrewViewGesture = UITapGestureRecognizer(target: self, action: #selector(self.crewViewTapped(_:)))
+//            crewView.addGestureRecognizer(tapCrewViewGesture)
+//
+//            self.crewListView.addArrangedSubview(crewView)
+//        }
+//    }
 
     func dismissSelfAndPresenetLogin() {
 
@@ -93,18 +84,18 @@ class MainViewController: UIViewController, NibLodable {
         self.present(viewController, animated: true, completion: nil)
     }
     
-    @objc func crewViewTapped(_ sender: UIGestureRecognizer) {
-        
-        let storyboard = UIStoryboard(name: StoryboardName.crewInfo, bundle: nil)
-        let viewController = storyboard.viewController(CrewInfoViewController.self)
-        viewController.modalPresentationStyle = .custom
-        
-        if let tag = sender.view?.tag {
-//            viewController.crew = self.crews[tag]
-        }
-        self.present(viewController, animated: true, completion: nil)
-    }
-    
+//    @objc func crewViewTapped(_ sender: UIGestureRecognizer) {
+//
+//        let storyboard = UIStoryboard(name: StoryboardName.crewInfo, bundle: nil)
+//        let viewController = storyboard.viewController(CrewInfoViewController.self)
+//        viewController.modalPresentationStyle = .custom
+//
+//        if let tag = sender.view?.tag {
+////            viewController.crew = self.crews[tag]
+//        }
+//        self.present(viewController, animated: true, completion: nil)
+//    }
+
     // MARK: - Actions
     @IBAction func goToRunButtonPressed(_ sender: Any) {
 
