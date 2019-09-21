@@ -9,13 +9,6 @@
 import UIKit
 import Foundation
 
-typealias Year = Int
-typealias Month = Int
-typealias Day = Int
-typealias Hour = Int
-typealias Minute = Int
-typealias UCDateType = (Year, Month, Day, Hour, Minute)
-
 class DateView: UIStackView {
     
     // MARK: - Outlets
@@ -62,19 +55,11 @@ class DateView: UIStackView {
 
     func getDateAndTimeComponents() -> (Year, Month, Day, Hour, Minute)? {
 
-        let calendar = Calendar.current
-
         guard let date = self.date, let time = self.time else {
             debugPrint("date and time is nil")
             return nil
         }
 
-        return (
-            calendar.component(.year, from: date),
-            calendar.component(.month, from: date),
-            calendar.component(.day, from: date),
-            calendar.component(.hour, from: time),
-            calendar.component(.minute, from: time)
-        )
+        return Date.convertToUCDateType(date: date, time: time)
     }
 }
