@@ -22,13 +22,7 @@ final class CrewService: CrewServiceType {
 
     func createCrew(name: String, oneLine: String, completion: @escaping CrewCompletion) {
 
-        let crewDateInput = DateInput(
-            year: 0,
-            month: 1,
-            date: 2,
-            hour: 3,
-            minute: 4
-        )
+        let crewDateInput = Date.convertToDateInput(date: Date())
 
         guard let nickname = UserDataService.shared.user?.nickname else {
             completion(.failure(.createCrew(("Nickname is nil"))))
