@@ -100,7 +100,7 @@ class MainViewController: UIViewController, NibLodable {
         viewController.modalPresentationStyle = .custom
         
         if let tag = sender.view?.tag {
-            viewController.crew = self.crews[tag]
+//            viewController.crew = self.crews[tag]
         }
         self.present(viewController, animated: true, completion: nil)
     }

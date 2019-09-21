@@ -125,10 +125,15 @@ class MyCrewsViewController: UIViewController, NibLodable {
             return
         }
 
-        for crew in crews {
+        for (index, crew) in crews.enumerated() {
             let crewView = CrewView(frame: .zero)
             crewView.configure(crew: crew)
-            
+
+            crewView.tag = index
+            crewView.isUserInteractionEnabled = true
+            let tapCrewViewGesture = UITapGestureRecognizer(target: self, action: #selector(self.crewViewTapped(_:)))
+            crewView.addGestureRecognizer(tapCrewViewGesture)
+
             crewViews.append(crewView)
         }
         
@@ -146,7 +151,19 @@ class MyCrewsViewController: UIViewController, NibLodable {
         
         NSLayoutConstraint.activate([ topAnchor, bottomAnchor, leadingAnchor, trailingAnchor ])
     }
-    
+
+    @objc func crewViewTapped(_ sender: UIGestureRecognizer) {
+
+        let storyboard = UIStoryboard(name: StoryboardName.crewInfo, bundle: nil)
+        let viewController = storyboard.viewController(CrewInfoViewController.self)
+        viewController.modalPresentationStyle = .custom
+
+        if let tag = sender.view?.tag, let crews = self.crews {
+            viewController.crew = crews[tag]
+        }
+        self.present(viewController, animated: true, completion: nil)
+    }
+
     @objc func createButtonPressed(_ sender: UIButton) {
         
         

@@ -19,7 +19,7 @@ class CrewInfoViewController: UIViewController, NibLodable {
     @IBOutlet weak var CrewMembersView: UIStackView!
     
     // MARK: - Properties
-    var crew: Crew?
+    var crew: CrewListQueryResult?
     
     // MARK: - Life cycles
     override func viewDidLoad() {
@@ -32,10 +32,10 @@ class CrewInfoViewController: UIViewController, NibLodable {
     
     // MARK: - Functions
     func setupSubViews() {
-        
+
         self.nameLabel.text = crew?.name
         self.oneLineLabel.text = crew?.oneLine
-        self.creationDateLabel.text = crew?.creationDate
+//        self.creationDateLabel.text = crew?.creationDate
     }
     
     func setupNavigationBar() {
