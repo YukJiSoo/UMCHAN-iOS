@@ -51,7 +51,7 @@ class UserDataService {
                 completion(.failure(.user("Fail Convert json data")))
                 return
             }
-
+            print(user)
             self.saveUserData(user, completion: { (response) in
                 switch response {
                 case .success(_):

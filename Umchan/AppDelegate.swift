@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.tintColor = Color.symbol
 
         if let accessToken = Keychain.loadValue(for: "access_token") {
+            print(accessToken)
 
             AuthService.shared.accessToken = accessToken
             let mainTabbarViewController = MainTabBarController()
