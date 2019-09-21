@@ -50,7 +50,7 @@ class MainViewController: UIViewController, NibLodable {
         
         self.setupNavigationBar()
         self.setupSeoulMapView()
-        self.setupCrewsView()
+//        self.setupCrewsView()
     }
     
     func setupNavigationBar() {
