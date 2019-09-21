@@ -13,14 +13,14 @@ typealias CrewCompletion = (_ Response: Result<Bool, CrewAPIError>) -> Void
 
 protocol CrewServiceType {
 
-    func createCrew(name: String, oneLine: String, creationDate: UCDateType, completion: @escaping CrewCompletion)
+    func createCrew(name: String, oneLine: String, completion: @escaping CrewCompletion)
 }
 
 final class CrewService: CrewServiceType {
 
     static let shared = CrewService()
 
-    func createCrew(name: String, oneLine: String, creationDate: UCDateType, completion: @escaping CrewCompletion) {
+    func createCrew(name: String, oneLine: String, completion: @escaping CrewCompletion) {
 
         let crewDateInput = DateInput(
             year: 0,

@@ -36,15 +36,41 @@ class CreateCrewViewController: UIViewController, NibLodable {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(selectImagePressed(_:)))
         self.crewImageView.addGestureRecognizer(tapGesture)
     }
-    
+
+    func createCrewCompletion(_ response: Result<Bool, CrewAPIError>){
+
+        switch response {
+        case .success(_):
+
+            let alertController = self.createBasicAlertViewController(title: "크루생성", message: "크루가 생성되었습니다.")  {
+                self.dismiss(animated: true, completion: nil)
+            }
+
+            self.present(alertController, animated: true, completion: nil)
+        case .failure(CrewAPIError.createCrew(let message)):
+
+            self.presentFailAlertController("러닝 등록 실패", with: message)
+        default:
+            debugPrint("Uncorrect access")
+        }
+    }
+
     // MARK: - Actions
     @IBAction func createButtonPressed(_ sender: UIButton) {
-        
-        let alertController = self.createBasicAlertViewController(title: "크루생성", message: "크루가 생성되었습니다.")  {
-            self.dismiss(animated: true, completion: nil)
+
+        guard
+            let name = self.crewNameTextField.text, !name.isEmpty,
+            let oneLine = self.oneLineTextField.text, !oneLine.isEmpty
+            else {
+                debugPrint("All field is not filled")
+                return
         }
-        
-        self.present(alertController, animated: true, completion: nil)
+
+        CrewService.shared.createCrew(
+            name: name,
+            oneLine: oneLine,
+            completion: self.createCrewCompletion(_: )
+        )
     }
     
 

@@ -148,6 +148,7 @@ class RegisterRunningViewController: UIViewController, NibLodable {
             runningPoint: runningPoint,
             completion: registerRunningCompletion(_:)
         )
+
     }
     
 }
