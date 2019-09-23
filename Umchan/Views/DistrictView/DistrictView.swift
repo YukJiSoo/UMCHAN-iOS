@@ -37,7 +37,7 @@ class DistrictView: UIImageView {
     
     // MAKRK: - Functions
     func configure(with disritct: DistrictCoordinate, _ widthRatio: CGFloat, _ heightRatio: CGFloat) {
-        guard let name = disritct.name, let image = UIImage(named: name)?.withRenderingMode(.alwaysTemplate) else {
+        guard let name = disritct.name, let image = UIImage(named: name) else {
             debugPrint("err: fail convert image")
             return
         }
@@ -56,7 +56,7 @@ class DistrictView: UIImageView {
         self.originX = CGFloat(x)
         self.originY = CGFloat(y)
         
-        self.tintColor = (name == "한강") ? self.riverColor : self.districtColor
+//        self.tintColor = (name == "한강") ? self.riverColor : self.districtColor
         self.image = image
         self.contentMode = .scaleAspectFit
         
