@@ -23,8 +23,6 @@ class RegisterRunningViewController: UIViewController, NibLodable {
     var runningCourseData: [RunningPoint]?
     var runningCourseOverlays = [MKOverlay]()
     
-    let initialLocation = CLLocation(latitude: 37.562310, longitude: 126.999827)
-    
     // MARK: - Life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,12 +60,13 @@ class RegisterRunningViewController: UIViewController, NibLodable {
     func setupMapView() {
         
         self.mapView.setupFix()
-        self.mapView.centerMapOnLocation(location: self.initialLocation)
-        
+
         if let runningCourseData = self.runningCourseData {
             
             self.mapView.annotationList = runningCourseData
             self.mapView.reloadAnnotation()
+        } else {
+            self.mapView.configureLocationServices()
         }
     }
     
@@ -79,7 +78,6 @@ class RegisterRunningViewController: UIViewController, NibLodable {
             
             self.mapView.annotationList = runningCourseData
             self.mapView.reloadAnnotation()
-            
             self.mapView.drawRunningCourse()
         }
     }

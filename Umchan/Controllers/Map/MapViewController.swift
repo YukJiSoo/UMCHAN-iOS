@@ -19,8 +19,7 @@ class MapViewController: UIViewController, NibLodable {
     // MARK: - Properties
     // TODO: - 지정된 위치가 없는 경우 현재 위치를 default로 받아오는 기능 구현
     var isCheckMode: Bool = false
-    
-    let initialLocation = CLLocation(latitude: 37.562310, longitude: 126.999827)
+
     var runningCourseData: [RunningPoint]?
     
     // MARK: - Life cycles
@@ -42,13 +41,16 @@ class MapViewController: UIViewController, NibLodable {
         
         self.mapView.setupAnnotationButton()
         self.mapView.delegate = self
-        self.mapView.centerMapOnLocation(location: self.initialLocation)
-        
+//        self.mapView.centerMapOnLocation(location: self.initialLocation)
+
         if let runningCourseData = self.runningCourseData {
             
             self.mapView.annotationList = runningCourseData
             self.mapView.reloadAnnotation()
             self.mapView.drawRunningCourse()
+        } else {
+            self.mapView.configureLocationServices()
+            print(self.mapView.locationManager.location)
         }
     }
     

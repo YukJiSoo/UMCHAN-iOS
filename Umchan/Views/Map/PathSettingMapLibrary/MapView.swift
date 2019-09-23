@@ -18,6 +18,9 @@ class MapView: UIView {
     weak var annotationView: UIImageView?
     
     // MARK: - Properties
+    var locationManager = CLLocationManager()
+    let authorizationStatus = CLLocationManager.authorizationStatus()
+
     @IBInspectable var regionRadius: CLLocationDistance = 1000 {
         didSet {
             if let nowLocation = self.mapView?.userLocation.location {
@@ -56,7 +59,9 @@ class MapView: UIView {
     
     // MARK: - Functions
     func setupSubViews() {
-        
+
+        self.locationManager.delegate = self
+
         self.setupMapView()
         self.setupAnnotationView()
     }
@@ -159,6 +164,10 @@ class MapView: UIView {
             self.mapView?.removeAnnotations(annotations)
         }
         self.mapView?.addAnnotations(self.annotationList)
+
+        if let mapViewAnnotations = self.mapView?.annotations {
+            self.mapView?.showAnnotations(mapViewAnnotations, animated: true)
+        }
     }
 
 }
@@ -179,3 +188,31 @@ extension MapView: AnnotationButtonDelegate {
         self.delegate?.annotationButtonDelegate(isCheckMode: isCheckMode)
     }
 }
+
+extension MapView: CLLocationManagerDelegate {
+    func configureLocationServices() {
+
+        if self.authorizationStatus == .notDetermined {
+            self.locationManager.requestAlwaysAuthorization()
+        } else {
+            self.centerMapOnUserLocation()
+            return
+        }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        print("call?")
+        self.centerMapOnUserLocation()
+    }
+
+    func centerMapOnUserLocation() {
+
+        guard let coordinate = self.locationManager.location?.coordinate else {
+            return
+        }
+
+        let coordinateRegion = MKCoordinateRegion(center: coordinate, latitudinalMeters: self.regionRadius, longitudinalMeters: self.regionRadius)
+        self.mapView?.setRegion(coordinateRegion, animated: true)
+    }
+}
+
