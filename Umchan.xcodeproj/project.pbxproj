@@ -116,6 +116,7 @@
 		A797A4592323FD5100FD2CD5 /* RegisterRunningViewController+MKMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A797A4582323FD5100FD2CD5 /* RegisterRunningViewController+MKMapViewDelegate.swift */; };
 		A7AE6C5F233659F60043B9FE /* CrewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AE6C5E233659F60043B9FE /* CrewService.swift */; };
 		A7AE6C6123365A580043B9FE /* CrewService.graphql in Resources */ = {isa = PBXBuildFile; fileRef = A7AE6C6023365A580043B9FE /* CrewService.graphql */; };
+		A7AE6C6423393AAE0043B9FE /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AE6C6323393AAE0043B9FE /* CustomPickerView.swift */; };
 		A7FC54F8232C01D20036177A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FC54F7232C01D20036177A /* API.swift */; };
 /* End PBXBuildFile section */
 
@@ -233,6 +234,7 @@
 		A797A4582323FD5100FD2CD5 /* RegisterRunningViewController+MKMapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegisterRunningViewController+MKMapViewDelegate.swift"; sourceTree = "<group>"; };
 		A7AE6C5E233659F60043B9FE /* CrewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewService.swift; sourceTree = "<group>"; };
 		A7AE6C6023365A580043B9FE /* CrewService.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CrewService.graphql; sourceTree = "<group>"; };
+		A7AE6C6323393AAE0043B9FE /* CustomPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerView.swift; sourceTree = "<group>"; };
 		A7FC54F7232C01D20036177A /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		C321F398A866D850759BD543 /* Pods_Umchan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Umchan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -588,6 +590,7 @@
 				A71EC1ED230FD22C00275EA8 /* PaddingLabel.swift */,
 				A7168B7F23104F8D00500621 /* ScrollableStackView.swift */,
 				A70C2A24231189E0002006A3 /* UserView.swift */,
+				A7AE6C6323393AAE0043B9FE /* CustomPickerView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -938,6 +941,7 @@
 				A71B94BC231B8FD800BCD3E7 /* RunningPointAnnotationView.swift in Sources */,
 				A72F0168231448E90044A285 /* AnnotationButton.swift in Sources */,
 				A70992212305743300AE3ACA /* CloseButton.swift in Sources */,
+				A7AE6C6423393AAE0043B9FE /* CustomPickerView.swift in Sources */,
 				A752FF43232BAB610012D31D /* AuthService.swift in Sources */,
 				A709920E2305514A00AE3ACA /* MainViewController+DistrictViewDelegate.swift in Sources */,
 				A71EC1FF230FF86C00275EA8 /* DateViewDelegate.swift in Sources */,

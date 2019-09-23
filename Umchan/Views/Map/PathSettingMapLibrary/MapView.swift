@@ -128,8 +128,8 @@ class MapView: UIView {
     
     func setupFix() {
         
-        self.mapView?.isZoomEnabled = false
-        self.mapView?.isPitchEnabled = false
+        self.mapView?.isZoomEnabled = true
+        self.mapView?.isPitchEnabled = true
         self.mapView?.isRotateEnabled = false
         self.mapView?.isScrollEnabled = false
         self.mapView?.isMultipleTouchEnabled = false

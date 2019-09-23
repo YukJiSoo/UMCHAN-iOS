@@ -41,7 +41,7 @@ class SeoulMapView: UIView, NibLodable {
             self.addSubview(districtView)
             
         }
-        
+
         self.setup()
     }
     
