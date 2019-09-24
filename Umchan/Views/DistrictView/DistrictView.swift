@@ -36,12 +36,12 @@ class DistrictView: UIImageView {
     }
     
     // MAKRK: - Functions
-    func configure(with disritct: DistrictCoordinate, _ widthRatio: CGFloat, _ heightRatio: CGFloat) {
-        guard let name = disritct.name, let image = UIImage(named: name) else {
+    func configure(with disritct: DistrictCoordinate, _ widthRatio: CGFloat, _ heightRatio: CGFloat, isSelected: Bool = false) {
+        guard let name = disritct.name, var image = UIImage(named: name) else {
             debugPrint("err: fail convert image")
             return
         }
-        
+
         guard let x = disritct.x else {
             debugPrint("err: fail convert x")
             return
@@ -55,13 +55,17 @@ class DistrictView: UIImageView {
         self.name = name
         self.originX = CGFloat(x)
         self.originY = CGFloat(y)
-        
-//        self.tintColor = (name == "한강") ? self.riverColor : self.districtColor
+
+        // set now district another color
+        if isSelected {
+            image = UIImage(named: "\(name)select")!
+            self.setGestureRecognizer()
+        }
+
         self.image = image
         self.contentMode = .scaleAspectFit
         
         self.setLayout(widthRatio, heightRatio)
-        self.setGestureRecognizer()
     }
     
     func setLayout(_ widthRatio: CGFloat, _ heightRatio: CGFloat) {

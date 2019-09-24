@@ -92,26 +92,26 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UVb-oP-OEg" userLabel="MapView" customClass="SeoulMapView" customModule="Umchan" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="100" width="374" height="268"/>
+                                                <rect key="frame" x="20" y="100" width="374" height="273.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="UVb-oP-OEg" secondAttribute="height" multiplier="335:240" id="NyZ-1C-xbj"/>
+                                                    <constraint firstAttribute="width" secondItem="UVb-oP-OEg" secondAttribute="height" multiplier="335:245" id="NyZ-1C-xbj"/>
                                                 </constraints>
                                             </view>
                                             <pickerView clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gVx-RP-d5g" customClass="CustomPickerView" customModule="Umchan" customModuleProvider="target">
-                                                <rect key="frame" x="60" y="378" width="294" height="80"/>
+                                                <rect key="frame" x="60" y="383.5" width="294" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="WuP-OB-R89"/>
                                                 </constraints>
                                             </pickerView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원하시는 지역의 러닝을 확인하실 수 있습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVJ-jI-Ya0">
-                                                <rect key="frame" x="100" y="478" width="214.5" height="14.5"/>
+                                                <rect key="frame" x="100" y="483.5" width="214.5" height="14.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="JrU-MH-AdC">
-                                                <rect key="frame" x="20" y="532.5" width="374" height="50"/>
+                                                <rect key="frame" x="20" y="538" width="374" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MkW-eW-2pY" customClass="RoundedButton" customModule="Umchan" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="177" height="50"/>
@@ -160,7 +160,7 @@
                                                 </constraints>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7kW-jH-DTq" customClass="RoundedButton" customModule="Umchan" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="602.5" width="374" height="50"/>
+                                                <rect key="frame" x="20" y="608" width="374" height="50"/>
                                                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="hfF-ah-1U1"/>

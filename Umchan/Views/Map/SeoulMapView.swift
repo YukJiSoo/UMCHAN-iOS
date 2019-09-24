@@ -21,6 +21,8 @@ class SeoulMapView: UIView, NibLodable {
     var heightRatio: CGFloat {
         return self.frame.height / ORIGINAL_MAP_HEIGHT
     }
+
+    var nowDistrictNumber = 1
     
     // MARK: - Life cycle
     override init(frame: CGRect) {
@@ -62,9 +64,13 @@ class SeoulMapView: UIView, NibLodable {
         
         let districts = DistrictInfoService.shared.districtCoordinates
         for i in 0..<DistrictInfoService.shared.districtCoordinatesCount {
-            
+
             let district = districts[i]
-            self.distirctViews[i].configure(with: district, self.widthRatio, self.heightRatio)
+            if self.nowDistrictNumber == i {
+                self.distirctViews[i].configure(with: district, self.widthRatio, self.heightRatio, isSelected: true)
+            } else {
+                self.distirctViews[i].configure(with: district, self.widthRatio, self.heightRatio)
+            }
         }
     }
     
@@ -72,6 +78,15 @@ class SeoulMapView: UIView, NibLodable {
         for districtView in self.distirctViews {
             districtView.delegate = target
         }
+    }
+
+    func districtSelected(order: Int) {
+        self.distirctViews[self.nowDistrictNumber].image = UIImage(named: self.distirctViews[self.nowDistrictNumber].name!)!
+        self.distirctViews[self.nowDistrictNumber].isUserInteractionEnabled = false
+
+        self.nowDistrictNumber = order + 1
+        self.distirctViews[self.nowDistrictNumber].image = UIImage(named: "\(self.distirctViews[self.nowDistrictNumber].name!)select")!
+        self.distirctViews[self.nowDistrictNumber].setGestureRecognizer()
     }
     
 }
