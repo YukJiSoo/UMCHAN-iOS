@@ -14,18 +14,49 @@ class RunningInDistrictViewController: ModalViewController {
     var tableView = UITableView()
     
     // MARK: - Properties
-//    var runnings = [Running]()
-    var runnings = [Running]()
+    var district: String?
+
+    var runnings: [RunningListQueryType]? {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
     // MARK: - Life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        self.setupData()
         self.setupTableView()
         self.setupXib()
     }
-    
+
     // MARK: - Functions
+    func runningsCompletion(_ response: Result<[RunningListQueryType], RunningAPIError>) {
+
+        switch response {
+        case .success(_):
+
+            guard let data = try? response.get() else {
+                debugPrint("cannot get data")
+                return
+            }
+
+            self.runnings = data
+        case .failure(RunningAPIError.runningList(let message)):
+
+            print(message)
+        default:
+            debugPrint("Uncorrect access")
+        }
+    }
+
+    func setupData() {
+        RunningService.shared.runningList(name: district, completion: self.runningsCompletion(_:))
+    }
+
     func setupTableView() {
         
         self.tableView.delegate = self
@@ -63,12 +94,15 @@ extension RunningInDistrictViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return self.runnings.count == 0 ? 1 : self.runnings.count
+        if let count = self.runnings?.count {
+            return count == 0 ? 1 : count
+        }
+        return 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        if self.runnings.count == 0 {
+        if self.runnings?.count == 0 {
             guard let emptyNoticeCell = tableView.dequeueReusableCell(withIdentifier: EmptyTableViewCell.nibId, for: indexPath) as? EmptyTableViewCell else {
                 return UITableViewCell()
             }
@@ -81,7 +115,10 @@ extension RunningInDistrictViewController: UITableViewDataSource {
             return UITableViewCell()
         }
 
-//        runningCell.configure(running: self.runnings[indexPath.row])
+        if let running = self.runnings?[indexPath.row] {
+            runningCell.configure(running: running)
+        }
+
         return runningCell
     }
 

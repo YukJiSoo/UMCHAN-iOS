@@ -16,6 +16,7 @@ extension MainViewController: DistrictViewDelegate {
         let viewController = ModalViewController.viewController(RunningInDistrictViewController.self, titleName: name)
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.isNavigationBarHidden = true
+        viewController.district = name
         
         self.present(navigationController, animated: true, completion: nil)
     }
