@@ -12,8 +12,7 @@ struct User {
     
     var name: String
     var nickname: String
-    var imagePath: String
-    var location: Location
+    var district: String
 }
 
 extension User: Codable {

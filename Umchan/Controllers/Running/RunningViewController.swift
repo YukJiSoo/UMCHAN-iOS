@@ -83,11 +83,8 @@ class RunningViewController: UIViewController, NibLodable {
     func setupParticipatingLeaderAndMembers() {
         
         let captinViewNib = UserView.instanceFromNib()
-        captinViewNib.configure(user: User(name: "크루장", nickname: "별명", imagePath: "이미지", location: Location(latitude: 20.0, longitude: 10.2)))
         let firstMemberViewNib = UserView.instanceFromNib()
-        firstMemberViewNib.configure(user:  User(name: "크루원1", nickname: "별명", imagePath: "이미지", location: Location(latitude: 20.0, longitude: 10.2)))
         let secondMemberViewNib = UserView.instanceFromNib()
-        secondMemberViewNib.configure(user:  User(name: "크루원2", nickname: "별명", imagePath: "이미지", location: Location(latitude: 20.0, longitude: 10.2)))
         
         self.leaderView.addArrangedSubview(captinViewNib)
         self.membersView.addArrangedSubview(firstMemberViewNib)
