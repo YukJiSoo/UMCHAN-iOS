@@ -8,6 +8,9 @@
 
 import Foundation
 import UIKit
+import CoreLocation
+
+typealias convertLocationCompletion = (_ Response: Result<String, DistrictInfoError>) -> Void
 
 class DistrictInfoService {
     
@@ -37,5 +40,18 @@ class DistrictInfoService {
         
         return json
     }
-    
+
+    func convertLocationToDisrict(latitude: Double, longitude: Double, completion: @escaping convertLocationCompletion) {
+        let location = CLLocation(latitude: latitude, longitude: longitude)
+        let geocoder = CLGeocoder()
+        let locale = Locale(identifier: "Ko-kr")
+
+        geocoder.reverseGeocodeLocation(location, preferredLocale: locale, completionHandler: { (placemarks, error) in
+            if let address: [CLPlacemark] = placemarks, let name = address.last?.locality {
+                completion(.success(name))
+            } else {
+                completion(.failure(.failToConvertLocation("placemarks is nil")))
+            }
+        })
+    }
 }
