@@ -17,11 +17,7 @@ mutation Login($account: LoginInput!) {
             id,
             name,
             nickname,
-            imagePath,
-            location {
-                latitude,
-                longitude
-            }
+            district,
         }
     }
 }

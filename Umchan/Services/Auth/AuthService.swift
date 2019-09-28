@@ -72,9 +72,9 @@ final class AuthService: AuthServiceType {
         }
     }
     
-    func register(email: String, password: String, name: String, nickname: String, completion: @escaping AuthCompletion) {
+    func register(email: String, password: String, name: String, nickname: String, district: String, completion: @escaping AuthCompletion) {
         
-        let registerInput = RegisterUserInput(email: email, password: password, name: name, nickname: nickname, location: LocationInput(latitude: 10.0, longitude: 20.2))
+        let registerInput = RegisterUserInput(email: email, password: password, name: name, nickname: nickname, district: district)
         
         Apollo.shared.client.perform(mutation: RegisterUserMutation(user: registerInput)) { result in
             

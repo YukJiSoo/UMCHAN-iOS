@@ -6,8 +6,8 @@ import Apollo
 public struct RegisterUserInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(email: String, password: String, name: String, nickname: String, location: LocationInput) {
-    graphQLMap = ["email": email, "password": password, "name": name, "nickname": nickname, "location": location]
+  public init(email: String, password: String, name: String, nickname: String, district: String) {
+    graphQLMap = ["email": email, "password": password, "name": name, "nickname": nickname, "district": district]
   }
 
   public var email: String {
@@ -46,39 +46,12 @@ public struct RegisterUserInput: GraphQLMapConvertible {
     }
   }
 
-  public var location: LocationInput {
+  public var district: String {
     get {
-      return graphQLMap["location"] as! LocationInput
+      return graphQLMap["district"] as! String
     }
     set {
-      graphQLMap.updateValue(newValue, forKey: "location")
-    }
-  }
-}
-
-/// Input
-public struct LocationInput: GraphQLMapConvertible {
-  public var graphQLMap: GraphQLMap
-
-  public init(latitude: Double, longitude: Double) {
-    graphQLMap = ["latitude": latitude, "longitude": longitude]
-  }
-
-  public var latitude: Double {
-    get {
-      return graphQLMap["latitude"] as! Double
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "latitude")
-    }
-  }
-
-  public var longitude: Double {
-    get {
-      return graphQLMap["longitude"] as! Double
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "longitude")
+      graphQLMap.updateValue(newValue, forKey: "district")
     }
   }
 }
@@ -253,6 +226,33 @@ public struct CreateRunningInput: GraphQLMapConvertible {
   }
 }
 
+/// Input
+public struct LocationInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  public init(latitude: Double, longitude: Double) {
+    graphQLMap = ["latitude": latitude, "longitude": longitude]
+  }
+
+  public var latitude: Double {
+    get {
+      return graphQLMap["latitude"] as! Double
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "latitude")
+    }
+  }
+
+  public var longitude: Double {
+    get {
+      return graphQLMap["longitude"] as! Double
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "longitude")
+    }
+  }
+}
+
 public final class RegisterUserMutation: GraphQLMutation {
   /// mutation RegisterUser($user: RegisterUserInput) {
   ///   register(user: $user) {
@@ -386,17 +386,12 @@ public final class LoginMutation: GraphQLMutation {
   ///       id
   ///       name
   ///       nickname
-  ///       imagePath
-  ///       location {
-  ///         __typename
-  ///         latitude
-  ///         longitude
-  ///       }
+  ///       district
   ///     }
   ///   }
   /// }
   public let operationDefinition =
-    "mutation Login($account: LoginInput!) { login(account: $account) { __typename code success message token user { __typename id name nickname imagePath location { __typename latitude longitude } } } }"
+    "mutation Login($account: LoginInput!) { login(account: $account) { __typename code success message token user { __typename id name nickname district } } }"
 
   public let operationName = "Login"
 
@@ -520,8 +515,7 @@ public final class LoginMutation: GraphQLMutation {
           GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
           GraphQLField("name", type: .nonNull(.scalar(String.self))),
           GraphQLField("nickname", type: .nonNull(.scalar(String.self))),
-          GraphQLField("imagePath", type: .nonNull(.scalar(String.self))),
-          GraphQLField("location", type: .nonNull(.object(Location.selections))),
+          GraphQLField("district", type: .nonNull(.scalar(String.self))),
         ]
 
         public private(set) var resultMap: ResultMap
@@ -530,8 +524,8 @@ public final class LoginMutation: GraphQLMutation {
           self.resultMap = unsafeResultMap
         }
 
-        public init(id: GraphQLID, name: String, nickname: String, imagePath: String, location: Location) {
-          self.init(unsafeResultMap: ["__typename": "User", "id": id, "name": name, "nickname": nickname, "imagePath": imagePath, "location": location.resultMap])
+        public init(id: GraphQLID, name: String, nickname: String, district: String) {
+          self.init(unsafeResultMap: ["__typename": "User", "id": id, "name": name, "nickname": nickname, "district": district])
         }
 
         public var __typename: String {
@@ -570,68 +564,12 @@ public final class LoginMutation: GraphQLMutation {
           }
         }
 
-        public var imagePath: String {
+        public var district: String {
           get {
-            return resultMap["imagePath"]! as! String
+            return resultMap["district"]! as! String
           }
           set {
-            resultMap.updateValue(newValue, forKey: "imagePath")
-          }
-        }
-
-        public var location: Location {
-          get {
-            return Location(unsafeResultMap: resultMap["location"]! as! ResultMap)
-          }
-          set {
-            resultMap.updateValue(newValue.resultMap, forKey: "location")
-          }
-        }
-
-        public struct Location: GraphQLSelectionSet {
-          public static let possibleTypes = ["Location"]
-
-          public static let selections: [GraphQLSelection] = [
-            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-            GraphQLField("latitude", type: .nonNull(.scalar(Double.self))),
-            GraphQLField("longitude", type: .nonNull(.scalar(Double.self))),
-          ]
-
-          public private(set) var resultMap: ResultMap
-
-          public init(unsafeResultMap: ResultMap) {
-            self.resultMap = unsafeResultMap
-          }
-
-          public init(latitude: Double, longitude: Double) {
-            self.init(unsafeResultMap: ["__typename": "Location", "latitude": latitude, "longitude": longitude])
-          }
-
-          public var __typename: String {
-            get {
-              return resultMap["__typename"]! as! String
-            }
-            set {
-              resultMap.updateValue(newValue, forKey: "__typename")
-            }
-          }
-
-          public var latitude: Double {
-            get {
-              return resultMap["latitude"]! as! Double
-            }
-            set {
-              resultMap.updateValue(newValue, forKey: "latitude")
-            }
-          }
-
-          public var longitude: Double {
-            get {
-              return resultMap["longitude"]! as! Double
-            }
-            set {
-              resultMap.updateValue(newValue, forKey: "longitude")
-            }
+            resultMap.updateValue(newValue, forKey: "district")
           }
         }
       }
@@ -2080,17 +2018,12 @@ public final class UserQuery: GraphQLQuery {
   ///       id
   ///       name
   ///       nickname
-  ///       imagePath
-  ///       location {
-  ///         __typename
-  ///         latitude
-  ///         longitude
-  ///       }
+  ///       district
   ///     }
   ///   }
   /// }
   public let operationDefinition =
-    "query User { user { __typename code success message user { __typename id name nickname imagePath location { __typename latitude longitude } } } }"
+    "query User { user { __typename code success message user { __typename id name nickname district } } }"
 
   public let operationName = "User"
 
@@ -2197,8 +2130,7 @@ public final class UserQuery: GraphQLQuery {
           GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
           GraphQLField("name", type: .nonNull(.scalar(String.self))),
           GraphQLField("nickname", type: .nonNull(.scalar(String.self))),
-          GraphQLField("imagePath", type: .nonNull(.scalar(String.self))),
-          GraphQLField("location", type: .nonNull(.object(Location.selections))),
+          GraphQLField("district", type: .nonNull(.scalar(String.self))),
         ]
 
         public private(set) var resultMap: ResultMap
@@ -2207,8 +2139,8 @@ public final class UserQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(id: GraphQLID, name: String, nickname: String, imagePath: String, location: Location) {
-          self.init(unsafeResultMap: ["__typename": "User", "id": id, "name": name, "nickname": nickname, "imagePath": imagePath, "location": location.resultMap])
+        public init(id: GraphQLID, name: String, nickname: String, district: String) {
+          self.init(unsafeResultMap: ["__typename": "User", "id": id, "name": name, "nickname": nickname, "district": district])
         }
 
         public var __typename: String {
@@ -2247,68 +2179,12 @@ public final class UserQuery: GraphQLQuery {
           }
         }
 
-        public var imagePath: String {
+        public var district: String {
           get {
-            return resultMap["imagePath"]! as! String
+            return resultMap["district"]! as! String
           }
           set {
-            resultMap.updateValue(newValue, forKey: "imagePath")
-          }
-        }
-
-        public var location: Location {
-          get {
-            return Location(unsafeResultMap: resultMap["location"]! as! ResultMap)
-          }
-          set {
-            resultMap.updateValue(newValue.resultMap, forKey: "location")
-          }
-        }
-
-        public struct Location: GraphQLSelectionSet {
-          public static let possibleTypes = ["Location"]
-
-          public static let selections: [GraphQLSelection] = [
-            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-            GraphQLField("latitude", type: .nonNull(.scalar(Double.self))),
-            GraphQLField("longitude", type: .nonNull(.scalar(Double.self))),
-          ]
-
-          public private(set) var resultMap: ResultMap
-
-          public init(unsafeResultMap: ResultMap) {
-            self.resultMap = unsafeResultMap
-          }
-
-          public init(latitude: Double, longitude: Double) {
-            self.init(unsafeResultMap: ["__typename": "Location", "latitude": latitude, "longitude": longitude])
-          }
-
-          public var __typename: String {
-            get {
-              return resultMap["__typename"]! as! String
-            }
-            set {
-              resultMap.updateValue(newValue, forKey: "__typename")
-            }
-          }
-
-          public var latitude: Double {
-            get {
-              return resultMap["latitude"]! as! Double
-            }
-            set {
-              resultMap.updateValue(newValue, forKey: "latitude")
-            }
-          }
-
-          public var longitude: Double {
-            get {
-              return resultMap["longitude"]! as! Double
-            }
-            set {
-              resultMap.updateValue(newValue, forKey: "longitude")
-            }
+            resultMap.updateValue(newValue, forKey: "district")
           }
         }
       }

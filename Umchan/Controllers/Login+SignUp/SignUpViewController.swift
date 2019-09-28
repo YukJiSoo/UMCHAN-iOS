@@ -99,7 +99,7 @@ class SignUpViewController: UIViewController {
 
         self.signUpButton.isEnabled = false
 
-        AuthService.shared.register(email: email, password: password, name: name, nickname: nickname, completion: registerCompletion(_:))
+        AuthService.shared.register(email: email, password: password, name: name, nickname: nickname, district: "tempDistrict(TODO)", completion: registerCompletion(_:))
     }
 }
     
