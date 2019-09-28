@@ -176,8 +176,8 @@ public struct DateInput: GraphQLMapConvertible {
 public struct CreateRunningInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(name: String, oneLine: String, runningDate: DateInput, registerLimitDate: DateInput, runningPoints: [LocationInput?]) {
-    graphQLMap = ["name": name, "oneLine": oneLine, "runningDate": runningDate, "registerLimitDate": registerLimitDate, "runningPoints": runningPoints]
+  public init(name: String, oneLine: String, runningDate: DateInput, registerLimitDate: DateInput, runningPoints: [LocationInput?], district: String) {
+    graphQLMap = ["name": name, "oneLine": oneLine, "runningDate": runningDate, "registerLimitDate": registerLimitDate, "runningPoints": runningPoints, "district": district]
   }
 
   public var name: String {
@@ -222,6 +222,15 @@ public struct CreateRunningInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "runningPoints")
+    }
+  }
+
+  public var district: String {
+    get {
+      return graphQLMap["district"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "district")
     }
   }
 }

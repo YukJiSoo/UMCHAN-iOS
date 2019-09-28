@@ -31,3 +31,7 @@ enum CrewAPIError: Error {
 enum KeychainError: Error {
     case failToSave(String)
 }
+
+enum DistrictInfoError: Error {
+    case failToConvertLocation(String)
+}

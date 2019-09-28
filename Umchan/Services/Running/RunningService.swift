@@ -19,7 +19,7 @@ protocol RunningServiceType {
 
     func running(id: String, completion: @escaping GetRunningCompletion)
     func runningList(name: String?, completion: @escaping GetRunningListCompletion)
-    func registerRunning(name: String, oneLine: String, runningDate: UCDateType, registerLimitDate: UCDateType, runningPoint: [LocationType], completion: @escaping RunningCompletion)
+    func registerRunning(name: String, oneLine: String, runningDate: UCDateType, registerLimitDate: UCDateType, runningPoint: [LocationType], district: String, completion: @escaping RunningCompletion)
 }
 
 final class RunningService: RunningServiceType {
@@ -85,7 +85,7 @@ final class RunningService: RunningServiceType {
         }
     }
 
-    func registerRunning(name: String, oneLine: String, runningDate: UCDateType, registerLimitDate: UCDateType, runningPoint: [LocationType], completion: @escaping RunningCompletion) {
+    func registerRunning(name: String, oneLine: String, runningDate: UCDateType, registerLimitDate: UCDateType, runningPoint: [LocationType], district: String, completion: @escaping RunningCompletion) {
 
         let runningDateInput = DateInput(
             year: runningDate.0,
@@ -108,7 +108,7 @@ final class RunningService: RunningServiceType {
             return
         }
 
-        let createRunningInput = CreateRunningInput(name: name, oneLine: oneLine, runningDate: runningDateInput, registerLimitDate: registerLimitDateInput, runningPoints: locationInput)
+        let createRunningInput = CreateRunningInput(name: name, oneLine: oneLine, runningDate: runningDateInput, registerLimitDate: registerLimitDateInput, runningPoints: locationInput, district: district)
         let createRunningMutation = CreateRunningMutation(nickname: nickname, running: createRunningInput)
         Apollo.shared.client.perform(mutation: createRunningMutation) { result in
 

@@ -136,19 +136,30 @@ class RegisterRunningViewController: UIViewController, NibLodable {
                 return
         }
 
+        
         let runningPoint = runningCourseData.map { (Double($0.coordinate.latitude), Double($0.coordinate.longitude)) }
 
-        RunningService.shared.registerRunning(
-            name: name,
-            oneLine: oneLine,
-            runningDate: runningDate,
-            registerLimitDate: registerLimitDate,
-            runningPoint: runningPoint,
-            completion: registerRunningCompletion(_:)
-        )
+        DistrictInfoService.shared.convertLocationToDisrict(latitude: runningPoint[0].0, longitude: runningPoint[0].1) { (result) in
 
+            switch result {
+            case .success(let district):
+
+                RunningService.shared.registerRunning(
+                    name: name,
+                    oneLine: oneLine,
+                    runningDate: runningDate,
+                    registerLimitDate: registerLimitDate,
+                    runningPoint: runningPoint,
+                    district: district,
+                    completion: self.registerRunningCompletion(_:)
+                )
+            case .failure(DistrictInfoError.failToConvertLocation(let message)):
+
+                self.presentFailAlertController("지역구 변환 실패", with: message)
+            }
+
+        }
     }
-    
 }
 
 extension RegisterRunningViewController: CustomNavigationBarDelegate {
