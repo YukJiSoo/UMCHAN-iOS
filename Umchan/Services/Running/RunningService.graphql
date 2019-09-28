@@ -45,6 +45,12 @@ query Running($input: RunningInput) {
                 nickname,
                 district
             },
+            awaitMembers {
+                userID,
+                name,
+                nickname,
+                district
+            },
             runningDate {
                 year,
                 month,
@@ -64,12 +70,22 @@ query Running($input: RunningInput) {
                 longitude
             },
             district
-        }
+        },
+        isApplied,
+        isMember
     }
 }
 
 mutation CreateRunning($nickname: String, $running: CreateRunningInput) {
     createRunning(nickname: $nickname, running: $running) {
+        code,
+        success,
+        message
+    }
+}
+
+mutation ApplyRunning($input: ApplyRunningInput) {
+    applyRunning(input: $input) {
         code,
         success,
         message
