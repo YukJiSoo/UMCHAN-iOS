@@ -17,7 +17,7 @@ typealias RunningCompletion = (_ Response: Result<Bool, RunningAPIError>) -> Voi
 
 protocol RunningServiceType {
 
-    func running(id: String, completion: @escaping GetRunningCompletion)
+    func running(id: String, district: String, completion: @escaping GetRunningCompletion)
     func runningList(name: String?, completion: @escaping GetRunningListCompletion)
     func registerRunning(name: String, oneLine: String, runningDate: UCDateType, registerLimitDate: UCDateType, runningPoint: [LocationType], district: String, completion: @escaping RunningCompletion)
 }
@@ -26,9 +26,10 @@ final class RunningService: RunningServiceType {
 
     static let shared = RunningService()
 
-    func running(id: String, completion: @escaping GetRunningCompletion) {
+    func running(id: String, district: String, completion: @escaping GetRunningCompletion) {
 
-        Apollo.shared.client.fetch(query: RunningQuery(id: id)) { result in
+        let runningInput = RunningInput(id: id, district: district)
+        Apollo.shared.client.fetch(query: RunningQuery(input: runningInput)) { result in
 
             guard
                 let data = try? result.get().data,

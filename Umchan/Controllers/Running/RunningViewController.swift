@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class RunningViewController: UIViewController, NibLodable {
 
@@ -17,9 +18,11 @@ class RunningViewController: UIViewController, NibLodable {
     @IBOutlet weak var runningDateLabel: UILabel!
     @IBOutlet weak var leaderView: UIStackView!
     @IBOutlet weak var membersView: UIStackView!
+    @IBOutlet weak var mapView: MapView!
     
     // MARK: - Properties
     var id: String?
+    var district: String?
     var running: RunningQueryType?
     
     // MARK: - Life cycles
@@ -28,16 +31,15 @@ class RunningViewController: UIViewController, NibLodable {
 
         self.setupData()
         self.setupNavigationBar()
-        self.setupParticipatingLeaderAndMembers()
     }
     
     // MARK: - Functions
     func setupData() {
 
-        guard let id = self.id else {
+        guard let id = self.id, let district = self.district else {
             return
         }
-        RunningService.shared.running(id: id) { (response) in
+        RunningService.shared.running(id: id, district: district) { (response) in
 
             switch response {
             case .success(_):
@@ -72,6 +74,8 @@ class RunningViewController: UIViewController, NibLodable {
             self.runningDateLabel.text = runningDate
         }
 
+        self.setupLeaderAndMembers()
+        self.setupMapView()
     }
     
     func setupNavigationBar() {
@@ -80,15 +84,55 @@ class RunningViewController: UIViewController, NibLodable {
         self.navigationBar.configureButton(location: .left, type: .back)
     }
     
-    func setupParticipatingLeaderAndMembers() {
-        
+    func setupLeaderAndMembers() {
+
+        guard
+            let leaderName = self.running?.leader?.name,
+            let leaderNickname = self.running?.leader?.nickname,
+            let leaderDistrict = self.running?.leader?.district else {
+            return
+        }
+
         let captinViewNib = UserView.instanceFromNib()
-        let firstMemberViewNib = UserView.instanceFromNib()
-        let secondMemberViewNib = UserView.instanceFromNib()
-        
+        captinViewNib.configure(user: User(name: leaderName, nickname: leaderNickname, district: leaderDistrict))
+
         self.leaderView.addArrangedSubview(captinViewNib)
-        self.membersView.addArrangedSubview(firstMemberViewNib)
-        self.membersView.addArrangedSubview(secondMemberViewNib)
+
+        self.running?.members?.forEach({ (member) in
+            guard
+                let memberName = member?.name,
+                let memberNickname = member?.nickname,
+                let memberDistrict = member?.district else {
+                    return
+            }
+
+            let memberViewNib = UserView.instanceFromNib()
+            memberViewNib.configure(user: User(name: memberName, nickname: memberNickname, district: memberDistrict))
+
+            self.membersView.addArrangedSubview(memberViewNib)
+        })
+    }
+
+    func setupMapView() {
+        
+        guard let runningPointDatas = self.running?.runningPoints else {
+            return
+        }
+
+        var index = 0
+        runningPointDatas.forEach { (data) in
+            guard let latitude = data?.latitude, let longitude = data?.longitude else {
+                return
+            }
+
+            index += 1
+            let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+            let runningPoint = RunningPoint(coordinate: coordinate, order: index)
+            self.mapView.annotationList.append(runningPoint)
+        }
+
+        self.mapView.reloadAnnotation()
+        self.mapView.drawRunningCourse()
     }
     
     @IBAction func requestButtonPressed(_ sender: UIButton) {

@@ -132,10 +132,13 @@ extension RunningInDistrictViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("1")
         let storyboard = UIStoryboard(name: StoryboardName.running, bundle: nil)
         let viewController = storyboard.viewController(RunningViewController.self)
-//        viewController.running = self.runnings[indexPath.row]
+
+        if let runnings = self.runnings, let district = self.district {
+            viewController.id = runnings[indexPath.row].id
+            viewController.district = district
+        }
 
         self.navigationController?.pushViewController(viewController, animated: true)
     }

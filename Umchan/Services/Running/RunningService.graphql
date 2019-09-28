@@ -26,8 +26,8 @@ query RunningList($name: String) {
     }
 }
 
-query Running($id: ID) {
-    running(id: $id) {
+query Running($input: RunningInput) {
+    running(input: $input) {
         code,
         success,
         message,
@@ -35,6 +35,16 @@ query Running($id: ID) {
             id,
             name,
             oneLine,
+            leader {
+                name,
+                nickname,
+                district
+            },
+            members {
+                name,
+                nickname,
+                district
+            },
             runningDate {
                 year,
                 month,
@@ -52,7 +62,8 @@ query Running($id: ID) {
             runningPoints {
                 latitude,
                 longitude
-            }
+            },
+            district
         }
     }
 }

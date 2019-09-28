@@ -173,6 +173,32 @@ public struct DateInput: GraphQLMapConvertible {
 }
 
 /// Input
+public struct RunningInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  public init(id: String, district: String) {
+    graphQLMap = ["id": id, "district": district]
+  }
+
+  public var id: String {
+    get {
+      return graphQLMap["id"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "id")
+    }
+  }
+
+  public var district: String {
+    get {
+      return graphQLMap["district"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "district")
+    }
+  }
+}
+
 public struct CreateRunningInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
@@ -1471,8 +1497,8 @@ public final class RunningListQuery: GraphQLQuery {
 }
 
 public final class RunningQuery: GraphQLQuery {
-  /// query Running($id: ID) {
-  ///   running(id: $id) {
+  /// query Running($input: RunningInput) {
+  ///   running(input: $input) {
   ///     __typename
   ///     code
   ///     success
@@ -1482,6 +1508,18 @@ public final class RunningQuery: GraphQLQuery {
   ///       id
   ///       name
   ///       oneLine
+  ///       leader {
+  ///         __typename
+  ///         name
+  ///         nickname
+  ///         district
+  ///       }
+  ///       members {
+  ///         __typename
+  ///         name
+  ///         nickname
+  ///         district
+  ///       }
   ///       runningDate {
   ///         __typename
   ///         year
@@ -1503,29 +1541,30 @@ public final class RunningQuery: GraphQLQuery {
   ///         latitude
   ///         longitude
   ///       }
+  ///       district
   ///     }
   ///   }
   /// }
   public let operationDefinition =
-    "query Running($id: ID) { running(id: $id) { __typename code success message running { __typename id name oneLine runningDate { __typename year month date hour minute } registerLimitDate { __typename year month date hour minute } runningPoints { __typename latitude longitude } } } }"
+    "query Running($input: RunningInput) { running(input: $input) { __typename code success message running { __typename id name oneLine leader { __typename name nickname district } members { __typename name nickname district } runningDate { __typename year month date hour minute } registerLimitDate { __typename year month date hour minute } runningPoints { __typename latitude longitude } district } } }"
 
   public let operationName = "Running"
 
-  public var id: GraphQLID?
+  public var input: RunningInput?
 
-  public init(id: GraphQLID? = nil) {
-    self.id = id
+  public init(input: RunningInput? = nil) {
+    self.input = input
   }
 
   public var variables: GraphQLMap? {
-    return ["id": id]
+    return ["input": input]
   }
 
   public struct Data: GraphQLSelectionSet {
     public static let possibleTypes = ["Query"]
 
     public static let selections: [GraphQLSelection] = [
-      GraphQLField("running", arguments: ["id": GraphQLVariable("id")], type: .object(Running.selections)),
+      GraphQLField("running", arguments: ["input": GraphQLVariable("input")], type: .object(Running.selections)),
     ]
 
     public private(set) var resultMap: ResultMap
@@ -1621,9 +1660,12 @@ public final class RunningQuery: GraphQLQuery {
           GraphQLField("id", type: .scalar(GraphQLID.self)),
           GraphQLField("name", type: .scalar(String.self)),
           GraphQLField("oneLine", type: .scalar(String.self)),
+          GraphQLField("leader", type: .object(Leader.selections)),
+          GraphQLField("members", type: .list(.object(Member.selections))),
           GraphQLField("runningDate", type: .object(RunningDate.selections)),
           GraphQLField("registerLimitDate", type: .object(RegisterLimitDate.selections)),
           GraphQLField("runningPoints", type: .list(.object(RunningPoint.selections))),
+          GraphQLField("district", type: .scalar(String.self)),
         ]
 
         public private(set) var resultMap: ResultMap
@@ -1632,8 +1674,8 @@ public final class RunningQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(id: GraphQLID? = nil, name: String? = nil, oneLine: String? = nil, runningDate: RunningDate? = nil, registerLimitDate: RegisterLimitDate? = nil, runningPoints: [RunningPoint?]? = nil) {
-          self.init(unsafeResultMap: ["__typename": "Running", "id": id, "name": name, "oneLine": oneLine, "runningDate": runningDate.flatMap { (value: RunningDate) -> ResultMap in value.resultMap }, "registerLimitDate": registerLimitDate.flatMap { (value: RegisterLimitDate) -> ResultMap in value.resultMap }, "runningPoints": runningPoints.flatMap { (value: [RunningPoint?]) -> [ResultMap?] in value.map { (value: RunningPoint?) -> ResultMap? in value.flatMap { (value: RunningPoint) -> ResultMap in value.resultMap } } }])
+        public init(id: GraphQLID? = nil, name: String? = nil, oneLine: String? = nil, leader: Leader? = nil, members: [Member?]? = nil, runningDate: RunningDate? = nil, registerLimitDate: RegisterLimitDate? = nil, runningPoints: [RunningPoint?]? = nil, district: String? = nil) {
+          self.init(unsafeResultMap: ["__typename": "Running", "id": id, "name": name, "oneLine": oneLine, "leader": leader.flatMap { (value: Leader) -> ResultMap in value.resultMap }, "members": members.flatMap { (value: [Member?]) -> [ResultMap?] in value.map { (value: Member?) -> ResultMap? in value.flatMap { (value: Member) -> ResultMap in value.resultMap } } }, "runningDate": runningDate.flatMap { (value: RunningDate) -> ResultMap in value.resultMap }, "registerLimitDate": registerLimitDate.flatMap { (value: RegisterLimitDate) -> ResultMap in value.resultMap }, "runningPoints": runningPoints.flatMap { (value: [RunningPoint?]) -> [ResultMap?] in value.map { (value: RunningPoint?) -> ResultMap? in value.flatMap { (value: RunningPoint) -> ResultMap in value.resultMap } } }, "district": district])
         }
 
         public var __typename: String {
@@ -1672,6 +1714,24 @@ public final class RunningQuery: GraphQLQuery {
           }
         }
 
+        public var leader: Leader? {
+          get {
+            return (resultMap["leader"] as? ResultMap).flatMap { Leader(unsafeResultMap: $0) }
+          }
+          set {
+            resultMap.updateValue(newValue?.resultMap, forKey: "leader")
+          }
+        }
+
+        public var members: [Member?]? {
+          get {
+            return (resultMap["members"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [Member?] in value.map { (value: ResultMap?) -> Member? in value.flatMap { (value: ResultMap) -> Member in Member(unsafeResultMap: value) } } }
+          }
+          set {
+            resultMap.updateValue(newValue.flatMap { (value: [Member?]) -> [ResultMap?] in value.map { (value: Member?) -> ResultMap? in value.flatMap { (value: Member) -> ResultMap in value.resultMap } } }, forKey: "members")
+          }
+        }
+
         public var runningDate: RunningDate? {
           get {
             return (resultMap["runningDate"] as? ResultMap).flatMap { RunningDate(unsafeResultMap: $0) }
@@ -1696,6 +1756,129 @@ public final class RunningQuery: GraphQLQuery {
           }
           set {
             resultMap.updateValue(newValue.flatMap { (value: [RunningPoint?]) -> [ResultMap?] in value.map { (value: RunningPoint?) -> ResultMap? in value.flatMap { (value: RunningPoint) -> ResultMap in value.resultMap } } }, forKey: "runningPoints")
+          }
+        }
+
+        public var district: String? {
+          get {
+            return resultMap["district"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "district")
+          }
+        }
+
+        public struct Leader: GraphQLSelectionSet {
+          public static let possibleTypes = ["Member"]
+
+          public static let selections: [GraphQLSelection] = [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("name", type: .scalar(String.self)),
+            GraphQLField("nickname", type: .scalar(String.self)),
+            GraphQLField("district", type: .scalar(String.self)),
+          ]
+
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public init(name: String? = nil, nickname: String? = nil, district: String? = nil) {
+            self.init(unsafeResultMap: ["__typename": "Member", "name": name, "nickname": nickname, "district": district])
+          }
+
+          public var __typename: String {
+            get {
+              return resultMap["__typename"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "__typename")
+            }
+          }
+
+          public var name: String? {
+            get {
+              return resultMap["name"] as? String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "name")
+            }
+          }
+
+          public var nickname: String? {
+            get {
+              return resultMap["nickname"] as? String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "nickname")
+            }
+          }
+
+          public var district: String? {
+            get {
+              return resultMap["district"] as? String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "district")
+            }
+          }
+        }
+
+        public struct Member: GraphQLSelectionSet {
+          public static let possibleTypes = ["Member"]
+
+          public static let selections: [GraphQLSelection] = [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("name", type: .scalar(String.self)),
+            GraphQLField("nickname", type: .scalar(String.self)),
+            GraphQLField("district", type: .scalar(String.self)),
+          ]
+
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public init(name: String? = nil, nickname: String? = nil, district: String? = nil) {
+            self.init(unsafeResultMap: ["__typename": "Member", "name": name, "nickname": nickname, "district": district])
+          }
+
+          public var __typename: String {
+            get {
+              return resultMap["__typename"]! as! String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "__typename")
+            }
+          }
+
+          public var name: String? {
+            get {
+              return resultMap["name"] as? String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "name")
+            }
+          }
+
+          public var nickname: String? {
+            get {
+              return resultMap["nickname"] as? String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "nickname")
+            }
+          }
+
+          public var district: String? {
+            get {
+              return resultMap["district"] as? String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "district")
+            }
           }
         }
 

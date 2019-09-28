@@ -43,10 +43,10 @@
                                 <rect key="frame" x="0.0" y="108" width="414" height="754"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a6g-WK-ZrE" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="592"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="877.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="lYv-pP-tOq">
-                                                <rect key="frame" x="30" y="30" width="354" height="412"/>
+                                                <rect key="frame" x="30" y="30" width="354" height="697.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="vkw-Pd-d1O">
                                                         <rect key="frame" x="0.0" y="0.0" width="354" height="22.5"/>
@@ -121,8 +121,8 @@
                                                             </label>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rhH-es-fuM">
-                                                        <rect key="frame" x="0.0" y="389.5" width="354" height="22.5"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="rhH-es-fuM">
+                                                        <rect key="frame" x="0.0" y="389.5" width="354" height="308"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="코스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqp-dk-fy6">
                                                                 <rect key="frame" x="0.0" y="0.0" width="354" height="22.5"/>
@@ -130,6 +130,13 @@
                                                                 <color key="textColor" red="0.58039215690000001" green="0.066666666669999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p42-Kh-yb2" customClass="MapView" customModule="Umchan" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="42.5" width="354" height="265.5"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="p42-Kh-yb2" secondAttribute="height" multiplier="4:3" id="a8O-vN-ykZ"/>
+                                                                </constraints>
+                                                            </view>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
@@ -190,6 +197,7 @@
                     </view>
                     <connections>
                         <outlet property="leaderView" destination="vkw-Pd-d1O" id="Obh-9P-mAH"/>
+                        <outlet property="mapView" destination="p42-Kh-yb2" id="n32-jN-ih9"/>
                         <outlet property="membersView" destination="zVm-Nj-Mzj" id="TDj-Dg-8Lj"/>
                         <outlet property="navigationBar" destination="yQr-DS-QEc" id="5vp-Mx-D8o"/>
                         <outlet property="oneLineLabel" destination="MbS-lY-Sjv" id="0oY-g8-hFs"/>

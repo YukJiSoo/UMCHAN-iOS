@@ -19,7 +19,7 @@ class UserView: UIView, NibLodable {
     
     func configure(user: User) {
         
-        self.nameLabel.text = user.name
+        self.nameLabel.text = user.nickname
     }
     
 }
