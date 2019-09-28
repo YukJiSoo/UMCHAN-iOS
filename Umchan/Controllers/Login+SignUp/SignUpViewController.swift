@@ -16,16 +16,20 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordLabel: UITextField!
     @IBOutlet weak var nameLabel: UITextField!
     @IBOutlet weak var nicknameLabel: UITextField!
-    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var districtPickerView: CustomPickerView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var signUpButton: UIButton!
-    
+
+    // MARK: - Properties
+    var districts = [String]()
+
     // MARK: - Life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setup()
         self.setupNavigationBar()
+        self.setupDistrictPickerView()
     }
     
     func setup() {
@@ -33,17 +37,25 @@ class SignUpViewController: UIViewController {
         let tapForEndEditingGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapForEndEditting(_:)))
         self.view.addGestureRecognizer(tapForEndEditingGesture)
         
-        let tapForSelectImageGesture = UITapGestureRecognizer(target: self, action: #selector(self.selectImagePressed(_:)))
-        self.userImageView.addGestureRecognizer(tapForSelectImageGesture)
-        
     }
-    
+
     func setupNavigationBar() {
         
         self.navigationBar.delegate = self
         self.navigationBar.configureButton(location: .right, type: .close)
     }
-    
+
+    func setupDistrictPickerView() {
+
+        self.districtPickerView.delegate = self
+        self.districtPickerView.dataSource = self
+
+        self.districts = DistrictInfoService.shared.districtCoordinates.map { $0.name ?? "" }
+        self.districts.remove(at: 0)
+
+        self.districtPickerView.reloadAllComponents()
+    }
+
     func presenetSuccessAlertAndUnwind() {
         
         let alertController = self.createBasicAlertViewController(title: "회원가입", message: "회원가입이 완료되었습니다")  {
@@ -74,6 +86,9 @@ class SignUpViewController: UIViewController {
         case .success(_):
             
             self.presenetSuccessAlertAndUnwind()
+        case .failure(AuthAPIError.register(let message)):
+
+            self.presenetFailAlertController(with: message)
         case .failure(AuthAPIError.login(let message)):
             
             self.presenetFailAlertController(with: message)
@@ -97,9 +112,12 @@ class SignUpViewController: UIViewController {
                 return
         }
 
+        let disctrictSelectedIndex = self.districtPickerView.selectedRow(inComponent: 0)
+        let district = self.districts[disctrictSelectedIndex]
+
         self.signUpButton.isEnabled = false
 
-        AuthService.shared.register(email: email, password: password, name: name, nickname: nickname, district: "tempDistrict(TODO)", completion: registerCompletion(_:))
+        AuthService.shared.register(email: email, password: password, name: name, nickname: nickname, district: district, completion: registerCompletion(_:))
     }
 }
     
@@ -110,14 +128,33 @@ extension SignUpViewController: CustomNavigationBarDelegate {
     }
 }
 
-extension SignUpViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        if let image = info[.editedImage] as? UIImage {
-            self.userImageView.image = image
-        }
-        
-        self.dismiss(animated: true, completion: nil)
+extension SignUpViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.districts.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return self.districts[row]
+    }
+
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let label = view as? UILabel ?? UILabel()
+
+        label.font = UIFont.umchanFont(size: CGFloat(22), boldState: .bold)!
+        label.textColor = Color.symbol
+        label.textAlignment = .center
+        label.text = self.districts[row]
+
+        return label
+    }
+
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return CGFloat(30)
     }
 }
