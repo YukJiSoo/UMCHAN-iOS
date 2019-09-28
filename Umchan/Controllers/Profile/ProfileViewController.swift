@@ -12,10 +12,9 @@ class ProfileViewController: UIViewController, NibLodable {
 
     // MARK: - Outlets
     @IBOutlet weak var navigationBar: CustomNavigationBar!
-    @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var nicknameLabel: UILabel!
-    @IBOutlet weak var emailLabel: UILabel!
+//    @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     
     // MARK: - Life cycles
@@ -23,11 +22,7 @@ class ProfileViewController: UIViewController, NibLodable {
         super.viewDidLoad()
 
         self.setupNavigationBar()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
+        self.setupProfile()
     }
     
     func setupNavigationBar() {
@@ -35,9 +30,15 @@ class ProfileViewController: UIViewController, NibLodable {
         self.navigationBar.delegate = self
         self.navigationBar.configureButton(location: .left, type: .close)
     }
-    
-    @IBAction func switchValueChanged(_ sender: UISwitch) {
-        
+
+    func setupProfile() {
+        guard let user = UserDataService.shared.user else {
+            debugPrint("Fail: user info is nil")
+            return
+        }
+        self.nameLabel.text = user.name
+        self.nicknameLabel.text = user.nickname
+        self.addressLabel.text = user.district
     }
 
     @IBAction func logoutButtonPressed(_ sender: UIButton) {
