@@ -196,6 +196,7 @@
                         <viewLayoutGuide key="safeArea" id="ecd-7d-aPm"/>
                     </view>
                     <connections>
+                        <outlet property="bottomButton" destination="aOI-tl-9Lh" id="dIW-hT-jt9"/>
                         <outlet property="leaderView" destination="vkw-Pd-d1O" id="Obh-9P-mAH"/>
                         <outlet property="mapView" destination="p42-Kh-yb2" id="n32-jN-ih9"/>
                         <outlet property="membersView" destination="zVm-Nj-Mzj" id="TDj-Dg-8Lj"/>

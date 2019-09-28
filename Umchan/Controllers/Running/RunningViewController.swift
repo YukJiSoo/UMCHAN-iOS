@@ -19,11 +19,13 @@ class RunningViewController: UIViewController, NibLodable {
     @IBOutlet weak var leaderView: UIStackView!
     @IBOutlet weak var membersView: UIStackView!
     @IBOutlet weak var mapView: MapView!
+    @IBOutlet weak var bottomButton: UIButton!
     
     // MARK: - Properties
     var id: String?
     var district: String?
     var running: RunningQueryType?
+    var memberState: MemberStateType?
     
     // MARK: - Life cycles
     override func viewDidLoad() {
@@ -49,7 +51,8 @@ class RunningViewController: UIViewController, NibLodable {
                     return
                 }
 
-                self.running = data
+                self.running = data.0
+                self.memberState = data.1
                 DispatchQueue.main.async {
                     self.setupSubViews()
                 }
@@ -76,6 +79,7 @@ class RunningViewController: UIViewController, NibLodable {
 
         self.setupLeaderAndMembers()
         self.setupMapView()
+        self.setupBottomButton()
     }
     
     func setupNavigationBar() {
@@ -114,7 +118,7 @@ class RunningViewController: UIViewController, NibLodable {
     }
 
     func setupMapView() {
-        
+
         guard let runningPointDatas = self.running?.runningPoints else {
             return
         }
@@ -134,13 +138,46 @@ class RunningViewController: UIViewController, NibLodable {
         self.mapView.reloadAnnotation()
         self.mapView.drawRunningCourse()
     }
-    
-    @IBAction func requestButtonPressed(_ sender: UIButton) {
-        
-        let alertController = self.createBasicAlertViewController(title: "참가신청", message: "리더에게 참가 신청을 보냈습니다")  {
-            self.dismiss(animated: true, completion: nil)
+
+    func setupBottomButton() {
+        guard let memberState = self.memberState else {
+            return
         }
-        self.present(alertController, animated: true, completion: nil)
+
+        if memberState == .none {
+            self.bottomButton.isEnabled = true
+        } else {
+            self.bottomButton.isEnabled = false
+            self.bottomButton.backgroundColor = memberState == .wait ? .lightGray : #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+            self.bottomButton.setTitleColor(.white, for: .normal)
+
+            let buttonTitle = memberState == .wait ? "수락 대기중" : "참가중"
+            self.bottomButton.setTitle(buttonTitle, for: .normal)
+        }
+    }
+
+    func applyRunningCompletion(_ response: Result<Bool, RunningAPIError>) {
+
+        switch response {
+        case .success(_):
+
+            let alertController = self.createBasicAlertViewController(title: "참가신청", message: "리더에게 참가 신청을 보냈습니다")  {
+                self.dismiss(animated: true, completion: nil)
+            }
+            self.present(alertController, animated: true, completion: nil)
+        case .failure(RunningAPIError.createRunning(let message)):
+
+            self.presentFailAlertController("참가 신청 실패", with: message)
+        default:
+            debugPrint("Uncorrect access")
+        }
+    }
+
+    @IBAction func requestButtonPressed(_ sender: UIButton) {
+
+        if let id = self.id, let district = self.district {
+            RunningService.shared.applyRunning(id: id, district: district, completion: applyRunningCompletion)
+        }
     }
     
 }
