@@ -15,7 +15,7 @@ class Color {
     private init() {
     }
     
-    static let symbol = #colorLiteral(red: 0.5968999267, green: 0.1244353876, blue: 0.1686562896, alpha: 1)
+    static let symbol = #colorLiteral(red: 0.5960784314, green: 0.1254901961, blue: 0.168627451, alpha: 1)
     static let symbolTransparent = #colorLiteral(red: 0.5968999267, green: 0.1244353876, blue: 0.1686562896, alpha: 0.6979612586)
 }
 

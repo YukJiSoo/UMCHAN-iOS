@@ -22,6 +22,7 @@ class MyCrewsViewController: UIViewController, NibLodable {
         didSet {
             DispatchQueue.main.async {
                 guard let crews = self.crews else {
+                    self.setupEmptyCase()
                     return
                 }
 
@@ -67,6 +68,7 @@ class MyCrewsViewController: UIViewController, NibLodable {
             case .failure(CrewAPIError.crewList(let message)):
 
                 print(message)
+                self.crews = nil
             default:
                 debugPrint("Uncorrect access")
             }
