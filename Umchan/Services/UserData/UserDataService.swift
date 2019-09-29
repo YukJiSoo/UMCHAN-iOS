@@ -29,7 +29,7 @@ class UserDataService {
 
     func loadUserData(completion: @escaping (_ Response: Result<Bool, UserAPIError>) -> Void) {
 
-        Apollo.shared.client.fetch(query: UserQuery()) { result in
+        Apollo.shared.client.fetch(query: UserQuery(), cachePolicy: .fetchIgnoringCacheData) { result in
 
             guard
                 let data = try? result.get().data,

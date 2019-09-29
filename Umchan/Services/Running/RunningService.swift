@@ -27,6 +27,7 @@ protocol RunningServiceType {
     func runningList(name: String?, completion: @escaping GetRunningListCompletion)
     func registerRunning(name: String, oneLine: String, runningDate: UCDateType, registerLimitDate: UCDateType, runningPoint: [LocationType], district: String, completion: @escaping RunningCompletion)
     func applyRunning(id: String, district: String, completion: @escaping RunningCompletion)
+    func goOutRunning(id: String, district: String, completion: @escaping RunningCompletion)
 }
 
 final class RunningService: RunningServiceType {
@@ -36,7 +37,7 @@ final class RunningService: RunningServiceType {
     func running(id: String, district: String, completion: @escaping GetRunningCompletion) {
 
         let runningInput = RunningInput(id: id, district: district)
-        Apollo.shared.client.fetch(query: RunningQuery(input: runningInput)) { result in
+        Apollo.shared.client.fetch(query: RunningQuery(input: runningInput), cachePolicy: .fetchIgnoringCacheData) { result in
 
             guard
                 let data = try? result.get().data,
@@ -74,7 +75,7 @@ final class RunningService: RunningServiceType {
 
     func runningList(name: String? = nil, completion: @escaping GetRunningListCompletion) {
 
-        Apollo.shared.client.fetch(query: RunningListQuery(name: name)) { result in
+        Apollo.shared.client.fetch(query: RunningListQuery(name: name), cachePolicy: .fetchIgnoringCacheData) { result in
 
             guard
                 let data = try? result.get().data,
@@ -173,6 +174,38 @@ final class RunningService: RunningServiceType {
             // check reseponse HTTP code
             guard code.isSuccessfulResponse else {
                 completion(.failure(.applyRunning(message)))
+                return
+            }
+
+            // response from server
+            completion(.success(true))
+        }
+    }
+
+    func goOutRunning(id: String, district: String, completion: @escaping RunningCompletion) {
+
+        guard let user = UserDataService.shared.user else {
+            completion(.failure(.goOutRunning(("User data is nil"))))
+            return
+        }
+
+        let goOutInput = GoOutInput(id: id, district: district)
+        let goOutRunningMutation = GoOutRunningMutation(input: goOutInput)
+
+        Apollo.shared.client.perform(mutation: goOutRunningMutation) { result in
+
+            guard
+                let data = try? result.get().data,
+                let code = data.goOutRunning?.code,
+                let message = data.goOutRunning?.message
+                else {
+                    completion(.failure(.goOutRunning(("Internal server error"))))
+                    return
+            }
+
+            // check reseponse HTTP code
+            guard code.isSuccessfulResponse else {
+                completion(.failure(.goOutRunning(message)))
                 return
             }
 

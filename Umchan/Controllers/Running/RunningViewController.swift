@@ -148,6 +148,8 @@ class RunningViewController: UIViewController, NibLodable {
             return
         }
 
+        self.bottomButton.isHidden = false
+
         if memberState == .none {
             self.bottomButton.isEnabled = true
         } else {

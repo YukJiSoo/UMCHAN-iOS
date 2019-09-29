@@ -26,7 +26,7 @@ final class CrewService: CrewServiceType {
 
     func crewList(name: String? = nil, completion: @escaping GetCrewListCompletion) {
 
-        Apollo.shared.client.fetch(query: CrewListQuery(name: name)) { result in
+        Apollo.shared.client.fetch(query: CrewListQuery(name: name), cachePolicy: .fetchIgnoringCacheData) { result in
 
             guard
                 let data = try? result.get().data,

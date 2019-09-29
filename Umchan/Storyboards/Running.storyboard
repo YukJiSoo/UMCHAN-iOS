@@ -159,7 +159,7 @@
                                     <constraint firstItem="a6g-WK-ZrE" firstAttribute="top" secondItem="yPH-tj-8zX" secondAttribute="top" id="wil-IT-7bI"/>
                                 </constraints>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOI-tl-9Lh" customClass="RoundedButton" customModule="Umchan" customModuleProvider="target">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOI-tl-9Lh" customClass="RoundedButton" customModule="Umchan" customModuleProvider="target">
                                 <rect key="frame" x="30" y="772" width="354" height="60"/>
                                 <color key="backgroundColor" red="0.54836952689999996" green="0.16884723309999999" blue="0.18428939580000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -384,6 +384,9 @@
                                                                         <real key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="goOutRunningButton:" destination="r3e-yy-9a8" eventType="touchUpInside" id="hu7-JE-81l"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -436,7 +439,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EGw-xU-grf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="871" y="119"/>
+            <point key="canvasLocation" x="920" y="119"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Y1c-lp-dGY">

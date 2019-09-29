@@ -94,3 +94,11 @@ mutation ApplyRunning($input: ApplyRunningInput) {
         message
     }
 }
+
+mutation GoOutRunning($input: GoOutInput) {
+    goOutRunning(input: $input) {
+        code,
+        success,
+        message
+    }
+}

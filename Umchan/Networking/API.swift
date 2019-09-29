@@ -367,6 +367,32 @@ public struct MemberInput: GraphQLMapConvertible {
   }
 }
 
+public struct GoOutInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  public init(id: String, district: String) {
+    graphQLMap = ["id": id, "district": district]
+  }
+
+  public var id: String {
+    get {
+      return graphQLMap["id"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "id")
+    }
+  }
+
+  public var district: String {
+    get {
+      return graphQLMap["district"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "district")
+    }
+  }
+}
+
 public final class RegisterUserMutation: GraphQLMutation {
   /// mutation RegisterUser($user: RegisterUserInput) {
   ///   register(user: $user) {
@@ -2484,6 +2510,115 @@ public final class ApplyRunningMutation: GraphQLMutation {
 
       public init(code: String, success: Bool, message: String) {
         self.init(unsafeResultMap: ["__typename": "ApplyRunningMutationResponse", "code": code, "success": success, "message": message])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var code: String {
+        get {
+          return resultMap["code"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "code")
+        }
+      }
+
+      public var success: Bool {
+        get {
+          return resultMap["success"]! as! Bool
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "success")
+        }
+      }
+
+      public var message: String {
+        get {
+          return resultMap["message"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "message")
+        }
+      }
+    }
+  }
+}
+
+public final class GoOutRunningMutation: GraphQLMutation {
+  /// mutation GoOutRunning($input: GoOutInput) {
+  ///   goOutRunning(input: $input) {
+  ///     __typename
+  ///     code
+  ///     success
+  ///     message
+  ///   }
+  /// }
+  public let operationDefinition =
+    "mutation GoOutRunning($input: GoOutInput) { goOutRunning(input: $input) { __typename code success message } }"
+
+  public let operationName = "GoOutRunning"
+
+  public var input: GoOutInput?
+
+  public init(input: GoOutInput? = nil) {
+    self.input = input
+  }
+
+  public var variables: GraphQLMap? {
+    return ["input": input]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes = ["Mutation"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("goOutRunning", arguments: ["input": GraphQLVariable("input")], type: .object(GoOutRunning.selections)),
+    ]
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(goOutRunning: GoOutRunning? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "goOutRunning": goOutRunning.flatMap { (value: GoOutRunning) -> ResultMap in value.resultMap }])
+    }
+
+    public var goOutRunning: GoOutRunning? {
+      get {
+        return (resultMap["goOutRunning"] as? ResultMap).flatMap { GoOutRunning(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "goOutRunning")
+      }
+    }
+
+    public struct GoOutRunning: GraphQLSelectionSet {
+      public static let possibleTypes = ["GoOutUserMutationResponse"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("code", type: .nonNull(.scalar(String.self))),
+        GraphQLField("success", type: .nonNull(.scalar(Bool.self))),
+        GraphQLField("message", type: .nonNull(.scalar(String.self))),
+      ]
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(code: String, success: Bool, message: String) {
+        self.init(unsafeResultMap: ["__typename": "GoOutUserMutationResponse", "code": code, "success": success, "message": message])
       }
 
       public var __typename: String {

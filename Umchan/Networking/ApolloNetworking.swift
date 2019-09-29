@@ -39,12 +39,13 @@ class Apollo {
 }
 
 extension Apollo: HTTPNetworkTransportPreflightDelegate {
-
     func networkTransport(_ networkTransport: HTTPNetworkTransport, shouldSend request: URLRequest) -> Bool {
+        print("shouldSend")
         return true
     }
 
     func networkTransport(_ networkTransport: HTTPNetworkTransport, willSend request: inout URLRequest) {
+        print("willSend")
         var headers = request.allHTTPHeaderFields ?? [String: String]()
         if let accessToken = AuthService.shared.accessToken {
             headers["Authorization"] = "Bearer \(accessToken)"
