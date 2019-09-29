@@ -236,6 +236,33 @@ final class RunningService: RunningServiceType {
         }
     }
 
+    func checkMember(id: String, district: String, memberID: String, completion: @escaping RunningCompletion) {
+
+        let checkRunningMemberInput = CheckRunningMemberInput(id: id, district: district, memberId: memberID)
+        let checkRunningMemberMutation = CheckRunningMemeberMutation(input: checkRunningMemberInput)
+
+        Apollo.shared.client.perform(mutation: checkRunningMemberMutation) { result in
+
+            guard
+                let data = try? result.get().data,
+                let code = data.checkRunningMember?.code,
+                let message = data.checkRunningMember?.message
+                else {
+                    completion(.failure(.checkRunningMember(("Internal server error"))))
+                    return
+            }
+
+            // check reseponse HTTP code
+            guard code.isSuccessfulResponse else {
+                completion(.failure(.checkRunningMember(message)))
+                return
+            }
+
+            // response from server
+            completion(.success(true))
+        }
+    }
+
     func rejectMember(id: String, district: String, memberID: String, completion: @escaping RunningCompletion) {
 
         let rejectRunningMemberInput = RejectRunningMemberInput(id: id, district: district, memberId: memberID)

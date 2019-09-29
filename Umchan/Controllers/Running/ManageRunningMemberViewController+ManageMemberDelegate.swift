@@ -54,12 +54,11 @@ extension ManageRunningMemberViewController: ManageMemberDelegate {
             return
         }
 
-        RunningService.shared.acceptMember(id: id, district: district, memberID: memberID) { (response) in
+        RunningService.shared.checkMember(id: id, district: district, memberID: memberID) { (response) in
             switch response {
             case .success(_):
                 let title = "러닝확인"
                 let message = "러닝 참여를 확인했습니다"
-                self.members?.remove(at: index)
 
                 let alertController = self.createBasicAlertViewController(title: title, message: message)  {
 
