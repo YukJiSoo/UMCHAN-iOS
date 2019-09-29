@@ -61,6 +61,8 @@
 		A7168B8E2310789A00500621 /* SearchViewController+CustomSearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B8D2310789A00500621 /* SearchViewController+CustomSearchBarDelegate.swift */; };
 		A7168B91231079FB00500621 /* SearchCrewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B90231079FB00500621 /* SearchCrewViewController.swift */; };
 		A7168B9323107A0C00500621 /* SearchRunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7168B9223107A0C00500621 /* SearchRunningViewController.swift */; };
+		A7178DC12341298C00976610 /* CrewInDistrictViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7178DC02341298C00976610 /* CrewInDistrictViewController.swift */; };
+		A7178DC323412B0B00976610 /* CrewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7178DC223412B0B00976610 /* CrewViewController.swift */; };
 		A71B94B4231AA19F00BCD3E7 /* MapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71B94B3231AA19F00BCD3E7 /* MapViewDelegate.swift */; };
 		A71B94B6231AA25300BCD3E7 /* MapViewController+MapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71B94B5231AA25300BCD3E7 /* MapViewController+MapViewDelegate.swift */; };
 		A71B94B8231AAA5700BCD3E7 /* RunningPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71B94B7231AAA5700BCD3E7 /* RunningPoint.swift */; };
@@ -185,6 +187,8 @@
 		A7168B8D2310789A00500621 /* SearchViewController+CustomSearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+CustomSearchBarDelegate.swift"; sourceTree = "<group>"; };
 		A7168B90231079FB00500621 /* SearchCrewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCrewViewController.swift; sourceTree = "<group>"; };
 		A7168B9223107A0C00500621 /* SearchRunningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRunningViewController.swift; sourceTree = "<group>"; };
+		A7178DC02341298C00976610 /* CrewInDistrictViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewInDistrictViewController.swift; sourceTree = "<group>"; };
+		A7178DC223412B0B00976610 /* CrewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewViewController.swift; sourceTree = "<group>"; };
 		A71B94B3231AA19F00BCD3E7 /* MapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewDelegate.swift; sourceTree = "<group>"; };
 		A71B94B5231AA25300BCD3E7 /* MapViewController+MapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+MapViewDelegate.swift"; sourceTree = "<group>"; };
 		A71B94B7231AAA5700BCD3E7 /* RunningPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningPoint.swift; sourceTree = "<group>"; };
@@ -455,6 +459,7 @@
 			isa = PBXGroup;
 			children = (
 				A7099222230576C100AE3ACA /* RunningInDistrictViewController.swift */,
+				A7178DC02341298C00976610 /* CrewInDistrictViewController.swift */,
 			);
 			path = RunningInDistrict;
 			sourceTree = "<group>";
@@ -534,6 +539,7 @@
 				A70C2A1E231171CE002006A3 /* MyCrewViewController.swift */,
 				A78E47A623411656007D2469 /* ManageCrewMemberViewController.swift */,
 				A78E47A8234116C2007D2469 /* ManageCrewMemberViewController+ManageMemberDelegate.swift */,
+				A7178DC223412B0B00976610 /* CrewViewController.swift */,
 			);
 			path = Crew;
 			sourceTree = "<group>";
@@ -909,6 +915,7 @@
 				A7168B9323107A0C00500621 /* SearchRunningViewController.swift in Sources */,
 				A797A4572323E88500FD2CD5 /* MapView+CalculateRunningCourseDelegate.swift in Sources */,
 				A70992272307105600AE3ACA /* ModalViewController.swift in Sources */,
+				A7178DC12341298C00976610 /* CrewInDistrictViewController.swift in Sources */,
 				A71EC203231003E100275EA8 /* DatePickerPresentable.swift in Sources */,
 				A70C2A362311A824002006A3 /* RunningHistoryViewController.swift in Sources */,
 				A70C2A3D2311B363002006A3 /* ModifyProfileViewController.swift in Sources */,
@@ -952,6 +959,7 @@
 				A78889B623327F530051DB3A /* DateConverter.swift in Sources */,
 				A709921223056D6000AE3ACA /* NibLodable.swift in Sources */,
 				A709920C23053DAA00AE3ACA /* DistrictViewDelegate.swift in Sources */,
+				A7178DC323412B0B00976610 /* CrewViewController.swift in Sources */,
 				A709921423056D9400AE3ACA /* UIStoryBoard+Extension.swift in Sources */,
 				A70992292307114900AE3ACA /* ModalFirstViewable.swift in Sources */,
 				A7168B832310645500500621 /* SearchViewController.swift in Sources */,

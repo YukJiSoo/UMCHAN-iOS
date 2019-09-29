@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="NanumSquareOTFBold.otf">
+            <string>NanumSquareOTF_acB</string>
+        </array>
         <array key="NanumSquareOTFExtraBold.otf">
             <string>NanumSquareOTF_acEB</string>
         </array>
@@ -75,99 +78,91 @@
                                 <rect key="frame" x="0.0" y="85" width="414" height="835"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="725" translatesAutoresizingMaskIntoConstraints="NO" id="HpT-Hb-ZEg" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="728"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="688.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yui-i9-thV">
-                                                <rect key="frame" x="49.5" y="30" width="315" height="40"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="GzX-2c-oGy">
+                                                <rect key="frame" x="0.0" y="-1" width="414" height="40"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jav-7l-1JN" customClass="RoundedButton" customModule="Umchan" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="207" height="40"/>
+                                                        <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="17"/>
+                                                        <state key="normal" title="러닝">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="roundedDegree">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="0.48381314209999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="runningButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cOV-Ue-2s9"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00P-E6-ldK" customClass="RoundedButton" customModule="Umchan" customModuleProvider="target">
+                                                        <rect key="frame" x="207" y="0.0" width="207" height="40"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="17"/>
+                                                        <state key="normal" title="크루">
+                                                            <color key="titleColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="roundedDegree">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="0.48381314209999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="crewButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OwG-bo-Ce8"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="315" id="zN1-c7-qET"/>
+                                                    <constraint firstAttribute="height" constant="40" id="r6Z-0Z-IPW"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acEB" family="NanumSquareOTF_ac" pointSize="20"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
-                                                <state key="normal" title="Running 이름으로 검색" image="search">
-                                                    <color key="titleColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="searchRunningByName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cyz-Ia-qga"/>
-                                                </connections>
-                                            </button>
+                                            </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UVb-oP-OEg" userLabel="MapView" customClass="SeoulMapView" customModule="Umchan" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="100" width="374" height="273.5"/>
+                                                <rect key="frame" x="20" y="69" width="374" height="273.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="UVb-oP-OEg" secondAttribute="height" multiplier="335:245" id="NyZ-1C-xbj"/>
                                                 </constraints>
                                             </view>
                                             <pickerView clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gVx-RP-d5g" customClass="CustomPickerView" customModule="Umchan" customModuleProvider="target">
-                                                <rect key="frame" x="60" y="383.5" width="294" height="120"/>
+                                                <rect key="frame" x="60" y="362.5" width="294" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="120" id="WuP-OB-R89"/>
                                                 </constraints>
                                             </pickerView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원하시는 지역의 러닝을 확인하실 수 있습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVJ-jI-Ya0">
-                                                <rect key="frame" x="100" y="523.5" width="214.5" height="14.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원하시는 지역의 러닝 / 크루를 확인할 수 있습니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVJ-jI-Ya0">
+                                                <rect key="frame" x="0.0" y="487.5" width="414" height="15"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="15" id="xvC-sG-ZUp"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="JrU-MH-AdC">
-                                                <rect key="frame" x="20" y="578" width="374" height="50"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MkW-eW-2pY" customClass="RoundedButton" customModule="Umchan" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="177" height="50"/>
-                                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" name="NanumSquareOTF_acEB" family="NanumSquareOTF_ac" pointSize="20"/>
-                                                        <state key="normal" title="달리러가기">
-                                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="roundedDegree">
-                                                                <real key="value" value="5"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="1"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="goToRunButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ac7-My-bxU"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yaC-nJ-9Hp" customClass="RoundedButton" customModule="Umchan" customModuleProvider="target">
-                                                        <rect key="frame" x="197" y="0.0" width="177" height="50"/>
-                                                        <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="0.14688570205479454" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" name="NanumSquareOTF_acEB" family="NanumSquareOTF_ac" pointSize="20"/>
-                                                        <state key="normal" title="My 러닝">
-                                                            <color key="titleColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="1"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="roundedDegree">
-                                                                <real key="value" value="5"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="myRunningButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YUe-AD-Bda"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MkW-eW-2pY" customClass="RoundedButton" customModule="Umchan" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="542.5" width="374" height="50"/>
+                                                <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="syN-ez-aX6"/>
-                                                </constraints>
-                                            </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7kW-jH-DTq" customClass="RoundedButton" customModule="Umchan" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="648" width="374" height="50"/>
-                                                <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="hfF-ah-1U1"/>
+                                                    <constraint firstAttribute="height" constant="50" id="vM2-be-USk"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="NanumSquareOTF_acEB" family="NanumSquareOTF_ac" pointSize="20"/>
-                                                <state key="normal" title="크루 이름으로 검색">
-                                                    <color key="titleColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="달리러가기">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="roundedDegree">
@@ -178,30 +173,56 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="searchCrewByName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hse-90-3d3"/>
+                                                    <action selector="goToRunButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ac7-My-bxU"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yaC-nJ-9Hp" customClass="RoundedButton" customModule="Umchan" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="612.5" width="374" height="50"/>
+                                                <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="7ht-IE-6uO"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acEB" family="NanumSquareOTF_ac" pointSize="20"/>
+                                                <state key="normal" title="My 러닝">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedDegree">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="myRunningButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YUe-AD-Bda"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="gVx-RP-d5g" firstAttribute="leading" secondItem="HpT-Hb-ZEg" secondAttribute="leading" constant="60" id="04M-uW-1mB"/>
-                                            <constraint firstItem="yui-i9-thV" firstAttribute="top" secondItem="HpT-Hb-ZEg" secondAttribute="top" constant="30" id="0wt-6a-Nfy"/>
-                                            <constraint firstItem="WVJ-jI-Ya0" firstAttribute="centerX" secondItem="HpT-Hb-ZEg" secondAttribute="centerX" id="5jI-j8-wbH"/>
-                                            <constraint firstAttribute="trailing" secondItem="JrU-MH-AdC" secondAttribute="trailing" constant="20" id="7cR-9N-ZeN"/>
-                                            <constraint firstItem="gVx-RP-d5g" firstAttribute="bottom" secondItem="WVJ-jI-Ya0" secondAttribute="top" constant="-20" id="7z1-6D-GTo"/>
+                                            <constraint firstItem="gVx-RP-d5g" firstAttribute="top" secondItem="UVb-oP-OEg" secondAttribute="bottom" constant="20" id="0Hf-tS-GkC"/>
+                                            <constraint firstAttribute="trailing" secondItem="WVJ-jI-Ya0" secondAttribute="trailing" id="481-ih-KG0"/>
+                                            <constraint firstAttribute="trailing" secondItem="MkW-eW-2pY" secondAttribute="trailing" constant="20" id="59U-84-Fk5"/>
+                                            <constraint firstItem="MkW-eW-2pY" firstAttribute="top" secondItem="WVJ-jI-Ya0" secondAttribute="bottom" constant="40" id="7J7-nD-sy2"/>
+                                            <constraint firstItem="gVx-RP-d5g" firstAttribute="bottom" secondItem="WVJ-jI-Ya0" secondAttribute="top" constant="-5" id="7z1-6D-GTo"/>
                                             <constraint firstAttribute="trailing" secondItem="gVx-RP-d5g" secondAttribute="trailing" constant="60" id="E0Q-it-I2E"/>
-                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="7kW-jH-DTq" secondAttribute="bottom" constant="30" id="IlJ-kb-KSF"/>
-                                            <constraint firstItem="yui-i9-thV" firstAttribute="centerX" secondItem="HpT-Hb-ZEg" secondAttribute="centerX" id="KUV-M9-k5E"/>
-                                            <constraint firstItem="JrU-MH-AdC" firstAttribute="leading" secondItem="HpT-Hb-ZEg" secondAttribute="leading" constant="20" id="QJ6-8r-5Gv"/>
+                                            <constraint firstItem="UVb-oP-OEg" firstAttribute="top" secondItem="GzX-2c-oGy" secondAttribute="bottom" constant="30" id="LWS-if-duO"/>
+                                            <constraint firstAttribute="bottom" secondItem="yaC-nJ-9Hp" secondAttribute="bottom" constant="26" id="Op9-Tx-a7y"/>
                                             <constraint firstItem="UVb-oP-OEg" firstAttribute="leading" secondItem="HpT-Hb-ZEg" secondAttribute="leading" constant="20" id="QPM-9Y-t0D"/>
-                                            <constraint firstItem="gVx-RP-d5g" firstAttribute="top" secondItem="UVb-oP-OEg" secondAttribute="bottom" constant="10" id="U20-kP-iga"/>
-                                            <constraint firstItem="7kW-jH-DTq" firstAttribute="leading" secondItem="HpT-Hb-ZEg" secondAttribute="leading" constant="20" id="VOW-jW-yDR"/>
-                                            <constraint firstItem="UVb-oP-OEg" firstAttribute="top" secondItem="yui-i9-thV" secondAttribute="bottom" constant="30" id="bFz-XZ-QGH"/>
-                                            <constraint firstAttribute="trailing" secondItem="7kW-jH-DTq" secondAttribute="trailing" constant="20" id="cZ5-Tw-YMk"/>
+                                            <constraint firstItem="GzX-2c-oGy" firstAttribute="leading" secondItem="HpT-Hb-ZEg" secondAttribute="leading" id="SWJ-b1-W1d"/>
+                                            <constraint firstItem="WVJ-jI-Ya0" firstAttribute="leading" secondItem="HpT-Hb-ZEg" secondAttribute="leading" id="UN1-96-GIr"/>
+                                            <constraint firstItem="GzX-2c-oGy" firstAttribute="top" secondItem="HpT-Hb-ZEg" secondAttribute="top" constant="-1" id="Wlu-8K-Ylx"/>
+                                            <constraint firstItem="yaC-nJ-9Hp" firstAttribute="leading" secondItem="HpT-Hb-ZEg" secondAttribute="leading" constant="20" id="f7t-e2-wMW"/>
                                             <constraint firstAttribute="trailing" secondItem="UVb-oP-OEg" secondAttribute="trailing" constant="20" id="hUw-2V-ZJ7"/>
-                                            <constraint firstItem="JrU-MH-AdC" firstAttribute="centerX" secondItem="HpT-Hb-ZEg" secondAttribute="centerX" id="jfg-it-mRt"/>
-                                            <constraint firstItem="7kW-jH-DTq" firstAttribute="top" secondItem="JrU-MH-AdC" secondAttribute="bottom" constant="20" id="nUw-UW-FrY"/>
-                                            <constraint firstItem="JrU-MH-AdC" firstAttribute="top" secondItem="WVJ-jI-Ya0" secondAttribute="bottom" constant="40" id="wb3-ap-ePN"/>
+                                            <constraint firstAttribute="trailing" secondItem="yaC-nJ-9Hp" secondAttribute="trailing" constant="20" id="jO5-0a-Ovn"/>
+                                            <constraint firstItem="MkW-eW-2pY" firstAttribute="leading" secondItem="HpT-Hb-ZEg" secondAttribute="leading" constant="20" id="khJ-kQ-bKe"/>
+                                            <constraint firstItem="yaC-nJ-9Hp" firstAttribute="top" secondItem="MkW-eW-2pY" secondAttribute="bottom" constant="20" id="mPp-bT-ClP"/>
+                                            <constraint firstAttribute="trailing" secondItem="GzX-2c-oGy" secondAttribute="trailing" id="q1z-S2-gld"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -231,8 +252,10 @@
                     </navigationItem>
                     <size key="freeformSize" width="414" height="920"/>
                     <connections>
+                        <outlet property="crewButton" destination="00P-E6-ldK" id="rM4-O0-ays"/>
                         <outlet property="districtPickerView" destination="gVx-RP-d5g" id="UEJ-Bb-Eo9"/>
                         <outlet property="navigationBar" destination="oZ4-e6-frJ" id="Exj-C2-k7Y"/>
+                        <outlet property="runningButton" destination="jav-7l-1JN" id="QDM-s4-cgn"/>
                         <outlet property="seoulMapView" destination="UVb-oP-OEg" id="VF7-40-Lkn"/>
                     </connections>
                 </viewController>
@@ -333,10 +356,10 @@
                                 <rect key="frame" x="0.0" y="85" width="414" height="835"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="725" translatesAutoresizingMaskIntoConstraints="NO" id="aHB-SR-F96" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="846.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="829.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6A-uV-kT4">
-                                                <rect key="frame" x="49.5" y="30" width="315" height="40"/>
+                                                <rect key="frame" x="49.5" y="30" width="315" height="23"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="315" id="130-23-vAF"/>
                                                 </constraints>
@@ -350,20 +373,20 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWy-Xp-H0r" userLabel="MapView" customClass="SeoulMapView" customModule="Umchan" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="100" width="374" height="268"/>
+                                                <rect key="frame" x="20" y="83" width="374" height="268"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="VWy-Xp-H0r" secondAttribute="height" multiplier="335:240" id="bDE-Yq-wz9"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원하시는 지역의 러닝을 확인하실 수 있습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sk0-Jg-g9b">
-                                                <rect key="frame" x="100" y="388" width="214.5" height="14.5"/>
+                                                <rect key="frame" x="100" y="371" width="214.5" height="14.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9G2-yG-1Ai">
-                                                <rect key="frame" x="20" y="442.5" width="374" height="50"/>
+                                                <rect key="frame" x="20" y="425.5" width="374" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSi-6u-4Qn" customClass="RoundedButton" customModule="Umchan" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="177" height="50"/>
@@ -412,13 +435,13 @@
                                                 </constraints>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인기 크루" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhJ-Ub-2KT">
-                                                <rect key="frame" x="20" y="542.5" width="63" height="19"/>
+                                                <rect key="frame" x="20" y="525.5" width="63" height="19"/>
                                                 <fontDescription key="fontDescription" name="NanumSquareOTF_acEB" family="NanumSquareOTF_ac" pointSize="17"/>
                                                 <color key="textColor" red="0.58188301320000002" green="0.21569153669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ouu-hC-M7B">
-                                                <rect key="frame" x="0.0" y="571.5" width="414" height="180"/>
+                                                <rect key="frame" x="0.0" y="554.5" width="414" height="180"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Izh-qV-fgf">
                                                         <rect key="frame" x="0.0" y="0.0" width="200" height="180"/>
@@ -439,7 +462,7 @@
                                                 </constraints>
                                             </scrollView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ioq-M9-ffN" customClass="RoundedButton" customModule="Umchan" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="766.5" width="374" height="50"/>
+                                                <rect key="frame" x="20" y="749.5" width="374" height="50"/>
                                                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="N5H-SY-5d0"/>

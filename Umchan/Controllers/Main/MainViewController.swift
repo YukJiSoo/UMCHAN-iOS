@@ -15,12 +15,35 @@ class MainViewController: UIViewController, NibLodable {
     @IBOutlet weak var seoulMapView: SeoulMapView!
     @IBOutlet weak var crewListView: UIStackView!
     @IBOutlet weak var districtPickerView: CustomPickerView!
+
+    @IBOutlet weak var runningButton: UIButton!
+    @IBOutlet weak var crewButton: UIButton!
     
     // MARK: - Properties
     let storyBoardName = "Main"
     
     var isLoggedIn: Bool = true
     var districts = [String]()
+
+    enum MainSearchType {
+        case running, crew
+    }
+    
+    var searchType: MainSearchType = .running {
+        didSet {
+            if self.searchType == .running {
+                self.runningButton.backgroundColor = Color.symbol
+                self.runningButton.setTitleColor(.white, for: .normal)
+                self.crewButton.backgroundColor = .white
+                self.crewButton.setTitleColor(Color.symbol, for: .normal)
+            } else {
+                self.runningButton.backgroundColor = .white
+                self.runningButton.setTitleColor(Color.symbol, for: .normal)
+                self.crewButton.backgroundColor = Color.symbol
+                self.crewButton.setTitleColor(.white, for: .normal)
+            }
+        }
+    }
     
     // MARK: - Life cycles
     override func viewDidLoad() {
@@ -44,7 +67,6 @@ class MainViewController: UIViewController, NibLodable {
         self.setupNavigationBar()
         self.setupSeoulMapView()
         self.setupDistrictPickerView()
-//        self.setupCrewsView()
     }
     
     func setupNavigationBar() {
@@ -69,24 +91,6 @@ class MainViewController: UIViewController, NibLodable {
 
         self.districtPickerView.reloadAllComponents()
     }
-    
-//    func setupCrewsView() {
-//
-//        self.crewListView.configure(axis: .horizontal, distribution: .fillEqually, spacing: 10)
-//
-//        for (index, crew) in self.crews.enumerated() {
-//
-//            let crewView = CrewView(frame: CGRect(origin: .zero, size: CGSize(width: 0, height: self.crewListView.frame.height)))
-//            crewView.configure(crew: Crew(name: crew.name, oneLine: crew.oneLine, creationDate: crew.creationDate, numberOfPeople: crew.numberOfPeople, image: crew.image))
-//
-//            crewView.tag = index
-//            crewView.isUserInteractionEnabled = true
-//            let tapCrewViewGesture = UITapGestureRecognizer(target: self, action: #selector(self.crewViewTapped(_:)))
-//            crewView.addGestureRecognizer(tapCrewViewGesture)
-//
-//            self.crewListView.addArrangedSubview(crewView)
-//        }
-//    }
 
     func dismissSelfAndPresenetLogin() {
 
@@ -97,18 +101,6 @@ class MainViewController: UIViewController, NibLodable {
 
         self.present(viewController, animated: true, completion: nil)
     }
-    
-//    @objc func crewViewTapped(_ sender: UIGestureRecognizer) {
-//
-//        let storyboard = UIStoryboard(name: StoryboardName.crewInfo, bundle: nil)
-//        let viewController = storyboard.viewController(CrewInfoViewController.self)
-//        viewController.modalPresentationStyle = .custom
-//
-//        if let tag = sender.view?.tag {
-////            viewController.crew = self.crews[tag]
-//        }
-//        self.present(viewController, animated: true, completion: nil)
-//    }
 
     // MARK: - Actions
     @IBAction func goToRunButtonPressed(_ sender: Any) {
@@ -146,6 +138,14 @@ class MainViewController: UIViewController, NibLodable {
     @IBAction func unwindToMainViewController(_ segue: UIStoryboardSegue) {
 
         self.dismissSelfAndPresenetLogin()
+    }
+
+    @IBAction func runningButtonPressed(_ sender: UIButton) {
+        self.searchType = .running
+    }
+
+    @IBAction func crewButtonPressed(_ sender: UIButton) {
+        self.searchType = .crew
     }
 }
 

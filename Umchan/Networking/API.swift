@@ -216,6 +216,85 @@ public struct DateInput: GraphQLMapConvertible {
   }
 }
 
+public struct ApplyCrewInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  public init(id: String, district: String, user: MemberInput) {
+    graphQLMap = ["id": id, "district": district, "user": user]
+  }
+
+  public var id: String {
+    get {
+      return graphQLMap["id"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "id")
+    }
+  }
+
+  public var district: String {
+    get {
+      return graphQLMap["district"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "district")
+    }
+  }
+
+  public var user: MemberInput {
+    get {
+      return graphQLMap["user"] as! MemberInput
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "user")
+    }
+  }
+}
+
+public struct MemberInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  public init(name: Swift.Optional<String?> = nil, nickname: Swift.Optional<String?> = nil, district: Swift.Optional<String?> = nil, userId: Swift.Optional<String?> = nil) {
+    graphQLMap = ["name": name, "nickname": nickname, "district": district, "userID": userId]
+  }
+
+  public var name: Swift.Optional<String?> {
+    get {
+      return graphQLMap["name"] as? Swift.Optional<String?> ?? .none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "name")
+    }
+  }
+
+  public var nickname: Swift.Optional<String?> {
+    get {
+      return graphQLMap["nickname"] as? Swift.Optional<String?> ?? .none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "nickname")
+    }
+  }
+
+  public var district: Swift.Optional<String?> {
+    get {
+      return graphQLMap["district"] as? Swift.Optional<String?> ?? .none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "district")
+    }
+  }
+
+  public var userId: Swift.Optional<String?> {
+    get {
+      return graphQLMap["userID"] as? Swift.Optional<String?> ?? .none
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "userID")
+    }
+  }
+}
+
 public struct GoOutCrewInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
@@ -520,50 +599,6 @@ public struct ApplyRunningInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "user")
-    }
-  }
-}
-
-public struct MemberInput: GraphQLMapConvertible {
-  public var graphQLMap: GraphQLMap
-
-  public init(name: Swift.Optional<String?> = nil, nickname: Swift.Optional<String?> = nil, district: Swift.Optional<String?> = nil, userId: Swift.Optional<String?> = nil) {
-    graphQLMap = ["name": name, "nickname": nickname, "district": district, "userID": userId]
-  }
-
-  public var name: Swift.Optional<String?> {
-    get {
-      return graphQLMap["name"] as? Swift.Optional<String?> ?? .none
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "name")
-    }
-  }
-
-  public var nickname: Swift.Optional<String?> {
-    get {
-      return graphQLMap["nickname"] as? Swift.Optional<String?> ?? .none
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "nickname")
-    }
-  }
-
-  public var district: Swift.Optional<String?> {
-    get {
-      return graphQLMap["district"] as? Swift.Optional<String?> ?? .none
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "district")
-    }
-  }
-
-  public var userId: Swift.Optional<String?> {
-    get {
-      return graphQLMap["userID"] as? Swift.Optional<String?> ?? .none
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "userID")
     }
   }
 }
@@ -2188,6 +2223,115 @@ public final class CreateCrewMutation: GraphQLMutation {
 
       public init(code: String, success: Bool, message: String) {
         self.init(unsafeResultMap: ["__typename": "CreateCrewMutationResponse", "code": code, "success": success, "message": message])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var code: String {
+        get {
+          return resultMap["code"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "code")
+        }
+      }
+
+      public var success: Bool {
+        get {
+          return resultMap["success"]! as! Bool
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "success")
+        }
+      }
+
+      public var message: String {
+        get {
+          return resultMap["message"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "message")
+        }
+      }
+    }
+  }
+}
+
+public final class ApplyCrewMutation: GraphQLMutation {
+  /// mutation ApplyCrew($input: ApplyCrewInput) {
+  ///   applyCrew(input: $input) {
+  ///     __typename
+  ///     code
+  ///     success
+  ///     message
+  ///   }
+  /// }
+  public let operationDefinition =
+    "mutation ApplyCrew($input: ApplyCrewInput) { applyCrew(input: $input) { __typename code success message } }"
+
+  public let operationName = "ApplyCrew"
+
+  public var input: ApplyCrewInput?
+
+  public init(input: ApplyCrewInput? = nil) {
+    self.input = input
+  }
+
+  public var variables: GraphQLMap? {
+    return ["input": input]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes = ["Mutation"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("applyCrew", arguments: ["input": GraphQLVariable("input")], type: .object(ApplyCrew.selections)),
+    ]
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(applyCrew: ApplyCrew? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "applyCrew": applyCrew.flatMap { (value: ApplyCrew) -> ResultMap in value.resultMap }])
+    }
+
+    public var applyCrew: ApplyCrew? {
+      get {
+        return (resultMap["applyCrew"] as? ResultMap).flatMap { ApplyCrew(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "applyCrew")
+      }
+    }
+
+    public struct ApplyCrew: GraphQLSelectionSet {
+      public static let possibleTypes = ["ApplyCrewMutationResponse"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("code", type: .nonNull(.scalar(String.self))),
+        GraphQLField("success", type: .nonNull(.scalar(Bool.self))),
+        GraphQLField("message", type: .nonNull(.scalar(String.self))),
+      ]
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(code: String, success: Bool, message: String) {
+        self.init(unsafeResultMap: ["__typename": "ApplyCrewMutationResponse", "code": code, "success": success, "message": message])
       }
 
       public var __typename: String {

@@ -126,6 +126,39 @@ final class CrewService: CrewServiceType {
         }
     }
 
+    func applyCrew(id: String, district: String, completion: @escaping CrewCompletion) {
+
+        guard let user = UserDataService.shared.user else {
+            completion(.failure(.applyCrew(("User data is nil"))))
+            return
+        }
+
+        let memberInput = MemberInput(name: user.name, nickname: user.nickname, district: user.district)
+        let applyCrewInput = ApplyCrewInput(id: id, district: district, user: memberInput)
+        let applyCrewMutation = ApplyCrewMutation(input: applyCrewInput)
+
+        Apollo.shared.client.perform(mutation: applyCrewMutation) { result in
+
+            guard
+                let data = try? result.get().data,
+                let code = data.applyCrew?.code,
+                let message = data.applyCrew?.message
+                else {
+                    completion(.failure(.applyCrew(("Internal server error"))))
+                    return
+            }
+
+            // check reseponse HTTP code
+            guard code.isSuccessfulResponse else {
+                completion(.failure(.applyCrew(message)))
+                return
+            }
+
+            // response from server
+            completion(.success(true))
+        }
+    }
+
     func goOutCrew(id: String, district: String, completion: @escaping CrewCompletion) {
 
         let goOutCrewInput = GoOutCrewInput(id: id, district: district)
