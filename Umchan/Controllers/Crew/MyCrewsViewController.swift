@@ -19,17 +19,12 @@ class MyCrewsViewController: UIViewController, NibLodable {
     // MARK: - SubViews
     var crewListView: ScrollableStackView?
     let createCrewButton = UmchanCreateButtom(frame: .zero)
-    
+
     // MARK: - Properties
-    var crews: [CrewListQueryResult]? {
+    var crews: [CrewListQueryResult?] = [] {
         didSet {
             DispatchQueue.main.async {
-                guard let crews = self.crews else {
-                    self.setupEmptyCase()
-                    return
-                }
-
-                if crews.isEmpty {
+                if self.crews.isEmpty {
                     self.setupEmptyCase()
                 } else {
                     self.setupXib()
@@ -73,7 +68,9 @@ class MyCrewsViewController: UIViewController, NibLodable {
             case .failure(CrewAPIError.crewList(let message)):
 
                 print(message)
-                self.crews = nil
+                DispatchQueue.main.async {
+                    self.setupEmptyCase()
+                }
             default:
                 debugPrint("Uncorrect access")
             }
@@ -161,7 +158,7 @@ extension MyCrewsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return self.crews?.count ?? 0
+        return self.crews.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -171,7 +168,7 @@ extension MyCrewsViewController: UITableViewDataSource {
             return UITableViewCell()
         }
 
-        guard let crew = self.crews?[indexPath.row] else {
+        guard let crew = self.crews[indexPath.row] else {
             debugPrint("Could not find post at row \(indexPath.row)")
             return UITableViewCell()
         }
@@ -192,6 +189,9 @@ extension MyCrewsViewController: UITableViewDelegate {
         let viewController = storyboard.viewController(CrewInfoViewController.self)
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.isNavigationBarHidden = true
+
+        viewController.id = self.crews[indexPath.row]?.id
+        viewController.district = self.crews[indexPath.row]?.district
 
         self.present(navigationController, animated: true, completion: nil)
     }

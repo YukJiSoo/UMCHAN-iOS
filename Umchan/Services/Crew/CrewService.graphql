@@ -4,6 +4,7 @@ query CrewList($name: String) {
         success,
         message,
         crews {
+            id,
             name,
             oneLine,
             creationDate {
@@ -27,6 +28,47 @@ query CrewList($name: String) {
             },
             district
         }
+    }
+}
+
+query Crew($input: CrewInput) {
+    crew(input: $input) {
+        code,
+        success,
+        message,
+        crew {
+            id,
+            name,
+            oneLine,
+            leader {
+                userID,
+                name,
+                nickname,
+                district
+            },
+            members {
+                userID,
+                name,
+                nickname,
+                district
+            },
+            awaitMembers {
+                userID,
+                name,
+                nickname,
+                district
+            },
+            creationDate {
+                year,
+                month,
+                date,
+                hour,
+                minute
+            },
+            district
+        },
+        isApplied,
+        isMember
     }
 }
 

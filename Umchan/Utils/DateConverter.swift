@@ -65,3 +65,20 @@ func convertRunningDateString(running: RunningQueryType) -> (String, String){
 
     return (runningDateString, registerDateString)
 }
+
+func convertCreationDateString(crew: CrewQueryType) -> String {
+    var creationDateString: String = ""
+
+    let creationDate = crew.creationDate
+    if
+        let year = creationDate?.year,
+        let month = creationDate?.month,
+        let date = creationDate?.date,
+        let hour = creationDate?.hour,
+        let minute = creationDate?.minute {
+
+        creationDateString = "\(year)년 \(month)월 \(date)일 \(hour)시 \(minute)분"
+    }
+
+    return creationDateString
+}

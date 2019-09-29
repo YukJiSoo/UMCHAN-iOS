@@ -19,23 +19,70 @@ class CrewInfoViewController: UIViewController, NibLodable {
     @IBOutlet weak var CrewMembersView: UIStackView!
     
     // MARK: - Properties
-    var crew: CrewListQueryResult?
-    
+    var crew: CrewQueryType?
+    var memberState: MemberStateType?
+    var id: String?
+    var district: String?
+
+    var captinViews = [UserView]()
+    var memberViews = [UserView]()
+
     // MARK: - Life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.setupSubViews()
+
         self.setupNavigationBar()
-        self.setupCaptinAndMembers()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        self.setupData()
     }
     
     // MARK: - Functions
+    func setupData() {
+        guard let id = self.id, let district = self.district else {
+            return
+        }
+
+        CrewService.shared.crew(id: id, district: district) { (response) in
+
+            switch response {
+            case .success(_):
+
+                guard let data = try? response.get() else {
+                    debugPrint("cannot get data")
+                    return
+                }
+
+                self.crew = data.0
+                self.memberState = data.1
+                DispatchQueue.main.async {
+                    self.setupSubViews()
+                }
+            case .failure(CrewAPIError.crew(let message)):
+
+                print(message)
+            default:
+                debugPrint("Uncorrect access")
+            }
+        }
+    }
+
     func setupSubViews() {
 
         self.nameLabel.text = crew?.name
         self.oneLineLabel.text = crew?.oneLine
-//        self.creationDateLabel.text = crew?.creationDate
+
+        if let crew = self.crew {
+            self.navigationBar.title = crew.name ?? "크루"
+
+            let creationDate = convertCreationDateString(crew: crew)
+            self.creationDateLabel.text = creationDate
+        }
+
+        self.setupLeaderAndMembers()
     }
     
     func setupNavigationBar() {
@@ -48,16 +95,42 @@ class CrewInfoViewController: UIViewController, NibLodable {
         self.navigationBar.configureButton(location: .left, type: .close)
     }
     
-    func setupCaptinAndMembers() {
-        
-        let captinViewNib = UserView.instanceFromNib()
-        let firstMemberViewNib = UserView.instanceFromNib()
-        let secondMemberViewNib = UserView.instanceFromNib()
+    func setupLeaderAndMembers() {
+        guard
+            let leaderNickname = self.crew?.leader?.nickname,
+            let leaderID = self.crew?.leader?.userId
+            else {
+                return
+        }
 
-        
+        self.captinViews.forEach { (view) in
+            view.removeFromSuperview()
+        }
+
+        for view in self.memberViews {
+            view.removeFromSuperview()
+        }
+
+        let captinViewNib = UserView.instanceFromNib()
+        captinViewNib.configure(user: User(id: leaderID, name: "leaderName", nickname: leaderNickname, district: "leaderDistrict"))
+
+        self.captinViews.append(captinViewNib)
         self.CrewCaptinView.addArrangedSubview(captinViewNib)
-        self.CrewMembersView.addArrangedSubview(firstMemberViewNib)
-        self.CrewMembersView.addArrangedSubview(secondMemberViewNib)
+
+        self.crew?.members?.forEach({ (member) in
+            guard
+                let memberNickname = member?.nickname,
+                let memberID = member?.userId
+                else {
+                    return
+            }
+
+            let memberViewNib = UserView.instanceFromNib()
+            memberViewNib.configure(user: User(id: memberID, name: "memberName", nickname: memberNickname, district: "memberDistrict"))
+
+            self.memberViews.append(memberViewNib)
+            self.CrewMembersView.addArrangedSubview(memberViewNib)
+        })
     }
     
     @IBAction func requestButtonPressed(_ sender: UIButton) {

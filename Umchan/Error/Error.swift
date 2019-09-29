@@ -33,6 +33,7 @@ enum RunningAPIError: Error {
 enum CrewAPIError: Error {
     case createCrew(String)
     case crewList(String)
+    case crew(String)
 }
 
 enum KeychainError: Error {
