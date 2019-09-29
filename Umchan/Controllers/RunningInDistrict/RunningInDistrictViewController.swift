@@ -19,7 +19,12 @@ class RunningInDistrictViewController: ModalViewController {
     var runnings: [RunningListQueryType]? {
         didSet {
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+                if self.runnings?.isEmpty ?? true {
+                    self.setupEmptyCase()
+                } else {
+                    self.setupTableView()
+                    self.setupXib()
+                }
             }
         }
     }
@@ -29,8 +34,6 @@ class RunningInDistrictViewController: ModalViewController {
         super.viewDidLoad()
 
         self.setupData()
-        self.setupTableView()
-        self.setupXib()
     }
 
     // MARK: - Functions
@@ -86,6 +89,47 @@ class RunningInDistrictViewController: ModalViewController {
         self.tableView.register(runningCellNib, forCellReuseIdentifier: RunningTableViewCell.nibId)
         self.tableView.register(emptyNoticeCellNib, forCellReuseIdentifier: EmptyTableViewCell.nibId)
         
+    }
+
+    func setupEmptyCase() {
+
+        // add views
+        let emptyImageView = UIImageView(frame: .zero)
+
+        emptyImageView.image = UIImage(named: AssetName.empty)
+        emptyImageView.contentMode = .scaleAspectFit
+
+        self.view.addSubview(emptyImageView)
+
+        let emptyLabel = UILabel(frame: .zero)
+
+        emptyLabel.font = UIFont.umchanFont(size: CGFloat(20), boldState: .extrabold)
+        emptyLabel.text = "참가 가능한 러닝이 없습니다"
+        emptyLabel.textColor = Color.symbolTransparent
+
+        self.view.addSubview(emptyLabel)
+
+        // set Constraint
+        emptyImageView.translatesAutoresizingMaskIntoConstraints = false
+
+        let emptyImageViewCenterXAnchor = emptyImageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+        let emptyImageViewCenterYAnchor = emptyImageView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
+        let emptyImageViewWidthAnchor = emptyImageView.widthAnchor.constraint(equalToConstant: 200)
+        let emptyImageViewHeightAnchor = emptyImageView.heightAnchor.constraint(equalToConstant: 200)
+
+        emptyLabel.translatesAutoresizingMaskIntoConstraints = false
+
+        let emptyLabelTopAnchor = emptyLabel.topAnchor.constraint(equalTo: emptyImageView.bottomAnchor, constant: 30)
+        let emptyLabelCenterXAnchor = emptyLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+
+        NSLayoutConstraint.activate([
+            emptyImageViewCenterXAnchor,
+            emptyImageViewCenterYAnchor,
+            emptyImageViewWidthAnchor,
+            emptyImageViewHeightAnchor,
+            emptyLabelTopAnchor,
+            emptyLabelCenterXAnchor
+            ])
     }
     
 }
