@@ -118,3 +118,11 @@ mutation RejectRunningMemeber($input: RejectRunningMemberInput) {
         message
     }
 }
+
+mutation ExceptRunningMemeber($input: ExceptRunningMemberInput) {
+    exceptRunningMember(input: $input) {
+        code,
+        success,
+        message
+    }
+}

@@ -23,6 +23,7 @@ enum RunningAPIError: Error {
     case goOutRunning(String)
     case acceptRunningMember(String)
     case rejectRunningMember(String)
+    case exceptRunningMember(String)
     case runningList(String)
     case running(String)
 }

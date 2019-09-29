@@ -463,6 +463,41 @@ public struct RejectRunningMemberInput: GraphQLMapConvertible {
   }
 }
 
+public struct ExceptRunningMemberInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  public init(id: String, district: String, memberId: String) {
+    graphQLMap = ["id": id, "district": district, "memberID": memberId]
+  }
+
+  public var id: String {
+    get {
+      return graphQLMap["id"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "id")
+    }
+  }
+
+  public var district: String {
+    get {
+      return graphQLMap["district"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "district")
+    }
+  }
+
+  public var memberId: String {
+    get {
+      return graphQLMap["memberID"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "memberID")
+    }
+  }
+}
+
 public final class RegisterUserMutation: GraphQLMutation {
   /// mutation RegisterUser($user: RegisterUserInput) {
   ///   register(user: $user) {
@@ -2907,6 +2942,115 @@ public final class RejectRunningMemeberMutation: GraphQLMutation {
 
       public init(code: String, success: Bool, message: String) {
         self.init(unsafeResultMap: ["__typename": "RejectRunningMemeberMutationResponse", "code": code, "success": success, "message": message])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var code: String {
+        get {
+          return resultMap["code"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "code")
+        }
+      }
+
+      public var success: Bool {
+        get {
+          return resultMap["success"]! as! Bool
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "success")
+        }
+      }
+
+      public var message: String {
+        get {
+          return resultMap["message"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "message")
+        }
+      }
+    }
+  }
+}
+
+public final class ExceptRunningMemeberMutation: GraphQLMutation {
+  /// mutation ExceptRunningMemeber($input: ExceptRunningMemberInput) {
+  ///   exceptRunningMember(input: $input) {
+  ///     __typename
+  ///     code
+  ///     success
+  ///     message
+  ///   }
+  /// }
+  public let operationDefinition =
+    "mutation ExceptRunningMemeber($input: ExceptRunningMemberInput) { exceptRunningMember(input: $input) { __typename code success message } }"
+
+  public let operationName = "ExceptRunningMemeber"
+
+  public var input: ExceptRunningMemberInput?
+
+  public init(input: ExceptRunningMemberInput? = nil) {
+    self.input = input
+  }
+
+  public var variables: GraphQLMap? {
+    return ["input": input]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes = ["Mutation"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("exceptRunningMember", arguments: ["input": GraphQLVariable("input")], type: .object(ExceptRunningMember.selections)),
+    ]
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(exceptRunningMember: ExceptRunningMember? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "exceptRunningMember": exceptRunningMember.flatMap { (value: ExceptRunningMember) -> ResultMap in value.resultMap }])
+    }
+
+    public var exceptRunningMember: ExceptRunningMember? {
+      get {
+        return (resultMap["exceptRunningMember"] as? ResultMap).flatMap { ExceptRunningMember(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "exceptRunningMember")
+      }
+    }
+
+    public struct ExceptRunningMember: GraphQLSelectionSet {
+      public static let possibleTypes = ["ExceptRunningMemeberMutationResponse"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("code", type: .nonNull(.scalar(String.self))),
+        GraphQLField("success", type: .nonNull(.scalar(Bool.self))),
+        GraphQLField("message", type: .nonNull(.scalar(String.self))),
+      ]
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(code: String, success: Bool, message: String) {
+        self.init(unsafeResultMap: ["__typename": "ExceptRunningMemeberMutationResponse", "code": code, "success": success, "message": message])
       }
 
       public var __typename: String {

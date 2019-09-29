@@ -31,6 +31,9 @@ class MyRunningViewController: UIViewController, NibLodable {
     var running: RunningQueryType?
     var memberState: MemberStateType?
 
+    var captinViews = [UserView]()
+    var memberViews = [UserView]()
+
     // MARK: - Life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -108,17 +111,19 @@ class MyRunningViewController: UIViewController, NibLodable {
                 return
         }
 
+        self.captinViews.forEach { (view) in
+            view.removeFromSuperview()
+        }
+
+        for view in self.memberViews {
+            print(view)
+            view.removeFromSuperview()
+        }
+
         let captinViewNib = UserView.instanceFromNib()
         captinViewNib.configure(user: User(id: leaderID, name: leaderName, nickname: leaderNickname, district: leaderDistrict))
 
-        self.leaderView.arrangedSubviews.forEach { (view) in
-            self.leaderView.removeArrangedSubview(view)
-        }
-
-        self.membersView.arrangedSubviews.forEach { (view) in
-            self.membersView.removeArrangedSubview(view)
-        }
-
+        self.captinViews.append(captinViewNib)
         self.leaderView.addArrangedSubview(captinViewNib)
 
         self.running?.members?.forEach({ (member) in
@@ -134,6 +139,7 @@ class MyRunningViewController: UIViewController, NibLodable {
             let memberViewNib = UserView.instanceFromNib()
             memberViewNib.configure(user: User(id: memberID, name: memberName, nickname: memberNickname, district: memberDistrict))
 
+            self.memberViews.append(memberViewNib)
             self.membersView.addArrangedSubview(memberViewNib)
         })
     }
