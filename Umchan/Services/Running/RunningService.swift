@@ -184,11 +184,6 @@ final class RunningService: RunningServiceType {
 
     func goOutRunning(id: String, district: String, completion: @escaping RunningCompletion) {
 
-        guard let user = UserDataService.shared.user else {
-            completion(.failure(.goOutRunning(("User data is nil"))))
-            return
-        }
-
         let goOutInput = GoOutInput(id: id, district: district)
         let goOutRunningMutation = GoOutRunningMutation(input: goOutInput)
 
@@ -206,6 +201,33 @@ final class RunningService: RunningServiceType {
             // check reseponse HTTP code
             guard code.isSuccessfulResponse else {
                 completion(.failure(.goOutRunning(message)))
+                return
+            }
+
+            // response from server
+            completion(.success(true))
+        }
+    }
+
+    func acceptMember(id: String, district: String, memberID: String, completion: @escaping RunningCompletion) {
+
+        let acceptRunningMemberInput = AcceptRunningMemberInput(id: id, district: district, memberId: memberID)
+        let acceptRunningMemberMutation = AcceptRunningMemeberMutation(input: acceptRunningMemberInput)
+
+        Apollo.shared.client.perform(mutation: acceptRunningMemberMutation) { result in
+
+            guard
+                let data = try? result.get().data,
+                let code = data.acceptRunningMember?.code,
+                let message = data.acceptRunningMember?.message
+                else {
+                    completion(.failure(.acceptRunningMember(("Internal server error"))))
+                    return
+            }
+
+            // check reseponse HTTP code
+            guard code.isSuccessfulResponse else {
+                completion(.failure(.acceptRunningMember(message)))
                 return
             }
 

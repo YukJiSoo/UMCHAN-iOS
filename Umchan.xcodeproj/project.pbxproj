@@ -109,6 +109,8 @@
 		A78E479723405892007D2469 /* MyRunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78E479623405892007D2469 /* MyRunningViewController.swift */; };
 		A78E479923405DD7007D2469 /* ManageMemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78E479823405DD7007D2469 /* ManageMemberTableViewCell.swift */; };
 		A78E479B2340A2EE007D2469 /* ManageRunningMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78E479A2340A2EE007D2469 /* ManageRunningMemberViewController.swift */; };
+		A78E479D2340ABA4007D2469 /* ManageMemberDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78E479C2340ABA4007D2469 /* ManageMemberDelegate.swift */; };
+		A78E479F2340ACA5007D2469 /* ManageRunningMemberViewController+ManageMemberDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78E479E2340ACA5007D2469 /* ManageRunningMemberViewController+ManageMemberDelegate.swift */; };
 		A792F20A232C07E900CE1742 /* AuthService.graphql in Resources */ = {isa = PBXBuildFile; fileRef = A792F209232C07E900CE1742 /* AuthService.graphql */; };
 		A792F20F232C22D300CE1742 /* ApolloNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792F20E232C22D300CE1742 /* ApolloNetworking.swift */; };
 		A792F211232CB14000CE1742 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792F210232CB14000CE1742 /* String+Extension.swift */; };
@@ -229,6 +231,8 @@
 		A78E479623405892007D2469 /* MyRunningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRunningViewController.swift; sourceTree = "<group>"; };
 		A78E479823405DD7007D2469 /* ManageMemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageMemberTableViewCell.swift; sourceTree = "<group>"; };
 		A78E479A2340A2EE007D2469 /* ManageRunningMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageRunningMemberViewController.swift; sourceTree = "<group>"; };
+		A78E479C2340ABA4007D2469 /* ManageMemberDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageMemberDelegate.swift; sourceTree = "<group>"; };
+		A78E479E2340ACA5007D2469 /* ManageRunningMemberViewController+ManageMemberDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ManageRunningMemberViewController+ManageMemberDelegate.swift"; sourceTree = "<group>"; };
 		A792F209232C07E900CE1742 /* AuthService.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = AuthService.graphql; sourceTree = "<group>"; };
 		A792F20B232C143400CE1742 /* Apollo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Apollo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A792F20E232C22D300CE1742 /* ApolloNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloNetworking.swift; sourceTree = "<group>"; };
@@ -463,6 +467,7 @@
 				A74A0EE0232D568E00420DF6 /* MyRunningsViewController.swift */,
 				A78E479623405892007D2469 /* MyRunningViewController.swift */,
 				A78E479A2340A2EE007D2469 /* ManageRunningMemberViewController.swift */,
+				A78E479E2340ACA5007D2469 /* ManageRunningMemberViewController+ManageMemberDelegate.swift */,
 			);
 			path = Running;
 			sourceTree = "<group>";
@@ -677,6 +682,7 @@
 				A7168B7623103E4300500621 /* RunningHistoryListTableViewCell.swift */,
 				A71EC1EF230FDAFF00275EA8 /* WriteTableViewCell.swift */,
 				A78E479823405DD7007D2469 /* ManageMemberTableViewCell.swift */,
+				A78E479C2340ABA4007D2469 /* ManageMemberDelegate.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -906,6 +912,7 @@
 				A76A70FC230E923E00B5EA81 /* RunningTableViewCell.swift in Sources */,
 				A709922D2307284400AE3ACA /* CustomNavigationBarDelegate.swift in Sources */,
 				A742E39B22F88ADF002E333C /* AppDelegate.swift in Sources */,
+				A78E479F2340ACA5007D2469 /* ManageRunningMemberViewController+ManageMemberDelegate.swift in Sources */,
 				A7528B9E2302BBC000A6BEC0 /* Constants.swift in Sources */,
 				A74A0EE1232D568E00420DF6 /* MyRunningsViewController.swift in Sources */,
 				A7071B892311C6D200982161 /* LoginViewController.swift in Sources */,
@@ -937,6 +944,7 @@
 				A71EC1EC230FCBCA00275EA8 /* UIFont+Extension.swift in Sources */,
 				A71EC1F6230FF23400275EA8 /* RoundedButton.swift in Sources */,
 				A787546D232B89F1004EA9E4 /* Keychain.swift in Sources */,
+				A78E479D2340ABA4007D2469 /* ManageMemberDelegate.swift in Sources */,
 				A70992032303E26500AE3ACA /* CustomNavigationBar.swift in Sources */,
 				A78E479723405892007D2469 /* MyRunningViewController.swift in Sources */,
 				A7FC54F8232C01D20036177A /* API.swift in Sources */,

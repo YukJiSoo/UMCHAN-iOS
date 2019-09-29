@@ -59,10 +59,12 @@ extension ManageRunningMemberViewController: UITableViewDataSource {
         }
 
         if indexPath.section == 0, let nickname = self.awaitMembers?[indexPath.row].nickname {
-            cell.configure(nickname: nickname, type: .waiter)
+            cell.configure(nickname: nickname, index: indexPath.row, type: .waiter)
         } else if let nickname = self.members?[indexPath.row].nickname {
-            cell.configure(nickname: nickname, type: .member)
+            cell.configure(nickname: nickname, index: indexPath.row, type: .member)
         }
+
+        cell.delegate = self
 
         return cell
     }
