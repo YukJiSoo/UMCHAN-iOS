@@ -21,6 +21,7 @@ enum RunningAPIError: Error {
     case createRunning(String)
     case applyRunning(String)
     case goOutRunning(String)
+    case cancelRunning(String)
     case acceptRunningMember(String)
     case checkRunningMember(String)
     case rejectRunningMember(String)

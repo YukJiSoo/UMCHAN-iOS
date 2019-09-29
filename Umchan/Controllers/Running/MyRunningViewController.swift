@@ -229,6 +229,33 @@ class MyRunningViewController: UIViewController, NibLodable {
 
         self.navigationController?.pushViewController(viewController, animated: true)
     }
+
+    @IBAction func cancelRunningButton(_ sender: UIButton) {
+        guard
+            let id = self.id,
+            let district = self.district
+            else {
+                debugPrint("id, district is nil")
+                return
+        }
+
+        RunningService.shared.cancelRunning(id: id, district: district) { (response) in
+
+            switch response {
+            case .success(_):
+
+                let alertController = self.createBasicAlertViewController(title: "참가취소", message: "러닝참가를 취소했습니다")  {
+                    self.dismiss(animated: true, completion: nil)
+                }
+                self.present(alertController, animated: true, completion: nil)
+            case .failure(RunningAPIError.goOutRunning(let message)):
+
+                self.presentFailAlertController("취소 실패", with: message)
+            default:
+                debugPrint("Uncorrect access")
+            }
+        }
+    }
 }
 
 extension MyRunningViewController: CustomNavigationBarDelegate {

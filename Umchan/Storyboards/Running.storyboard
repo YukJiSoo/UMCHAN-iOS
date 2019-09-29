@@ -370,6 +370,9 @@
                                                                         <real key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="cancelRunningButton:" destination="r3e-yy-9a8" eventType="touchUpInside" id="DYl-bD-PNL"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3sF-pJ-Sbh" customClass="RoundedButton" customModule="Umchan" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="160" width="354" height="60"/>

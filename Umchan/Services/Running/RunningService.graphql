@@ -103,6 +103,14 @@ mutation GoOutRunning($input: GoOutInput) {
     }
 }
 
+mutation CancelRunning($input: CancelRunningInput) {
+    cancelRunning(input: $input) {
+        code,
+        success,
+        message
+    }
+}
+
 mutation AcceptRunningMemeber($input: AcceptRunningMemberInput) {
     acceptRunningMember(input: $input) {
         code,
