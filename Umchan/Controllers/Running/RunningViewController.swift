@@ -144,6 +144,15 @@ class RunningViewController: UIViewController, NibLodable {
     }
 
     func setupBottomButton() {
+        guard
+            let userNickname = UserDataService.shared.user?.nickname,
+            let leaderNickname = self.running?.leader?.nickname,
+            userNickname != leaderNickname
+        else {
+            self.bottomButton.isHidden = true
+            return
+        }
+
         guard let memberState = self.memberState else {
             return
         }

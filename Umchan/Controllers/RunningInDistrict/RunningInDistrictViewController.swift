@@ -47,7 +47,7 @@ class RunningInDistrictViewController: ModalViewController {
                 return
             }
 
-            self.runnings = data as! [RunningListQueryType]
+            self.runnings = data 
         case .failure(RunningAPIError.runningList(let message)):
 
             print(message)
