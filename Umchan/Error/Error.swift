@@ -31,6 +31,8 @@ enum RunningAPIError: Error {
 }
 
 enum CrewAPIError: Error {
+    case goOutCrew(String)
+    case disassembleCrew(String)
     case createCrew(String)
     case crewList(String)
     case crew(String)

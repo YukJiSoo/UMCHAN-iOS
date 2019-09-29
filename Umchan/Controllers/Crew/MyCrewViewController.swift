@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CrewInfoViewController: UIViewController, NibLodable {
+class MyCrewViewController: UIViewController, NibLodable {
     
     // MARK: - Outlets
     @IBOutlet weak var navigationBar: CustomNavigationBar!
@@ -17,7 +17,12 @@ class CrewInfoViewController: UIViewController, NibLodable {
     @IBOutlet weak var creationDateLabel: UILabel!
     @IBOutlet weak var CrewCaptinView: UIStackView!
     @IBOutlet weak var CrewMembersView: UIStackView!
-    
+    // member 전용
+    @IBOutlet weak var goOutCrewButton: UIButton!
+    // leader 전용
+    @IBOutlet weak var manageCrewButton: UIButton!
+    @IBOutlet weak var disassempleCrewButton: UIButton!
+
     // MARK: - Properties
     var crew: CrewQueryType?
     var memberState: MemberStateType?
@@ -83,6 +88,7 @@ class CrewInfoViewController: UIViewController, NibLodable {
         }
 
         self.setupLeaderAndMembers()
+        self.setupButtons()
     }
     
     func setupNavigationBar() {
@@ -132,18 +138,100 @@ class CrewInfoViewController: UIViewController, NibLodable {
             self.CrewMembersView.addArrangedSubview(memberViewNib)
         })
     }
-    
-    @IBAction func requestButtonPressed(_ sender: UIButton) {
-        
-        let alertController = self.createBasicAlertViewController(title: "참가신청", message: "크루장에게 참가 신청을 보냈습니다") {
-            self.dismiss(animated: true, completion: nil)
+
+    func setupButtons() {
+        guard
+            let leaderID = self.crew?.leader?.userId,
+            let myID = UserDataService.shared.user?.id,
+            leaderID == myID
+            else {
+                if self.manageCrewButton != nil {
+                    self.manageCrewButton.removeFromSuperview()
+                    self.disassempleCrewButton.removeFromSuperview()
+                }
+                return
         }
-        self.present(alertController, animated: true, completion: nil)
+
+        if self.goOutCrewButton != nil {
+            self.goOutCrewButton.removeFromSuperview()
+        }
     }
-    
+
+    @IBAction func goOutCrewButtonPressed(_ sender: UIButton) {
+        guard
+            let id = self.id,
+            let district = self.district
+            else {
+                debugPrint("id, district is nil")
+                return
+        }
+
+        CrewService.shared.goOutCrew(id: id, district: district) { (response) in
+
+            switch response {
+            case .success(_):
+
+                let alertController = self.createBasicAlertViewController(title: "크루탈퇴", message: "크루에서 탈퇴했습니다")  {
+                    self.dismiss(animated: true, completion: nil)
+                }
+                self.present(alertController, animated: true, completion: nil)
+            case .failure(CrewAPIError.goOutCrew(let message)):
+
+                self.presentFailAlertController("탈퇴 실패", with: message)
+            default:
+                debugPrint("Uncorrect access")
+            }
+        }
+    }
+
+//    @IBAction func manageCrewButtonPressed(_ sender: UIButton) {
+//        let storyboard = UIStoryboard(name: StoryboardName.running, bundle: nil)
+//        let viewController = storyboard.viewController(ManageRunningMemberViewController.self)
+//
+//        if
+//            let id = self.id,
+//            let district = self.district,
+//            let awaitMembers = self.crew?.awaitMembers,
+//            let members = self.crew?.members {
+//
+//            viewController.id = id
+//            viewController.district = district
+//            viewController.awaitMembers = awaitMembers as? [CrewQueryType.AwaitMember]
+//            viewController.members = members as? [CrewQueryType.Member]
+//        }
+//
+//        self.navigationController?.pushViewController(viewController, animated: true)
+//    }
+
+//    @IBAction func disassempleCrewButtonPressed(_ sender: UIButton) {
+//        guard
+//            let id = self.id,
+//            let district = self.district
+//            else {
+//                debugPrint("id, district is nil")
+//                return
+//        }
+//
+//        RunningService.shared.cancelRunning(id: id, district: district) { (response) in
+//
+//            switch response {
+//            case .success(_):
+//
+//                let alertController = self.createBasicAlertViewController(title: "참가취소", message: "러닝참가를 취소했습니다")  {
+//                    self.dismiss(animated: true, completion: nil)
+//                }
+//                self.present(alertController, animated: true, completion: nil)
+//            case .failure(RunningAPIError.goOutRunning(let message)):
+//
+//                self.presentFailAlertController("취소 실패", with: message)
+//            default:
+//                debugPrint("Uncorrect access")
+//            }
+//        }
+//    }
 }
 
-extension CrewInfoViewController: CustomNavigationBarDelegate {
+extension MyCrewViewController: CustomNavigationBarDelegate {
     
     func leftBarButtonPressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)

@@ -186,7 +186,7 @@ extension MyCrewsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         let storyboard = UIStoryboard(name: StoryboardName.crewInfo, bundle: nil)
-        let viewController = storyboard.viewController(CrewInfoViewController.self)
+        let viewController = storyboard.viewController(MyCrewViewController.self)
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.isNavigationBarHidden = true
 

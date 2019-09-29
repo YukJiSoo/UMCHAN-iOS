@@ -161,7 +161,7 @@ class SearchCrewViewController: SearchViewController {
     @objc func crewViewTapped(_ sender: UIGestureRecognizer) {
 
         let storyboard = UIStoryboard(name: StoryboardName.crewInfo, bundle: nil)
-        let viewController = storyboard.viewController(CrewInfoViewController.self)
+        let viewController = storyboard.viewController(MyCrewViewController.self)
         viewController.modalPresentationStyle = .custom
 
         if let tag = sender.view?.tag {

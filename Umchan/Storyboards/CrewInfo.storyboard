@@ -13,18 +13,15 @@
         <array key="NanumSquareOTFBold.otf">
             <string>NanumSquareOTF_acB</string>
         </array>
-        <array key="NanumSquareOTFExtraBold.otf">
-            <string>NanumSquareOTF_acEB</string>
-        </array>
         <array key="NanumSquareOTFRight.otf">
             <string>NanumSquareOTF_acR</string>
         </array>
     </customFonts>
     <scenes>
-        <!--Crew Info View Controller-->
+        <!--My Crew View Controller-->
         <scene sceneID="INV-q3-C9e">
             <objects>
-                <viewController storyboardIdentifier="CrewInfoViewController" id="K61-O2-R1Z" customClass="CrewInfoViewController" customModule="Umchan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CrewInfoViewController" id="K61-O2-R1Z" customClass="MyCrewViewController" customModule="Umchan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5j7-4I-td9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,55 +40,22 @@
                                 <rect key="frame" x="0.0" y="108" width="414" height="858"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tct-GZ-rgJ" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="764"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="687.5"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kMD-LE-mcH">
-                                                <rect key="frame" x="20" y="30" width="374" height="249.5"/>
-                                                <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="kMD-LE-mcH" secondAttribute="height" multiplier="3:2" id="Rou-ud-gXL"/>
-                                                </constraints>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9N-Sd-OAq" customClass="RoundedButton" customModule="Umchan" customModuleProvider="target">
-                                                <rect key="frame" x="294" y="289.5" width="100" height="40"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="AeX-gE-66K"/>
-                                                    <constraint firstAttribute="height" constant="40" id="dTX-wP-Bej"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acEB" family="NanumSquareOTF_ac" pointSize="15"/>
-                                                <state key="normal" title="참가신청">
-                                                    <color key="titleColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedDegree">
-                                                        <real key="value" value="8"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" red="0.58039215690000001" green="0.066666666669999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="2"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="requestButtonPressed:" destination="K61-O2-R1Z" eventType="touchUpInside" id="7sd-VN-VxL"/>
-                                                </connections>
-                                            </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="Hl5-Ay-naj">
-                                                <rect key="frame" x="30" y="359.5" width="354" height="354.5"/>
+                                                <rect key="frame" x="30" y="20" width="354" height="617.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="8YM-xJ-map">
-                                                        <rect key="frame" x="0.0" y="0.0" width="354" height="56.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="354" height="58.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCf-5y-sZW">
-                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="22.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="23.5"/>
                                                                 <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="20"/>
                                                                 <color key="textColor" red="0.58039215690000001" green="0.066666666669999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtU-ku-i80">
-                                                                <rect key="frame" x="0.0" y="37.5" width="354" height="19"/>
+                                                                <rect key="frame" x="0.0" y="38.5" width="354" height="20"/>
                                                                 <fontDescription key="fontDescription" name="NanumSquareOTF_acR" family="NanumSquareOTF_ac" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -99,16 +63,16 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="rSK-E0-sva">
-                                                        <rect key="frame" x="0.0" y="91.5" width="354" height="56.5"/>
+                                                        <rect key="frame" x="0.0" y="93.5" width="354" height="58.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="크루 한줄소개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQX-jx-qxI">
-                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="22.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="23.5"/>
                                                                 <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="20"/>
                                                                 <color key="textColor" red="0.58039215690000001" green="0.066666666669999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hx-V7-DGF">
-                                                                <rect key="frame" x="0.0" y="37.5" width="354" height="19"/>
+                                                                <rect key="frame" x="0.0" y="38.5" width="354" height="20"/>
                                                                 <fontDescription key="fontDescription" name="NanumSquareOTF_acR" family="NanumSquareOTF_ac" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -116,16 +80,16 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="t09-Hb-0yW">
-                                                        <rect key="frame" x="0.0" y="183" width="354" height="56.5"/>
+                                                        <rect key="frame" x="0.0" y="187" width="354" height="58.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="생성일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOf-Tl-dhc">
-                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="22.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="23.5"/>
                                                                 <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="20"/>
                                                                 <color key="textColor" red="0.58039215690000001" green="0.066666666669999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlB-MJ-iId">
-                                                                <rect key="frame" x="0.0" y="37.5" width="354" height="19"/>
+                                                                <rect key="frame" x="0.0" y="38.5" width="354" height="20"/>
                                                                 <fontDescription key="fontDescription" name="NanumSquareOTF_acR" family="NanumSquareOTF_ac" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -133,10 +97,10 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ZNH-cI-1o1">
-                                                        <rect key="frame" x="0.0" y="274.5" width="354" height="22.5"/>
+                                                        <rect key="frame" x="0.0" y="280.5" width="354" height="23.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="크루장" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3Z-Oa-ceJ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="22.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="23.5"/>
                                                                 <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="20"/>
                                                                 <color key="textColor" red="0.58039215690000001" green="0.066666666669999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -144,14 +108,70 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Wpq-wP-F6V">
-                                                        <rect key="frame" x="0.0" y="332" width="354" height="22.5"/>
+                                                        <rect key="frame" x="0.0" y="339" width="354" height="23.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="크루원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yT9-cu-ojf">
-                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="22.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="23.5"/>
                                                                 <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="20"/>
                                                                 <color key="textColor" red="0.58039215690000001" green="0.066666666669999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1MM-U3-GSq">
+                                                        <rect key="frame" x="0.0" y="397.5" width="354" height="220"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXx-IQ-pui" customClass="RoundedButton" customModule="Umchan" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="60"/>
+                                                                <color key="backgroundColor" red="0.54836952689999996" green="0.16884723309999999" blue="0.18428939580000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="d70-q6-rUp"/>
+                                                                    <constraint firstAttribute="height" constant="60" id="fbk-6N-P18"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="25"/>
+                                                                <state key="normal" title="크루원 관리">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedDegree">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eaH-Bo-HuC" customClass="RoundedButton" customModule="Umchan" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="80" width="354" height="60"/>
+                                                                <color key="backgroundColor" red="0.54836952689999996" green="0.16884723309999999" blue="0.18428939580000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="60" id="iIH-fk-OzS"/>
+                                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="w8Q-bW-sUJ"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="25"/>
+                                                                <state key="normal" title="크루 해체">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedDegree">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acj-S4-kqh" customClass="RoundedButton" customModule="Umchan" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="160" width="354" height="60"/>
+                                                                <color key="backgroundColor" red="0.54836952689999996" green="0.16884723309999999" blue="0.18428939580000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="60" id="kix-QG-Odo"/>
+                                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="lEh-is-rfT"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="25"/>
+                                                                <state key="normal" title="크루 탈퇴">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedDegree">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
@@ -160,14 +180,9 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="Hl5-Ay-naj" firstAttribute="leading" secondItem="tct-GZ-rgJ" secondAttribute="leading" constant="30" id="4cu-9f-qWu"/>
-                                            <constraint firstItem="Hl5-Ay-naj" firstAttribute="top" secondItem="s9N-Sd-OAq" secondAttribute="bottom" constant="30" id="Kmu-fh-S0C"/>
                                             <constraint firstAttribute="bottom" secondItem="Hl5-Ay-naj" secondAttribute="bottom" constant="50" id="UJ0-LI-dcA"/>
-                                            <constraint firstItem="kMD-LE-mcH" firstAttribute="top" secondItem="tct-GZ-rgJ" secondAttribute="top" constant="30" id="cyd-rA-fh3"/>
                                             <constraint firstAttribute="trailing" secondItem="Hl5-Ay-naj" secondAttribute="trailing" constant="30" id="ewY-cE-Hoi"/>
-                                            <constraint firstAttribute="trailing" secondItem="kMD-LE-mcH" secondAttribute="trailing" constant="20" id="m0H-v2-XTi"/>
-                                            <constraint firstItem="kMD-LE-mcH" firstAttribute="leading" secondItem="tct-GZ-rgJ" secondAttribute="leading" constant="20" id="mT5-3G-fvs"/>
-                                            <constraint firstItem="s9N-Sd-OAq" firstAttribute="top" secondItem="kMD-LE-mcH" secondAttribute="bottom" constant="10" id="rQL-ex-w0R"/>
-                                            <constraint firstItem="s9N-Sd-OAq" firstAttribute="trailing" secondItem="kMD-LE-mcH" secondAttribute="trailing" id="sKO-Mg-g5K"/>
+                                            <constraint firstItem="Hl5-Ay-naj" firstAttribute="top" secondItem="tct-GZ-rgJ" secondAttribute="top" constant="20" id="x71-oa-69a"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -197,6 +212,9 @@
                         <outlet property="CrewCaptinView" destination="ZNH-cI-1o1" id="FNQ-4e-3Il"/>
                         <outlet property="CrewMembersView" destination="Wpq-wP-F6V" id="Wcm-a9-3R1"/>
                         <outlet property="creationDateLabel" destination="hlB-MJ-iId" id="mLm-K8-eIu"/>
+                        <outlet property="disassempleCrewButton" destination="eaH-Bo-HuC" id="jgf-j1-uv1"/>
+                        <outlet property="goOutCrewButton" destination="acj-S4-kqh" id="4Iz-Mz-jOe"/>
+                        <outlet property="manageCrewButton" destination="uXx-IQ-pui" id="7PV-7E-La7"/>
                         <outlet property="nameLabel" destination="dtU-ku-i80" id="PWt-uQ-qQL"/>
                         <outlet property="navigationBar" destination="Sfm-2Z-HrM" id="GiB-ps-utz"/>
                         <outlet property="oneLineLabel" destination="9hx-V7-DGF" id="qjj-c2-cJL"/>

@@ -79,3 +79,11 @@ mutation CreateCrew($input: CreateCrewInput) {
         message
     }
 }
+
+mutation GoOutCrew($input: GoOutCrewInput) {
+    goOutCrew(input: $input) {
+        code,
+        success,
+        message
+    }
+}

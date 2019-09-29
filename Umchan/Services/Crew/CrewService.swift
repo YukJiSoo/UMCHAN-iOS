@@ -124,6 +124,32 @@ final class CrewService: CrewServiceType {
             // response from server
             completion(.success(true))
         }
-        
+    }
+
+    func goOutCrew(id: String, district: String, completion: @escaping CrewCompletion) {
+
+        let goOutCrewInput = GoOutCrewInput(id: id, district: district)
+        let goOutCrewMutation = GoOutCrewMutation(input: goOutCrewInput)
+
+        Apollo.shared.client.perform(mutation: goOutCrewMutation) { result in
+
+            guard
+                let data = try? result.get().data,
+                let code = data.goOutCrew?.code,
+                let message = data.goOutCrew?.message
+                else {
+                    completion(.failure(.goOutCrew(("Internal server error"))))
+                    return
+            }
+
+            // check reseponse HTTP code
+            guard code.isSuccessfulResponse else {
+                completion(.failure(.goOutCrew(message)))
+                return
+            }
+
+            // response from server
+            completion(.success(true))
+        }
     }
 }
