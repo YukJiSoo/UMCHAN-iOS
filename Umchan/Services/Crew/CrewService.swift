@@ -179,4 +179,85 @@ final class CrewService: CrewServiceType {
             completion(.success(true))
         }
     }
+
+    func acceptMember(id: String, district: String, memberID: String, completion: @escaping CrewCompletion) {
+
+        let acceptCrewMemberInput = AcceptCrewMemberInput(id: id, district: district, memberId: memberID)
+        let acceptCrewMemberMutation = AcceptCrewMemeberMutation(input: acceptCrewMemberInput)
+
+        Apollo.shared.client.perform(mutation: acceptCrewMemberMutation) { result in
+
+            guard
+                let data = try? result.get().data,
+                let code = data.acceptCrewMember?.code,
+                let message = data.acceptCrewMember?.message
+                else {
+                    completion(.failure(.acceptCrewMember(("Internal server error"))))
+                    return
+            }
+
+            // check reseponse HTTP code
+            guard code.isSuccessfulResponse else {
+                completion(.failure(.acceptCrewMember(message)))
+                return
+            }
+
+            // response from server
+            completion(.success(true))
+        }
+    }
+
+    func rejectMember(id: String, district: String, memberID: String, completion: @escaping CrewCompletion) {
+
+        let rejectCrewMemberInput = RejectCrewMemberInput(id: id, district: district, memberId: memberID)
+        let rejectCrewMemberMutation = RejectCrewMemeberMutation(input: rejectCrewMemberInput)
+
+        Apollo.shared.client.perform(mutation: rejectCrewMemberMutation) { result in
+
+            guard
+                let data = try? result.get().data,
+                let code = data.rejectCrewMember?.code,
+                let message = data.rejectCrewMember?.message
+                else {
+                    completion(.failure(.rejectCrewMember(("Internal server error"))))
+                    return
+            }
+
+            // check reseponse HTTP code
+            guard code.isSuccessfulResponse else {
+                completion(.failure(.rejectCrewMember(message)))
+                return
+            }
+
+            // response from server
+            completion(.success(true))
+        }
+    }
+
+    func exceptMember(id: String, district: String, memberID: String, completion: @escaping CrewCompletion) {
+
+        let exceptCrewMemberInput = ExceptCrewMemberInput(id: id, district: district, memberId: memberID)
+        let exceptCrewMemberMutation = ExceptCrewMemeberMutation(input: exceptCrewMemberInput)
+
+        Apollo.shared.client.perform(mutation: exceptCrewMemberMutation) { result in
+
+            guard
+                let data = try? result.get().data,
+                let code = data.exceptCrewMember?.code,
+                let message = data.exceptCrewMember?.message
+                else {
+                    completion(.failure(.exceptCrewMember(("Internal server error"))))
+                    return
+            }
+
+            // check reseponse HTTP code
+            guard code.isSuccessfulResponse else {
+                completion(.failure(.exceptCrewMember(message)))
+                return
+            }
+
+            // response from server
+            completion(.success(true))
+        }
+    }
 }

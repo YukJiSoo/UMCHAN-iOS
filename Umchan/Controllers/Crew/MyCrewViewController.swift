@@ -184,24 +184,24 @@ class MyCrewViewController: UIViewController, NibLodable {
         }
     }
 
-//    @IBAction func manageCrewButtonPressed(_ sender: UIButton) {
-//        let storyboard = UIStoryboard(name: StoryboardName.running, bundle: nil)
-//        let viewController = storyboard.viewController(ManageRunningMemberViewController.self)
-//
-//        if
-//            let id = self.id,
-//            let district = self.district,
-//            let awaitMembers = self.crew?.awaitMembers,
-//            let members = self.crew?.members {
-//
-//            viewController.id = id
-//            viewController.district = district
-//            viewController.awaitMembers = awaitMembers as? [CrewQueryType.AwaitMember]
-//            viewController.members = members as? [CrewQueryType.Member]
-//        }
-//
-//        self.navigationController?.pushViewController(viewController, animated: true)
-//    }
+    @IBAction func manageCrewButtonPressed(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: StoryboardName.crewInfo, bundle: nil)
+        let viewController = storyboard.viewController(ManageCrewMemberViewController.self)
+
+        if
+            let id = self.id,
+            let district = self.district,
+            let awaitMembers = self.crew?.awaitMembers,
+            let members = self.crew?.members {
+
+            viewController.id = id
+            viewController.district = district
+            viewController.awaitMembers = awaitMembers as? [CrewQueryType.AwaitMember]
+            viewController.members = members as? [CrewQueryType.Member]
+        }
+
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
 
     @IBAction func disassempleCrewButtonPressed(_ sender: UIButton) {
         guard

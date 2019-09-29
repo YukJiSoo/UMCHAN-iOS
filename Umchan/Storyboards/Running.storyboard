@@ -463,7 +463,7 @@
                                     <constraint firstAttribute="height" constant="64" id="bDG-r7-6iz"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="러닝이름"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="러닝 멤버 관리"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="barItemSize">
                                         <real key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>

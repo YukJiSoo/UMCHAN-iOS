@@ -268,6 +268,111 @@ public struct DisassembleCrewInput: GraphQLMapConvertible {
   }
 }
 
+public struct AcceptCrewMemberInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  public init(id: String, district: String, memberId: String) {
+    graphQLMap = ["id": id, "district": district, "memberID": memberId]
+  }
+
+  public var id: String {
+    get {
+      return graphQLMap["id"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "id")
+    }
+  }
+
+  public var district: String {
+    get {
+      return graphQLMap["district"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "district")
+    }
+  }
+
+  public var memberId: String {
+    get {
+      return graphQLMap["memberID"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "memberID")
+    }
+  }
+}
+
+public struct RejectCrewMemberInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  public init(id: String, district: String, memberId: String) {
+    graphQLMap = ["id": id, "district": district, "memberID": memberId]
+  }
+
+  public var id: String {
+    get {
+      return graphQLMap["id"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "id")
+    }
+  }
+
+  public var district: String {
+    get {
+      return graphQLMap["district"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "district")
+    }
+  }
+
+  public var memberId: String {
+    get {
+      return graphQLMap["memberID"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "memberID")
+    }
+  }
+}
+
+public struct ExceptCrewMemberInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  public init(id: String, district: String, memberId: String) {
+    graphQLMap = ["id": id, "district": district, "memberID": memberId]
+  }
+
+  public var id: String {
+    get {
+      return graphQLMap["id"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "id")
+    }
+  }
+
+  public var district: String {
+    get {
+      return graphQLMap["district"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "district")
+    }
+  }
+
+  public var memberId: String {
+    get {
+      return graphQLMap["memberID"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "memberID")
+    }
+  }
+}
+
 /// Input
 public struct RunningInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
@@ -2301,6 +2406,333 @@ public final class DisassembleCrewMutation: GraphQLMutation {
 
       public init(code: String, success: Bool, message: String) {
         self.init(unsafeResultMap: ["__typename": "DisassembleCrewMutationResponse", "code": code, "success": success, "message": message])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var code: String {
+        get {
+          return resultMap["code"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "code")
+        }
+      }
+
+      public var success: Bool {
+        get {
+          return resultMap["success"]! as! Bool
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "success")
+        }
+      }
+
+      public var message: String {
+        get {
+          return resultMap["message"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "message")
+        }
+      }
+    }
+  }
+}
+
+public final class AcceptCrewMemeberMutation: GraphQLMutation {
+  /// mutation AcceptCrewMemeber($input: AcceptCrewMemberInput) {
+  ///   acceptCrewMember(input: $input) {
+  ///     __typename
+  ///     code
+  ///     success
+  ///     message
+  ///   }
+  /// }
+  public let operationDefinition =
+    "mutation AcceptCrewMemeber($input: AcceptCrewMemberInput) { acceptCrewMember(input: $input) { __typename code success message } }"
+
+  public let operationName = "AcceptCrewMemeber"
+
+  public var input: AcceptCrewMemberInput?
+
+  public init(input: AcceptCrewMemberInput? = nil) {
+    self.input = input
+  }
+
+  public var variables: GraphQLMap? {
+    return ["input": input]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes = ["Mutation"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("acceptCrewMember", arguments: ["input": GraphQLVariable("input")], type: .object(AcceptCrewMember.selections)),
+    ]
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(acceptCrewMember: AcceptCrewMember? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "acceptCrewMember": acceptCrewMember.flatMap { (value: AcceptCrewMember) -> ResultMap in value.resultMap }])
+    }
+
+    public var acceptCrewMember: AcceptCrewMember? {
+      get {
+        return (resultMap["acceptCrewMember"] as? ResultMap).flatMap { AcceptCrewMember(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "acceptCrewMember")
+      }
+    }
+
+    public struct AcceptCrewMember: GraphQLSelectionSet {
+      public static let possibleTypes = ["AcceptCrewMemeberMutationResponse"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("code", type: .nonNull(.scalar(String.self))),
+        GraphQLField("success", type: .nonNull(.scalar(Bool.self))),
+        GraphQLField("message", type: .nonNull(.scalar(String.self))),
+      ]
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(code: String, success: Bool, message: String) {
+        self.init(unsafeResultMap: ["__typename": "AcceptCrewMemeberMutationResponse", "code": code, "success": success, "message": message])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var code: String {
+        get {
+          return resultMap["code"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "code")
+        }
+      }
+
+      public var success: Bool {
+        get {
+          return resultMap["success"]! as! Bool
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "success")
+        }
+      }
+
+      public var message: String {
+        get {
+          return resultMap["message"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "message")
+        }
+      }
+    }
+  }
+}
+
+public final class RejectCrewMemeberMutation: GraphQLMutation {
+  /// mutation RejectCrewMemeber($input: RejectCrewMemberInput) {
+  ///   rejectCrewMember(input: $input) {
+  ///     __typename
+  ///     code
+  ///     success
+  ///     message
+  ///   }
+  /// }
+  public let operationDefinition =
+    "mutation RejectCrewMemeber($input: RejectCrewMemberInput) { rejectCrewMember(input: $input) { __typename code success message } }"
+
+  public let operationName = "RejectCrewMemeber"
+
+  public var input: RejectCrewMemberInput?
+
+  public init(input: RejectCrewMemberInput? = nil) {
+    self.input = input
+  }
+
+  public var variables: GraphQLMap? {
+    return ["input": input]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes = ["Mutation"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("rejectCrewMember", arguments: ["input": GraphQLVariable("input")], type: .object(RejectCrewMember.selections)),
+    ]
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(rejectCrewMember: RejectCrewMember? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "rejectCrewMember": rejectCrewMember.flatMap { (value: RejectCrewMember) -> ResultMap in value.resultMap }])
+    }
+
+    public var rejectCrewMember: RejectCrewMember? {
+      get {
+        return (resultMap["rejectCrewMember"] as? ResultMap).flatMap { RejectCrewMember(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "rejectCrewMember")
+      }
+    }
+
+    public struct RejectCrewMember: GraphQLSelectionSet {
+      public static let possibleTypes = ["RejectCrewMemeberMutationResponse"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("code", type: .nonNull(.scalar(String.self))),
+        GraphQLField("success", type: .nonNull(.scalar(Bool.self))),
+        GraphQLField("message", type: .nonNull(.scalar(String.self))),
+      ]
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(code: String, success: Bool, message: String) {
+        self.init(unsafeResultMap: ["__typename": "RejectCrewMemeberMutationResponse", "code": code, "success": success, "message": message])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var code: String {
+        get {
+          return resultMap["code"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "code")
+        }
+      }
+
+      public var success: Bool {
+        get {
+          return resultMap["success"]! as! Bool
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "success")
+        }
+      }
+
+      public var message: String {
+        get {
+          return resultMap["message"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "message")
+        }
+      }
+    }
+  }
+}
+
+public final class ExceptCrewMemeberMutation: GraphQLMutation {
+  /// mutation ExceptCrewMemeber($input: ExceptCrewMemberInput) {
+  ///   exceptCrewMember(input: $input) {
+  ///     __typename
+  ///     code
+  ///     success
+  ///     message
+  ///   }
+  /// }
+  public let operationDefinition =
+    "mutation ExceptCrewMemeber($input: ExceptCrewMemberInput) { exceptCrewMember(input: $input) { __typename code success message } }"
+
+  public let operationName = "ExceptCrewMemeber"
+
+  public var input: ExceptCrewMemberInput?
+
+  public init(input: ExceptCrewMemberInput? = nil) {
+    self.input = input
+  }
+
+  public var variables: GraphQLMap? {
+    return ["input": input]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes = ["Mutation"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("exceptCrewMember", arguments: ["input": GraphQLVariable("input")], type: .object(ExceptCrewMember.selections)),
+    ]
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(exceptCrewMember: ExceptCrewMember? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "exceptCrewMember": exceptCrewMember.flatMap { (value: ExceptCrewMember) -> ResultMap in value.resultMap }])
+    }
+
+    public var exceptCrewMember: ExceptCrewMember? {
+      get {
+        return (resultMap["exceptCrewMember"] as? ResultMap).flatMap { ExceptCrewMember(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "exceptCrewMember")
+      }
+    }
+
+    public struct ExceptCrewMember: GraphQLSelectionSet {
+      public static let possibleTypes = ["ExceptCrewMemeberMutationResponse"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("code", type: .nonNull(.scalar(String.self))),
+        GraphQLField("success", type: .nonNull(.scalar(Bool.self))),
+        GraphQLField("message", type: .nonNull(.scalar(String.self))),
+      ]
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(code: String, success: Bool, message: String) {
+        self.init(unsafeResultMap: ["__typename": "ExceptCrewMemeberMutationResponse", "code": code, "success": success, "message": message])
       }
 
       public var __typename: String {

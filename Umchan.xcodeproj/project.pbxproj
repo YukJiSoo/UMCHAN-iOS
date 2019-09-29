@@ -113,6 +113,8 @@
 		A78E479F2340ACA5007D2469 /* ManageRunningMemberViewController+ManageMemberDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78E479E2340ACA5007D2469 /* ManageRunningMemberViewController+ManageMemberDelegate.swift */; };
 		A78E47A42340FEF0007D2469 /* CrewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78E47A22340FEF0007D2469 /* CrewTableViewCell.swift */; };
 		A78E47A52340FEF0007D2469 /* CrewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A78E47A32340FEF0007D2469 /* CrewTableViewCell.xib */; };
+		A78E47A723411656007D2469 /* ManageCrewMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78E47A623411656007D2469 /* ManageCrewMemberViewController.swift */; };
+		A78E47A9234116C2007D2469 /* ManageCrewMemberViewController+ManageMemberDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78E47A8234116C2007D2469 /* ManageCrewMemberViewController+ManageMemberDelegate.swift */; };
 		A792F20A232C07E900CE1742 /* AuthService.graphql in Resources */ = {isa = PBXBuildFile; fileRef = A792F209232C07E900CE1742 /* AuthService.graphql */; };
 		A792F20F232C22D300CE1742 /* ApolloNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792F20E232C22D300CE1742 /* ApolloNetworking.swift */; };
 		A792F211232CB14000CE1742 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A792F210232CB14000CE1742 /* String+Extension.swift */; };
@@ -237,6 +239,8 @@
 		A78E479E2340ACA5007D2469 /* ManageRunningMemberViewController+ManageMemberDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ManageRunningMemberViewController+ManageMemberDelegate.swift"; sourceTree = "<group>"; };
 		A78E47A22340FEF0007D2469 /* CrewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewTableViewCell.swift; sourceTree = "<group>"; };
 		A78E47A32340FEF0007D2469 /* CrewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CrewTableViewCell.xib; sourceTree = "<group>"; };
+		A78E47A623411656007D2469 /* ManageCrewMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCrewMemberViewController.swift; sourceTree = "<group>"; };
+		A78E47A8234116C2007D2469 /* ManageCrewMemberViewController+ManageMemberDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ManageCrewMemberViewController+ManageMemberDelegate.swift"; sourceTree = "<group>"; };
 		A792F209232C07E900CE1742 /* AuthService.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = AuthService.graphql; sourceTree = "<group>"; };
 		A792F20B232C143400CE1742 /* Apollo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Apollo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A792F20E232C22D300CE1742 /* ApolloNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloNetworking.swift; sourceTree = "<group>"; };
@@ -528,6 +532,8 @@
 				A7168B7B2310436500500621 /* MyCrewsViewController.swift */,
 				A70C2A1A2311640A002006A3 /* CreateCrewViewController.swift */,
 				A70C2A1E231171CE002006A3 /* MyCrewViewController.swift */,
+				A78E47A623411656007D2469 /* ManageCrewMemberViewController.swift */,
+				A78E47A8234116C2007D2469 /* ManageCrewMemberViewController+ManageMemberDelegate.swift */,
 			);
 			path = Crew;
 			sourceTree = "<group>";
@@ -915,6 +921,7 @@
 				A70991F02303BD3600AE3ACA /* MainTabBarController.swift in Sources */,
 				A7168B91231079FB00500621 /* SearchCrewViewController.swift in Sources */,
 				A71B94B6231AA25300BCD3E7 /* MapViewController+MapViewDelegate.swift in Sources */,
+				A78E47A723411656007D2469 /* ManageCrewMemberViewController.swift in Sources */,
 				A76A7102230EA13200B5EA81 /* EmptyTableViewCell.swift in Sources */,
 				A76A70FC230E923E00B5EA81 /* RunningTableViewCell.swift in Sources */,
 				A709922D2307284400AE3ACA /* CustomNavigationBarDelegate.swift in Sources */,
@@ -922,6 +929,7 @@
 				A78E479F2340ACA5007D2469 /* ManageRunningMemberViewController+ManageMemberDelegate.swift in Sources */,
 				A7528B9E2302BBC000A6BEC0 /* Constants.swift in Sources */,
 				A74A0EE1232D568E00420DF6 /* MyRunningsViewController.swift in Sources */,
+				A78E47A9234116C2007D2469 /* ManageCrewMemberViewController+ManageMemberDelegate.swift in Sources */,
 				A7071B892311C6D200982161 /* LoginViewController.swift in Sources */,
 				A7168B6A231006AA00500621 /* DateView+DatePickerPresentable.swift in Sources */,
 				A70992072303FC5000AE3ACA /* DistrictView.swift in Sources */,

@@ -95,3 +95,27 @@ mutation DisassembleCrew($input: DisassembleCrewInput) {
         message
     }
 }
+
+mutation AcceptCrewMemeber($input: AcceptCrewMemberInput) {
+    acceptCrewMember(input: $input) {
+        code,
+        success,
+        message
+    }
+}
+
+mutation RejectCrewMemeber($input: RejectCrewMemberInput) {
+    rejectCrewMember(input: $input) {
+        code,
+        success,
+        message
+    }
+}
+
+mutation ExceptCrewMemeber($input: ExceptCrewMemberInput) {
+    exceptCrewMember(input: $input) {
+        code,
+        success,
+        message
+    }
+}
