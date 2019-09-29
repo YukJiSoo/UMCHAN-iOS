@@ -12,7 +12,10 @@ class MyCrewsViewController: UIViewController, NibLodable {
 
     // MARK: - Outlets
     @IBOutlet weak var navigationBar: CustomNavigationBar!
-    
+
+    // MARK: - SubViews
+    let tableView = UITableView(frame: .zero)
+
     // MARK: - SubViews
     var crewListView: ScrollableStackView?
     let createCrewButton = UmchanCreateButtom(frame: .zero)
@@ -29,7 +32,8 @@ class MyCrewsViewController: UIViewController, NibLodable {
                 if crews.isEmpty {
                     self.setupEmptyCase()
                 } else {
-                    self.setupCrewListView()
+                    self.setupXib()
+                    self.setupTableView()
                 }
             }
         }
@@ -42,7 +46,7 @@ class MyCrewsViewController: UIViewController, NibLodable {
         self.setup()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
         self.setupData()
@@ -52,9 +56,6 @@ class MyCrewsViewController: UIViewController, NibLodable {
     func setup() {
         
         self.setupNavigationBar()
-
-        createCrewButton.setup(title: "크루만들기")
-        createCrewButton.addTarget(self, action: #selector(createButtonPressed(_:)), for: .touchUpInside)
     }
 
     func setupData() {
@@ -84,6 +85,7 @@ class MyCrewsViewController: UIViewController, NibLodable {
         self.navigationBar.delegate = self
         
         self.navigationBar.configureButton(location: .right, type: .profile)
+        self.navigationBar.configureButton(location: .left, type: .add)
         self.navigationBar.configureBottomLineView(color: Color.symbol.cgColor, opacity: 0.5, radius: 0.1)
     }
     
@@ -121,66 +123,77 @@ class MyCrewsViewController: UIViewController, NibLodable {
             createCrewButtonWidthAnchor
         ])
     }
-    
-    func setupCrewListView() {
-        
-        let crewListView = ScrollableStackView(frame: .zero)
 
-        var crewViews = [CrewView]()
+    func setupTableView() {
 
-        guard let crews = self.crews else {
-            debugPrint("Fail: binding crew array")
-            return
-        }
+        tableView.separatorStyle = .none
 
-        for (index, crew) in crews.enumerated() {
-            let crewView = CrewView(frame: .zero)
-            crewView.configure(crew: crew)
+        self.view.addSubview(tableView)
 
-            crewView.tag = index
-            crewView.isUserInteractionEnabled = true
-            let tapCrewViewGesture = UITapGestureRecognizer(target: self, action: #selector(self.crewViewTapped(_:)))
-            crewView.addGestureRecognizer(tapCrewViewGesture)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
 
-            crewViews.append(crewView)
-        }
-        
-        crewListView.configureSubViews(subViews: crewViews)
-        crewListView.configureSubViews(subViews: [createCrewButton])
-        
-        self.view.addSubview(crewListView)
-        
-        crewListView.translatesAutoresizingMaskIntoConstraints = false
-        
-        let topAnchor = crewListView.topAnchor.constraint(equalTo: self.navigationBar.bottomAnchor)
-        let bottomAnchor = crewListView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
-        let leadingAnchor = crewListView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)
-        let trailingAnchor = crewListView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
-        
+        let topAnchor = tableView.topAnchor.constraint(equalTo: self.navigationBar.bottomAnchor, constant: 1)
+        let bottomAnchor = tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+        let leadingAnchor = tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)
+        let trailingAnchor = tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
+
         NSLayoutConstraint.activate([ topAnchor, bottomAnchor, leadingAnchor, trailingAnchor ])
+
+
+        let runningCellNib = UINib(nibName: RunningTableViewCell.nibId, bundle: nil)
+        self.tableView.register(runningCellNib, forCellReuseIdentifier: RunningTableViewCell.nibId)
+
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+
+        self.tableView.reloadData()
     }
 
-    @objc func crewViewTapped(_ sender: UIGestureRecognizer) {
+    func setupXib() {
+
+        let crewCellNib = UINib(nibName: CrewTableViewCell.nibId, bundle: nil)
+        self.tableView.register(crewCellNib, forCellReuseIdentifier: CrewTableViewCell.nibId)
+    }
+
+}
+
+extension MyCrewsViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+        return self.crews?.count ?? 0
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CrewTableViewCell.nibId, for: indexPath) as? CrewTableViewCell else {
+            debugPrint("err: fail to convert \(CrewTableViewCell.nibId)")
+            return UITableViewCell()
+        }
+
+        guard let crew = self.crews?[indexPath.row] else {
+            debugPrint("Could not find post at row \(indexPath.row)")
+            return UITableViewCell()
+        }
+
+        cell.configure(crew: crew)
+
+        return cell
+    }
+
+
+}
+
+extension MyCrewsViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         let storyboard = UIStoryboard(name: StoryboardName.crewInfo, bundle: nil)
         let viewController = storyboard.viewController(CrewInfoViewController.self)
-        viewController.modalPresentationStyle = .custom
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.isNavigationBarHidden = true
 
-        if let tag = sender.view?.tag, let crews = self.crews {
-            viewController.crew = crews[tag]
-        }
-        self.present(viewController, animated: true, completion: nil)
-    }
-
-    @objc func createButtonPressed(_ sender: UIButton) {
-        
-        
-        let storyBoard = UIStoryboard(name: StoryboardName.createCrew, bundle: nil)
-        let viewController = storyBoard.viewController(CreateCrewViewController.self)
-        
-        viewController.modalPresentationStyle = .custom
-        
-        self.present(viewController, animated: true, completion: nil)
+        self.present(navigationController, animated: true, completion: nil)
     }
 }
 
@@ -194,5 +207,13 @@ extension MyCrewsViewController: CustomNavigationBarDelegate {
         navigationController.isNavigationBarHidden = true
 
         self.present(navigationController, animated: true, completion: nil)
+    }
+
+    func leftBarButtonPressed(_ sender: UIButton) {
+
+        let stroyboard = UIStoryboard(name: StoryboardName.createCrew, bundle: nil)
+        let viewController = stroyboard.viewController(CreateCrewViewController.self)
+
+        self.present(viewController, animated: true, completion: nil)
     }
 }

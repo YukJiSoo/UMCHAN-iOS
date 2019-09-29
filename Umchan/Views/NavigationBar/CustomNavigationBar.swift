@@ -17,7 +17,7 @@ class CustomNavigationBar: UIView {
     }
     
     enum BarButtonType {
-        case back, close, profile
+        case back, close, profile, add
     }
     
     enum BarButtonLocation {
@@ -108,6 +108,9 @@ class CustomNavigationBar: UIView {
         case .profile:
             button = UIButton()
             button.setImage(UIImage(named: AssetName.user), for: .normal)
+        case .add:
+            button = UIButton()
+            button.setImage(UIImage(named: AssetName.add), for: .normal)
         }
         
         self.addSubview(button)

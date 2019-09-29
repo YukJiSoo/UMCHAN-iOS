@@ -96,7 +96,7 @@ class RunningHistoryListViewController: UIViewController, NibLodable {
         self.view.addSubview(tableView)
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        
+
         let topAnchor = tableView.topAnchor.constraint(equalTo: self.navigationBar.bottomAnchor)
         let bottomAnchor = tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         let leadingAnchor = tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)
