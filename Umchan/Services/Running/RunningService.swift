@@ -235,4 +235,31 @@ final class RunningService: RunningServiceType {
             completion(.success(true))
         }
     }
+
+    func rejectMember(id: String, district: String, memberID: String, completion: @escaping RunningCompletion) {
+
+        let rejectRunningMemberInput = RejectRunningMemberInput(id: id, district: district, memberId: memberID)
+        let rejectRunningMemberMutation = RejectRunningMemeberMutation(input: rejectRunningMemberInput)
+
+        Apollo.shared.client.perform(mutation: rejectRunningMemberMutation) { result in
+
+            guard
+                let data = try? result.get().data,
+                let code = data.rejectRunningMember?.code,
+                let message = data.rejectRunningMember?.message
+                else {
+                    completion(.failure(.rejectRunningMember(("Internal server error"))))
+                    return
+            }
+
+            // check reseponse HTTP code
+            guard code.isSuccessfulResponse else {
+                completion(.failure(.rejectRunningMember(message)))
+                return
+            }
+
+            // response from server
+            completion(.success(true))
+        }
+    }
 }

@@ -35,8 +35,13 @@ class MyRunningViewController: UIViewController, NibLodable {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.setupData()
         self.setupNavigationBar()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        self.setupData()
     }
 
     // MARK: - Functions
@@ -106,6 +111,14 @@ class MyRunningViewController: UIViewController, NibLodable {
         let captinViewNib = UserView.instanceFromNib()
         captinViewNib.configure(user: User(id: leaderID, name: leaderName, nickname: leaderNickname, district: leaderDistrict))
 
+        self.leaderView.arrangedSubviews.forEach { (view) in
+            self.leaderView.removeArrangedSubview(view)
+        }
+
+        self.membersView.arrangedSubviews.forEach { (view) in
+            self.membersView.removeArrangedSubview(view)
+        }
+
         self.leaderView.addArrangedSubview(captinViewNib)
 
         self.running?.members?.forEach({ (member) in
@@ -153,12 +166,16 @@ class MyRunningViewController: UIViewController, NibLodable {
             let myID = UserDataService.shared.user?.id,
             leaderID == myID
         else {
-            self.manageMemberButton.removeFromSuperview()
-            self.cancelRunningButton.removeFromSuperview()
+            if self.manageMemberButton != nil {
+                self.manageMemberButton.removeFromSuperview()
+                self.cancelRunningButton.removeFromSuperview()
+            }
             return
         }
 
-        self.goOutRunningButton.removeFromSuperview()
+        if self.goOutRunningButton != nil {
+            self.goOutRunningButton.removeFromSuperview()
+        }
     }
 
     @IBAction func goOutRunningButtonPressed(_ sender: UIButton) {
@@ -200,8 +217,8 @@ class MyRunningViewController: UIViewController, NibLodable {
 
             viewController.id = id
             viewController.district = district
-            viewController.awaitMembers = awaitMembers as! [RunningQueryType.AwaitMember]
-            viewController.members = members as! [RunningQueryType.Member]
+            viewController.awaitMembers = awaitMembers as? [RunningQueryType.AwaitMember]
+            viewController.members = members as? [RunningQueryType.Member]
         }
 
         self.navigationController?.pushViewController(viewController, animated: true)

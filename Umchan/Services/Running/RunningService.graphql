@@ -110,3 +110,11 @@ mutation AcceptRunningMemeber($input: AcceptRunningMemberInput) {
         message
     }
 }
+
+mutation RejectRunningMemeber($input: RejectRunningMemberInput) {
+    rejectRunningMember(input: $input) {
+        code,
+        success,
+        message
+    }
+}
