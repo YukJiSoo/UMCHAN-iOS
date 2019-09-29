@@ -17,7 +17,7 @@ typealias CrewCompletion = (_ Response: Result<Bool, CrewAPIError>) -> Void
 protocol CrewServiceType {
 
     func crewList(name: String?, completion: @escaping GetCrewListCompletion)
-    func createCrew(name: String, oneLine: String, completion: @escaping CrewCompletion)
+    func createCrew(name: String, oneLine: String, district: String, completion: @escaping CrewCompletion)
 }
 
 final class CrewService: CrewServiceType {
@@ -53,17 +53,16 @@ final class CrewService: CrewServiceType {
         }
     }
 
-    func createCrew(name: String, oneLine: String, completion: @escaping CrewCompletion) {
-
-        let crewDateInput = Date.convertToDateInput(date: Date())
+    func createCrew(name: String, oneLine: String, district: String, completion: @escaping CrewCompletion) {
 
         guard let nickname = UserDataService.shared.user?.nickname else {
             completion(.failure(.createCrew(("Nickname is nil"))))
             return
         }
 
-        let createCrewInput = CreateCrewInput(name: name, oneLine: oneLine, creationDate: crewDateInput)
-        let createCrewMutation = CreateCrewMutation(nickname: nickname, crew: createCrewInput)
+        let crewDateInput = Date.convertToDateInput(date: Date())
+        let createCrewInput = CreateCrewInput(nickname: nickname, name: name, oneLine: oneLine, district: district, creationDate: crewDateInput)
+        let createCrewMutation = CreateCrewMutation(input: createCrewInput)
         Apollo.shared.client.perform(mutation: createCrewMutation) { result in
 
             guard

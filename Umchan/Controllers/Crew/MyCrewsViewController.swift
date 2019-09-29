@@ -41,6 +41,12 @@ class MyCrewsViewController: UIViewController, NibLodable {
         
         self.setup()
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        self.setupData()
+    }
     
     // MARK: - Functions
     func setup() {
@@ -49,8 +55,6 @@ class MyCrewsViewController: UIViewController, NibLodable {
 
         createCrewButton.setup(title: "크루만들기")
         createCrewButton.addTarget(self, action: #selector(createButtonPressed(_:)), for: .touchUpInside)
-
-        self.setupData()
     }
 
     func setupData() {

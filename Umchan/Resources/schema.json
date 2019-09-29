@@ -1270,7 +1270,7 @@
             "deprecationReason": null
           },
           {
-            "name": "imagePath",
+            "name": "district",
             "description": "",
             "args": [],
             "type": {
@@ -1307,6 +1307,22 @@
           },
           {
             "name": "members",
+            "description": "",
+            "args": [],
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "Member",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "awaitMembers",
             "description": "",
             "args": [],
             "type": {
@@ -1769,17 +1785,7 @@
             "description": "",
             "args": [
               {
-                "name": "nickname",
-                "description": "",
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                },
-                "defaultValue": null
-              },
-              {
-                "name": "crew",
+                "name": "input",
                 "description": "",
                 "type": {
                   "kind": "INPUT_OBJECT",
@@ -3252,6 +3258,20 @@
         "fields": null,
         "inputFields": [
           {
+            "name": "nickname",
+            "description": "",
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
             "name": "name",
             "description": "",
             "type": {
@@ -3267,6 +3287,20 @@
           },
           {
             "name": "oneLine",
+            "description": "",
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "district",
             "description": "",
             "type": {
               "kind": "NON_NULL",

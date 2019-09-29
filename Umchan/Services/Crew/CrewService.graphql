@@ -6,7 +6,6 @@ query CrewList($name: String) {
         crews {
             name,
             oneLine,
-            imagePath,
             creationDate {
                 year,
                 month,
@@ -15,19 +14,24 @@ query CrewList($name: String) {
                 minute
             },
             leader {
-                name,
+                nickname,
                 userID
             },
             members {
-                name,
+                nickname,
                 userID
-            }
+            },
+            awaitMembers {
+                nickname,
+                userID
+            },
+            district
         }
     }
 }
 
-mutation CreateCrew($nickname: String, $crew: CreateCrewInput) {
-    createCrew(nickname: $nickname, crew: $crew) {
+mutation CreateCrew($input: CreateCrewInput) {
+    createCrew(input: $input) {
         code,
         success,
         message

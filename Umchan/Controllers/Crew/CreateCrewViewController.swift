@@ -14,27 +14,24 @@ class CreateCrewViewController: UIViewController, NibLodable {
     @IBOutlet weak var navigationBar: CustomNavigationBar!
     @IBOutlet weak var crewNameTextField: UITextField!
     @IBOutlet weak var oneLineTextField: UITextField!
-    @IBOutlet weak var crewImageView: UIImageView!
-    
+    @IBOutlet weak var districtPickerView: CustomPickerView!
+
+    // MARK: - Properties
+    var districts = [String]()
+
     // MARK: - Life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.addGestureForEndEditting()
         self.setupNavigationBar()
-        self.setupImageView()
+        self.setupDistrictPickerView()
     }
     
     func setupNavigationBar() {
         
         self.navigationBar.delegate = self
         self.navigationBar.configureButton(location: .left, type: .close)
-    }
-    
-    func setupImageView() {
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(selectImagePressed(_:)))
-        self.crewImageView.addGestureRecognizer(tapGesture)
     }
 
     func createCrewCompletion(_ response: Result<Bool, CrewAPIError>){
@@ -55,6 +52,17 @@ class CreateCrewViewController: UIViewController, NibLodable {
         }
     }
 
+    func setupDistrictPickerView() {
+
+        self.districtPickerView.delegate = self
+        self.districtPickerView.dataSource = self
+
+        self.districts = DistrictInfoService.shared.districtCoordinates.map { $0.name ?? "" }
+        self.districts.remove(at: 0)
+
+        self.districtPickerView.reloadAllComponents()
+    }
+
     // MARK: - Actions
     @IBAction func createButtonPressed(_ sender: UIButton) {
 
@@ -66,13 +74,16 @@ class CreateCrewViewController: UIViewController, NibLodable {
                 return
         }
 
+        let disctrictSelectedIndex = self.districtPickerView.selectedRow(inComponent: 0)
+        let district = self.districts[disctrictSelectedIndex]
+
         CrewService.shared.createCrew(
             name: name,
             oneLine: oneLine,
+            district: district,
             completion: self.createCrewCompletion(_: )
         )
     }
-    
 
 }
 
@@ -83,14 +94,31 @@ extension CreateCrewViewController: CustomNavigationBarDelegate {
     }
 }
 
-extension CreateCrewViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        if let image = info[.editedImage] as? UIImage {
-            self.crewImageView.image = image
-        }
-        
-        self.dismiss(animated: true, completion: nil)
+extension CreateCrewViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.districts.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return self.districts[row]
+    }
+
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let label = view as? UILabel ?? UILabel()
+
+        label.font = UIFont.umchanFont(size: CGFloat(22), boldState: .bold)!
+        label.textColor = Color.symbol
+        label.textAlignment = .center
+        label.text = self.districts[row]
+
+        return label
+    }
+
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return CGFloat(30)
     }
 }
