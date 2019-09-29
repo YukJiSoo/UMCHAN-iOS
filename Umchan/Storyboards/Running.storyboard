@@ -350,6 +350,9 @@
                                                                         <real key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="manageMemberButtonPressed:" destination="r3e-yy-9a8" eventType="touchUpInside" id="7ab-L4-YIg"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EyK-rQ-2Oj" customClass="RoundedButton" customModule="Umchan" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="80" width="354" height="60"/>
@@ -385,7 +388,7 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
-                                                                    <action selector="goOutRunningButton:" destination="r3e-yy-9a8" eventType="touchUpInside" id="hu7-JE-81l"/>
+                                                                    <action selector="goOutRunningButtonPressed:" destination="r3e-yy-9a8" eventType="touchUpInside" id="f6D-9P-Di4"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -441,10 +444,10 @@
             </objects>
             <point key="canvasLocation" x="920" y="119"/>
         </scene>
-        <!--View Controller-->
+        <!--Manage Running Member View Controller-->
         <scene sceneID="Y1c-lp-dGY">
             <objects>
-                <viewController id="oZf-9M-MUe" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ManageRunningMemberViewController" id="oZf-9M-MUe" customClass="ManageRunningMemberViewController" customModule="Umchan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HXe-Jx-SJp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -463,15 +466,15 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sbq-Ha-KZk">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sbq-Ha-KZk">
                                 <rect key="frame" x="0.0" y="108" width="414" height="754"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="236" id="deY-SF-bAB" customClass="WaitingPersonTableViewCell" customModule="Umchan" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ManageMemberTableViewCell" rowHeight="236" id="deY-SF-bAB" customClass="ManageMemberTableViewCell" customModule="Umchan" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="236"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="deY-SF-bAB" id="Cee-4X-JvN">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="235.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="236"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cmO-NW-a7k">
@@ -505,7 +508,7 @@
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
                                                             <connections>
-                                                                <action selector="userDetailButtonPressed:" destination="deY-SF-bAB" eventType="touchUpInside" id="aFK-sf-IRN"/>
+                                                                <action selector="userDetailButtonPressed:" destination="deY-SF-bAB" eventType="touchUpInside" id="NjW-YM-Dyr"/>
                                                             </connections>
                                                         </button>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OYM-oV-Ozd">
@@ -519,7 +522,7 @@
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </state>
                                                                     <connections>
-                                                                        <action selector="acceptButtonPressed:" destination="deY-SF-bAB" eventType="touchUpInside" id="gHy-zA-e6a"/>
+                                                                        <action selector="acceptButtonPressed:" destination="deY-SF-bAB" eventType="touchUpInside" id="kdH-hF-RW2"/>
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wlj-k2-U2x" customClass="RoundedButton" customModule="Umchan" customModuleProvider="target">
@@ -530,7 +533,7 @@
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </state>
                                                                     <connections>
-                                                                        <action selector="rejectButtonPressed:" destination="deY-SF-bAB" eventType="touchUpInside" id="Uyk-Sz-pWb"/>
+                                                                        <action selector="rejectButtonPressed:" destination="deY-SF-bAB" eventType="touchUpInside" id="iRp-3N-Nfo"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
@@ -549,81 +552,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="waiterNameLabel" destination="6Tb-MS-7fW" id="kS9-ZL-iBB"/>
+                                            <outlet property="acceptButton" destination="1y5-W9-xJ5" id="3oB-pH-pXM"/>
+                                            <outlet property="memberNicknameLabel" destination="6Tb-MS-7fW" id="Mix-Ke-RQk"/>
+                                            <outlet property="rejectButton" destination="Wlj-k2-U2x" id="SFB-eu-A2W"/>
                                         </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="236" id="QPI-UO-KfL">
-                                        <rect key="frame" x="0.0" y="264" width="414" height="236"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QPI-UO-KfL" id="eyd-A2-Evx">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="235.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mRK-M6-evP">
-                                                    <rect key="frame" x="20" y="20" width="374" height="195.5"/>
-                                                    <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="iju-ZY-4mO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="55.5"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sg-U9-dOm">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="22.5"/>
-                                                                    <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="20"/>
-                                                                    <color key="textColor" red="0.58039215690000001" green="0.066666666669999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYd-tk-kUF">
-                                                                    <rect key="frame" x="0.0" y="37.5" width="374" height="18"/>
-                                                                    <fontDescription key="fontDescription" name="NanumSquareOTF_acR" family="NanumSquareOTF_ac" pointSize="17"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                        </stackView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4g-Qr-HPP" customClass="RoundedButton" customModule="Umchan" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="75.5" width="374" height="50"/>
-                                                            <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="50" id="13K-hk-SBL"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="20"/>
-                                                            <state key="normal" title="회원정보">
-                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </state>
-                                                        </button>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="noa-Py-zpY">
-                                                            <rect key="frame" x="0.0" y="145.5" width="374" height="50"/>
-                                                            <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IzV-Io-I76" customClass="RoundedButton" customModule="Umchan" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="182" height="50"/>
-                                                                    <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="20"/>
-                                                                    <state key="normal" title="참가확인">
-                                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    </state>
-                                                                </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Iv-vl-eVz" customClass="RoundedButton" customModule="Umchan" customModuleProvider="target">
-                                                                    <rect key="frame" x="192" y="0.0" width="182" height="50"/>
-                                                                    <color key="backgroundColor" red="1" green="0.28083222810000003" blue="0.16810966920000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                    <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="20"/>
-                                                                    <state key="normal" title="제외">
-                                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    </state>
-                                                                </button>
-                                                            </subviews>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="50" id="lhd-UT-bJh"/>
-                                                            </constraints>
-                                                        </stackView>
-                                                    </subviews>
-                                                </stackView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="mRK-M6-evP" secondAttribute="bottom" constant="20" id="Cd0-IB-xUF"/>
-                                                <constraint firstItem="mRK-M6-evP" firstAttribute="top" secondItem="eyd-A2-Evx" secondAttribute="top" constant="20" id="IRT-4T-dNX"/>
-                                                <constraint firstItem="mRK-M6-evP" firstAttribute="leading" secondItem="eyd-A2-Evx" secondAttribute="leading" constant="20" id="Rwh-AS-4GW"/>
-                                                <constraint firstAttribute="trailing" secondItem="mRK-M6-evP" secondAttribute="trailing" constant="20" id="V46-Yj-T3U"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -640,10 +572,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fMY-b1-l3E"/>
                     </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="1tN-IF-XP0" id="dZt-Gq-9EO"/>
+                        <outlet property="tableView" destination="sbq-Ha-KZk" id="Dog-Iq-ngL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8YH-av-qhZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1704" y="119"/>
+            <point key="canvasLocation" x="1814" y="119"/>
         </scene>
     </scenes>
 </document>

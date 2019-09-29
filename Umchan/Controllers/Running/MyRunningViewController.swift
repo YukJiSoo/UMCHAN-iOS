@@ -161,7 +161,7 @@ class MyRunningViewController: UIViewController, NibLodable {
         self.goOutRunningButton.removeFromSuperview()
     }
 
-    @IBAction func goOutRunningButton(_ sender: UIButton) {
+    @IBAction func goOutRunningButtonPressed(_ sender: UIButton) {
         guard
             let id = self.id,
             let district = self.district
@@ -186,6 +186,25 @@ class MyRunningViewController: UIViewController, NibLodable {
                 debugPrint("Uncorrect access")
             }
         }
+    }
+
+    @IBAction func manageMemberButtonPressed(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: StoryboardName.running, bundle: nil)
+        let viewController = storyboard.viewController(ManageRunningMemberViewController.self)
+
+        if
+            let id = self.id,
+            let district = self.district,
+            let awaitMembers = self.running?.awaitMembers,
+            let members = self.running?.members {
+
+            viewController.id = id
+            viewController.district = district
+            viewController.awaitMembers = awaitMembers as! [RunningQueryType.AwaitMember]
+            viewController.members = members as! [RunningQueryType.Member]
+        }
+
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
