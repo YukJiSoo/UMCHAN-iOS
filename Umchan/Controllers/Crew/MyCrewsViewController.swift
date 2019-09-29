@@ -14,16 +14,21 @@ class MyCrewsViewController: UIViewController, NibLodable {
     @IBOutlet weak var navigationBar: CustomNavigationBar!
 
     // MARK: - SubViews
-    let tableView = UITableView(frame: .zero)
+    var tableView = UITableView(frame: .zero)
 
     // MARK: - SubViews
     var crewListView: ScrollableStackView?
     let createCrewButton = UmchanCreateButtom(frame: .zero)
 
+    var emptyView: UIStackView?
+
     // MARK: - Properties
     var crews: [CrewListQueryResult?] = [] {
         didSet {
             DispatchQueue.main.async {
+                self.tableView.removeFromSuperview()
+                self.emptyView?.removeFromSuperview()
+                
                 if self.crews.isEmpty {
                     self.setupEmptyCase()
                 } else {
@@ -102,6 +107,8 @@ class MyCrewsViewController: UIViewController, NibLodable {
         
         let stackView = UIStackView(arrangedSubviews: [ emptyImageView, emptyLabel, createCrewButton ])
         stackView.configure(axis: .vertical, distribution: .fill, alignment: .fill, spacing: 30)
+
+        self.emptyView = stackView
         self.view.addSubview(stackView)
         
         // setConstraint
