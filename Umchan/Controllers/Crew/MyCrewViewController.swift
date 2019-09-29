@@ -203,32 +203,32 @@ class MyCrewViewController: UIViewController, NibLodable {
 //        self.navigationController?.pushViewController(viewController, animated: true)
 //    }
 
-//    @IBAction func disassempleCrewButtonPressed(_ sender: UIButton) {
-//        guard
-//            let id = self.id,
-//            let district = self.district
-//            else {
-//                debugPrint("id, district is nil")
-//                return
-//        }
-//
-//        RunningService.shared.cancelRunning(id: id, district: district) { (response) in
-//
-//            switch response {
-//            case .success(_):
-//
-//                let alertController = self.createBasicAlertViewController(title: "참가취소", message: "러닝참가를 취소했습니다")  {
-//                    self.dismiss(animated: true, completion: nil)
-//                }
-//                self.present(alertController, animated: true, completion: nil)
-//            case .failure(RunningAPIError.goOutRunning(let message)):
-//
-//                self.presentFailAlertController("취소 실패", with: message)
-//            default:
-//                debugPrint("Uncorrect access")
-//            }
-//        }
-//    }
+    @IBAction func disassempleCrewButtonPressed(_ sender: UIButton) {
+        guard
+            let id = self.id,
+            let district = self.district
+            else {
+                debugPrint("id, district is nil")
+                return
+        }
+
+        CrewService.shared.disassembleCrew(id: id, district: district) { (response) in
+
+            switch response {
+            case .success(_):
+
+                let alertController = self.createBasicAlertViewController(title: "크루해체", message: "크루를 해체했습니다")  {
+                    self.dismiss(animated: true, completion: nil)
+                }
+                self.present(alertController, animated: true, completion: nil)
+            case .failure(CrewAPIError.disassembleCrew(let message)):
+
+                self.presentFailAlertController("해체 실패", with: message)
+            default:
+                debugPrint("Uncorrect access")
+            }
+        }
+    }
 }
 
 extension MyCrewViewController: CustomNavigationBarDelegate {

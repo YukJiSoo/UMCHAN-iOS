@@ -87,3 +87,11 @@ mutation GoOutCrew($input: GoOutCrewInput) {
         message
     }
 }
+
+mutation DisassembleCrew($input: DisassembleCrewInput) {
+    disassembleCrew(input: $input) {
+        code,
+        success,
+        message
+    }
+}

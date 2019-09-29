@@ -152,4 +152,31 @@ final class CrewService: CrewServiceType {
             completion(.success(true))
         }
     }
+
+    func disassembleCrew(id: String, district: String, completion: @escaping CrewCompletion) {
+
+        let disassembleCrewInput = DisassembleCrewInput(id: id, district: district)
+        let disassembleCrewMutation = DisassembleCrewMutation(input: disassembleCrewInput)
+
+        Apollo.shared.client.perform(mutation: disassembleCrewMutation) { result in
+
+            guard
+                let data = try? result.get().data,
+                let code = data.disassembleCrew?.code,
+                let message = data.disassembleCrew?.message
+                else {
+                    completion(.failure(.disassembleCrew(("Internal server error"))))
+                    return
+            }
+
+            // check reseponse HTTP code
+            guard code.isSuccessfulResponse else {
+                completion(.failure(.disassembleCrew(message)))
+                return
+            }
+
+            // response from server
+            completion(.success(true))
+        }
+    }
 }
