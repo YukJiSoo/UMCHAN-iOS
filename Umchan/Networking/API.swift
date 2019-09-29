@@ -1589,12 +1589,14 @@ public final class RunningQuery: GraphQLQuery {
   ///       oneLine
   ///       leader {
   ///         __typename
+  ///         userID
   ///         name
   ///         nickname
   ///         district
   ///       }
   ///       members {
   ///         __typename
+  ///         userID
   ///         name
   ///         nickname
   ///         district
@@ -1634,7 +1636,7 @@ public final class RunningQuery: GraphQLQuery {
   ///   }
   /// }
   public let operationDefinition =
-    "query Running($input: RunningInput) { running(input: $input) { __typename code success message running { __typename id name oneLine leader { __typename name nickname district } members { __typename name nickname district } awaitMembers { __typename userID name nickname district } runningDate { __typename year month date hour minute } registerLimitDate { __typename year month date hour minute } runningPoints { __typename latitude longitude } district } isApplied isMember } }"
+    "query Running($input: RunningInput) { running(input: $input) { __typename code success message running { __typename id name oneLine leader { __typename userID name nickname district } members { __typename userID name nickname district } awaitMembers { __typename userID name nickname district } runningDate { __typename year month date hour minute } registerLimitDate { __typename year month date hour minute } runningPoints { __typename latitude longitude } district } isApplied isMember } }"
 
   public let operationName = "Running"
 
@@ -1891,6 +1893,7 @@ public final class RunningQuery: GraphQLQuery {
 
           public static let selections: [GraphQLSelection] = [
             GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("userID", type: .scalar(String.self)),
             GraphQLField("name", type: .scalar(String.self)),
             GraphQLField("nickname", type: .scalar(String.self)),
             GraphQLField("district", type: .scalar(String.self)),
@@ -1902,8 +1905,8 @@ public final class RunningQuery: GraphQLQuery {
             self.resultMap = unsafeResultMap
           }
 
-          public init(name: String? = nil, nickname: String? = nil, district: String? = nil) {
-            self.init(unsafeResultMap: ["__typename": "Member", "name": name, "nickname": nickname, "district": district])
+          public init(userId: String? = nil, name: String? = nil, nickname: String? = nil, district: String? = nil) {
+            self.init(unsafeResultMap: ["__typename": "Member", "userID": userId, "name": name, "nickname": nickname, "district": district])
           }
 
           public var __typename: String {
@@ -1912,6 +1915,15 @@ public final class RunningQuery: GraphQLQuery {
             }
             set {
               resultMap.updateValue(newValue, forKey: "__typename")
+            }
+          }
+
+          public var userId: String? {
+            get {
+              return resultMap["userID"] as? String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "userID")
             }
           }
 
@@ -1948,6 +1960,7 @@ public final class RunningQuery: GraphQLQuery {
 
           public static let selections: [GraphQLSelection] = [
             GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("userID", type: .scalar(String.self)),
             GraphQLField("name", type: .scalar(String.self)),
             GraphQLField("nickname", type: .scalar(String.self)),
             GraphQLField("district", type: .scalar(String.self)),
@@ -1959,8 +1972,8 @@ public final class RunningQuery: GraphQLQuery {
             self.resultMap = unsafeResultMap
           }
 
-          public init(name: String? = nil, nickname: String? = nil, district: String? = nil) {
-            self.init(unsafeResultMap: ["__typename": "Member", "name": name, "nickname": nickname, "district": district])
+          public init(userId: String? = nil, name: String? = nil, nickname: String? = nil, district: String? = nil) {
+            self.init(unsafeResultMap: ["__typename": "Member", "userID": userId, "name": name, "nickname": nickname, "district": district])
           }
 
           public var __typename: String {
@@ -1969,6 +1982,15 @@ public final class RunningQuery: GraphQLQuery {
             }
             set {
               resultMap.updateValue(newValue, forKey: "__typename")
+            }
+          }
+
+          public var userId: String? {
+            get {
+              return resultMap["userID"] as? String
+            }
+            set {
+              resultMap.updateValue(newValue, forKey: "userID")
             }
           }
 

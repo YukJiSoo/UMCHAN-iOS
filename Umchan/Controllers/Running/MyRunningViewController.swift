@@ -19,7 +19,11 @@ class MyRunningViewController: UIViewController, NibLodable {
     @IBOutlet weak var leaderView: UIStackView!
     @IBOutlet weak var membersView: UIStackView!
     @IBOutlet weak var mapView: MapView!
-    @IBOutlet weak var bottomButton: UIButton!
+    // member 전용
+    @IBOutlet weak var goOutRunningButton: UIButton!
+    // leader 전용
+    @IBOutlet weak var manageMemberButton: UIButton!
+    @IBOutlet weak var cancelRunningButton: UIButton!
 
     // MARK: - Properties
     var id: String?
@@ -79,7 +83,7 @@ class MyRunningViewController: UIViewController, NibLodable {
 
         self.setupLeaderAndMembers()
         self.setupMapView()
-        self.setupBottomButton()
+        self.setupButtons()
     }
 
     func setupNavigationBar() {
@@ -93,12 +97,14 @@ class MyRunningViewController: UIViewController, NibLodable {
         guard
             let leaderName = self.running?.leader?.name,
             let leaderNickname = self.running?.leader?.nickname,
-            let leaderDistrict = self.running?.leader?.district else {
+            let leaderDistrict = self.running?.leader?.district,
+            let leaderID = self.running?.leader?.userId
+        else {
                 return
         }
 
         let captinViewNib = UserView.instanceFromNib()
-        captinViewNib.configure(user: User(name: leaderName, nickname: leaderNickname, district: leaderDistrict))
+        captinViewNib.configure(user: User(id: leaderID, name: leaderName, nickname: leaderNickname, district: leaderDistrict))
 
         self.leaderView.addArrangedSubview(captinViewNib)
 
@@ -106,12 +112,14 @@ class MyRunningViewController: UIViewController, NibLodable {
             guard
                 let memberName = member?.name,
                 let memberNickname = member?.nickname,
-                let memberDistrict = member?.district else {
+                let memberDistrict = member?.district,
+                let memberID = member?.userId
+            else {
                     return
             }
 
             let memberViewNib = UserView.instanceFromNib()
-            memberViewNib.configure(user: User(name: memberName, nickname: memberNickname, district: memberDistrict))
+            memberViewNib.configure(user: User(id: memberID, name: memberName, nickname: memberNickname, district: memberDistrict))
 
             self.membersView.addArrangedSubview(memberViewNib)
         })
@@ -139,47 +147,19 @@ class MyRunningViewController: UIViewController, NibLodable {
         self.mapView.drawRunningCourse()
     }
 
-    func setupBottomButton() {
-        guard let memberState = self.memberState else {
+    func setupButtons() {
+        guard
+            let leaderID = self.running?.leader?.userId,
+            let myID = UserDataService.shared.user?.id,
+            leaderID == myID
+        else {
+            self.manageMemberButton.removeFromSuperview()
+            self.cancelRunningButton.removeFromSuperview()
             return
         }
 
-        if memberState == .none {
-            self.bottomButton.isEnabled = true
-        } else {
-            self.bottomButton.isEnabled = false
-            self.bottomButton.backgroundColor = memberState == .wait ? .lightGray : #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
-            self.bottomButton.setTitleColor(.white, for: .normal)
-
-            let buttonTitle = memberState == .wait ? "수락 대기중" : "참가중"
-            self.bottomButton.setTitle(buttonTitle, for: .normal)
-        }
+        self.goOutRunningButton.removeFromSuperview()
     }
-
-    func applyRunningCompletion(_ response: Result<Bool, RunningAPIError>) {
-
-        switch response {
-        case .success(_):
-
-            let alertController = self.createBasicAlertViewController(title: "참가신청", message: "리더에게 참가 신청을 보냈습니다")  {
-                self.dismiss(animated: true, completion: nil)
-            }
-            self.present(alertController, animated: true, completion: nil)
-        case .failure(RunningAPIError.createRunning(let message)):
-
-            self.presentFailAlertController("참가 신청 실패", with: message)
-        default:
-            debugPrint("Uncorrect access")
-        }
-    }
-
-    @IBAction func requestButtonPressed(_ sender: UIButton) {
-
-        if let id = self.id, let district = self.district {
-            RunningService.shared.applyRunning(id: id, district: district, completion: applyRunningCompletion)
-        }
-    }
-
 }
 
 extension MyRunningViewController: CustomNavigationBarDelegate {

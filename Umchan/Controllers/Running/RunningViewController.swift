@@ -93,12 +93,14 @@ class RunningViewController: UIViewController, NibLodable {
         guard
             let leaderName = self.running?.leader?.name,
             let leaderNickname = self.running?.leader?.nickname,
-            let leaderDistrict = self.running?.leader?.district else {
+            let leaderDistrict = self.running?.leader?.district,
+            let leaderID = self.running?.leader?.userId
+        else {
             return
         }
 
         let captinViewNib = UserView.instanceFromNib()
-        captinViewNib.configure(user: User(name: leaderName, nickname: leaderNickname, district: leaderDistrict))
+        captinViewNib.configure(user: User(id: leaderID, name: leaderName, nickname: leaderNickname, district: leaderDistrict))
 
         self.leaderView.addArrangedSubview(captinViewNib)
 
@@ -106,12 +108,14 @@ class RunningViewController: UIViewController, NibLodable {
             guard
                 let memberName = member?.name,
                 let memberNickname = member?.nickname,
-                let memberDistrict = member?.district else {
+                let memberDistrict = member?.district,
+                let memberID = member?.userId
+            else {
                     return
             }
 
             let memberViewNib = UserView.instanceFromNib()
-            memberViewNib.configure(user: User(name: memberName, nickname: memberNickname, district: memberDistrict))
+            memberViewNib.configure(user: User(id: memberID, name: memberName, nickname: memberNickname, district: memberDistrict))
 
             self.membersView.addArrangedSubview(memberViewNib)
         })

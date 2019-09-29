@@ -350,9 +350,6 @@
                                                                         <real key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
-                                                                <connections>
-                                                                    <action selector="requestButtonPressed:" destination="r3e-yy-9a8" eventType="touchUpInside" id="NZy-Po-bu2"/>
-                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EyK-rQ-2Oj" customClass="RoundedButton" customModule="Umchan" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="80" width="354" height="60"/>
@@ -370,9 +367,6 @@
                                                                         <real key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
-                                                                <connections>
-                                                                    <action selector="requestButtonPressed:" destination="r3e-yy-9a8" eventType="touchUpInside" id="Sem-xg-gCY"/>
-                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -410,16 +404,6 @@
                         <viewLayoutGuide key="safeArea" id="myg-tB-kZY"/>
                     </view>
                     <size key="freeformSize" width="414" height="1200"/>
-                    <connections>
-                        <outlet property="bottomButton" destination="MYh-2T-J4a" id="0VL-Ze-rvS"/>
-                        <outlet property="leaderView" destination="Hzb-Wi-EwE" id="Xg3-FP-dOk"/>
-                        <outlet property="mapView" destination="IJE-Nl-fN9" id="waB-qs-NCu"/>
-                        <outlet property="membersView" destination="lzy-3b-VNl" id="xuw-RM-dSb"/>
-                        <outlet property="navigationBar" destination="U7E-9S-DmK" id="7Xv-Xu-Ub8"/>
-                        <outlet property="oneLineLabel" destination="hac-qX-R5r" id="LZc-6K-CkX"/>
-                        <outlet property="registerDateLabel" destination="Hbr-gN-6B8" id="WNo-PW-SG1"/>
-                        <outlet property="runningDateLabel" destination="Rt5-Ei-wKa" id="Syd-FV-Wld"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EGw-xU-grf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

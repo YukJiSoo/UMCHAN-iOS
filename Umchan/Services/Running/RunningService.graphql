@@ -36,11 +36,13 @@ query Running($input: RunningInput) {
             name,
             oneLine,
             leader {
+                userID,
                 name,
                 nickname,
                 district
             },
             members {
+                userID,
                 name,
                 nickname,
                 district
