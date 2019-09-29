@@ -40,10 +40,10 @@
                                 <rect key="frame" x="0.0" y="108" width="414" height="754"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kHB-UZ-1Es" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="627"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="392"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="LBX-Jy-ZhV">
-                                                <rect key="frame" x="10" y="30" width="394" height="567"/>
+                                                <rect key="frame" x="10" y="30" width="394" height="332"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="y8K-FL-1Q0">
                                                         <rect key="frame" x="0.0" y="0.0" width="394" height="232"/>
@@ -102,61 +102,11 @@
                                                         </subviews>
                                                         <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="15" bottom="0.0" trailing="15"/>
                                                     </stackView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s2x-eL-4F3" userLabel="BarView">
-                                                        <rect key="frame" x="0.0" y="272" width="394" height="2"/>
-                                                        <color key="backgroundColor" red="0.54836952689999996" green="0.16884723309999999" blue="0.18428939580000001" alpha="0.64209653249999998" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="2" id="Qe7-An-g0Y"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SH5-4a-xTy">
-                                                        <rect key="frame" x="0.0" y="314" width="394" height="31"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="크루장이 주최한 러닝 알림" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ks0-xA-Xaf">
-                                                                <rect key="frame" x="15" y="0.0" width="315" height="31"/>
-                                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acR" family="NanumSquareOTF_ac" pointSize="17"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EWv-nB-sZz">
-                                                                <rect key="frame" x="330" y="0.0" width="51" height="31"/>
-                                                                <connections>
-                                                                    <action selector="switchValueChanged:" destination="xsk-lq-Z9s" eventType="valueChanged" id="zna-eG-cvq"/>
-                                                                </connections>
-                                                            </switch>
-                                                        </subviews>
-                                                        <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="15" bottom="0.0" trailing="15"/>
-                                                    </stackView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C5H-aJ-Z69" userLabel="BarView">
-                                                        <rect key="frame" x="0.0" y="385" width="394" height="2"/>
-                                                        <color key="backgroundColor" red="0.54836952689999996" green="0.16884723309999999" blue="0.18428939580000001" alpha="0.64209653249999998" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="2" id="GHf-7b-PvS"/>
-                                                        </constraints>
-                                                    </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Fg2-J4-WJl">
-                                                        <rect key="frame" x="0.0" y="427" width="394" height="140"/>
+                                                        <rect key="frame" x="0.0" y="272" width="394" height="60"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZk-dW-Ze0" customClass="RoundedButton" customModule="Umchan" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="394" height="60"/>
-                                                                <color key="backgroundColor" red="0.54836952689999996" green="0.16884723309999999" blue="0.18428939580000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="60" id="Vde-Vi-Mhi"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="25"/>
-                                                                <state key="normal" title="프로필 수정">
-                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </state>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedDegree">
-                                                                        <real key="value" value="10"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
-                                                                <connections>
-                                                                    <segue destination="kd3-4q-fRa" kind="show" id="KxC-Gb-QNB"/>
-                                                                </connections>
-                                                            </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drM-MT-jxD" customClass="RoundedButton" customModule="Umchan" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="80" width="394" height="60"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="394" height="60"/>
                                                                 <color key="backgroundColor" red="0.54836952689999996" green="0.16884723309999999" blue="0.18428939580000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="60" id="9p3-qZ-5sg"/>
