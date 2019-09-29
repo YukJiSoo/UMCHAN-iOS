@@ -235,10 +235,10 @@
                                 <rect key="frame" x="0.0" y="108" width="414" height="1058"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mug-Ss-KP8" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="932.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1012.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="0bA-gX-i6V">
-                                                <rect key="frame" x="30" y="30" width="354" height="872.5"/>
+                                                <rect key="frame" x="30" y="30" width="354" height="952.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Hzb-Wi-EwE">
                                                         <rect key="frame" x="0.0" y="0.0" width="354" height="22.5"/>
@@ -332,7 +332,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="OHI-yk-JyB">
-                                                        <rect key="frame" x="0.0" y="732.5" width="354" height="140"/>
+                                                        <rect key="frame" x="0.0" y="732.5" width="354" height="220"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MYh-2T-J4a" customClass="RoundedButton" customModule="Umchan" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="354" height="60"/>
@@ -360,6 +360,23 @@
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="25"/>
                                                                 <state key="normal" title="러닝 해체">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="roundedDegree">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3sF-pJ-Sbh" customClass="RoundedButton" customModule="Umchan" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="160" width="354" height="60"/>
+                                                                <color key="backgroundColor" red="0.54836952689999996" green="0.16884723309999999" blue="0.18428939580000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="60" id="mwx-CT-XIO"/>
+                                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="rnq-uH-whf"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="25"/>
+                                                                <state key="normal" title="참가 취소">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <userDefinedRuntimeAttributes>
@@ -404,6 +421,18 @@
                         <viewLayoutGuide key="safeArea" id="myg-tB-kZY"/>
                     </view>
                     <size key="freeformSize" width="414" height="1200"/>
+                    <connections>
+                        <outlet property="cancelRunningButton" destination="EyK-rQ-2Oj" id="xTV-35-hmG"/>
+                        <outlet property="goOutRunningButton" destination="3sF-pJ-Sbh" id="5BO-G9-EQp"/>
+                        <outlet property="leaderView" destination="Hzb-Wi-EwE" id="cD0-2f-Skc"/>
+                        <outlet property="manageMemberButton" destination="MYh-2T-J4a" id="6Ny-Ne-gBL"/>
+                        <outlet property="mapView" destination="IJE-Nl-fN9" id="JtD-8q-kYV"/>
+                        <outlet property="membersView" destination="lzy-3b-VNl" id="Dje-fA-cgC"/>
+                        <outlet property="navigationBar" destination="U7E-9S-DmK" id="7yP-ub-ReN"/>
+                        <outlet property="oneLineLabel" destination="hac-qX-R5r" id="rbR-aN-Rou"/>
+                        <outlet property="registerDateLabel" destination="Hbr-gN-6B8" id="obm-Rz-MWY"/>
+                        <outlet property="runningDateLabel" destination="Rt5-Ei-wKa" id="uOw-uD-fQi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EGw-xU-grf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

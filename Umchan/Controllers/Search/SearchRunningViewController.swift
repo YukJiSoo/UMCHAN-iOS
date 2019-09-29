@@ -14,7 +14,7 @@ class SearchRunningViewController: SearchViewController {
     var tableView = UITableView()
     
     // MARK: - Properties
-    var runnings = [RunningListQueryType]()
+    var runnings = [RunningListQueryType?]()
     
     // MARK: - Life cycles
     override var searchType: CustomSearchBar.SearchType {
@@ -130,7 +130,9 @@ extension SearchRunningViewController: UITableViewDataSource {
             return UITableViewCell()
         }
 
-        runningCell.configure(running: self.runnings[indexPath.row])
+        if let running = self.runnings[indexPath.row] {
+            runningCell.configure(running: running)
+        }
         return runningCell
     }
 
@@ -143,9 +145,7 @@ extension SearchRunningViewController: UITableViewDelegate {
         let storyboard = UIStoryboard(name: StoryboardName.running, bundle: nil)
         let viewController = storyboard.viewController(RunningViewController.self)
 
-        if let runningID = self.runnings[indexPath.row].id {
-            viewController.id = runningID
-        }
+        viewController.id = self.runnings[indexPath.row]?.id
 
         self.navigationController?.pushViewController(viewController, animated: true)
     }

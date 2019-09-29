@@ -21,7 +21,8 @@ query RunningList($name: String) {
                 date,
                 hour,
                 minute
-            }
+            },
+            district
         }
     }
 }

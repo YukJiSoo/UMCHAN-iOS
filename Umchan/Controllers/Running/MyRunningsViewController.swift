@@ -17,14 +17,10 @@ class MyRunningsViewController: UIViewController, NibLodable {
     var tableView: UITableView?
 
     // MARK: - Properties
-    var runnings: [RunningListQueryType]? {
+    var runnings: [RunningListQueryType?] = [] {
         didSet {
             DispatchQueue.main.async {
-                guard let runnings = self.runnings else {
-                    return
-                }
-
-                if runnings.isEmpty {
+                if self.runnings.isEmpty {
                     self.setupEmptyCase()
                 } else {
                     self.setupTableView()
@@ -63,6 +59,9 @@ class MyRunningsViewController: UIViewController, NibLodable {
             case .failure(RunningAPIError.runningList(let message)):
 
                 print(message)
+                DispatchQueue.main.async {
+                    self.setupEmptyCase()
+                }
             default:
                 debugPrint("Uncorrect access")
             }
@@ -149,7 +148,7 @@ extension MyRunningsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return self.runnings?.count ?? 0
+        return self.runnings.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -159,8 +158,9 @@ extension MyRunningsViewController: UITableViewDataSource {
             return UITableViewCell()
         }
 
-        guard let running = self.runnings?[indexPath.row] else {
-            fatalError("Could not find post at row \(indexPath.row)")
+        guard let running = self.runnings[indexPath.row] else {
+            debugPrint("Could not find post at row \(indexPath.row)")
+            return UITableViewCell()
         }
 
         cell.configure(running: running)
@@ -176,11 +176,10 @@ extension MyRunningsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         let storyboard = UIStoryboard(name: StoryboardName.running, bundle: nil)
-        let viewController = storyboard.viewController(RunningViewController.self)
+        let viewController = storyboard.viewController(MyRunningViewController.self)
 
-        if let runnings = self.runnings {
-            viewController.id = runnings[indexPath.row].id
-        }
+        viewController.id = self.runnings[indexPath.row]?.id
+        viewController.district = self.runnings[indexPath.row]?.district
 
         self.navigationController?.pushViewController(viewController, animated: true)
     }

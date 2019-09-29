@@ -1231,11 +1231,12 @@ public final class RunningListQuery: GraphQLQuery {
   ///         hour
   ///         minute
   ///       }
+  ///       district
   ///     }
   ///   }
   /// }
   public let operationDefinition =
-    "query RunningList($name: String) { runnings(name: $name) { __typename code success message runnings { __typename id name oneLine runningDate { __typename year month date hour minute } registerLimitDate { __typename year month date hour minute } } } }"
+    "query RunningList($name: String) { runnings(name: $name) { __typename code success message runnings { __typename id name oneLine runningDate { __typename year month date hour minute } registerLimitDate { __typename year month date hour minute } district } } }"
 
   public let operationName = "RunningList"
 
@@ -1351,6 +1352,7 @@ public final class RunningListQuery: GraphQLQuery {
           GraphQLField("oneLine", type: .scalar(String.self)),
           GraphQLField("runningDate", type: .object(RunningDate.selections)),
           GraphQLField("registerLimitDate", type: .object(RegisterLimitDate.selections)),
+          GraphQLField("district", type: .scalar(String.self)),
         ]
 
         public private(set) var resultMap: ResultMap
@@ -1359,8 +1361,8 @@ public final class RunningListQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(id: GraphQLID? = nil, name: String? = nil, oneLine: String? = nil, runningDate: RunningDate? = nil, registerLimitDate: RegisterLimitDate? = nil) {
-          self.init(unsafeResultMap: ["__typename": "Running", "id": id, "name": name, "oneLine": oneLine, "runningDate": runningDate.flatMap { (value: RunningDate) -> ResultMap in value.resultMap }, "registerLimitDate": registerLimitDate.flatMap { (value: RegisterLimitDate) -> ResultMap in value.resultMap }])
+        public init(id: GraphQLID? = nil, name: String? = nil, oneLine: String? = nil, runningDate: RunningDate? = nil, registerLimitDate: RegisterLimitDate? = nil, district: String? = nil) {
+          self.init(unsafeResultMap: ["__typename": "Running", "id": id, "name": name, "oneLine": oneLine, "runningDate": runningDate.flatMap { (value: RunningDate) -> ResultMap in value.resultMap }, "registerLimitDate": registerLimitDate.flatMap { (value: RegisterLimitDate) -> ResultMap in value.resultMap }, "district": district])
         }
 
         public var __typename: String {
@@ -1414,6 +1416,15 @@ public final class RunningListQuery: GraphQLQuery {
           }
           set {
             resultMap.updateValue(newValue?.resultMap, forKey: "registerLimitDate")
+          }
+        }
+
+        public var district: String? {
+          get {
+            return resultMap["district"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "district")
           }
         }
 
