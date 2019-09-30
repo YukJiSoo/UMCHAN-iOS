@@ -105,7 +105,9 @@ final class AuthService: AuthServiceType {
                 return
             }
             self.accessToken = token
-            
+
+            UserDataService.shared.setUser(user: User(id: "id", name: name, nickname: nickname, district: district))
+
             // response from server
             completion(.success(true))
         }

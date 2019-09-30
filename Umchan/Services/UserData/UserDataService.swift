@@ -15,7 +15,11 @@ class UserDataService {
     // MARK: Properties
     private(set) var user: User?
     
-    // MARK: Func
+    // MARK: Function
+    func setUser(user: User) {
+        self.user = user
+    }
+
     func saveUserData(_ dictionary: [String: Any], completion: @escaping (_ Response: Result<Bool, KeychainError>) -> Void) {
         
         guard let user = try? User(dictionary) else {
