@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>움찬러너</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -20,6 +22,24 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>위치 정보 공유 필요.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>위치 정보 공유 필요.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>위치 정보 공유 필요.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>NanumSquareOTFBold</string>
+		<string>NanumSquareOTFExtraBold</string>
+		<string>NanumSquareOTFLight</string>
+		<string>NanumSquareOTFRight</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -41,23 +61,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string>NanumSquareOTFBold</string>
-		<string>NanumSquareOTFExtraBold</string>
-		<string>NanumSquareOTFLight</string>
-		<string>NanumSquareOTFRight</string>
-	</array>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>위치 정보 공유 필요.</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>위치 정보 공유 필요.</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>위치 정보 공유 필요.</string>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-        <key>NSAllowsArbitraryLoads</key>
-        <true/>
-    </dict>
 </dict>
 </plist>
