@@ -29,7 +29,8 @@ class MainTabBarController: UITabBarController {
         runningHistoryNavigationController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: AssetName.history), tag: 0)
         runningHistoryNavigationController.tabBarItem.imageInsets = UIEdgeInsets(top: 3, left: 0, bottom: 0, right: 0)
         
-        let tabBarList = [myCrewsViewController, mainNavigationController, runningHistoryNavigationController]
+//        let tabBarList = [myCrewsViewController, mainNavigationController, runningHistoryNavigationController]
+        let tabBarList = [myCrewsViewController, mainNavigationController]
         
         self.viewControllers = tabBarList
         self.selectedIndex = 1

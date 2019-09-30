@@ -15,10 +15,9 @@ class MyCrewsViewController: UIViewController, NibLodable {
 
     // MARK: - SubViews
     var tableView = UITableView(frame: .zero)
-
-    // MARK: - SubViews
     var crewListView: ScrollableStackView?
     let createCrewButton = UmchanCreateButtom(frame: .zero)
+    var indicatorView =  UIActivityIndicatorView()
 
     var emptyView: UIStackView?
 
@@ -60,7 +59,18 @@ class MyCrewsViewController: UIViewController, NibLodable {
 
     func setupData() {
 
+//        self.indicatorView.isHidden = false
+//        self.view.addSubview(self.indicatorView)
+//        self.indicatorView.translatesAutoresizingMaskIntoConstraints = false
+//        self.indicatorView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+//        self.indicatorView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+//
+//        self.indicatorView.startAnimating()
         CrewService.shared.crewList { (response) in
+
+//            self.indicatorView.stopAnimating()
+//            self.indicatorView.isHidden = true
+
             switch response {
             case .success(_):
 

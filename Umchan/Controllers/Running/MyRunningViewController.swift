@@ -25,6 +25,9 @@ class MyRunningViewController: UIViewController, NibLodable {
     @IBOutlet weak var manageMemberButton: UIButton!
     @IBOutlet weak var cancelRunningButton: UIButton!
 
+    var loadingView = UIView(frame: .zero)
+    var indicatorView = UIActivityIndicatorView(style: .whiteLarge)
+
     // MARK: - Properties
     var id: String?
     var district: String?
@@ -38,12 +41,30 @@ class MyRunningViewController: UIViewController, NibLodable {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // white back ground
+        self.view.addSubview(self.loadingView)
+        self.loadingView.backgroundColor = .white
+        self.loadingView.translatesAutoresizingMaskIntoConstraints = false
+        self.loadingView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
+        self.loadingView.heightAnchor.constraint(equalTo: self.view.heightAnchor).isActive = true
+
+        // indicator
+        self.indicatorView.color = Color.symbol
+        self.view.addSubview(self.indicatorView)
+
+        self.indicatorView.translatesAutoresizingMaskIntoConstraints = false
+        self.indicatorView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        self.indicatorView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+
+        self.indicatorView.startAnimating()
+
         self.setupNavigationBar()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
+        self.indicatorView.startAnimating()
         self.setupData()
     }
 
@@ -54,7 +75,6 @@ class MyRunningViewController: UIViewController, NibLodable {
             return
         }
         RunningService.shared.running(id: id, district: district) { (response) in
-
             switch response {
             case .success(_):
 
@@ -67,6 +87,8 @@ class MyRunningViewController: UIViewController, NibLodable {
                 self.memberState = data.1
                 DispatchQueue.main.async {
                     self.setupSubViews()
+                    self.loadingView.isHidden = true
+                    self.indicatorView.stopAnimating()
                 }
             case .failure(RunningAPIError.runningList(let message)):
 

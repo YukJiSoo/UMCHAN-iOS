@@ -19,6 +19,9 @@ class CrewViewController: UIViewController, NibLodable {
     @IBOutlet weak var membersView: UIStackView!
     @IBOutlet weak var bottomButton: UIButton!
 
+    var loadingView = UIView(frame: .zero)
+    var indicatorView = UIActivityIndicatorView(style: .whiteLarge)
+
     // MARK: - Properties
     var id: String?
     var district: String?
@@ -29,6 +32,23 @@ class CrewViewController: UIViewController, NibLodable {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // white back ground
+        self.view.addSubview(self.loadingView)
+        self.loadingView.backgroundColor = .white
+        self.loadingView.translatesAutoresizingMaskIntoConstraints = false
+        self.loadingView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
+        self.loadingView.heightAnchor.constraint(equalTo: self.view.heightAnchor).isActive = true
+
+        // indicator
+        self.indicatorView.color = Color.symbol
+        self.view.addSubview(self.indicatorView)
+
+        self.indicatorView.translatesAutoresizingMaskIntoConstraints = false
+        self.indicatorView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        self.indicatorView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+
+        self.indicatorView.startAnimating()
+        
         self.setupData()
         self.setupNavigationBar()
     }
@@ -53,6 +73,9 @@ class CrewViewController: UIViewController, NibLodable {
                 self.memberState = data.1
                 DispatchQueue.main.async {
                     self.setupSubViews()
+
+                    self.loadingView.isHidden = true
+                    self.indicatorView.stopAnimating()
                 }
             case .failure(CrewAPIError.crewList(let message)):
 
